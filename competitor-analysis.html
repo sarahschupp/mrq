@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Competitor Analysis: SkirtingDirect.com</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --border: #2e3250;
+      --text: #e4e6f0;
+      --text-muted: #9ba3bf;
+      --accent: #7c83ff;
+      --ok: #4caf87;
+      --warn: #f5a623;
+      --err: #e05252;
+      --teal: #6ec6e8;
+      --green: #5ecea0;
+      --purple: #b07cff;
+      --pink: #ff7cb0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .header { background: var(--surface); border-bottom: 2px solid var(--border); padding: 28px 40px 20px; }
+    .header h1 { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
+    .header-sub { color: var(--text-muted); font-size: 13px; }
+    .header-sub span { margin-right: 20px; }
+
+    /* NAV TABS */
+    .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); background: var(--surface2); overflow-x: auto; }
+    .tab { padding: 14px 24px; font-size: 13px; font-weight: 500; color: var(--text-muted); cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; background: none; border-top: none; border-left: none; border-right: none; transition: color 0.15s; }
+    .tab:hover { color: var(--text); }
+    .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .tab-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; }
+
+    /* PANELS */
+    .panel { display: none; padding: 36px 40px; max-width: 1300px; }
+    .panel.active { display: block; }
+
+    /* SUMMARY MATRIX */
+    .matrix-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .matrix-table th { background: var(--surface2); padding: 11px 16px; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); font-weight: 500; position: sticky; top: 0; }
+    .matrix-table th:first-child { width: 200px; }
+    .matrix-table td { padding: 11px 16px; border-top: 1px solid var(--border); vertical-align: top; }
+    .matrix-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .matrix-table td:first-child { color: var(--text-muted); font-weight: 500; font-size: 12px; }
+    .matrix-table .site-header { font-weight: 700; font-size: 13px; color: var(--text); border-bottom: 2px solid var(--border); }
+    .check { color: var(--ok); }
+    .cross { color: var(--err); }
+    .partial { color: var(--warn); }
+
+    /* SECTION LAYOUT */
+    .section-title { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 6px; margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--border); }
+    .section-title:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+    .section-desc { color: var(--text-muted); font-size: 13px; margin-bottom: 24px; }
+
+    /* SITE CARDS */
+    .site-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; margin-bottom: 24px; overflow: hidden; }
+    .site-card-header { padding: 20px 24px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 16px; }
+    .site-badge { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .site-info { flex: 1; }
+    .site-name { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+    .site-url { font-size: 12px; color: var(--text-muted); }
+    .site-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+    .tag { padding: 2px 10px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+    .tag-competitor { background: rgba(224,82,82,0.12); color: var(--err); border: 1px solid rgba(224,82,82,0.25); }
+    .tag-reference { background: rgba(124,131,255,0.1); color: var(--accent); border: 1px solid rgba(124,131,255,0.2); }
+    .tag-same-products { background: rgba(245,166,35,0.1); color: var(--warn); border: 1px solid rgba(245,166,35,0.2); }
+    .tag-diff-material { background: rgba(110,198,232,0.1); color: var(--teal); border: 1px solid rgba(110,198,232,0.2); }
+    .tag-broad-retailer { background: rgba(94,206,160,0.1); color: var(--green); border: 1px solid rgba(94,206,160,0.2); }
+    .tag-enterprise { background: rgba(176,124,255,0.1); color: var(--purple); border: 1px solid rgba(176,124,255,0.2); }
+    .site-scores { display: flex; gap: 12px; flex-direction: column; align-items: flex-end; min-width: 130px; }
+    .score-row { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+    .score-label { color: var(--text-muted); }
+    .score-pill { padding: 2px 10px; border-radius: 10px; font-size: 12px; font-weight: 700; }
+    .score-a { background: rgba(76,175,135,0.15); color: var(--ok); }
+    .score-b { background: rgba(94,206,160,0.12); color: #5ecea0; }
+    .score-c { background: rgba(245,166,35,0.12); color: var(--warn); }
+    .score-d { background: rgba(224,82,82,0.12); color: var(--err); }
+
+    .site-card-body { padding: 20px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .site-section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.09em; color: var(--text-muted); margin-bottom: 8px; font-weight: 600; }
+    .site-detail-block { margin-bottom: 14px; }
+    .finding-list { display: flex; flex-direction: column; gap: 5px; }
+    .finding { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; padding: 5px 0; }
+    .finding-icon { flex-shrink: 0; font-size: 12px; margin-top: 1px; }
+    .f-ok { color: var(--ok); }
+    .f-warn { color: var(--warn); }
+    .f-err { color: var(--err); }
+    .f-info { color: var(--teal); }
+    .f-neutral { color: var(--text-muted); }
+
+    .content-inventory { background: var(--surface2); border-radius: 6px; padding: 12px 16px; }
+    .content-row { display: flex; align-items: center; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid var(--border); font-size: 12px; }
+    .content-row:last-child { border-bottom: none; }
+    .content-label { color: var(--text-muted); }
+    .content-val { color: var(--text); font-weight: 500; }
+    .content-val.yes { color: var(--ok); }
+    .content-val.no { color: var(--err); }
+    .content-val.partial { color: var(--warn); }
+
+    /* INSIGHT BOX */
+    .insight { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 14px 18px; margin-bottom: 12px; }
+    .insight-title { font-weight: 600; color: var(--text); font-size: 13px; margin-bottom: 4px; }
+    .insight-body { color: var(--text-muted); font-size: 13px; line-height: 1.7; }
+    .insight.warn { border-left-color: var(--warn); }
+    .insight.err { border-left-color: var(--err); }
+    .insight.ok { border-left-color: var(--ok); }
+
+    /* PRICING TABLE */
+    .pricing-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 20px; }
+    .pricing-table th { background: var(--surface2); padding: 10px 14px; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
+    .pricing-table td { padding: 10px 14px; border-top: 1px solid var(--border); }
+    .pricing-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .price { font-weight: 600; color: var(--ok); }
+
+    /* FEATURE GRID */
+    .feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 20px; }
+    .feature-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+    .feature-card-title { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+    .feature-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--text-muted); padding: 3px 0; }
+    .feature-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .dot-ok { background: var(--ok); }
+    .dot-no { background: var(--err); }
+    .dot-partial { background: var(--warn); }
+
+    /* OPPORTUNITIES */
+    .opp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+    .opp-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px; }
+    .opp-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .opp-icon { font-size: 20px; }
+    .opp-title { font-size: 14px; font-weight: 700; color: var(--text); }
+    .opp-sub { font-size: 11px; color: var(--text-muted); }
+    .opp-body { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+    .opp-priority { display: inline-block; padding: 2px 9px; border-radius: 8px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
+    .p-high { background: rgba(224,82,82,0.12); color: var(--err); }
+    .p-med { background: rgba(245,166,35,0.12); color: var(--warn); }
+    .p-low { background: rgba(124,131,255,0.1); color: var(--accent); }
+
+    /* FOOTER */
+    .footer { padding: 24px 40px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 12px; }
+
+    @media (max-width: 800px) {
+      .site-card-body { grid-template-columns: 1fr; }
+      .opp-grid { grid-template-columns: 1fr; }
+      .panel { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Competitor &amp; Reference Site Analysis</h1>
+  <div class="header-sub">
+    <span>Client: Everlock Systems / SkirtingDirect.com</span>
+    <span>Crawled: April 29, 2026</span>
+    <span>Sites reviewed: 5</span>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <button class="tab active" onclick="showTab('summary')"><span class="tab-dot" style="background:var(--accent)"></span>Summary Matrix</button>
+  <button class="tab" onclick="showTab('duraskirt')"><span class="tab-dot" style="background:var(--err)"></span>DuraSkirt</button>
+  <button class="tab" onclick="showTab('depots')"><span class="tab-dot" style="background:var(--warn)"></span>Skirting Depot</button>
+  <button class="tab" onclick="showTab('mhpd')"><span class="tab-dot" style="background:var(--green)"></span>MH Parts Depot</button>
+  <button class="tab" onclick="showTab('trex')"><span class="tab-dot" style="background:var(--teal)"></span>Trex</button>
+  <button class="tab" onclick="showTab('certainteed')"><span class="tab-dot" style="background:var(--purple)"></span>CertainTeed</button>
+  <button class="tab" onclick="showTab('opportunities')"><span class="tab-dot" style="background:var(--ok)"></span>Opportunities</button>
+</div>
+
+<!-- SUMMARY PANEL -->
+<div class="panel active" id="panel-summary">
+  <div class="section-title" style="margin-top:0; border-top:none; padding-top:0;">Feature &amp; Strategy Comparison Matrix</div>
+  <div class="section-desc">How SkirtingDirect.com stacks up against competitors and aspirational reference sites on key dimensions. <span class="check">&#10003;</span> = present, <span class="cross">&#10007;</span> = absent, <span class="partial">&#9651;</span> = partial.</div>
+
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:8px; overflow:auto; margin-bottom:32px;">
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>Feature / Signal</th>
+          <th style="color:var(--accent)">SkirtingDirect <span style="font-size:10px; font-weight:400;">(baseline)</span></th>
+          <th style="color:var(--err)">DuraSkirt</th>
+          <th style="color:var(--warn)">Skirting Depot</th>
+          <th style="color:var(--green)">MH Parts Depot</th>
+          <th style="color:var(--teal)">Trex</th>
+          <th style="color:var(--purple)">CertainTeed</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="7" style="font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); background:var(--surface2); padding:8px 16px;">Technical / SEO Foundations</td></tr>
+        <tr><td>Sitemap.xml</td><td class="cross">&#10007;</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td>Meta descriptions</td><td class="cross">&#10007; (0 of 27)</td><td class="check">&#10003; most pages</td><td class="partial">&#9651; some pages</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="partial">&#9651;</td></tr>
+        <tr><td>Consistent title format</td><td class="partial">&#9651; 3 formats</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td>Structured data / schema</td><td class="cross">&#10007;</td><td class="partial">&#9651; basic</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td>Clean / SEO-friendly URLs</td><td class="partial">&#9651; /everlock/ good; /Merchant5/ bad</td><td class="check">&#10003;</td><td class="partial">&#9651; some PHP params</td><td class="partial">&#9651;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td colspan="7" style="font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); background:var(--surface2); padding:8px 16px;">Content &amp; Authority</td></tr>
+        <tr><td>Blog / editorial content</td><td class="cross">&#10007;</td><td class="check">&#10003; extensive</td><td class="partial">&#9651; thin</td><td class="cross">&#10007;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td>Comparison pages (vs competitors)</td><td class="cross">&#10007;</td><td class="check">&#10003; vs HD, Lowes, concrete</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003; comparison tool</td><td class="partial">&#9651;</td></tr>
+        <tr><td>FAQ page</td><td class="check">&#10003;</td><td class="check">&#10003; (2 pages)</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td>Installation guide / videos</td><td class="partial">&#9651; page exists, limited</td><td class="check">&#10003; full video library</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td>Photo gallery / inspiration</td><td class="partial">&#9651; gallery page exists</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003; full galleries</td><td class="check">&#10003;</td></tr>
+        <tr><td>Customer testimonials / reviews</td><td class="cross">&#10007; none visible</td><td class="check">&#10003; dedicated page</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td>Technical / engineering docs</td><td class="cross">&#10007;</td><td class="check">&#10003; PDFs, submittals</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td colspan="7" style="font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); background:var(--surface2); padding:8px 16px;">Shopping Experience &amp; Conversion</td></tr>
+        <tr><td>Complete packages by home size</td><td class="cross">&#10007; panels only</td><td class="check">&#10003; kits by size</td><td class="check">&#10003; primary model</td><td class="check">&#10003;</td><td>N/A</td><td>N/A</td></tr>
+        <tr><td>Pricing visible without calling</td><td class="partial">&#9651; product pages yes; calculator links out</td><td class="partial">&#9651; PDFs, form required for exact</td><td class="check">&#10003;</td><td class="check">&#10003;</td><td>N/A</td><td>N/A</td></tr>
+        <tr><td>Material / size calculator</td><td class="check">&#10003; 5 calculators</td><td class="partial">&#9651; PDF calculator</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003; Deck Cost Calc</td><td>N/A</td></tr>
+        <tr><td>Visual color selector / configurator</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003; full Color Selector</td><td class="check">&#10003; ColorView tool</td></tr>
+        <tr><td>Physical samples available</td><td class="cross">&#10007;</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003; prominent CTA</td><td class="check">&#10003;</td></tr>
+        <tr><td>Contractor / dealer channel</td><td class="cross">&#10007;</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003; TrexPro program</td><td class="check">&#10003;</td></tr>
+        <tr><td colspan="7" style="font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); background:var(--surface2); padding:8px 16px;">Trust &amp; Social Proof</td></tr>
+        <tr><td>Customer reviews visible on site</td><td class="cross">&#10007;</td><td class="check">&#10003; reviews + testimonials page</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td>Warranty information visible</td><td class="partial">&#9651; footer link only</td><td class="check">&#10003; PDF</td><td class="partial">&#9651;</td><td class="partial">&#9651;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td>Years in business prominently stated</td><td class="partial">&#9651; on About Us only</td><td class="check">&#10003; homepage ("nearly 20 years")</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003;</td><td class="check">&#10003;</td></tr>
+        <tr><td>FHA/VA loan compliance info</td><td class="cross">&#10007;</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td>N/A</td><td>N/A</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title">Top-Level Summary</div>
+
+  <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:24px;">
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:16px 18px;">
+      <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-muted); margin-bottom:10px;">Biggest threat</div>
+      <div style="font-size:14px; font-weight:700; color:var(--err); margin-bottom:6px;">SkirtingDepot.com</div>
+      <div style="font-size:12px; color:var(--text-muted);">Sells the exact same Novik products in complete pre-packaged kits by home size, with transparent pricing and phone support. Removes all friction from the buying decision that SkirtingDirect currently leaves on the table.</div>
+    </div>
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:16px 18px;">
+      <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-muted); margin-bottom:10px;">Best content model</div>
+      <div style="font-size:14px; font-weight:700; color:var(--warn); margin-bottom:6px;">DuraSkirt.com</div>
+      <div style="font-size:12px; color:var(--text-muted);">Different material (concrete), but the strongest content strategy in the category: comparison pages, installation videos, engineering submittals, testimonials, FAQs, blog, and contractor channel. The content architecture is worth studying even though the product doesn't compete directly.</div>
+    </div>
+    <div style="background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:16px 18px;">
+      <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-muted); margin-bottom:10px;">Best UX model</div>
+      <div style="font-size:14px; font-weight:700; color:var(--teal); margin-bottom:6px;">Trex.com</div>
+      <div style="font-size:12px; color:var(--text-muted);">Not a competitor, but the gold standard for how a building materials brand helps customers buy: Color Selector, Deck Designer, Cost Calculator, Comparison Tool, sample ordering, and a Pro program. These tools exist because they directly close sales. SkirtingDirect's calculators are a start — but Trex shows what full tool coverage looks like.</div>
+    </div>
+  </div>
+</div>
+
+<!-- DURASKIRT PANEL -->
+<div class="panel" id="panel-duraskirt">
+  <div class="site-card">
+    <div class="site-card-header">
+      <div class="site-badge" style="background:rgba(224,82,82,0.12); font-size:22px;">&#127963;</div>
+      <div class="site-info">
+        <div class="site-name">DuraSkirt.com</div>
+        <div class="site-url"><a href="https://duraskirt.com" target="_blank">https://duraskirt.com</a> &mdash; WordPress + WooCommerce</div>
+        <div class="site-tags" style="margin-top:8px;">
+          <span class="tag tag-competitor">Direct Competitor</span>
+          <span class="tag tag-diff-material">Different Material (Concrete/CMU)</span>
+        </div>
+      </div>
+      <div class="site-scores">
+        <div class="score-row"><span class="score-label">Content</span><span class="score-pill score-a">A</span></div>
+        <div class="score-row"><span class="score-label">SEO</span><span class="score-pill score-b">B+</span></div>
+        <div class="score-row"><span class="score-label">UX</span><span class="score-pill score-c">C</span></div>
+        <div class="score-row"><span class="score-label">E-Commerce</span><span class="score-pill score-d">D</span></div>
+      </div>
+    </div>
+    <div class="site-card-body">
+      <div>
+        <div class="site-section-label">About &amp; Positioning</div>
+        <div class="site-detail-block">
+          <div class="finding-list">
+            <div class="finding"><span class="finding-icon f-info">&#9432;</span>Nearly 20 years in business; manufactured home and mobile home skirting focus</div>
+            <div class="finding"><span class="finding-icon f-info">&#9432;</span>Product differentiator: concrete/CMU panels (not vinyl) — permanent, bank/FHA/VA compliant</div>
+            <div class="finding"><span class="finding-icon f-info">&#9432;</span>Factory direct, same as Skirting Direct's model; sells kits in PRO30 and PRO37 sizes</div>
+            <div class="finding"><span class="finding-icon f-info">&#9432;</span>Homepage tagline: "America's Best Mobile Home Underpinning and Skirting"</div>
+            <div class="finding"><span class="finding-icon f-warn">&#9651;</span>Also sells shed skirting, ICF insulation covers, wheel stops, garden beds — some product drift</div>
+            <div class="finding"><span class="finding-icon f-ok">&#10003;</span>Contractor/dealership channel page — B2B distribution alongside DTC</div>
+          </div>
+        </div>
+
+        <div class="site-section-label">Pricing Model</div>
+        <div class="content-inventory">
+          <div class="content-row"><span class="content-label">Pricing transparency</span><span class="content-val partial">PDF pricing sheets (Jan 2025)</span></div>
+          <div class="content-row"><span class="content-label">Kit sizes</span><span class="content-val">PRO30, PRO37; by home dimension</span></div>
+          <div class="content-row"><span class="content-val partial">Pre-order form required for purchase (not fully e-commerce)</span></div>
+          <div class="content-row"><span class="content-label">Samples</span><span class="content-val yes">Yes — purchasable in store</span></div>
+          <div class="content-row"><span class="content-label">Contractor discounts</span><span class="content-val yes">Yes — bulk pricing available</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="site-section-label">Content Inventory</div>
+        <div class="content-inventory">
+          <div class="content-row"><span class="content-label">Blog</span><span class="content-val yes">Yes — active, multiple categories</span></div>
+          <div class="content-row"><span class="content-label">FAQs</span><span class="content-val yes">Yes — 2 separate FAQ pages</span></div>
+          <div class="content-row"><span class="content-label">Installation videos</span><span class="content-val yes">Yes — full library (9+ topics)</span></div>
+          <div class="content-row"><span class="content-label">Testimonials</span><span class="content-val yes">Yes — dedicated page</span></div>
+          <div class="content-row"><span class="content-label">Photo gallery</span><span class="content-val yes">Yes</span></div>
+          <div class="content-row"><span class="content-label">Comparison pages</span><span class="content-val yes">Yes — vs HD, vs Lowes, vs concrete</span></div>
+          <div class="content-row"><span class="content-label">Engineering docs / submittals</span><span class="content-val yes">Yes — FHA/VA/loan compliance PDFs</span></div>
+          <div class="content-row"><span class="content-label">Material guides</span><span class="content-val yes">Yes — cement board, concrete board, PENETRON, flood vent, hidden vent</span></div>
+          <div class="content-row"><span class="content-label">Contractor channel</span><span class="content-val yes">Yes</span></div>
+          <div class="content-row"><span class="content-label">Brochure</span><span class="content-val yes">Yes — downloadable PDF</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:0 24px 20px; border-top:1px solid var(--border); padding-top:16px;">
+      <div class="site-section-label">Key Learnings for SkirtingDirect</div>
+      <div class="finding-list">
+        <div class="finding"><span class="finding-icon f-ok">&#10003;</span><strong>Comparison content works.</strong> DuraSkirt's "vs Home Depot" and "vs Lowes" pages directly capture high-intent shoppers who are price-comparing. SkirtingDirect has a real advantage over box-store vinyl (quality, selection, direct pricing) but no content that makes that case.</div>
+        <div class="finding"><span class="finding-icon f-ok">&#10003;</span><strong>Engineering docs as trust signals.</strong> DuraSkirt publishes FHA/VA compliance documentation, which is critical for the manufactured home buyer audience where financing often requires inspection. SkirtingDirect likely qualifies for this but has no documentation on-site.</div>
+        <div class="finding"><span class="finding-icon f-ok">&#10003;</span><strong>Installation video library drives conversion.</strong> 9+ specific installation topics (backfilling, joint concealing, crawl space wells, dryer vents) remove the #1 DIY purchase hesitation. SkirtingDirect has one or two videos; DuraSkirt has a full library.</div>
+        <div class="finding"><span class="finding-icon f-warn">&#9651;</span><strong>What NOT to copy:</strong> DuraSkirt's purchase UX is poor — pricing is in PDFs, purchasing requires a pre-order form, and checkout isn't fully e-commerce. SkirtingDirect's direct product pages are an advantage here.</div>
+        <div class="finding"><span class="finding-icon f-warn">&#9651;</span><strong>Product focus matters.</strong> DuraSkirt has expanded into wheel stops, garden beds, and skincare (!) — some mission drift that dilutes brand authority. SkirtingDirect should stay focused on the skirting category.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SKIRTING DEPOT PANEL -->
+<div class="panel" id="panel-depots">
+  <div class="site-card">
+    <div class="site-card-header">
+      <div class="site-badge" style="background:rgba(245,166,35,0.12); font-size:22px;">&#128722;</div>
+      <div class="site-info">
+        <div class="site-name">SkirtingDepot.com</div>
+        <div class="site-url"><a href="https://www.skirtingdepot.com" target="_blank">https://www.skirtingdepot.com</a> &mdash; OpenCart</div>
+        <div class="site-tags" style="margin-top:8px;">
+          <span class="tag tag-competitor">Direct Competitor</span>
+          <span class="tag tag-same-products">Sells Same Novik Products</span>
+        </div>
+      </div>
+      <div class="site-scores">
+        <div class="score-row"><span class="score-label">Content</span><span class="score-pill score-d">D</span></div>
+        <div class="score-row"><span class="score-label">SEO</span><span class="score-pill score-c">C</span></div>
+        <div class="score-row"><span class="score-label">UX</span><span class="score-pill score-b">B</span></div>
+        <div class="score-row"><span class="score-label">E-Commerce</span><span class="score-pill score-b">B+</span></div>
+      </div>
+    </div>
+    <div class="site-card-body">
+      <div>
+        <div class="site-section-label">About &amp; Positioning</div>
+        <div class="finding-list">
+          <div class="finding"><span class="finding-icon f-err">&#9888;</span><strong>Sells the exact same Novik products</strong> (Stacked Stone, Brick, Field Stone, etc.) as SkirtingDirect — and likely sources from the same distributor</div>
+          <div class="finding"><span class="finding-icon f-err">&#9888;</span>Also sells K-Rok brand (direct competitor to EverRock) in complete packages</div>
+          <div class="finding"><span class="finding-icon f-info">&#9432;</span>Phone: 800-605-3968 — prominently displayed at top of every page</div>
+          <div class="finding"><span class="finding-icon f-info">&#9432;</span>Appears to be a sister site or same vendor as MobileHomePartsDepot.com (identical package pricing)</div>
+        </div>
+
+        <div class="site-section-label" style="margin-top:16px;">Key Differentiator: Complete Packages</div>
+        <div class="finding-list">
+          <div class="finding"><span class="finding-icon f-ok">&#10003;</span>Sells <strong>complete skirting packages by home size</strong> — customer picks their home dimensions, gets everything in one SKU</div>
+          <div class="finding"><span class="finding-icon f-ok">&#10003;</span>Package includes all panels, hardware, rails — no calculator needed, no separate SKUs to manage</div>
+          <div class="finding"><span class="finding-icon f-ok">&#10003;</span>This is a fundamentally lower-friction purchase model than SkirtingDirect's individual component approach</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="site-section-label">Pricing Data (observed)</div>
+        <div style="background:var(--surface2); border-radius:6px; overflow:hidden;">
+          <table style="width:100%; border-collapse:collapse; font-size:12px;">
+            <thead><tr style="background:var(--border);"><th style="padding:8px 12px; text-align:left;">Product</th><th style="padding:8px 12px; text-align:left;">Price Range</th></tr></thead>
+            <tbody>
+              <tr style="border-top:1px solid var(--border);"><td style="padding:8px 12px; color:var(--text-muted);">Vinyl panels (individual)</td><td style="padding:8px 12px; color:var(--ok); font-weight:600;">$18.95 – $21.16</td></tr>
+              <tr style="border-top:1px solid var(--border);"><td style="padding:8px 12px; color:var(--text-muted);">Complete vinyl package</td><td style="padding:8px 12px; color:var(--ok); font-weight:600;">$335.95 – $959.95</td></tr>
+              <tr style="border-top:1px solid var(--border);"><td style="padding:8px 12px; color:var(--text-muted);">K-Rok complete package</td><td style="padding:8px 12px; color:var(--ok); font-weight:600;">$1,917.95 – $2,787.95</td></tr>
+              <tr style="border-top:1px solid var(--border);"><td style="padding:8px 12px; color:var(--text-muted);">Hardware kit (rails, etc.)</td><td style="padding:8px 12px; color:var(--ok); font-weight:600;">$9.95 – $395.95</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="site-section-label" style="margin-top:16px;">Content Inventory</div>
+        <div class="content-inventory">
+          <div class="content-row"><span class="content-label">Blog</span><span class="content-val partial">Exists but appears sparse</span></div>
+          <div class="content-row"><span class="content-label">Installation guides</span><span class="content-val no">No</span></div>
+          <div class="content-row"><span class="content-label">FAQ</span><span class="content-val no">No</span></div>
+          <div class="content-row"><span class="content-label">Reviews</span><span class="content-val no">No</span></div>
+          <div class="content-row"><span class="content-label">Calculators</span><span class="content-val no">No</span></div>
+          <div class="content-row"><span class="content-label">Phone number</span><span class="content-val yes">Prominent — 800-605-3968</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:0 24px 20px; border-top:1px solid var(--border); padding-top:16px;">
+      <div class="site-section-label">Key Learnings for SkirtingDirect</div>
+      <div class="finding-list">
+        <div class="finding"><span class="finding-icon f-err">&#9888;</span><strong>The package model is a direct challenge.</strong> A customer who knows their home size (14x70, 16x80, etc.) can land on SkirtingDepot, pick their package, and check out in three clicks. On SkirtingDirect, they need to understand what panels, rails, and hardware they need separately. SkirtingDirect has the calculator advantage — but the package model removes the need for a calculator entirely.</div>
+        <div class="finding"><span class="finding-icon f-ok">&#10003;</span><strong>Where SkirtingDirect wins:</strong> product selection (Novik stone + Gorilla insulated + Thermal EverRock + accessories), content depth (FAQs, installation instructions), and the calculator tools. SkirtingDepot has none of that.</div>
+        <div class="finding"><span class="finding-icon f-warn">&#9651;</span><strong>Consider a "Complete Kit" product line.</strong> SkirtingDirect could offer the same package-first model on top of its existing catalog. A "14x70 Complete Everlock Deluxe Kit" would directly compete with SkirtingDepot's most popular SKUs while keeping the brand's factory-direct story intact.</div>
+        <div class="finding"><span class="finding-icon f-warn">&#9651;</span><strong>Pricing context matters.</strong> SkirtingDepot shows prices on all listing pages, making comparison easy. SkirtingDirect's product pages don't show aggregated package prices, only per-panel or per-piece pricing that requires calculator use to understand total cost.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MHPD PANEL -->
+<div class="panel" id="panel-mhpd">
+  <div class="site-card">
+    <div class="site-card-header">
+      <div class="site-badge" style="background:rgba(94,206,160,0.12); font-size:22px;">&#127968;</div>
+      <div class="site-info">
+        <div class="site-name">MobileHomePartsDepot.com</div>
+        <div class="site-url"><a href="https://www.mobilehomepartsdepot.com" target="_blank">https://www.mobilehomepartsdepot.com</a></div>
+        <div class="site-tags" style="margin-top:8px;">
+          <span class="tag tag-broad-retailer">Broad Mobile Home Retailer</span>
+          <span class="tag tag-same-products">Sells Same Products</span>
+        </div>
+      </div>
+      <div class="site-scores">
+        <div class="score-row"><span class="score-label">Content</span><span class="score-pill score-d">D</span></div>
+        <div class="score-row"><span class="score-label">SEO</span><span class="score-pill score-b">B</span></div>
+        <div class="score-row"><span class="score-label">UX</span><span class="score-pill score-b">B-</span></div>
+        <div class="score-row"><span class="score-label">E-Commerce</span><span class="score-pill score-b">B</span></div>
+      </div>
+    </div>
+    <div class="site-card-body">
+      <div>
+        <div class="site-section-label">About &amp; Positioning</div>
+        <div class="finding-list">
+          <div class="finding"><span class="finding-icon f-info">&#9432;</span>Broad mobile home parts retailer: bath, doors, windows, skirting — not a skirting specialist</div>
+          <div class="finding"><span class="finding-icon f-info">&#9432;</span>Title: "Mobile Home Parts — Luxurious Tubs &amp; Showers — Beautiful Doors"</div>
+          <div class="finding"><span class="finding-icon f-warn">&#9651;</span>Skirting is one category among many — gets less merchandising emphasis than bath and doors</div>
+          <div class="finding"><span class="finding-icon f-info">&#9432;</span>Appears to share inventory/pricing with SkirtingDepot.com (packages at identical prices)</div>
+          <div class="finding"><span class="finding-icon f-ok">&#10003;</span>Mon-Fri 9am-4pm EST phone support prominently featured</div>
+        </div>
+
+        <div class="site-section-label" style="margin-top:16px;">Skirting Section</div>
+        <div class="content-inventory">
+          <div class="content-row"><span class="content-label">Complete vinyl packages</span><span class="content-val yes">$774.95 – $1,075.95</span></div>
+          <div class="content-row"><span class="content-label">K-Rok complete packages</span><span class="content-val yes">$1,917.95 – $2,787.95</span></div>
+          <div class="content-row"><span class="content-label">Vinyl skirting (individual)</span><span class="content-val yes">Available</span></div>
+          <div class="content-row"><span class="content-label">Meta description (skirting)</span><span class="content-val yes">"Save on complete vinyl skirting packages... fast shipping &amp; low prices"</span></div>
+          <div class="content-row"><span class="content-label">Measuring guidance</span><span class="content-val partial">Some text on measuring</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="site-section-label">Site Structure Notable Points</div>
+        <div class="finding-list">
+          <div class="finding"><span class="finding-icon f-ok">&#10003;</span>Clean category hierarchy: Bath > Doors > Windows > Skirting</div>
+          <div class="finding"><span class="finding-icon f-ok">&#10003;</span>Good meta descriptions on product category pages (SEO advantage)</div>
+          <div class="finding"><span class="finding-icon f-ok">&#10003;</span>Featured products grid on homepage with visible prices</div>
+          <div class="finding"><span class="finding-icon f-err">&#9888;</span>No blog, no guides, no FAQ, no comparison content</div>
+          <div class="finding"><span class="finding-icon f-warn">&#9651;</span>Skirting is not a top-level nav category — buried under "Skirting &amp; Exterior"</div>
+        </div>
+
+        <div class="site-section-label" style="margin-top:16px;">Audience Note</div>
+        <div style="background:var(--surface2); border-radius:6px; padding:12px 14px; font-size:13px; color:var(--text-muted);">
+          MHPD attracts mobile home owners who need multiple products — bath replacement AND new skirting AND a door. SkirtingDirect's focused positioning (skirting specialist) is actually a competitive advantage against this broader retailer for a customer who searches specifically for skirting. The "factory direct skirting" angle is stronger than "mobile home parts plus skirting."
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:0 24px 20px; border-top:1px solid var(--border); padding-top:16px;">
+      <div class="site-section-label">Key Learnings for SkirtingDirect</div>
+      <div class="finding-list">
+        <div class="finding"><span class="finding-icon f-ok">&#10003;</span><strong>Category page meta descriptions</strong> are a quick win. MHPD's skirting meta description ("Save on complete vinyl skirting packages for single wide, double wide &amp; triple wide trailers. Enjoy fast shipping &amp; low prices") is specific, keyword-rich, and communicates value. SkirtingDirect has zero meta descriptions.</div>
+        <div class="finding"><span class="finding-icon f-ok">&#10003;</span><strong>Home size vocabulary is key.</strong> MHPD uses "single wide, double wide &amp; triple wide" in their copy — this is how customers actually search. SkirtingDirect's product pages don't explicitly address home sizes.</div>
+        <div class="finding"><span class="finding-icon f-warn">&#9651;</span><strong>Fast shipping language converts.</strong> "Enjoy fast shipping &amp; low prices" in the meta description is a simple CRO-tested pattern. SkirtingDirect doesn't surface shipping information until the FAQ.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TREX PANEL -->
+<div class="panel" id="panel-trex">
+  <div class="site-card">
+    <div class="site-card-header">
+      <div class="site-badge" style="background:rgba(110,198,232,0.12); font-size:22px;">&#127795;</div>
+      <div class="site-info">
+        <div class="site-name">Trex.com</div>
+        <div class="site-url"><a href="https://www.trex.com" target="_blank">https://www.trex.com</a> &mdash; Enterprise composite decking brand</div>
+        <div class="site-tags" style="margin-top:8px;">
+          <span class="tag tag-reference">UX Reference</span>
+          <span class="tag tag-enterprise">Enterprise Brand</span>
+        </div>
+      </div>
+      <div class="site-scores">
+        <div class="score-row"><span class="score-label">Content</span><span class="score-pill score-a">A</span></div>
+        <div class="score-row"><span class="score-label">SEO</span><span class="score-pill score-a">A</span></div>
+        <div class="score-row"><span class="score-label">UX / Tools</span><span class="score-pill score-a">A+</span></div>
+        <div class="score-row"><span class="score-label">Brand</span><span class="score-pill score-a">A</span></div>
+      </div>
+    </div>
+    <div class="site-card-body">
+      <div>
+        <div class="site-section-label">Why Trex is Relevant as a Reference</div>
+        <div class="finding-list">
+          <div class="finding"><span class="finding-icon f-info">&#9432;</span>Different product (composite decking) but identical buyer profile: homeowners making a visual exterior decision on a building material, price-shopping, needing measurement help, and wanting to see how it looks</div>
+          <div class="finding"><span class="finding-icon f-info">&#9432;</span>Trex solved the same UX problems SkirtingDirect faces: "how much do I need?", "what does it look like?", "what's the total cost?", "who installs it?"</div>
+          <div class="finding"><span class="finding-icon f-ok">&#10003;</span>The Trex tool suite directly addresses the top 5 pre-purchase questions — and each tool is a conversion device</div>
+        </div>
+
+        <div class="site-section-label" style="margin-top:16px;">Planning Tool Suite (Study This)</div>
+        <div class="content-inventory">
+          <div class="content-row"><span class="content-label">Color Selector</span><span class="content-val yes">Full visual color browser</span></div>
+          <div class="content-row"><span class="content-label">Deck Designer</span><span class="content-val yes">Interactive layout planner</span></div>
+          <div class="content-row"><span class="content-label">Deck Cost Calculator</span><span class="content-val yes">Inputs home size, gets $ estimate</span></div>
+          <div class="content-row"><span class="content-label">Comparison Tool</span><span class="content-val yes">Compare Trex vs wood, vinyl, etc.</span></div>
+          <div class="content-row"><span class="content-label">Lighting Calculator</span><span class="content-val yes">Category-specific tool</span></div>
+          <div class="content-row"><span class="content-label">Sample Ordering</span><span class="content-val yes">Physical samples; prominent CTA</span></div>
+          <div class="content-row"><span class="content-label">Deck Plans</span><span class="content-val yes">Pre-made design templates</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="site-section-label">Content Architecture</div>
+        <div class="finding-list">
+          <div class="finding"><span class="finding-icon f-ok">&#10003;</span>Separate product, inspiration, and resources sections — each serves a different stage of the buyer journey</div>
+          <div class="finding"><span class="finding-icon f-ok">&#10003;</span>"Ideas &amp; Inspiration" gallery is SEO gold — targets "deck ideas" queries with visual content</div>
+          <div class="finding"><span class="finding-icon f-ok">&#10003;</span>TrexPro contractor program — creates a distribution channel and a "find a local pro" UX that reassures DIY-averse buyers</div>
+          <div class="finding"><span class="finding-icon f-ok">&#10003;</span>BIM library for architects and commercial buyers — extends reach to specification market</div>
+          <div class="finding"><span class="finding-icon f-ok">&#10003;</span>"Order a Sample" CTA appears throughout — converts discovery traffic into physical touchpoints</div>
+          <div class="finding"><span class="finding-icon f-ok">&#10003;</span>"Complete Guide to Trex Cladding" — guides, not just product pages, for their full product range</div>
+        </div>
+
+        <div class="site-section-label" style="margin-top:16px;">Trust Signals</div>
+        <div class="content-inventory">
+          <div class="content-row"><span class="content-label">Warranty information</span><span class="content-val yes">Featured — "Explore Warranties"</span></div>
+          <div class="content-row"><span class="content-label">HGTV partnership</span><span class="content-val yes">HGTV Smart Home 2026 feature</span></div>
+          <div class="content-row"><span class="content-label">Customer reviews</span><span class="content-val yes">On product pages</span></div>
+          <div class="content-row"><span class="content-label">Retail locations</span><span class="content-val yes">"Find a Retailer" CTA</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:0 24px 20px; border-top:1px solid var(--border); padding-top:16px;">
+      <div class="site-section-label">Directly Applicable Patterns for SkirtingDirect</div>
+      <div class="finding-list">
+        <div class="finding"><span class="finding-icon f-ok">&#10003;</span><strong>The sample order CTA should exist.</strong> Trex's "Order Samples" button appears throughout the site because letting customers hold the product before committing to a $400+ purchase removes the biggest barrier. SkirtingDirect doesn't offer samples — or if they do, it's not featured anywhere.</div>
+        <div class="finding"><span class="finding-icon f-ok">&#10003;</span><strong>A visual color browser would help sell Novik.</strong> The premium Novik stone products (Stacked Stone, Field Stone, Hand-Laid Brick) are a visual purchase — customers need to see Weathered vs Sandstone vs Gray at realistic scale. Trex's Color Selector solves this exact problem for decking. SkirtingDirect currently shows static color chips.</div>
+        <div class="finding"><span class="finding-icon f-ok">&#10003;</span><strong>A "cost estimate" tool is different from a "how many panels" calculator.</strong> SkirtingDirect has a quantity calculator. Trex has a cost calculator — it tells you the total dollar amount, not just the units. That's what closes a purchase decision. A "total job cost" output from the calculator would be a significant upgrade.</div>
+        <div class="finding"><span class="finding-icon f-ok">&#10003;</span><strong>"Planning 101" content section.</strong> Trex has a whole "build your deck" planning section. SkirtingDirect could build a "How to Skirt Your Home" planning hub that mirrors this — measure, choose material, calculate, install. This content serves both SEO and conversion.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CERTAINTEED PANEL -->
+<div class="panel" id="panel-certainteed">
+  <div class="site-card">
+    <div class="site-card-header">
+      <div class="site-badge" style="background:rgba(176,124,255,0.12); font-size:22px;">&#127968;</div>
+      <div class="site-info">
+        <div class="site-name">CertainTeed.com</div>
+        <div class="site-url"><a href="https://www.certainteed.com" target="_blank">https://www.certainteed.com</a> &mdash; Saint-Gobain brand, exterior building products</div>
+        <div class="site-tags" style="margin-top:8px;">
+          <span class="tag tag-reference">Configurator Reference</span>
+          <span class="tag tag-enterprise">Enterprise Brand</span>
+        </div>
+      </div>
+      <div class="site-scores">
+        <div class="score-row"><span class="score-label">Content</span><span class="score-pill score-a">A</span></div>
+        <div class="score-row"><span class="score-label">SEO</span><span class="score-pill score-a">A</span></div>
+        <div class="score-row"><span class="score-label">Visualizer</span><span class="score-pill score-a">A+</span></div>
+        <div class="score-row"><span class="score-label">Brand</span><span class="score-pill score-a">A</span></div>
+      </div>
+    </div>
+    <div class="site-card-body">
+      <div>
+        <div class="site-section-label">Why CertainTeed is Relevant</div>
+        <div class="finding-list">
+          <div class="finding"><span class="finding-icon f-info">&#9432;</span>North America's leading exterior siding brand — siding is architecturally adjacent to skirting; same visual/material decision process</div>
+          <div class="finding"><span class="finding-icon f-info">&#9432;</span>They solved the "what will it look like on my house?" problem that is identical to what Novik stone skirting buyers face</div>
+          <div class="finding"><span class="finding-icon f-ok">&#10003;</span>Two design tools: <strong>ColorView</strong> (colorview.certainteed.com) and <strong>ColorCoach</strong> (certainteed.com/colorcoach)</div>
+        </div>
+
+        <div class="site-section-label" style="margin-top:16px;">Design Tools (Primary Reference)</div>
+        <div class="content-inventory">
+          <div class="content-row"><span class="content-label">ColorView</span><span class="content-val yes">Upload a photo of your house, apply product colors virtually</span></div>
+          <div class="content-row"><span class="content-label">ColorCoach</span><span class="content-val yes">Guided color selection tool based on home style + environment</span></div>
+          <div class="content-row"><span class="content-label">CTA on siding page</span><span class="content-val yes">"Design Your Home" &amp; "Get Started"</span></div>
+          <div class="content-row"><span class="content-label">Sample ordering</span><span class="content-val yes">Available</span></div>
+          <div class="content-row"><span class="content-label">"Find a Pro" tool</span><span class="content-val yes">Contractor locator</span></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="site-section-label">Brand Architecture</div>
+        <div class="finding-list">
+          <div class="finding"><span class="finding-icon f-ok">&#10003;</span>Products structured by material + application: roofing, siding, trim, insulation — clean taxonomy</div>
+          <div class="finding"><span class="finding-icon f-ok">&#10003;</span>Tagline: "Let's Build for Tomorrow. Today" — aspirational framing that goes beyond product features</div>
+          <div class="finding"><span class="finding-icon f-ok">&#10003;</span>Multi-language (EN/ES + Canada) for inclusive reach</div>
+          <div class="finding"><span class="finding-icon f-info">&#9432;</span>Heavy JavaScript rendering — the site itself is not a direct crawl/SEO model to follow for a small DTC brand</div>
+        </div>
+
+        <div class="site-section-label" style="margin-top:16px;">Content Pillars</div>
+        <div class="content-inventory">
+          <div class="content-row"><span class="content-label">Product collections</span><span class="content-val yes">Cedar Impressions, Polymer Shakes, etc.</span></div>
+          <div class="content-row"><span class="content-label">Inspiration gallery</span><span class="content-val yes">By home style, color, application</span></div>
+          <div class="content-row"><span class="content-label">Pro/architect resources</span><span class="content-val yes">Spec sheets, BIM, tech docs</span></div>
+          <div class="content-row"><span class="content-label">Sustainability / brand story</span><span class="content-val yes">"Built for Tomorrow" narrative</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding:0 24px 20px; border-top:1px solid var(--border); padding-top:16px;">
+      <div class="site-section-label">Key Learnings for SkirtingDirect</div>
+      <div class="finding-list">
+        <div class="finding"><span class="finding-icon f-ok">&#10003;</span><strong>A "visualizer" is the single highest-value tool for Novik products.</strong> A customer choosing between Stacked Stone in Sandstone vs Weathered Gray for their home's foundation cannot make that decision from a 100px color chip. A photo-upload visualizer (like ColorView) or even a simulated home rendering would directly increase conversion on the premium Novik line.</div>
+        <div class="finding"><span class="finding-icon f-ok">&#10003;</span><strong>ColorCoach's guided approach is the right model for a less technical buyer.</strong> CertainTeed's ColorCoach walks users through style preferences and home characteristics before suggesting colors — it's a guided selling tool. For a SkirtingDirect buyer who is unsure whether to choose EverRock or Novik Stone, a similar "which skirting is right for you?" quiz would serve the same function.</div>
+        <div class="finding"><span class="finding-icon f-warn">&#9651;</span><strong>Don't copy the enterprise complexity.</strong> CertainTeed's heavy JavaScript and multi-layer navigation would be overkill and an SEO liability at SkirtingDirect's scale. Extract the visual tool concept; leave the enterprise architecture.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OPPORTUNITIES PANEL -->
+<div class="panel" id="panel-opportunities">
+  <div class="section-title" style="margin-top:0; border-top:none; padding-top:0;">Strategic Opportunities</div>
+  <div class="section-desc">Priority-ranked opportunities identified from competitive research. Ordered by impact and feasibility.</div>
+
+  <div class="opp-grid">
+
+    <div class="opp-card">
+      <div class="opp-header">
+        <span class="opp-icon">&#128230;</span>
+        <div><div class="opp-title">Complete Package SKUs</div><div class="opp-sub">Beat SkirtingDepot at their own game</div></div>
+      </div>
+      <span class="opp-priority p-high">High Priority</span>
+      <div class="opp-body">SkirtingDepot's core product is a "Complete [home size] Skirting Package" — everything the customer needs in one SKU at one price. SkirtingDirect currently sells components, which requires customers to use the calculator, add multiple items to cart, and trust they've gotten it right. Adding a "Complete Kit" product layer on top of the existing component catalog would directly attack SkirtingDepot's primary advantage. You could offer these for the top 5-8 most common home sizes (14x70, 16x80, etc.) across the Everlock Deluxe, EverRock, and Gorilla product lines.</div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-header">
+        <span class="opp-icon">&#128221;</span>
+        <div><div class="opp-title">Meta Descriptions + Title Fixes</div><div class="opp-sub">Zero-effort SEO recovery</div></div>
+      </div>
+      <span class="opp-priority p-high">High Priority</span>
+      <div class="opp-body">Every competitor has meta descriptions; SkirtingDirect has none on any of its 27 pages. This is a single-session fix that could meaningfully improve search CTR. The pattern from MobileHomePartsDepot is instructive: lead with "complete [product] package", include home size language ("single wide, double wide"), and close with a shipping or price promise. Also fix the two mis-titled pages (Installation Instructions showing "Privacy Policy"; Customer Gallery showing "About Us") and the broken navigation link to /everlock/storage.html.</div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-header">
+        <span class="opp-icon">&#127942;</span>
+        <div><div class="opp-title">Comparison Content Hub</div><div class="opp-sub">Model after DuraSkirt's "vs" pages</div></div>
+      </div>
+      <span class="opp-priority p-high">High Priority</span>
+      <div class="opp-body">DuraSkirt captures high-intent search traffic with "DURASKIRT vs Home Depot Mobile Home Skirting" and "vs Lowes" pages. SkirtingDirect has the same opportunity — and arguably a stronger story. A page comparing Everlock Deluxe to box-store vinyl skirting, one comparing EverRock to K-Rok, and one comparing vinyl vs Novik stone would all target mid-funnel comparison queries. These pages also serve GEO — they're exactly the kind of specific, structured comparison content that AI systems cite when answering "which mobile home skirting is best?"</div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-header">
+        <span class="opp-icon">&#127909;</span>
+        <div><div class="opp-title">Installation Video Library</div><div class="opp-sub">DuraSkirt's #1 content asset</div></div>
+      </div>
+      <span class="opp-priority p-med">Medium Priority</span>
+      <div class="opp-body">DuraSkirt has 9+ specific installation video topics covering every anxiety a DIY buyer has: backfilling, joint concealing, crawl space access, dryer vent holes, etc. SkirtingDirect has one installation page with a couple of external YouTube links. A structured video library — even 5-6 videos covering the key Everlock Deluxe and EverRock installation scenarios — would reduce support calls, increase buyer confidence, and generate organic video search traffic. The installation page URL (/page/cp-installation-instructions.html) is also poorly structured; it should be at /installation/ or /how-to-install/.</div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-header">
+        <span class="opp-icon">&#127774;</span>
+        <div><div class="opp-title">Visual Color Tool for Novik</div><div class="opp-sub">Model after CertainTeed's ColorView</div></div>
+      </div>
+      <span class="opp-priority p-med">Medium Priority</span>
+      <div class="opp-body">The Novik premium stone products (5 styles, 6-8 colors each) are a visual purchase. A customer cannot choose between Weathered Gray and Sandstone from a color swatch. A visualizer — even a simplified one showing each color option applied to a representative foundation section — would directly help the premium product line convert. Full photo-upload tools (like CertainTeed's ColorView) are expensive to build; a curated photo gallery organized by color and style is a simpler first step that provides the same functional value.</div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-header">
+        <span class="opp-icon">&#128247;</span>
+        <div><div class="opp-title">Sample Ordering</div><div class="opp-sub">Both Trex and DuraSkirt offer this</div></div>
+      </div>
+      <span class="opp-priority p-med">Medium Priority</span>
+      <div class="opp-body">Both Trex and DuraSkirt offer physical samples. For a $400-2,800+ purchase decision, holding the material removes the biggest remaining hesitation. DuraSkirt charges a nominal fee for samples, which is standard practice. SkirtingDirect doesn't mention samples anywhere on the site. Even a "request a sample" form or a $5 sample product in the Merchant5 store would address this gap — and the sample itself is a direct marketing piece that lives in the customer's hands until they're ready to order.</div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-header">
+        <span class="opp-icon">&#128203;</span>
+        <div><div class="opp-title">FHA/VA Compliance Documentation</div><div class="opp-sub">DuraSkirt uses this as a trust differentiator</div></div>
+      </div>
+      <span class="opp-priority p-med">Medium Priority</span>
+      <div class="opp-body">A significant portion of manufactured home buyers are financing with FHA or VA loans, which require that skirting meet specific inspection standards. DuraSkirt publishes engineering submittals and compliance documentation directly on its site and positions this as a buying reason ("Qualifies for VA, FHA, and all other loan requirements"). If Everlock products meet these requirements (very likely given 40 years in the business), a single page documenting this compliance — and ideally a downloadable PDF — would close a meaningful segment of buyers who are blocked by financing requirements.</div>
+    </div>
+
+    <div class="opp-card">
+      <div class="opp-header">
+        <span class="opp-icon">&#128184;</span>
+        <div><div class="opp-title">Cost Calculator Upgrade</div><div class="opp-sub">From "how many panels" to "total cost estimate"</div></div>
+      </div>
+      <span class="opp-priority p-med">Medium Priority</span>
+      <div class="opp-body">SkirtingDirect already has 5 product calculators — a genuine advantage over SkirtingDepot and DuraSkirt. The current calculators output a parts list. Upgrading them to output a total estimated cost (panels + rails + hardware) would make them conversion devices, not just utility tools. Trex's Deck Cost Calculator is the model: the user enters dimensions and gets a dollar amount, which then links directly to an add-to-cart flow. This upgrade may require Miva Merchant customization but the payoff on conversion rate would be significant.</div>
+    </div>
+
+  </div>
+
+  <div class="section-title">Content Gap Summary</div>
+  <div class="section-desc">Content that direct competitors have and SkirtingDirect does not.</div>
+
+  <div style="background:var(--surface); border:1px solid var(--border); border-radius:8px; overflow:auto; margin-bottom:24px;">
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th>Content Type</th>
+          <th>Competitor Who Has It</th>
+          <th>Why It Matters</th>
+          <th>Difficulty to Create</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>vs Box Store comparison page</td><td style="color:var(--err);">DuraSkirt</td><td>Captures mid-funnel "which skirting" searches; most effective SEO content type</td><td style="color:var(--ok);">Low — 500-800 words + data</td></tr>
+        <tr><td>Complete package by home size</td><td style="color:var(--warn);">SkirtingDepot, MHPD</td><td>Removes #1 purchase friction for customers who don't want to calculate</td><td style="color:var(--warn);">Medium — product config + merchandising</td></tr>
+        <tr><td>Testimonials / review page</td><td style="color:var(--err);">DuraSkirt</td><td>Social proof; critical for $400+ first-time online purchases</td><td style="color:var(--ok);">Low — collect existing customer feedback</td></tr>
+        <tr><td>FHA/VA compliance docs</td><td style="color:var(--err);">DuraSkirt</td><td>Closes a specific buyer segment blocked by financing requirements</td><td style="color:var(--warn);">Medium — requires documentation pull</td></tr>
+        <tr><td>Visual style/color gallery (Novik)</td><td style="color:var(--purple);">CertainTeed (model)</td><td>Novik is a visual purchase; buyers need to see installed results</td><td style="color:var(--warn);">Medium — curated photo content</td></tr>
+        <tr><td>Installation video library</td><td style="color:var(--err);">DuraSkirt</td><td>Removes DIY anxiety; reduces support volume; drives YouTube traffic</td><td style="color:var(--err);">High — video production required</td></tr>
+        <tr><td>Physical sample offering</td><td style="color:var(--err);">DuraSkirt, Trex</td><td>Converts discovery visitors into highly qualified leads</td><td style="color:var(--ok);">Low — add one SKU to Merchant5</td></tr>
+        <tr><td>Home size language in copy</td><td style="color:var(--green);">MHPD</td><td>Matches how customers actually search ("14x70 skirting")</td><td style="color:var(--ok);">Low — copy update on product pages</td></tr>
+        <tr><td>Meta descriptions</td><td>All competitors</td><td>Directly impacts search CTR; affects how AI systems excerpt the site</td><td style="color:var(--ok);">Low — 30 mins of writing</td></tr>
+        <tr><td>Sitemap.xml</td><td>All competitors</td><td>Required for reliable search engine indexing</td><td style="color:var(--ok);">Low — one-time Miva Merchant config</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="footer">
+  <span>Competitor Analysis: SkirtingDirect.com | Reviewed: April 29, 2026</span>
+  <span>Sites reviewed: DuraSkirt, SkirtingDepot, MobileHomePartsDepot, Trex, CertainTeed</span>
+</div>
+
+<script>
+  function showTab(name) {
+    document.querySelectorAll('.panel').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+    document.getElementById('panel-' + name).classList.add('active');
+    event.currentTarget.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>

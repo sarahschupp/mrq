@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Audit Report: SkirtingDirect.com</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --border: #2e3250;
+      --text: #e4e6f0;
+      --text-muted: #9ba3bf;
+      --accent: #7c83ff;
+      --ok: #4caf87;
+      --warn: #f5a623;
+      --err: #e05252;
+      --depth0: #7c83ff;
+      --depth1: #6ec6e8;
+      --depth2: #5ecea0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* HEADER */
+    .header { background: var(--surface); border-bottom: 2px solid var(--border); padding: 28px 40px 20px; }
+    .header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .header h1 { font-size: 24px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .header-sub { color: var(--text-muted); font-size: 13px; margin-bottom: 16px; }
+    .header-sub span { margin-right: 20px; }
+    .crawl-info { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 14px 20px; font-size: 13px; color: var(--text-muted); min-width: 260px; }
+    .crawl-info strong { color: var(--text); display: block; font-size: 14px; margin-bottom: 6px; }
+    .crawl-info p { margin-bottom: 3px; }
+
+    /* STAT CARDS */
+    .stats-bar { display: flex; gap: 0; border-bottom: 1px solid var(--border); background: var(--surface2); flex-wrap: wrap; }
+    .stat-card { flex: 1; min-width: 130px; padding: 20px 28px; border-right: 1px solid var(--border); }
+    .stat-card:last-child { border-right: none; }
+    .stat-number { font-size: 36px; font-weight: 700; line-height: 1; margin-bottom: 4px; }
+    .stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); }
+    .stat-ok { color: var(--ok); }
+    .stat-warn { color: var(--warn); }
+    .stat-err { color: var(--err); }
+    .stat-blue { color: var(--accent); }
+    .stat-cyan { color: #6ec6e8; }
+
+    /* ALERT BANNERS */
+    .alerts { padding: 20px 40px; display: flex; flex-direction: column; gap: 10px; }
+    .alert { display: flex; align-items: flex-start; gap: 12px; padding: 14px 18px; border-radius: 8px; font-size: 13px; }
+    .alert-err { background: rgba(224,82,82,0.1); border: 1px solid rgba(224,82,82,0.3); }
+    .alert-warn { background: rgba(245,166,35,0.1); border: 1px solid rgba(245,166,35,0.3); }
+    .alert-info { background: rgba(124,131,255,0.08); border: 1px solid rgba(124,131,255,0.25); }
+    .alert-icon { font-size: 16px; line-height: 1.4; flex-shrink: 0; }
+    .alert-title { font-weight: 600; color: var(--text); margin-bottom: 2px; }
+    .alert-body { color: var(--text-muted); }
+
+    /* MAIN CONTENT GRID */
+    .layout { display: grid; grid-template-columns: 260px 1fr; gap: 0; }
+    .sidebar { background: var(--surface); border-right: 1px solid var(--border); padding: 24px 0; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+    .sidebar-title { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); padding: 0 20px 8px; }
+    .sidebar-link { display: flex; align-items: center; gap: 10px; padding: 9px 20px; color: var(--text-muted); font-size: 13px; cursor: pointer; transition: background 0.12s; border: none; background: none; width: 100%; text-align: left; }
+    .sidebar-link:hover { background: var(--surface2); color: var(--text); }
+    .sidebar-link.active { background: rgba(124,131,255,0.12); color: var(--accent); border-right: 2px solid var(--accent); }
+    .sidebar-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .sidebar-count { margin-left: auto; font-size: 11px; background: var(--surface2); border-radius: 10px; padding: 1px 7px; }
+    .sidebar-section { padding: 16px 20px 4px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-top: 8px; border-top: 1px solid var(--border); }
+
+    /* MAIN */
+    .main { padding: 32px 40px; min-width: 0; }
+    .section-title { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 6px; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); }
+    .section-title:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+    .section-desc { color: var(--text-muted); font-size: 13px; margin-bottom: 20px; }
+
+    /* PAGE CARDS */
+    .page-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 8px; }
+    .page-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; transition: border-color 0.15s; }
+    .page-card:hover { border-color: var(--accent); }
+    .page-card.has-error { border-left: 3px solid var(--err); }
+    .page-card.has-warn { border-left: 3px solid var(--warn); }
+    .page-card-top { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+    .page-card-icon { width: 32px; height: 32px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+    .icon-product { background: rgba(110,198,232,0.12); }
+    .icon-tool { background: rgba(94,206,160,0.12); }
+    .icon-company { background: rgba(124,131,255,0.12); }
+    .icon-shop { background: rgba(245,166,35,0.12); }
+    .icon-home { background: rgba(124,131,255,0.2); }
+    .page-card-meta { flex: 1; min-width: 0; }
+    .page-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .page-url { font-size: 12px; color: var(--text-muted); }
+    .page-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto; flex-shrink: 0; }
+    .badge { padding: 2px 9px; border-radius: 10px; font-size: 11px; font-weight: 600; white-space: nowrap; }
+    .badge-ok { background: rgba(76,175,135,0.15); color: var(--ok); border: 1px solid rgba(76,175,135,0.25); }
+    .badge-err { background: rgba(224,82,82,0.15); color: var(--err); border: 1px solid rgba(224,82,82,0.25); }
+    .badge-warn { background: rgba(245,166,35,0.15); color: var(--warn); border: 1px solid rgba(245,166,35,0.25); }
+    .badge-info { background: rgba(124,131,255,0.12); color: var(--accent); border: 1px solid rgba(124,131,255,0.25); }
+    .badge-gray { background: rgba(155,163,191,0.12); color: var(--text-muted); border: 1px solid rgba(155,163,191,0.2); }
+    .badge-depth { font-size: 10px; }
+    .page-card-body { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 12px; color: var(--text-muted); }
+    .page-detail-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--text-muted); margin-bottom: 2px; }
+    .page-detail-val { color: var(--text); font-size: 12px; }
+    .page-flags { margin-top: 8px; display: flex; flex-direction: column; gap: 4px; }
+    .flag-item { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; padding: 6px 10px; border-radius: 5px; }
+    .flag-err { background: rgba(224,82,82,0.08); color: var(--err); }
+    .flag-warn { background: rgba(245,166,35,0.08); color: var(--warn); }
+    .flag-info { background: rgba(124,131,255,0.07); color: #9ba3bf; }
+    .colors-bar { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+    .color-chip { padding: 1px 8px; border-radius: 8px; font-size: 11px; background: var(--surface2); border: 1px solid var(--border); color: var(--text-muted); text-transform: capitalize; }
+
+    /* TREE / HIERARCHY */
+    .tree { font-size: 13px; }
+    .tree-node { padding: 5px 0; }
+    .tree-indent { padding-left: 24px; border-left: 1px dashed var(--border); margin-left: 8px; }
+    .tree-item { display: flex; align-items: center; gap: 8px; padding: 5px 8px; border-radius: 5px; }
+    .tree-item:hover { background: var(--surface2); }
+    .tree-bullet { color: var(--text-muted); font-size: 10px; }
+    .tree-label { color: var(--text); }
+    .tree-url { color: var(--text-muted); font-size: 11px; }
+
+    /* ISSUES TABLE */
+    .issues-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .issues-table th { background: var(--surface2); padding: 10px 14px; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); font-weight: 500; }
+    .issues-table td { padding: 10px 14px; border-top: 1px solid var(--border); vertical-align: top; }
+    .issues-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .severity-high { color: var(--err); font-weight: 600; }
+    .severity-med { color: var(--warn); font-weight: 600; }
+    .severity-low { color: var(--text-muted); font-weight: 600; }
+
+    /* DEPTH DISTRIBUTION */
+    .depth-chart { display: flex; flex-direction: column; gap: 8px; }
+    .depth-row { display: flex; align-items: center; gap: 12px; font-size: 13px; }
+    .depth-label { width: 70px; color: var(--text-muted); }
+    .depth-bar-bg { flex: 1; background: var(--surface2); border-radius: 4px; height: 18px; overflow: hidden; }
+    .depth-bar-fill { height: 100%; border-radius: 4px; }
+    .depth-count { width: 40px; text-align: right; color: var(--text-muted); }
+    .d0-fill { background: var(--depth0); }
+    .d1-fill { background: var(--depth1); }
+    .d2-fill { background: linear-gradient(90deg, var(--depth2), #4ade80); }
+
+    /* OVERVIEW PROSE */
+    .overview-box { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; margin-bottom: 24px; }
+    .overview-box h3 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+    .overview-box p { color: var(--text-muted); font-size: 13px; margin-bottom: 8px; line-height: 1.7; }
+    .overview-box p:last-child { margin-bottom: 0; }
+
+    /* SEO ANALYSIS */
+    .seo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+    .seo-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+    .seo-card-title { font-size: 12px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+    .seo-score { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+    .seo-finding { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; padding-left: 10px; position: relative; }
+    .seo-finding::before { content: '•'; position: absolute; left: 0; }
+
+    /* FOOTER */
+    .footer { padding: 24px 40px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 12px; display: flex; justify-content: space-between; }
+
+    /* SEARCH */
+    .search-bar { padding: 14px 40px; background: var(--surface); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 14px; position: sticky; top: 0; z-index: 40; }
+    .search-input { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; color: var(--text); font-size: 13px; padding: 7px 14px; width: 300px; outline: none; }
+    .search-input:focus { border-color: var(--accent); }
+    .search-input::placeholder { color: var(--text-muted); }
+    .search-match-count { font-size: 12px; color: var(--text-muted); }
+    .hidden { display: none !important; }
+
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      .seo-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-top">
+    <div>
+      <h1>Site Audit Report: SkirtingDirect.com</h1>
+      <div class="header-sub">
+        <span>Start URL: <a href="https://www.skirtingdirect.com" target="_blank" rel="noopener">https://www.skirtingdirect.com</a></span>
+        <span>Crawl Date: April 29, 2026</span>
+        <span>Platform: Miva Merchant (Merchant5)</span>
+      </div>
+    </div>
+    <div class="crawl-info">
+      <strong>About this site</strong>
+      <p>Operated by: Everlock Systems, Inc.</p>
+      <p>Location: Boulder, CO 80301</p>
+      <p>Phone: 800-843-3336</p>
+      <p>Founded: 2011 (Everlock ~40 yrs)</p>
+      <p>Purpose: Factory-direct DTC e-commerce for mobile/manufactured home skirting</p>
+    </div>
+  </div>
+</div>
+
+<!-- STAT CARDS -->
+<div class="stats-bar">
+  <div class="stat-card">
+    <div class="stat-number stat-blue">27</div>
+    <div class="stat-label">Total Pages</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number stat-cyan">5</div>
+    <div class="stat-label">Site Sections</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number stat-ok">26</div>
+    <div class="stat-label">HTTP 200 OK</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number stat-err">1</div>
+    <div class="stat-label">HTTP 404 Errors</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number stat-ok">2</div>
+    <div class="stat-label">Max Depth</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number stat-warn">9</div>
+    <div class="stat-label">Quality Flags</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number" style="color:#e4e6f0">0</div>
+    <div class="stat-label">Sitemap.xml</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-number" style="color:#e4e6f0">0</div>
+    <div class="stat-label">Meta Descriptions</div>
+  </div>
+</div>
+
+<!-- ALERTS -->
+<div class="alerts">
+  <div class="alert alert-err">
+    <div class="alert-icon">&#9888;</div>
+    <div>
+      <div class="alert-title">Broken Page: /everlock/storage.html (HTTP 404)</div>
+      <div class="alert-body">The "Everlock EZ Storage" link appears in the site navigation and is reachable from the homepage, but the destination page returns a 404. Every visitor who clicks this nav item hits a dead end. This is an active navigation error.</div>
+    </div>
+  </div>
+  <div class="alert alert-warn">
+    <div class="alert-icon">&#9432;</div>
+    <div>
+      <div class="alert-title">No sitemap.xml found</div>
+      <div class="alert-body">The site does not have a sitemap.xml at any standard location (/sitemap.xml, /sitemap_index.xml, /sitemap/). Search engines rely on sitemaps for efficient crawling, especially for e-commerce sites. This should be generated and submitted to Google Search Console.</div>
+    </div>
+  </div>
+  <div class="alert alert-warn">
+    <div class="alert-icon">&#9432;</div>
+    <div>
+      <div class="alert-title">Zero meta descriptions across all 27 pages</div>
+      <div class="alert-body">Not a single page has a meta description tag. Google will auto-generate snippets, but those are often poor quality. Well-written meta descriptions directly impact click-through rate from search results pages and are a fundamental SEO gap.</div>
+    </div>
+  </div>
+  <div class="alert alert-warn">
+    <div class="alert-icon">&#9432;</div>
+    <div>
+      <div class="alert-title">Page title format is inconsistent across sections</div>
+      <div class="alert-body">Product pages use at least three different title patterns: (1) "[Product] Skirting from SkirtingDirect.com", (2) "View [Product] at Skirting Direct — Your Factory Direct Source...", and (3) raw Merchant5 titles like "EverBrick II, EverStone II, Premium EverStone II, River Rock &amp; Field Stone Calculator: :". Two support pages have mis-matched titles: Installation Instructions shows "Privacy Policy" and Customer Gallery shows "About Us".</div>
+    </div>
+  </div>
+  <div class="alert alert-warn">
+    <div class="alert-icon">&#9432;</div>
+    <div>
+      <div class="alert-title">Duplicate nav entries: "Gorilla Thermal" and "Thermal EverRock" both link to /everlock/gorilla.html</div>
+      <div class="alert-body">The mobile/collapsed nav menu lists "Gorrilla Thermal" and "Thermal EverRock" as separate items, but both resolve to the same page. This likely reflects a product line consolidation that was not cleaned up in the nav template. Also note the typo: "Gorrilla" in the collapsed nav.</div>
+    </div>
+  </div>
+  <div class="alert alert-info">
+    <div class="alert-icon">&#9432;</div>
+    <div>
+      <div class="alert-title">Technical: Merchant5 URLs expose platform internals</div>
+      <div class="alert-body">Calculator and e-commerce pages live under /Merchant5/ with URLs like /Merchant5/merchant.mvc?Screen=PLST. These expose the underlying Miva Merchant platform and are not SEO-friendly. The "All Products", "Terms &amp; Conditions", and "Warranty" pages are only accessible via these parameter-based URLs, which are difficult for search engines to index reliably.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SEARCH BAR -->
+<div class="search-bar">
+  <span style="font-size:12px;color:var(--text-muted);white-space:nowrap;">Filter pages</span>
+  <input type="search" class="search-input" id="pageSearch" placeholder="Search by title or URL..." autocomplete="off">
+  <span class="search-match-count" id="matchCount"></span>
+</div>
+
+<div class="layout">
+  <!-- SIDEBAR -->
+  <nav class="sidebar" aria-label="Section navigation">
+    <div style="padding: 0 20px 12px; font-size: 12px; color: var(--text-muted);">27 pages across 5 sections</div>
+    <div class="sidebar-title">Jump to section</div>
+    <button class="sidebar-link active" onclick="scrollToSection('overview')">
+      <span class="sidebar-dot" style="background:var(--accent)"></span>
+      Overview &amp; Hierarchy
+    </button>
+    <button class="sidebar-link" onclick="scrollToSection('products')">
+      <span class="sidebar-dot" style="background:var(--depth1)"></span>
+      Products (Everlock)
+      <span class="sidebar-count">14</span>
+    </button>
+    <button class="sidebar-link" onclick="scrollToSection('tools')">
+      <span class="sidebar-dot" style="background:var(--ok)"></span>
+      Calculators
+      <span class="sidebar-count">5</span>
+    </button>
+    <button class="sidebar-link" onclick="scrollToSection('company')">
+      <span class="sidebar-dot" style="background:#7c83ff"></span>
+      Company Pages
+      <span class="sidebar-count">5</span>
+    </button>
+    <button class="sidebar-link" onclick="scrollToSection('shop')">
+      <span class="sidebar-dot" style="background:var(--warn)"></span>
+      E-Commerce
+      <span class="sidebar-count">3</span>
+    </button>
+    <div class="sidebar-section">Analysis</div>
+    <button class="sidebar-link" onclick="scrollToSection('quality')">
+      <span class="sidebar-dot" style="background:var(--err)"></span>
+      Quality Issues
+      <span class="sidebar-count" style="background:rgba(224,82,82,0.2);color:var(--err)">9</span>
+    </button>
+    <button class="sidebar-link" onclick="scrollToSection('seo')">
+      <span class="sidebar-dot" style="background:var(--warn)"></span>
+      SEO Analysis
+    </button>
+    <button class="sidebar-link" onclick="scrollToSection('strategic')">
+      <span class="sidebar-dot" style="background:var(--ok)"></span>
+      Strategic Observations
+    </button>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main style="min-width:0; overflow-x:hidden;">
+  <div class="main">
+
+    <!-- OVERVIEW -->
+    <div id="overview">
+      <div class="section-title" style="margin-top:0; border-top:none; padding-top:0;">Overview &amp; Site Hierarchy</div>
+      <div class="section-desc">SkirtingDirect.com is a small, flat DTC e-commerce site. All product pages are exactly 1 click from the homepage. The site has a simple structure that is easy to navigate but has limited SEO depth.</div>
+
+      <div class="overview-box">
+        <h3>About the Site</h3>
+        <p>Skirting Direct is the consumer-facing website of Everlock Systems, Inc., a Boulder, Colorado company with nearly 40 years in the mobile/manufactured home skirting industry. The site was created in 2011 to give homeowners direct access to factory pricing on skirting products that are typically sold through dealers.</p>
+        <p>The site sells a focused product line: traditional vinyl skirting (Everlock Deluxe, Gorilla Insulated), rock-look vinyl skirting (EverRock, Thermal EverRock), and premium Novik-branded stone/brick skirting panels. Accessories include foundation vents, floor repair kits, and access doors. Each product family has a dedicated landing page and a matching product calculator.</p>
+        <p>The platform is Miva Merchant (evidenced by /Merchant5/ paths). The site is visually straightforward, using a Bootstrap-based responsive layout with a horizontal nav dropdown.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:24px;">
+        <div class="overview-box" style="margin:0;">
+          <h3>Depth Distribution</h3>
+          <div class="depth-chart" style="margin-top:12px;">
+            <div class="depth-row">
+              <div class="depth-label">Depth 0</div>
+              <div class="depth-bar-bg"><div class="depth-bar-fill d0-fill" style="width:4%"></div></div>
+              <div class="depth-count">1</div>
+            </div>
+            <div class="depth-row">
+              <div class="depth-label">Depth 1</div>
+              <div class="depth-bar-bg"><div class="depth-bar-fill d1-fill" style="width:89%"></div></div>
+              <div class="depth-count">24</div>
+            </div>
+            <div class="depth-row">
+              <div class="depth-label">Depth 2</div>
+              <div class="depth-bar-bg"><div class="depth-bar-fill d2-fill" style="width:7%"></div></div>
+              <div class="depth-count">2</div>
+            </div>
+          </div>
+          <p style="font-size:12px; color:var(--text-muted); margin-top:12px;">The site is extremely flat. 89% of pages are directly reachable from the homepage in 1 click. No pages violate the 3-click rule.</p>
+        </div>
+        <div class="overview-box" style="margin:0;">
+          <h3>HTTP Status Overview</h3>
+          <div style="margin-top:12px; display:flex; flex-direction:column; gap:8px;">
+            <div style="display:flex; align-items:center; gap:12px;">
+              <span class="badge badge-ok">HTTP 200</span>
+              <div style="flex:1; background:var(--surface2); border-radius:4px; height:18px; overflow:hidden;"><div style="width:96%; height:100%; background:var(--ok); border-radius:4px;"></div></div>
+              <span style="font-size:12px; color:var(--text-muted);">26 pages</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:12px;">
+              <span class="badge badge-err">HTTP 404</span>
+              <div style="flex:1; background:var(--surface2); border-radius:4px; height:18px; overflow:hidden;"><div style="width:4%; height:100%; background:var(--err); border-radius:4px;"></div></div>
+              <span style="font-size:12px; color:var(--text-muted);">1 page</span>
+            </div>
+          </div>
+          <p style="font-size:12px; color:var(--text-muted); margin-top:12px;">Only one broken page: <code style="font-size:11px; color:var(--err);">/everlock/storage.html</code> (Everlock EZ Storage). This is linked from the nav and represents an active user-facing error.</p>
+        </div>
+      </div>
+
+      <!-- Visual site tree -->
+      <div class="overview-box" style="margin-bottom:24px;">
+        <h3>Visual Site Tree</h3>
+        <div class="tree" style="margin-top:14px;">
+          <div class="tree-node">
+            <div class="tree-item">
+              <span class="tree-bullet">&#9632;</span>
+              <span class="tree-label" style="font-weight:600; color:var(--accent);">/ Home</span>
+              <span class="badge badge-ok" style="font-size:10px; margin-left:6px;">200</span>
+              <span class="badge badge-info" style="font-size:10px; margin-left:4px;">depth 0</span>
+            </div>
+            <div class="tree-indent">
+
+              <!-- Products -->
+              <div class="tree-node">
+                <div class="tree-item">
+                  <span class="tree-bullet">&#9660;</span>
+                  <span class="tree-label" style="color:var(--depth1); font-weight:600;">/everlock/ &amp; /ER301/ — Products (14 pages)</span>
+                </div>
+                <div class="tree-indent">
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">Everlock Deluxe Vinyl Skirting</span><span class="tree-url" style="margin-left:8px;">/everlock/vinyl.html</span><span class="badge badge-ok" style="font-size:10px; margin-left:6px;">200</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">Gorilla Insulated Skirting</span><span class="tree-url" style="margin-left:8px;">/everlock/gorilla.html</span><span class="badge badge-ok" style="font-size:10px; margin-left:6px;">200</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">EverRock Vinyl Skirting</span><span class="tree-url" style="margin-left:8px;">/everlock/rock.html</span><span class="badge badge-ok" style="font-size:10px; margin-left:6px;">200</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">Thermal EverRock Insulated Skirting</span><span class="tree-url" style="margin-left:8px;">/everlock/thermal.html</span><span class="badge badge-ok" style="font-size:10px; margin-left:6px;">200</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">Novik Stacked Stone</span><span class="tree-url" style="margin-left:8px;">/everlock/stacked-stone.html</span><span class="badge badge-ok" style="font-size:10px; margin-left:6px;">200</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">Novik Hand-Laid Brick</span><span class="tree-url" style="margin-left:8px;">/everlock/ever-brick.html</span><span class="badge badge-ok" style="font-size:10px; margin-left:6px;">200</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">Novik Dry-Stacked Stone</span><span class="tree-url" style="margin-left:8px;">/everlock/dry-stacked-stone.html</span><span class="badge badge-ok" style="font-size:10px; margin-left:6px;">200</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">Novik Premium Hand-Cut Stone</span><span class="tree-url" style="margin-left:8px;">/everlock/premium-ever-stone.html</span><span class="badge badge-ok" style="font-size:10px; margin-left:6px;">200</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">Novik Field Stone</span><span class="tree-url" style="margin-left:8px;">/everlock/field-stone.html</span><span class="badge badge-ok" style="font-size:10px; margin-left:6px;">200</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">Foundation Vents</span><span class="tree-url" style="margin-left:8px;">/everlock/foundation-vents.html</span><span class="badge badge-ok" style="font-size:10px; margin-left:6px;">200</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">Squeek No More (Mobile Home Parts)</span><span class="tree-url" style="margin-left:8px;">/everlock/mobile-home-parts.html</span><span class="badge badge-ok" style="font-size:10px; margin-left:6px;">200</span></div>
+                  <div class="tree-item"><span class="tree-bullet" style="color:var(--err);">&#9679;</span><span class="tree-label" style="color:var(--err);">Everlock EZ Storage <strong>[BROKEN]</strong></span><span class="tree-url" style="margin-left:8px;">/everlock/storage.html</span><span class="badge badge-err" style="font-size:10px; margin-left:6px;">404</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">EZ Access Door Conversion Kit</span><span class="tree-url" style="margin-left:8px;">/ER301/EverRock-Access-Door-Conversion-Kit.html</span><span class="badge badge-ok" style="font-size:10px; margin-left:6px;">200</span></div>
+                  <div class="tree-item" style="opacity:0.5"><span class="tree-bullet">&#9679;</span><span class="tree-label">Product Thumbnails (images)</span><span class="tree-url" style="margin-left:8px;">/Merchant5/graphics/...</span><span class="badge badge-gray" style="font-size:10px; margin-left:6px;">excluded</span></div>
+                </div>
+              </div>
+
+              <!-- Calculators -->
+              <div class="tree-node" style="margin-top:8px;">
+                <div class="tree-item">
+                  <span class="tree-bullet">&#9660;</span>
+                  <span class="tree-label" style="color:var(--ok); font-weight:600;">/Merchant5/*.mvc — Calculators (5 pages)</span>
+                </div>
+                <div class="tree-indent">
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">Everlock Deluxe Vinyl Calculator</span><span class="tree-url" style="margin-left:8px;">/Merchant5/el-calculate.mvc</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">EverRock Vinyl Calculator</span><span class="tree-url" style="margin-left:8px;">/Merchant5/er-calculate.mvc</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">EverBrick / EverStone / Field Stone Calculator</span><span class="tree-url" style="margin-left:8px;">/Merchant5/ebes-calculate.mvc</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">Gorilla Insulated Calculator</span><span class="tree-url" style="margin-left:8px;">/Merchant5/gr-calculate.mvc</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">Thermal EverRock Calculator</span><span class="tree-url" style="margin-left:8px;">/Merchant5/tm-calculate.mvc</span></div>
+                </div>
+              </div>
+
+              <!-- Company -->
+              <div class="tree-node" style="margin-top:8px;">
+                <div class="tree-item">
+                  <span class="tree-bullet">&#9660;</span>
+                  <span class="tree-label" style="color:var(--accent); font-weight:600;">/page/ — Company (5 pages)</span>
+                </div>
+                <div class="tree-indent">
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">About Us</span><span class="tree-url" style="margin-left:8px;">/page/ABUS.html</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">Contact Us</span><span class="tree-url" style="margin-left:8px;">/page/CTUS.html</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">FAQs</span><span class="tree-url" style="margin-left:8px;">/page/FAQS.html</span></div>
+                  <div class="tree-item">
+                    <span class="tree-bullet" style="color:var(--warn);">&#9679;</span>
+                    <span class="tree-label">Installation Instructions <span style="color:var(--warn); font-size:11px;">[title says "Privacy Policy"]</span></span>
+                    <span class="tree-url" style="margin-left:8px;">/page/cp-installation-instructions.html</span>
+                  </div>
+                  <div class="tree-item">
+                    <span class="tree-bullet" style="color:var(--warn);">&#9679;</span>
+                    <span class="tree-label">Customer Gallery <span style="color:var(--warn); font-size:11px;">[title says "About Us"]</span></span>
+                    <span class="tree-url" style="margin-left:8px;">/page/gallery.html</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- E-Commerce -->
+              <div class="tree-node" style="margin-top:8px;">
+                <div class="tree-item">
+                  <span class="tree-bullet">&#9660;</span>
+                  <span class="tree-label" style="color:var(--warn); font-weight:600;">/Merchant5/merchant.mvc — E-Commerce (3 pages)</span>
+                </div>
+                <div class="tree-indent">
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">All Products</span><span class="tree-url" style="margin-left:8px;">?Screen=PLST</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">Terms &amp; Conditions / Privacy Policy</span><span class="tree-url" style="margin-left:8px;">?Screen=PRPO</span></div>
+                  <div class="tree-item"><span class="tree-bullet">&#9679;</span><span class="tree-label">Warranty</span><span class="tree-url" style="margin-left:8px;">?Screen=WART</span></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCTS SECTION -->
+    <div id="products">
+      <div class="section-title">Products (Everlock)</div>
+      <div class="section-desc">14 product pages covering skirting panels, insulated options, premium stone/brick finishes, and accessories. All live under /everlock/ (plus one under /ER301/). All are depth 1 — directly reachable from the homepage nav.</div>
+
+      <div class="page-grid" id="productGrid">
+
+        <!-- VINYL SKIRTING -->
+        <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:4px; margin-top:8px; padding-bottom:4px; border-bottom:1px solid var(--border);">Traditional &amp; Insulated Vinyl</div>
+
+        <div class="page-card page-item">
+          <div class="page-card-top">
+            <div class="page-card-icon icon-product">&#128701;</div>
+            <div class="page-card-meta">
+              <div class="page-title">Everlock Deluxe Vinyl Skirting</div>
+              <div class="page-url"><a href="https://www.skirtingdirect.com/everlock/vinyl.html" target="_blank">/everlock/vinyl.html</a></div>
+            </div>
+            <div class="page-badges">
+              <span class="badge badge-ok">200</span>
+              <span class="badge badge-info badge-depth">Depth 1</span>
+            </div>
+          </div>
+          <div class="page-card-body">
+            <div>
+              <div class="page-detail-label">Page Title</div>
+              <div class="page-detail-val">Everlock Deluxe Vinyl Skirting from SkirtingDirect.com</div>
+            </div>
+            <div>
+              <div class="page-detail-label">H1</div>
+              <div class="page-detail-val">Everlock Deluxe Vinyl Skirting</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Key Headings</div>
+              <div class="page-detail-val">Triple-Lock Design, Features, Available Colors, Order Products</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Available Colors</div>
+              <div class="colors-bar"><span class="color-chip">White</span><span class="color-chip">Grey</span><span class="color-chip">Beige</span><span class="color-chip">Tan</span><span class="color-chip">Black</span><span class="color-chip">Clay</span></div>
+            </div>
+          </div>
+          <div class="page-flags">
+            <div class="flag-item flag-warn">&#9432; No meta description</div>
+          </div>
+        </div>
+
+        <div class="page-card page-item">
+          <div class="page-card-top">
+            <div class="page-card-icon icon-product">&#128701;</div>
+            <div class="page-card-meta">
+              <div class="page-title">Gorilla Insulated Skirting</div>
+              <div class="page-url"><a href="https://www.skirtingdirect.com/everlock/gorilla.html" target="_blank">/everlock/gorilla.html</a></div>
+            </div>
+            <div class="page-badges">
+              <span class="badge badge-ok">200</span>
+              <span class="badge badge-info badge-depth">Depth 1</span>
+            </div>
+          </div>
+          <div class="page-card-body">
+            <div>
+              <div class="page-detail-label">Page Title</div>
+              <div class="page-detail-val">Gorilla Insulated Skirting from SkirtingDirect.com</div>
+            </div>
+            <div>
+              <div class="page-detail-label">H1</div>
+              <div class="page-detail-val">Gorilla Insulated Skirting</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Key Headings</div>
+              <div class="page-detail-val">Features, Available Colors, Order Products, Panel 36" x 47" Details</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Available Colors</div>
+              <div class="colors-bar"><span class="color-chip">White</span><span class="color-chip">Grey</span><span class="color-chip">Tan</span><span class="color-chip">Black</span></div>
+            </div>
+          </div>
+          <div class="page-flags">
+            <div class="flag-item flag-warn">&#9432; No meta description</div>
+            <div class="flag-item flag-info">&#9432; Also serves as destination for "Gorilla Thermal" nav link (duplicate nav entry)</div>
+          </div>
+        </div>
+
+        <div class="page-card page-item">
+          <div class="page-card-top">
+            <div class="page-card-icon icon-product">&#127758;</div>
+            <div class="page-card-meta">
+              <div class="page-title">EverRock Vinyl Skirting</div>
+              <div class="page-url"><a href="https://www.skirtingdirect.com/everlock/rock.html" target="_blank">/everlock/rock.html</a></div>
+            </div>
+            <div class="page-badges">
+              <span class="badge badge-ok">200</span>
+              <span class="badge badge-info badge-depth">Depth 1</span>
+            </div>
+          </div>
+          <div class="page-card-body">
+            <div>
+              <div class="page-detail-label">Page Title</div>
+              <div class="page-detail-val">EverRock Vinyl Skirting from SkirtingDirect.com</div>
+            </div>
+            <div>
+              <div class="page-detail-label">H1</div>
+              <div class="page-detail-val">EverRock Vinyl Skirting</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Key Headings</div>
+              <div class="page-detail-val">Features, Available Colors, Order Products, Panel 30" x 5' Details</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Available Colors</div>
+              <div class="colors-bar"><span class="color-chip">White</span><span class="color-chip">Grey</span><span class="color-chip">Tan</span><span class="color-chip">Brown</span><span class="color-chip">Black</span><span class="color-chip">Sandstone</span></div>
+            </div>
+          </div>
+          <div class="page-flags">
+            <div class="flag-item flag-warn">&#9432; No meta description</div>
+          </div>
+        </div>
+
+        <div class="page-card page-item">
+          <div class="page-card-top">
+            <div class="page-card-icon icon-product">&#127758;</div>
+            <div class="page-card-meta">
+              <div class="page-title">Thermal EverRock Insulated Skirting</div>
+              <div class="page-url"><a href="https://www.skirtingdirect.com/everlock/thermal.html" target="_blank">/everlock/thermal.html</a></div>
+            </div>
+            <div class="page-badges">
+              <span class="badge badge-ok">200</span>
+              <span class="badge badge-info badge-depth">Depth 1</span>
+            </div>
+          </div>
+          <div class="page-card-body">
+            <div>
+              <div class="page-detail-label">Page Title</div>
+              <div class="page-detail-val">Thermal EverRock Insulated Skirting from SkirtingDirect.com</div>
+            </div>
+            <div>
+              <div class="page-detail-label">H1</div>
+              <div class="page-detail-val">Thermal EverRock Insulated Skirting</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Key Headings</div>
+              <div class="page-detail-val">Features, Available Colors, Order Products, Panel 36" x 5' Details</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Available Colors</div>
+              <div class="colors-bar"><span class="color-chip">White</span><span class="color-chip">Grey</span><span class="color-chip">Tan</span><span class="color-chip">Brown</span><span class="color-chip">Black</span><span class="color-chip">Sandstone</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PREMIUM NOVIK STONE -->
+        <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:4px; margin-top:16px; padding-bottom:4px; border-bottom:1px solid var(--border);">Premium Novik Stone &amp; Brick (extended lead times: 1-4 weeks)</div>
+
+        <div class="page-card page-item">
+          <div class="page-card-top">
+            <div class="page-card-icon icon-product">&#127963;</div>
+            <div class="page-card-meta">
+              <div class="page-title">Novik Stacked Stone Skirting</div>
+              <div class="page-url"><a href="https://www.skirtingdirect.com/everlock/stacked-stone.html" target="_blank">/everlock/stacked-stone.html</a></div>
+            </div>
+            <div class="page-badges">
+              <span class="badge badge-ok">200</span>
+              <span class="badge badge-info badge-depth">Depth 1</span>
+            </div>
+          </div>
+          <div class="page-card-body">
+            <div>
+              <div class="page-detail-label">Page Title</div>
+              <div class="page-detail-val">View Novik Stacked Stone Skirting at Skirting Direct...</div>
+            </div>
+            <div>
+              <div class="page-detail-label">H1</div>
+              <div class="page-detail-val">Novik Stacked Stone Skirting</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Lead Time Notice</div>
+              <div class="page-detail-val">Up to 3 weeks; best case 1 week</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Available Colors</div>
+              <div class="colors-bar"><span class="color-chip">White</span><span class="color-chip">Gray</span><span class="color-chip">Tan</span><span class="color-chip">Brown</span><span class="color-chip">Black</span><span class="color-chip">Sandstone</span><span class="color-chip">Weathered</span></div>
+            </div>
+          </div>
+          <div class="page-flags">
+            <div class="flag-item flag-warn">&#9432; Title format inconsistent ("View Novik...") vs other product pages</div>
+          </div>
+        </div>
+
+        <div class="page-card page-item">
+          <div class="page-card-top">
+            <div class="page-card-icon icon-product">&#127963;</div>
+            <div class="page-card-meta">
+              <div class="page-title">Novik Hand-Laid Brick</div>
+              <div class="page-url"><a href="https://www.skirtingdirect.com/everlock/ever-brick.html" target="_blank">/everlock/ever-brick.html</a></div>
+            </div>
+            <div class="page-badges">
+              <span class="badge badge-ok">200</span>
+              <span class="badge badge-info badge-depth">Depth 1</span>
+            </div>
+          </div>
+          <div class="page-card-body">
+            <div>
+              <div class="page-detail-label">Page Title</div>
+              <div class="page-detail-val">View Novik Hand-Laid Brick at Skirting Direct...</div>
+            </div>
+            <div>
+              <div class="page-detail-label">H1</div>
+              <div class="page-detail-val">Novik Hand-Laid Brick</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Lead Time Notice</div>
+              <div class="page-detail-val">Up to 4 weeks; best case 2 weeks</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Available Colors</div>
+              <div class="colors-bar"><span class="color-chip">White</span><span class="color-chip">Gray</span><span class="color-chip">Tan</span><span class="color-chip">Brown</span><span class="color-chip">Black</span><span class="color-chip">Sandstone</span><span class="color-chip">Weathered</span></div>
+            </div>
+          </div>
+          <div class="page-flags">
+            <div class="flag-item flag-warn">&#9432; Title format inconsistent ("View Novik...")</div>
+          </div>
+        </div>
+
+        <div class="page-card page-item">
+          <div class="page-card-top">
+            <div class="page-card-icon icon-product">&#127963;</div>
+            <div class="page-card-meta">
+              <div class="page-title">Novik Dry-Stacked Stone Skirting</div>
+              <div class="page-url"><a href="https://www.skirtingdirect.com/everlock/dry-stacked-stone.html" target="_blank">/everlock/dry-stacked-stone.html</a></div>
+            </div>
+            <div class="page-badges">
+              <span class="badge badge-ok">200</span>
+              <span class="badge badge-info badge-depth">Depth 1</span>
+            </div>
+          </div>
+          <div class="page-card-body">
+            <div>
+              <div class="page-detail-label">Page Title</div>
+              <div class="page-detail-val">View Novik Dry-Stacked Stone Skirting at Skirting Direct...</div>
+            </div>
+            <div>
+              <div class="page-detail-label">H1</div>
+              <div class="page-detail-val">Novik Dry-Stacked Stone Skirting</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Lead Time Notice</div>
+              <div class="page-detail-val">Up to 3 weeks; best case 1 week</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Available Colors</div>
+              <div class="colors-bar"><span class="color-chip">White</span><span class="color-chip">Gray</span><span class="color-chip">Beige</span><span class="color-chip">Tan</span><span class="color-chip">Brown</span><span class="color-chip">Black</span><span class="color-chip">Sandstone</span><span class="color-chip">Weathered</span></div>
+            </div>
+          </div>
+          <div class="page-flags">
+            <div class="flag-item flag-warn">&#9432; Title format inconsistent ("View Novik...")</div>
+          </div>
+        </div>
+
+        <div class="page-card page-item">
+          <div class="page-card-top">
+            <div class="page-card-icon icon-product">&#127963;</div>
+            <div class="page-card-meta">
+              <div class="page-title">Novik Premium Hand-Cut Stone Skirting</div>
+              <div class="page-url"><a href="https://www.skirtingdirect.com/everlock/premium-ever-stone.html" target="_blank">/everlock/premium-ever-stone.html</a></div>
+            </div>
+            <div class="page-badges">
+              <span class="badge badge-ok">200</span>
+              <span class="badge badge-info badge-depth">Depth 1</span>
+            </div>
+          </div>
+          <div class="page-card-body">
+            <div>
+              <div class="page-detail-label">Page Title</div>
+              <div class="page-detail-val">View Novik Premium Hand-Cut Stone Skirting at Skirting Direct...</div>
+            </div>
+            <div>
+              <div class="page-detail-label">H1</div>
+              <div class="page-detail-val">Novik Premium Hand-Cut Stone Skirting</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Lead Time Notice</div>
+              <div class="page-detail-val">Up to 3 weeks; best case 1 week</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Available Colors</div>
+              <div class="colors-bar"><span class="color-chip">White</span><span class="color-chip">Gray</span><span class="color-chip">Beige</span><span class="color-chip">Tan</span><span class="color-chip">Brown</span><span class="color-chip">Sandstone</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-card page-item">
+          <div class="page-card-top">
+            <div class="page-card-icon icon-product">&#127963;</div>
+            <div class="page-card-meta">
+              <div class="page-title">Novik Field Stone Skirting</div>
+              <div class="page-url"><a href="https://www.skirtingdirect.com/everlock/field-stone.html" target="_blank">/everlock/field-stone.html</a></div>
+            </div>
+            <div class="page-badges">
+              <span class="badge badge-ok">200</span>
+              <span class="badge badge-info badge-depth">Depth 1</span>
+            </div>
+          </div>
+          <div class="page-card-body">
+            <div>
+              <div class="page-detail-label">Page Title</div>
+              <div class="page-detail-val">View Novik Field Stone Skirting at Skirting Direct...</div>
+            </div>
+            <div>
+              <div class="page-detail-label">H1</div>
+              <div class="page-detail-val">Novik Field Stone Skirting</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Lead Time Notice</div>
+              <div class="page-detail-val">Up to 3 weeks; best case 1 week</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Available Colors</div>
+              <div class="colors-bar"><span class="color-chip">White</span><span class="color-chip">Gray</span><span class="color-chip">Tan</span><span class="color-chip">Brown</span><span class="color-chip">Black</span><span class="color-chip">Sandstone</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACCESSORIES -->
+        <div style="font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--text-muted); margin-bottom:4px; margin-top:16px; padding-bottom:4px; border-bottom:1px solid var(--border);">Accessories</div>
+
+        <div class="page-card page-item">
+          <div class="page-card-top">
+            <div class="page-card-icon icon-product">&#128477;</div>
+            <div class="page-card-meta">
+              <div class="page-title">Foundation Vents</div>
+              <div class="page-url"><a href="https://www.skirtingdirect.com/everlock/foundation-vents.html" target="_blank">/everlock/foundation-vents.html</a></div>
+            </div>
+            <div class="page-badges">
+              <span class="badge badge-ok">200</span>
+              <span class="badge badge-info badge-depth">Depth 1</span>
+            </div>
+          </div>
+          <div class="page-card-body">
+            <div>
+              <div class="page-detail-label">Page Title</div>
+              <div class="page-detail-val">View Foundation Vents at Skirting Direct...</div>
+            </div>
+            <div>
+              <div class="page-detail-label">H1</div>
+              <div class="page-detail-val">Foundation Vents</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Products</div>
+              <div class="page-detail-val">Automatic Foundation Vent, Vent Inserts</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Available Colors</div>
+              <div class="colors-bar"><span class="color-chip">White</span><span class="color-chip">Grey</span><span class="color-chip">Tan</span><span class="color-chip">Black</span><span class="color-chip">Sandstone</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-card page-item">
+          <div class="page-card-top">
+            <div class="page-card-icon icon-product">&#128477;</div>
+            <div class="page-card-meta">
+              <div class="page-title">Squeek No More (Mobile Home Parts)</div>
+              <div class="page-url"><a href="https://www.skirtingdirect.com/everlock/mobile-home-parts.html" target="_blank">/everlock/mobile-home-parts.html</a></div>
+            </div>
+            <div class="page-badges">
+              <span class="badge badge-ok">200</span>
+              <span class="badge badge-info badge-depth">Depth 1</span>
+            </div>
+          </div>
+          <div class="page-card-body">
+            <div>
+              <div class="page-detail-label">Page Title</div>
+              <div class="page-detail-val">Mobil Home Parts from SkirtingDirect.com</div>
+            </div>
+            <div>
+              <div class="page-detail-label">H1</div>
+              <div class="page-detail-val">Mobile Home Parts</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Products</div>
+              <div class="page-detail-val">SqueeeekNoMore Kit, 50 Pack Replacement Screws</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Product Purpose</div>
+              <div class="page-detail-val">Fixes squeaky floors in mobile/manufactured homes</div>
+            </div>
+          </div>
+          <div class="page-flags">
+            <div class="flag-item flag-warn">&#9432; Typo in page title: "Mobil" should be "Mobile"</div>
+          </div>
+        </div>
+
+        <div class="page-card page-item">
+          <div class="page-card-top">
+            <div class="page-card-icon icon-product">&#128477;</div>
+            <div class="page-card-meta">
+              <div class="page-title">EverRock Access Door Conversion Kit</div>
+              <div class="page-url"><a href="https://www.skirtingdirect.com/ER301/EverRock-Access-Door-Conversion-Kit.html" target="_blank">/ER301/EverRock-Access-Door-Conversion-Kit.html</a></div>
+            </div>
+            <div class="page-badges">
+              <span class="badge badge-ok">200</span>
+              <span class="badge badge-info badge-depth">Depth 1</span>
+            </div>
+          </div>
+          <div class="page-card-body">
+            <div>
+              <div class="page-detail-label">H1</div>
+              <div class="page-detail-val">EverRock Access Door Conversion Kit</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Price Signal</div>
+              <div class="page-detail-val">$38.00</div>
+            </div>
+            <div>
+              <div class="page-detail-label">URL Note</div>
+              <div class="page-detail-val">Orphaned under /ER301/ — inconsistent with /everlock/ product pattern</div>
+            </div>
+            <div>
+              <div class="page-detail-label">Nav Label</div>
+              <div class="page-detail-val">"EZ Access Doors"</div>
+            </div>
+          </div>
+          <div class="page-flags">
+            <div class="flag-item flag-info">&#9432; URL path /ER301/ doesn't match the /everlock/ convention used by all other products — may cause confusion in future URL management</div>
+          </div>
+        </div>
+
+        <!-- BROKEN -->
+        <div class="page-card has-error page-item">
+          <div class="page-card-top">
+            <div class="page-card-icon" style="background:rgba(224,82,82,0.12); font-size:16px; display:flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:6px; flex-shrink:0;">&#9888;</div>
+            <div class="page-card-meta">
+              <div class="page-title" style="color:var(--err);">Everlock EZ Storage [BROKEN — HTTP 404]</div>
+              <div class="page-url"><a href="https://www.skirtingdirect.com/everlock/storage.html" target="_blank" style="color:var(--err);">/everlock/storage.html</a></div>
+            </div>
+            <div class="page-badges">
+              <span class="badge badge-err">404</span>
+              <span class="badge badge-info badge-depth">Depth 1</span>
+            </div>
+          </div>
+          <div class="page-flags">
+            <div class="flag-item flag-err">&#9888; Page returns HTTP 404 — the file does not exist on the server</div>
+            <div class="flag-item flag-err">&#9888; This link appears in the main navigation dropdown — every user who clicks it hits an error page</div>
+            <div class="flag-item flag-warn">&#9432; Recommended: either restore the page, redirect to /everlock/foundation-vents.html or the home page, or remove from nav</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CALCULATORS SECTION -->
+    <div id="tools">
+      <div class="section-title">Product Calculators</div>
+      <div class="section-desc">5 interactive calculator pages help customers determine how much skirting they need based on home dimensions. Each calculator is a 3-step form on the Miva Merchant platform. These are linked from product pages, not from the main nav directly.</div>
+
+      <div class="page-grid" id="toolGrid">
+        <div class="page-card page-item"><div class="page-card-top"><div class="page-card-icon icon-tool">&#128290;</div><div class="page-card-meta"><div class="page-title">Everlock Deluxe Vinyl Skirting Calculator</div><div class="page-url"><a href="https://www.skirtingdirect.com/Merchant5/el-calculate.mvc" target="_blank">/Merchant5/el-calculate.mvc</a></div></div><div class="page-badges"><span class="badge badge-ok">200</span><span class="badge badge-info badge-depth">Depth 1</span></div></div><div class="page-card-body"><div><div class="page-detail-label">Tool Steps</div><div class="page-detail-val">3-step form: Home size → Extensions → Result</div></div><div><div class="page-detail-label">Platform</div><div class="page-detail-val">Miva Merchant MVC controller</div></div></div></div>
+        <div class="page-card page-item"><div class="page-card-top"><div class="page-card-icon icon-tool">&#128290;</div><div class="page-card-meta"><div class="page-title">EverRock Vinyl Skirting Calculator</div><div class="page-url"><a href="https://www.skirtingdirect.com/Merchant5/er-calculate.mvc" target="_blank">/Merchant5/er-calculate.mvc</a></div></div><div class="page-badges"><span class="badge badge-ok">200</span><span class="badge badge-info badge-depth">Depth 1</span></div></div><div class="page-card-body"><div><div class="page-detail-label">Products Covered</div><div class="page-detail-val">EverRock panel line</div></div><div><div class="page-detail-label">URL Pattern</div><div class="page-detail-val">Exposes /Merchant5/ platform path</div></div></div></div>
+        <div class="page-card page-item"><div class="page-card-top"><div class="page-card-icon icon-tool">&#128290;</div><div class="page-card-meta"><div class="page-title">EverBrick / EverStone / Field Stone Calculator</div><div class="page-url"><a href="https://www.skirtingdirect.com/Merchant5/ebes-calculate.mvc" target="_blank">/Merchant5/ebes-calculate.mvc</a></div></div><div class="page-badges"><span class="badge badge-ok">200</span><span class="badge badge-info badge-depth">Depth 1</span></div></div><div class="page-card-body"><div><div class="page-detail-label">Products Covered</div><div class="page-detail-val">EverBrick II, EverStone II, Premium EverStone II, River Rock, Field Stone</div></div><div><div class="page-detail-label">Title Issue</div><div class="page-detail-val">Full product list in title makes it very long</div></div></div><div class="page-flags"><div class="flag-item flag-warn">&#9432; Title is unusually long and verbose for a calculator page</div></div></div>
+        <div class="page-card page-item"><div class="page-card-top"><div class="page-card-icon icon-tool">&#128290;</div><div class="page-card-meta"><div class="page-title">Gorilla Insulated Skirting Calculator</div><div class="page-url"><a href="https://www.skirtingdirect.com/Merchant5/gr-calculate.mvc" target="_blank">/Merchant5/gr-calculate.mvc</a></div></div><div class="page-badges"><span class="badge badge-ok">200</span><span class="badge badge-info badge-depth">Depth 1</span></div></div><div class="page-card-body"><div><div class="page-detail-label">Products Covered</div><div class="page-detail-val">Gorilla standard and insulated</div></div></div></div>
+        <div class="page-card page-item"><div class="page-card-top"><div class="page-card-icon icon-tool">&#128290;</div><div class="page-card-meta"><div class="page-title">Thermal EverRock Insulated Calculator</div><div class="page-url"><a href="https://www.skirtingdirect.com/Merchant5/tm-calculate.mvc" target="_blank">/Merchant5/tm-calculate.mvc</a></div></div><div class="page-badges"><span class="badge badge-ok">200</span><span class="badge badge-info badge-depth">Depth 1</span></div></div><div class="page-card-body"><div><div class="page-detail-label">Products Covered</div><div class="page-detail-val">Thermal EverRock insulated panel</div></div></div></div>
+      </div>
+    </div>
+
+    <!-- COMPANY PAGES -->
+    <div id="company">
+      <div class="section-title">Company Pages</div>
+      <div class="section-desc">5 informational pages covering the company background, support resources, and customer community. All live under /page/ with Miva Merchant uppercase codes as filenames (ABUS, CTUS, etc.).</div>
+
+      <div class="page-grid" id="companyGrid">
+
+        <div class="page-card page-item">
+          <div class="page-card-top">
+            <div class="page-card-icon icon-company">&#128203;</div>
+            <div class="page-card-meta">
+              <div class="page-title">About Us</div>
+              <div class="page-url"><a href="https://www.skirtingdirect.com/page/ABUS.html" target="_blank">/page/ABUS.html</a></div>
+            </div>
+            <div class="page-badges"><span class="badge badge-ok">200</span><span class="badge badge-info badge-depth">Depth 1</span></div>
+          </div>
+          <div class="page-card-body">
+            <div><div class="page-detail-label">H1</div><div class="page-detail-val">About Everlock Systems, Inc. and SkirtingDirect.com</div></div>
+            <div><div class="page-detail-label">Key Content</div><div class="page-detail-val">~40 years in mobile home skirting, SkirtingDirect founded 2011, factory-direct mission, free skirting sweepstakes CTA</div></div>
+          </div>
+        </div>
+
+        <div class="page-card page-item">
+          <div class="page-card-top">
+            <div class="page-card-icon icon-company">&#128222;</div>
+            <div class="page-card-meta">
+              <div class="page-title">Contact Us</div>
+              <div class="page-url"><a href="https://www.skirtingdirect.com/page/CTUS.html" target="_blank">/page/CTUS.html</a></div>
+            </div>
+            <div class="page-badges"><span class="badge badge-ok">200</span><span class="badge badge-info badge-depth">Depth 1</span></div>
+          </div>
+          <div class="page-card-body">
+            <div><div class="page-detail-label">H1</div><div class="page-detail-val">Contact Us</div></div>
+            <div><div class="page-detail-label">Contact Info</div><div class="page-detail-val">Email form + 800-843-3336; 6676 Gunpark Dr, Boulder CO 80301</div></div>
+          </div>
+        </div>
+
+        <div class="page-card page-item">
+          <div class="page-card-top">
+            <div class="page-card-icon icon-company">&#10067;</div>
+            <div class="page-card-meta">
+              <div class="page-title">FAQs</div>
+              <div class="page-url"><a href="https://www.skirtingdirect.com/page/FAQS.html" target="_blank">/page/FAQS.html</a></div>
+            </div>
+            <div class="page-badges"><span class="badge badge-ok">200</span><span class="badge badge-info badge-depth">Depth 1</span></div>
+          </div>
+          <div class="page-card-body">
+            <div><div class="page-detail-label">FAQ Categories</div><div class="page-detail-val">Shipping, Product &amp; Ordering, EverRock-specific, Installation</div></div>
+            <div><div class="page-detail-label">Shipping Note</div><div class="page-detail-val">Mostly freight delivery (LTL) — too large for UPS/FedEx. Residential delivery possible.</div></div>
+          </div>
+        </div>
+
+        <div class="page-card has-warn page-item">
+          <div class="page-card-top">
+            <div class="page-card-icon icon-company">&#128196;</div>
+            <div class="page-card-meta">
+              <div class="page-title">Installation Instructions</div>
+              <div class="page-url"><a href="https://www.skirtingdirect.com/page/cp-installation-instructions.html" target="_blank">/page/cp-installation-instructions.html</a></div>
+            </div>
+            <div class="page-badges"><span class="badge badge-ok">200</span><span class="badge badge-info badge-depth">Depth 1</span></div>
+          </div>
+          <div class="page-card-body">
+            <div><div class="page-detail-label">H1</div><div class="page-detail-val">Installation Instructions and Videos</div></div>
+            <div><div class="page-detail-label">Content</div><div class="page-detail-val">PDF instructions + YouTube videos. Covers EZ Access Doors (Vinyl, EverRock/Gorilla/Thermal), Everlock Deluxe installation video by customer Mobile Home Parts 4 U</div></div>
+          </div>
+          <div class="page-flags">
+            <div class="flag-item flag-err">&#9888; Page title tag reads "Privacy Policy" — this is incorrect and appears to be a Miva Merchant template bug</div>
+          </div>
+        </div>
+
+        <div class="page-card has-warn page-item">
+          <div class="page-card-top">
+            <div class="page-card-icon icon-company">&#128247;</div>
+            <div class="page-card-meta">
+              <div class="page-title">Customer Gallery</div>
+              <div class="page-url"><a href="https://www.skirtingdirect.com/page/gallery.html" target="_blank">/page/gallery.html</a></div>
+            </div>
+            <div class="page-badges"><span class="badge badge-ok">200</span><span class="badge badge-info badge-depth">Depth 1</span></div>
+          </div>
+          <div class="page-card-body">
+            <div><div class="page-detail-label">H1</div><div class="page-detail-val">Customer Gallery</div></div>
+            <div><div class="page-detail-label">Content</div><div class="page-detail-val">Customer-submitted photos of installed skirting; social proof tool</div></div>
+          </div>
+          <div class="page-flags">
+            <div class="flag-item flag-err">&#9888; Page title tag reads "About Us" — incorrect; should be "Customer Gallery | Skirting Direct"</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- E-COMMERCE SECTION -->
+    <div id="shop">
+      <div class="section-title">E-Commerce Pages</div>
+      <div class="section-desc">3 pages accessible via Miva Merchant query-string URLs. These are reachable from the site footer but not via clean, indexable paths.</div>
+
+      <div class="page-grid" id="shopGrid">
+        <div class="page-card page-item"><div class="page-card-top"><div class="page-card-icon icon-shop">&#128722;</div><div class="page-card-meta"><div class="page-title">All Products Listing</div><div class="page-url"><a href="https://www.skirtingdirect.com/Merchant5/merchant.mvc?Screen=PLST" target="_blank">/Merchant5/merchant.mvc?Screen=PLST</a></div></div><div class="page-badges"><span class="badge badge-ok">200</span><span class="badge badge-info badge-depth">Depth 1</span><span class="badge badge-warn">Poor SEO URL</span></div></div><div class="page-card-body"><div><div class="page-detail-label">Purpose</div><div class="page-detail-val">Full product catalog listing page</div></div><div><div class="page-detail-label">SEO Note</div><div class="page-detail-val">Query-string URL; low crawlability</div></div></div></div>
+        <div class="page-card page-item"><div class="page-card-top"><div class="page-card-icon icon-shop">&#128220;</div><div class="page-card-meta"><div class="page-title">Terms &amp; Conditions / Privacy Policy</div><div class="page-url"><a href="https://www.skirtingdirect.com/Merchant5/merchant.mvc?Screen=PRPO" target="_blank">/Merchant5/merchant.mvc?Screen=PRPO</a></div></div><div class="page-badges"><span class="badge badge-ok">200</span><span class="badge badge-gray badge-depth">Depth 1</span></div></div><div class="page-card-body"><div><div class="page-detail-label">Note</div><div class="page-detail-val">Combined T&amp;C + Privacy Policy page</div></div></div></div>
+        <div class="page-card page-item"><div class="page-card-top"><div class="page-card-icon icon-shop">&#9989;</div><div class="page-card-meta"><div class="page-title">Warranty</div><div class="page-url"><a href="https://www.skirtingdirect.com/Merchant5/merchant.mvc?Screen=WART" target="_blank">/Merchant5/merchant.mvc?Screen=WART</a></div></div><div class="page-badges"><span class="badge badge-ok">200</span><span class="badge badge-gray badge-depth">Depth 1</span></div></div><div class="page-card-body"><div><div class="page-detail-label">Note</div><div class="page-detail-val">Warranty information; accessible from footer only</div></div></div></div>
+      </div>
+    </div>
+
+    <!-- QUALITY ISSUES -->
+    <div id="quality">
+      <div class="section-title">Quality Issues</div>
+      <div class="section-desc">9 quality issues identified across the site, ranging from a broken navigation link (critical) to title tag inconsistencies (medium priority).</div>
+
+      <div style="background:var(--surface); border:1px solid var(--border); border-radius:8px; overflow:hidden; margin-bottom:20px;">
+        <table class="issues-table">
+          <thead>
+            <tr>
+              <th>Severity</th>
+              <th>Issue</th>
+              <th>Page(s) Affected</th>
+              <th>Recommendation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="severity-high">HIGH</span></td>
+              <td>Broken page in nav (HTTP 404)</td>
+              <td><a href="https://www.skirtingdirect.com/everlock/storage.html" target="_blank">/everlock/storage.html</a></td>
+              <td>Restore, redirect, or remove from navigation</td>
+            </tr>
+            <tr>
+              <td><span class="severity-high">HIGH</span></td>
+              <td>Wrong title tag: "Privacy Policy" on Installation Instructions page</td>
+              <td><a href="https://www.skirtingdirect.com/page/cp-installation-instructions.html" target="_blank">/page/cp-installation-instructions.html</a></td>
+              <td>Fix title tag in Miva Merchant CMS template</td>
+            </tr>
+            <tr>
+              <td><span class="severity-high">HIGH</span></td>
+              <td>Wrong title tag: "About Us" on Customer Gallery page</td>
+              <td><a href="https://www.skirtingdirect.com/page/gallery.html" target="_blank">/page/gallery.html</a></td>
+              <td>Fix title tag in Miva Merchant CMS template</td>
+            </tr>
+            <tr>
+              <td><span class="severity-med">MED</span></td>
+              <td>No meta descriptions on any page (all 27 pages)</td>
+              <td>Site-wide</td>
+              <td>Add unique 150-160 char meta descriptions to all pages</td>
+            </tr>
+            <tr>
+              <td><span class="severity-med">MED</span></td>
+              <td>No sitemap.xml</td>
+              <td>Site-wide</td>
+              <td>Generate sitemap.xml and submit to Google Search Console</td>
+            </tr>
+            <tr>
+              <td><span class="severity-med">MED</span></td>
+              <td>Inconsistent title tag format (3 different patterns across product pages)</td>
+              <td>Products section — 5 Novik pages use "View Novik..." format</td>
+              <td>Standardize to: "[Product Name] | Skirting Direct"</td>
+            </tr>
+            <tr>
+              <td><span class="severity-med">MED</span></td>
+              <td>Typo in page title: "Mobil Home Parts" (missing 'e')</td>
+              <td><a href="https://www.skirtingdirect.com/everlock/mobile-home-parts.html" target="_blank">/everlock/mobile-home-parts.html</a></td>
+              <td>Correct to "Mobile Home Parts from SkirtingDirect.com"</td>
+            </tr>
+            <tr>
+              <td><span class="severity-low">LOW</span></td>
+              <td>Duplicate nav entry: "Gorilla Thermal" and "Thermal EverRock" link to same page; typo "Gorrilla"</td>
+              <td>Collapsed mobile navigation menu</td>
+              <td>Remove duplicate "Gorrilla Thermal" entry from mobile nav</td>
+            </tr>
+            <tr>
+              <td><span class="severity-low">LOW</span></td>
+              <td>Orphaned URL pattern: /ER301/ doesn't match /everlock/ convention</td>
+              <td><a href="https://www.skirtingdirect.com/ER301/EverRock-Access-Door-Conversion-Kit.html" target="_blank">/ER301/...</a></td>
+              <td>Consider moving to /everlock/access-door.html with 301 redirect</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SEO ANALYSIS -->
+    <div id="seo">
+      <div class="section-title">SEO Analysis</div>
+      <div class="section-desc">Technical and on-page SEO assessment across all 27 pages.</div>
+
+      <div class="seo-grid">
+        <div class="seo-card">
+          <div class="seo-card-title">Technical SEO</div>
+          <div class="seo-score" style="color:var(--warn);">C</div>
+          <div class="seo-finding">No sitemap.xml (search engines must crawl manually)</div>
+          <div class="seo-finding">Google Search Console verification tag present (good)</div>
+          <div class="seo-finding">Miva Merchant URLs expose internal platform paths</div>
+          <div class="seo-finding">Query-string parameters (?Screen=) reduce indexability</div>
+          <div class="seo-finding">Site structure is flat (good for crawlability)</div>
+        </div>
+        <div class="seo-card">
+          <div class="seo-card-title">On-Page SEO</div>
+          <div class="seo-score" style="color:var(--err);">D+</div>
+          <div class="seo-finding">0 of 27 pages have meta descriptions</div>
+          <div class="seo-finding">Title tags present but inconsistently formatted</div>
+          <div class="seo-finding">H1 tags generally match content (good)</div>
+          <div class="seo-finding">2 pages have wrong title tags (template error)</div>
+          <div class="seo-finding">1 title tag has a typo ("Mobil" vs "Mobile")</div>
+        </div>
+        <div class="seo-card">
+          <div class="seo-card-title">Content &amp; Keywords</div>
+          <div class="seo-score" style="color:var(--warn);">C+</div>
+          <div class="seo-finding">Product pages cover target terms (skirting, vinyl, insulated)</div>
+          <div class="seo-finding">No blog or editorial content for long-tail keywords</div>
+          <div class="seo-finding">FAQ page is good for informational query coverage</div>
+          <div class="seo-finding">Installation page covers high-intent "how to install" searches</div>
+          <div class="seo-finding">No structured data / schema markup detected</div>
+        </div>
+        <div class="seo-card">
+          <div class="seo-card-title">Site Architecture</div>
+          <div class="seo-score" style="color:var(--ok);">B</div>
+          <div class="seo-finding">All key pages are depth 1 (good crawl equity distribution)</div>
+          <div class="seo-finding">No pages exceed the 3-click rule</div>
+          <div class="seo-finding">Product categories logically grouped under /everlock/</div>
+          <div class="seo-finding">One orphaned URL pattern (/ER301/)</div>
+        </div>
+        <div class="seo-card">
+          <div class="seo-card-title">Content Gaps</div>
+          <div class="seo-score" style="color:var(--err);">D</div>
+          <div class="seo-finding">No blog or how-to content section</div>
+          <div class="seo-finding">No comparison / buyer's guide pages</div>
+          <div class="seo-finding">No color-specific landing pages</div>
+          <div class="seo-finding">No "manufactured home skirting" overview hub page</div>
+          <div class="seo-finding">No review/testimonial content visible to crawlers</div>
+        </div>
+        <div class="seo-card">
+          <div class="seo-card-title">GEO / AI Visibility</div>
+          <div class="seo-score" style="color:var(--err);">D</div>
+          <div class="seo-finding">No structured data (no Product schema, no FAQ schema)</div>
+          <div class="seo-finding">No explicit expert attribution on product content</div>
+          <div class="seo-finding">No llms.txt or AI crawler directives</div>
+          <div class="seo-finding">Limited citation-worthy statistics or proprietary data</div>
+          <div class="seo-finding">Company history (40 yrs) is citation-worthy but buried</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STRATEGIC OBSERVATIONS -->
+    <div id="strategic">
+      <div class="section-title">Strategic Observations</div>
+      <div class="section-desc">High-level findings and recommendations for content strategy, GEO, and site growth.</div>
+
+      <div class="overview-box">
+        <h3>What the Site Does Well</h3>
+        <p>The site is clean, focused, and navigable. Every product is one click from the homepage, product pages include color selectors and matching calculators, and the FAQ covers the highest-friction purchase questions (shipping costs, freight delivery, LTL vs residential). The 40-year company history and factory-direct positioning are genuinely differentiating claims.</p>
+        <p>The calculator tools are a meaningful conversion asset — helping customers calculate material needs before ordering is a direct way to reduce returns and support tickets.</p>
+      </div>
+
+      <div class="overview-box">
+        <h3>Site Thinness and SEO Vulnerability</h3>
+        <p>With 27 total pages (13 product/company pages of real content, the rest utility), this site has almost no topical authority for informational queries. A homeowner searching "how to install mobile home skirting" or "best skirting for manufactured home" will not find this site in organic results — there is no editorial content at all.</p>
+        <p>This is the single largest SEO gap. Competitors or content aggregators that produce how-to guides, comparison articles, and buyer's guides will consistently outrank SkirtingDirect.com for the high-volume informational queries that drive purchase consideration.</p>
+      </div>
+
+      <div class="overview-box">
+        <h3>GEO / AI Visibility Gap</h3>
+        <p>For AI-generated answers (ChatGPT, Perplexity, Claude, Gemini), the site currently has very limited signals. There is no structured data (Product schema would allow price, availability, and reviews to appear in rich results), no FAQ schema (the FAQ page content is ideal for this), and no llms.txt file to guide AI crawlers.</p>
+        <p>The "Everlock Systems" and "Skirting Direct" brand names are not well-established in AI training data relative to their 40-year history. A targeted GEO strategy — expert-attributed content, structured data, and an llms.txt — would meaningfully improve brand citation in AI-generated responses about mobile home skirting.</p>
+      </div>
+
+      <div class="overview-box">
+        <h3>Content Architecture Opportunity</h3>
+        <p>A hub-and-spoke content model built around the core topic "mobile home skirting" would address both the SEO and GEO gaps simultaneously. A central hub page ("Complete Guide to Mobile Home Skirting") with spokes covering installation, cost comparison, material types, color selection, and maintenance would establish topical authority and provide the citation-worthy content that AI systems prefer.</p>
+        <p>The existing FAQ content is a natural starting point — it contains genuine customer questions that could be expanded into standalone articles. The installation instructions page already links to video content, which could anchor a richer resource section.</p>
+      </div>
+
+      <div class="overview-box">
+        <h3>Quick Win Priorities</h3>
+        <p><strong>Fix immediately (no content effort):</strong> The /everlock/storage.html 404, the two mis-titled support pages (Installation Instructions and Customer Gallery), and the "Mobil" typo. These are template-level errors that can be corrected in the Miva Merchant CMS.</p>
+        <p><strong>Fix in under a week:</strong> Add meta descriptions to all product and company pages. Generate and submit a sitemap.xml to Google Search Console. Remove the duplicate "Gorilla Thermal" nav entry.</p>
+        <p><strong>Medium-term (content):</strong> Write meta descriptions, standardize title tag format, add Product and FAQ schema markup. Consider one well-written buyer's guide as an initial content investment.</p>
+      </div>
+    </div>
+
+  </div>
+  </main>
+</div>
+
+<div class="footer">
+  <span>Audit Report: skirtingdirect.com | Crawled: April 29, 2026 | 27 pages audited</span>
+  <span>Generated by Cowork for Everlock Systems</span>
+</div>
+
+<script>
+  var searchInput = document.getElementById('pageSearch');
+  var matchCount = document.getElementById('matchCount');
+
+  searchInput.addEventListener('input', function() {
+    var q = this.value.toLowerCase().trim();
+    var items = document.querySelectorAll('.page-item');
+    var visible = 0;
+    items.forEach(function(item) {
+      var text = item.textContent.toLowerCase();
+      var show = !q || text.includes(q);
+      item.classList.toggle('hidden', !show);
+      if (show) visible++;
+    });
+    matchCount.textContent = q ? visible + ' of 27 matching' : '';
+  });
+
+  function scrollToSection(id) {
+    var el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelectorAll('.sidebar-link').forEach(function(l) { l.classList.remove('active'); });
+    event.currentTarget.classList.add('active');
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+# ================================================================
+# robots.txt for SkirtingDirect.com / Everlock Systems
+# Last Updated: April 29, 2026
+# ================================================================
+
+User-agent: *
+Allow: /
+
+# Disallow admin, internal, and duplicate content
+Disallow: /Merchant5/
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /account/
+Disallow: /order-tracking/
+Disallow: /search/
+Disallow: /api/
+Disallow: /temp/
+Disallow: /private/
+
+# Disallow duplicate or low-value legacy pages
+Disallow: /page/gallery.html
+Disallow: /everlock/storage.html
+Disallow: /*?Screen=*
+Disallow: /*?Store_Code=*
+
+# Allow important AI and search crawler files
+Allow: /llms.txt
+Allow: /sitemap.xml
+Allow: /sitemap_index.xml
+
+# Sitemap location
+Sitemap: https://www.skirtingdirect.com/sitemap.xml
+
+# Crawl delay (polite for smaller sites)
+Crawl-delay: 1
+
+# ================================================================
+# Specific User-Agent Rules
+# ================================================================
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+Disallow: /Merchant5/
+
+# Bing / Microsoft
+User-agent: Bingbot
+Allow: /
+Disallow: /Merchant5/
+
+# AI / LLM Crawlers (allow for GEO visibility)
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# ================================================================
+# SkirtingDirect.com by Everlock Systems
+# Factory-direct mobile home skirting since 1980
+# 800-843-3336
+# ================================================================
