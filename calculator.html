@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Everlock skirting calculator - estimate costs, savings, and FHA/VA compliance for mobile home underpinning.">
+    <title>Skirting Calculator - Everlock Systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Design System & Reset */
+        :root {
+            --green: #006400;
+            --navy: #003366;
+            --earth: #f5f2ed;
+            --text: #333;
+            --light-text: #666;
+            --border: #ddd;
+            --error: #c41e3a;
+            --success: #2d5016;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--text);
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--green);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .flex {
+            display: flex;
+            gap: 12px;
+        }
+
+        .flex-between {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        .mt-24 {
+            margin-top: 24px;
+        }
+
+        .mt-48 {
+            margin-top: 48px;
+        }
+
+        .mb-24 {
+            margin-bottom: 24px;
+        }
+
+        .mb-12 {
+            margin-bottom: 12px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-sm {
+            font-size: 14px;
+        }
+
+        .text-lg {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .text-xl {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .text-2xl {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .text-light {
+            color: var(--light-text);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 12px;
+            background: var(--earth);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-green {
+            background: var(--green);
+            color: #fff;
+            border-color: var(--green);
+        }
+
+        .badge-navy {
+            background: var(--navy);
+            color: #fff;
+            border-color: var(--navy);
+        }
+
+        /* Header */
+        .header {
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo strong {
+            color: var(--green);
+        }
+
+        .nav {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .nav a:hover {
+            color: var(--green);
+            text-decoration: none;
+        }
+
+        .nav-cta {
+            background: var(--green);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .nav-cta:hover {
+            background: #004a00;
+            text-decoration: none;
+        }
+
+        @media (max-width: 900px) {
+            .nav {
+                display: none;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background: #f9f9f9;
+            border-top: 1px solid var(--border);
+            padding: 48px 0 24px;
+            margin-top: 48px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .footer-col h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col a {
+            font-size: 13px;
+            color: var(--light-text);
+        }
+
+        .footer-col a:hover {
+            color: var(--green);
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-legal {
+            font-size: 12px;
+            color: var(--light-text);
+        }
+
+        @media (max-width: 600px) {
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--navy);
+            color: #fff;
+            padding: 48px 0;
+            margin-bottom: 48px;
+        }
+
+        .page-header h1 {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        /* Tabs */
+        .tabs-container {
+            margin-bottom: 48px;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 8px;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 12px 24px;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: var(--light-text);
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-button:hover {
+            color: var(--text);
+        }
+
+        .tab-button.active {
+            color: var(--green);
+            border-bottom-color: var(--green);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 15px;
+            color: var(--text);
+            background: #fff;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(0, 100, 0, 0.1);
+        }
+
+        input.error,
+        select.error {
+            border-color: var(--error);
+            background: rgba(196, 30, 58, 0.05);
+        }
+
+        .error-text {
+            color: var(--error);
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-top: 4px;
+        }
+
+        /* Product Cards */
+        .product-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 12px;
+        }
+
+        .product-card {
+            padding: 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #fff;
+        }
+
+        .product-card:hover {
+            border-color: var(--green);
+            box-shadow: 0 2px 8px rgba(0, 100, 0, 0.1);
+        }
+
+        .product-card.selected {
+            border-color: var(--green);
+            background: rgba(0, 100, 0, 0.05);
+        }
+
+        .product-name {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .product-price {
+            color: var(--green);
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .product-desc {
+            font-size: 13px;
+            color: var(--light-text);
+            margin-top: 8px;
+        }
+
+        /* Buttons */
+        button,
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--green);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        button:hover,
+        .button:hover {
+            background: #004a00;
+            text-decoration: none;
+        }
+
+        button:active,
+        .button:active {
+            transform: scale(0.98);
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .button-secondary {
+            background: #666;
+        }
+
+        .button-secondary:hover {
+            background: #444;
+        }
+
+        .button-navy {
+            background: var(--navy);
+        }
+
+        .button-navy:hover {
+            background: #002244;
+        }
+
+        /* Results */
+        .results-panel {
+            background: var(--earth);
+            padding: 24px;
+            border-radius: 8px;
+            border-left: 4px solid var(--green);
+            margin-top: 24px;
+        }
+
+        .results-panel h3 {
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .results-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .results-row:last-child {
+            border-bottom: none;
+        }
+
+        .results-label {
+            color: var(--light-text);
+            font-size: 14px;
+        }
+
+        .results-value {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .results-highlight {
+            font-size: 24px;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+
+        th {
+            background: rgba(0, 100, 0, 0.1);
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text);
+            border-bottom: 2px solid var(--border);
+        }
+
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        tr:hover {
+            background: rgba(0, 100, 0, 0.02);
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            margin-bottom: 24px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--green);
+            transition: width 0.3s;
+        }
+
+        /* Compliance Questions */
+        .compliance-question {
+            background: var(--earth);
+            padding: 20px;
+            margin-bottom: 16px;
+            border-radius: 8px;
+            border-left: 4px solid var(--green);
+        }
+
+        .compliance-question.answered {
+            border-left-color: #999;
+            opacity: 0.8;
+        }
+
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .question-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .option-label {
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .option-label:hover {
+            border-color: var(--green);
+            background: rgba(0, 100, 0, 0.02);
+        }
+
+        .option-label input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--navy);
+            color: #fff;
+            padding: 48px 0;
+            margin-top: 48px;
+        }
+
+        .cta-content {
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .cta-content p {
+            font-size: 16px;
+            opacity: 0.95;
+            margin-bottom: 24px;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+            padding: 16px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: var(--light-text);
+            margin-top: 16px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .page-header h1 {
+                font-size: 28px;
+            }
+
+            .product-cards {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+
+            table {
+                font-size: 13px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .page-header {
+                padding: 32px 0;
+                margin-bottom: 32px;
+            }
+
+            .page-header h1 {
+                font-size: 24px;
+            }
+
+            .tab-buttons {
+                gap: 4px;
+            }
+
+            .tab-button {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
+
+            .product-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-content h2 {
+                font-size: 24px;
+            }
+
+            .results-panel {
+                padding: 16px;
+            }
+
+            .question-options {
+                gap: 6px;
+            }
+
+            .option-label {
+                padding: 6px 10px;
+                font-size: 14px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .header, .tab-buttons, button, .nav-cta, .cta-section {
+                display: none;
+            }
+
+            .results-panel {
+                page-break-inside: avoid;
+                border: 1px solid var(--border);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    Everlock <strong>Systems</strong>
+                </div>
+                <nav class="nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="complete-kits.html">Complete Kits</a></li>
+                    <li><a href="#" class="nav-cta">Get a Quote</a></li>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Skirting Calculator</h1>
+            <p>Estimate costs, savings, and compliance for your home.</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="tabs-container">
+            <!-- Tab Buttons -->
+            <div class="tab-buttons">
+                <button class="tab-button active" onclick="switchTab(event, 'estimator')">
+                    Skirting Estimator
+                </button>
+                <button class="tab-button" onclick="switchTab(event, 'savings')">
+                    Insulation Savings
+                </button>
+                <button class="tab-button" onclick="switchTab(event, 'compliance')">
+                    FHA/VA Checker
+                </button>
+            </div>
+
+            <!-- TAB 1: Skirting Estimator -->
+            <div id="estimator" class="tab-content active">
+                <div class="grid grid-2">
+                    <div>
+                        <h2 class="text-xl mb-24">Home Dimensions</h2>
+
+                        <div class="form-group">
+                            <label for="length">Home Length (feet) <span style="color: var(--error);">*</span></label>
+                            <input type="number" id="length" min="1" max="100" placeholder="e.g., 60">
+                            <div class="error-text" id="length-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="width">Home Width (feet) <span style="color: var(--error);">*</span></label>
+                            <input type="number" id="width" min="1" max="100" placeholder="e.g., 28">
+                            <div class="error-text" id="width-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="height">Skirt Height <span style="color: var(--error);">*</span></label>
+                            <select id="height">
+                                <option value="">-- Select --</option>
+                                <option value="18">18 inches</option>
+                                <option value="24">24 inches</option>
+                                <option value="30">30 inches</option>
+                                <option value="36">36 inches</option>
+                            </select>
+                            <div class="error-text" id="height-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="addon-check" onchange="toggleAddonFields()">
+                                Add decks, porches, or other areas?
+                            </label>
+                        </div>
+
+                        <div id="addon-fields" style="display: none;">
+                            <div class="form-group">
+                                <label for="addon-sq-ft">Additional Square Footage</label>
+                                <input type="number" id="addon-sq-ft" min="0" max="500" placeholder="e.g., 120">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl mb-24">Choose Your Product</h2>
+
+                        <div class="product-cards">
+                            <div class="product-card" onclick="selectProduct(event, 'deluxe')">
+                                <div class="product-name">Everlock Deluxe</div>
+                                <div class="product-price">$1.89/sq ft</div>
+                                <div class="product-desc">Premium vinyl with thermal backing</div>
+                            </div>
+
+                            <div class="product-card" onclick="selectProduct(event, 'rock')">
+                                <div class="product-name">EverRock</div>
+                                <div class="product-price">$2.10/sq ft</div>
+                                <div class="product-desc">Durable composite material</div>
+                            </div>
+
+                            <div class="product-card" onclick="selectProduct(event, 'thermal')">
+                                <div class="product-name">Thermal</div>
+                                <div class="product-price">$3.20/sq ft</div>
+                                <div class="product-desc">Energy-efficient insulated panels</div>
+                            </div>
+
+                            <div class="product-card" onclick="selectProduct(event, 'gorilla')">
+                                <div class="product-name">Gorilla</div>
+                                <div class="product-price">$3.85/sq ft</div>
+                                <div class="product-desc">Heavy-duty commercial grade</div>
+                            </div>
+
+                            <div class="product-card" onclick="selectProduct(event, 'novik')">
+                                <div class="product-name">Novik Stone</div>
+                                <div class="product-price">$4.90/sq ft</div>
+                                <div class="product-desc">Realistic stone appearance</div>
+                            </div>
+                        </div>
+
+                        <input type="hidden" id="selected-product" value="">
+                        <div class="error-text" id="product-error" style="margin-top: 12px;"></div>
+                    </div>
+                </div>
+
+                <button onclick="calculateEstimate()" style="margin-top: 32px; width: 100%; padding: 16px;" class="button">
+                    Calculate Estimate
+                </button>
+
+                <div id="estimator-results"></div>
+            </div>
+
+            <!-- TAB 2: Insulation Savings -->
+            <div id="savings" class="tab-content">
+                <div class="grid grid-2">
+                    <div>
+                        <h2 class="text-xl mb-24">Your Home Details</h2>
+
+                        <div class="form-group">
+                            <label for="s-length">Home Length (feet) <span style="color: var(--error);">*</span></label>
+                            <input type="number" id="s-length" min="1" max="100" placeholder="e.g., 60">
+                            <div class="error-text" id="s-length-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="s-width">Home Width (feet) <span style="color: var(--error);">*</span></label>
+                            <input type="number" id="s-width" min="1" max="100" placeholder="e.g., 28">
+                            <div class="error-text" id="s-width-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="s-state">State / Climate Region <span style="color: var(--error);">*</span></label>
+                            <select id="s-state">
+                                <option value="">-- Select --</option>
+                                <option value="cold">Cold (MN, WI, ND, MT)</option>
+                                <option value="moderate">Moderate (MA, OH, IL, CO)</option>
+                                <option value="warm">Warm (TX, GA, FL)</option>
+                            </select>
+                            <div class="error-text" id="s-state-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="s-bill">Current Monthly Heating Bill ($) <span style="color: var(--error);">*</span></label>
+                            <input type="number" id="s-bill" min="0" max="1000" step="10" placeholder="e.g., 150">
+                            <div class="error-text" id="s-bill-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="s-current">Current Skirting Type <span style="color: var(--error);">*</span></label>
+                            <select id="s-current">
+                                <option value="">-- Select --</option>
+                                <option value="none">None / Open air</option>
+                                <option value="vinyl-uninsulated">Vinyl (uninsulated)</option>
+                                <option value="metal">Metal</option>
+                            </select>
+                            <div class="error-text" id="s-current-error"></div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 48px; color: var(--green); font-weight: 700; margin-bottom: 8px;">
+                                Up to
+                            </div>
+                            <div style="font-size: 18px; color: var(--light-text);">
+                                annual savings possible
+                            </div>
+                            <div style="margin-top: 32px; font-size: 14px; color: var(--light-text); line-height: 1.8;">
+                                <p>Thermal insulated skirting can reduce heat loss by up to 40% in cold climates.</p>
+                                <p style="margin-top: 12px;">Let us calculate your specific savings based on your location and current setup.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="calculateSavings()" style="margin-top: 32px; width: 100%; padding: 16px;" class="button">
+                    Calculate Savings
+                </button>
+
+                <div id="savings-results"></div>
+            </div>
+
+            <!-- TAB 3: FHA/VA Compliance Checker -->
+            <div id="compliance" class="tab-content">
+                <h2 class="text-xl mb-24">FHA/VA Compliance Assessment</h2>
+
+                <div class="progress-container">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                        <span class="text-sm">Progress</span>
+                        <span class="text-sm" id="progress-text">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div id="compliance-form">
+                    <!-- Question 1 -->
+                    <div class="compliance-question" data-question="1">
+                        <div class="question-text">Is your skirting material approved by the foundation manufacturer?</div>
+                        <div class="question-options">
+                            <label class="option-label">
+                                <input type="radio" name="q1" value="yes"> Yes, it is
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q1" value="no"> No, unsure
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q1" value="unknown"> Don't know
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="compliance-question" data-question="2">
+                        <div class="question-text">Does your skirting system allow for adequate ventilation and moisture control?</div>
+                        <div class="question-options">
+                            <label class="option-label">
+                                <input type="radio" name="q2" value="yes"> Yes, with vents
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q2" value="partial"> Partial ventilation
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q2" value="no"> No / Unknown
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="compliance-question" data-question="3">
+                        <div class="question-text">Is your home installed on a permanent foundation as required?</div>
+                        <div class="question-options">
+                            <label class="option-label">
+                                <input type="radio" name="q3" value="yes"> Yes, permanent foundation
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q3" value="partial"> Partial / Block piers
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q3" value="no"> No / Not sure
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="compliance-question" data-question="4">
+                        <div class="question-text">Has your home been professionally inspected for compliance?</div>
+                        <div class="question-options">
+                            <label class="option-label">
+                                <input type="radio" name="q4" value="yes"> Yes, recently inspected
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q4" value="older"> Inspected over 2 years ago
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q4" value="no"> No inspection
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="compliance-question" data-question="5">
+                        <div class="question-text">What is your financing type?</div>
+                        <div class="question-options">
+                            <label class="option-label">
+                                <input type="radio" name="q5" value="fha"> FHA loan
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q5" value="va"> VA loan
+                            </label>
+                            <label class="option-label">
+                                <input type="radio" name="q5" value="other"> Other / Cash
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="checkCompliance()" style="margin-top: 32px; width: 100%; padding: 16px;" class="button">
+                    Get Assessment
+                </button>
+
+                <div id="compliance-results"></div>
+
+                <div class="disclaimer mt-48">
+                    <strong>Important Disclaimer:</strong> This assessment is informational only. Final approval rests with your lender and appraiser, not with Everlock Systems. FHA and VA financing have specific requirements that may change. We recommend consulting with your lender directly for current compliance requirements.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Upgrade Your Skirting?</h2>
+                <p>Get a custom quote or speak with one of our specialists today.</p>
+                <button class="button" style="background: #fff; color: var(--navy); border: none; font-weight: 600;">
+                    Get Your Free Quote
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="complete-kits.html">Complete Kits</a></li>
+                        <li><a href="#">Warranty</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Dealers</a></li>
+                        <li><a href="#">Installation</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>More Info</h4>
+                    <ul>
+                        <li><a href="#">45+ Years</a></li>
+                        <li><a href="#">2 U.S. Plants</a></li>
+                        <li><a href="#">Lifetime Warranty</a></li>
+                        <li><a href="#">Boulder, Colorado</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    &copy; 2026 Everlock Systems. All rights reserved. | Made in the USA
+                </div>
+                <div style="display: flex; gap: 12px;">
+                    <span class="badge badge-green">Lifetime Warranty</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab Switching
+        function switchTab(e, tabName) {
+            e.preventDefault();
+            
+            // Hide all tabs
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+            
+            // Mark button as active
+            e.target.classList.add('active');
+            
+            // Clear previous errors
+            clearErrors();
+        }
+
+        // Product Selection
+        function selectProduct(e, productId) {
+            e.preventDefault();
+            
+            // Remove selection from all cards
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => card.classList.remove('selected'));
+            
+            // Mark selected card
+            e.currentTarget.classList.add('selected');
+            
+            // Store selection
+            document.getElementById('selected-product').value = productId;
+            
+            // Clear error
+            document.getElementById('product-error').textContent = '';
+        }
+
+        // Toggle Addon Fields
+        function toggleAddonFields() {
+            const isChecked = document.getElementById('addon-check').checked;
+            document.getElementById('addon-fields').style.display = isChecked ? 'block' : 'none';
+        }
+
+        // Clear Error Messages
+        function clearErrors() {
+            const errors = document.querySelectorAll('.error-text');
+            errors.forEach(err => err.textContent = '');
+            const inputs = document.querySelectorAll('input.error, select.error');
+            inputs.forEach(inp => inp.classList.remove('error'));
+        }
+
+        // Validate & Calculate Estimate
+        function calculateEstimate() {
+            clearErrors();
+            let isValid = true;
+
+            const length = parseFloat(document.getElementById('length').value);
+            const width = parseFloat(document.getElementById('width').value);
+            const height = document.getElementById('height').value;
+            const addonSqFt = parseFloat(document.getElementById('addon-sq-ft').value) || 0;
+            const product = document.getElementById('selected-product').value;
+
+            // Validation
+            if (!length || length <= 0) {
+                document.getElementById('length').classList.add('error');
+                document.getElementById('length-error').textContent = 'Please enter a valid length.';
+                isValid = false;
+            }
+            if (!width || width <= 0) {
+                document.getElementById('width').classList.add('error');
+                document.getElementById('width-error').textContent = 'Please enter a valid width.';
+                isValid = false;
+            }
+            if (!height) {
+                document.getElementById('height').classList.add('error');
+                document.getElementById('height-error').textContent = 'Please select a height.';
+                isValid = false;
+            }
+            if (!product) {
+                document.getElementById('product-error').textContent = 'Please select a product.';
+                isValid = false;
+            }
+
+            if (!isValid) return;
+
+            // Calculate
+            const perimeter = 2 * (length + width);
+            const heightFeet = height / 12;
+            const mainSqFt = perimeter * heightFeet;
+            const totalSqFt = mainSqFt + addonSqFt;
+
+            const prices = {
+                deluxe: 1.89,
+                rock: 2.10,
+                thermal: 3.20,
+                gorilla: 3.85,
+                novik: 4.90
+            };
+
+            const productNames = {
+                deluxe: 'Everlock Deluxe',
+                rock: 'EverRock',
+                thermal: 'Thermal',
+                gorilla: 'Gorilla',
+                novik: 'Novik Stone'
+            };
+
+            const pricePerSqFt = prices[product];
+            const subtotal = totalSqFt * pricePerSqFt;
+            const lowTotal = subtotal * 0.9;
+            const highTotal = subtotal * 1.1;
+
+            // Parts estimate (simple formula)
+            const panels = Math.ceil(perimeter / 4);
+            const rails = Math.ceil(perimeter / 8) * 2;
+            const brackets = panels * 2;
+
+            // Render Results
+            const resultsHTML = `
+                <div class="results-panel">
+                    <h3>Your Estimate</h3>
+                    
+                    <div class="results-row">
+                        <span class="results-label">Home Size</span>
+                        <span class="results-value">${length}' × ${width}' (${Math.round(length * width)} sq ft)</span>
+                    </div>
+                    
+                    <div class="results-row">
+                        <span class="results-label">Skirting Perimeter</span>
+                        <span class="results-value">${Math.round(perimeter)} linear feet</span>
+                    </div>
+                    
+                    <div class="results-row">
+                        <span class="results-label">Skirting Coverage Area</span>
+                        <span class="results-value">${Math.round(totalSqFt)} square feet</span>
+                    </div>
+                    
+                    <div class="results-row">
+                        <span class="results-label">Selected Product</span>
+                        <span class="results-value">${productNames[product]}</span>
+                    </div>
+                    
+                    <div class="results-row">
+                        <span class="results-label">Price Per Square Foot</span>
+                        <span class="results-value">$${pricePerSqFt.toFixed(2)}</span>
+                    </div>
+
+                    <h3 style="margin-top: 24px; margin-bottom: 16px;">Estimated Parts List</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Quantity</th>
+                                <th>Unit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Panels / Sheets</td>
+                                <td>${panels}</td>
+                                <td>pieces</td>
+                            </tr>
+                            <tr>
+                                <td>Rails</td>
+                                <td>${rails}</td>
+                                <td>linear feet</td>
+                            </tr>
+                            <tr>
+                                <td>Brackets / Hardware</td>
+                                <td>${brackets}</td>
+                                <td>pieces</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3 style="margin-top: 24px; margin-bottom: 16px;">Cost Estimate</h3>
+                    <div class="results-row">
+                        <span class="results-label">Estimated Range</span>
+                        <span class="results-highlight">$${Math.round(lowTotal).toLocaleString()} - $${Math.round(highTotal).toLocaleString()}</span>
+                    </div>
+
+                    <div class="disclaimer">
+                        <strong>Prices are factory-direct and subject to change.</strong> This is an estimate based on standard installation. Final pricing confirmed at checkout. Additional costs may apply for custom sizes, special colors, or complex installations. A representative will provide an exact quote.
+                    </div>
+
+                    <div style="margin-top: 24px; text-align: center;">
+                        <button class="button" style="background: var(--navy);">Get Exact Quote</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('estimator-results').innerHTML = resultsHTML;
+        }
+
+        // Calculate Savings
+        function calculateSavings() {
+            clearErrors();
+            let isValid = true;
+
+            const length = parseFloat(document.getElementById('s-length').value);
+            const width = parseFloat(document.getElementById('s-width').value);
+            const state = document.getElementById('s-state').value;
+            const bill = parseFloat(document.getElementById('s-bill').value);
+            const current = document.getElementById('s-current').value;
+
+            // Validation
+            if (!length || length <= 0) {
+                document.getElementById('s-length').classList.add('error');
+                document.getElementById('s-length-error').textContent = 'Please enter a valid length.';
+                isValid = false;
+            }
+            if (!width || width <= 0) {
+                document.getElementById('s-width').classList.add('error');
+                document.getElementById('s-width-error').textContent = 'Please enter a valid width.';
+                isValid = false;
+            }
+            if (!state) {
+                document.getElementById('s-state').classList.add('error');
+                document.getElementById('s-state-error').textContent = 'Please select a climate region.';
+                isValid = false;
+            }
+            if (!bill || bill < 0) {
+                document.getElementById('s-bill').classList.add('error');
+                document.getElementById('s-bill-error').textContent = 'Please enter a valid amount.';
+                isValid = false;
+            }
+            if (!current) {
+                document.getElementById('s-current').classList.add('error');
+                document.getElementById('s-current-error').textContent = 'Please select current skirting type.';
+                isValid = false;
+            }
+
+            if (!isValid) return;
+
+            // Determine savings based on climate
+            const savingsRates = {
+                cold: { min: 0.30, max: 0.40 },
+                moderate: { min: 0.18, max: 0.25 },
+                warm: { min: 0.08, max: 0.15 }
+            };
+
+            const rate = savingsRates[state];
+            const monthlyBill = bill;
+            const monthlyLow = monthlyBill * rate.min;
+            const monthlyHigh = monthlyBill * rate.max;
+            const annualLow = monthlyLow * 12;
+            const annualHigh = monthlyHigh * 12;
+
+            // Simple payback estimate (assuming thermal product at $3.20/sqft)
+            const sqFt = 2 * (length + width) * (24 / 12);
+            const installmentCost = sqFt * 3.20;
+            const paybackYearsLow = installmentCost / annualHigh;
+            const paybackYearsHigh = installmentCost / annualLow;
+
+            const resultsHTML = `
+                <div class="results-panel">
+                    <h3>Your Potential Savings</h3>
+
+                    <div class="results-row">
+                        <span class="results-label">Climate Region</span>
+                        <span class="results-value">${state.charAt(0).toUpperCase() + state.slice(1)}</span>
+                    </div>
+
+                    <div class="results-row">
+                        <span class="results-label">Current Monthly Heating Bill</span>
+                        <span class="results-value">$${monthlyBill.toFixed(2)}</span>
+                    </div>
+
+                    <div class="results-row">
+                        <span class="results-label">Potential Monthly Savings</span>
+                        <span class="results-highlight">$${Math.round(monthlyLow)} - $${Math.round(monthlyHigh)}</span>
+                    </div>
+
+                    <div class="results-row">
+                        <span class="results-label">Estimated Annual Savings</span>
+                        <span class="results-highlight">$${Math.round(annualLow).toLocaleString()} - $${Math.round(annualHigh).toLocaleString()}</span>
+                    </div>
+
+                    <div class="results-row">
+                        <span class="results-label">Estimated Payback Period</span>
+                        <span class="results-value">${paybackYearsLow.toFixed(1)} - ${paybackYearsHigh.toFixed(1)} years</span>
+                    </div>
+
+                    <div class="disclaimer" style="margin-top: 24px;">
+                        <strong>How We Calculate Savings:</strong> Insulated thermal skirting reduces heat loss from the space beneath your home. Savings vary based on climate, current insulation level, and heating costs. These estimates assume standard 24-inch height skirting with thermal insulation and are based on industry averages. Actual savings may vary. This is for estimation purposes only.
+                    </div>
+
+                    <div style="margin-top: 24px; text-align: center;">
+                        <button class="button" style="background: var(--navy);">Learn More About Thermal Insulation</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('savings-results').innerHTML = resultsHTML;
+        }
+
+        // Update Progress Bar
+        function updateProgress() {
+            const questions = document.querySelectorAll('.compliance-question');
+            let answered = 0;
+
+            questions.forEach(q => {
+                const qNum = q.getAttribute('data-question');
+                const checked = document.querySelector(`input[name="q${qNum}"]:checked`);
+                if (checked) {
+                    answered++;
+                    q.classList.add('answered');
+                } else {
+                    q.classList.remove('answered');
+                }
+            });
+
+            const progress = (answered / questions.length) * 100;
+            document.getElementById('progress-fill').style.width = progress + '%';
+            document.getElementById('progress-text').textContent = Math.round(progress) + '%';
+        }
+
+        // Add event listeners for progress tracking
+        document.addEventListener('change', (e) => {
+            if (e.target.name.match(/^q[1-5]$/)) {
+                updateProgress();
+            }
+        });
+
+        // Check Compliance
+        function checkCompliance() {
+            const questions = document.querySelectorAll('.compliance-question');
+            let allAnswered = true;
+            let score = 0;
+
+            questions.forEach(q => {
+                const qNum = q.getAttribute('data-question');
+                const checked = document.querySelector(`input[name="q${qNum}"]:checked`);
+                if (!checked) {
+                    allAnswered = false;
+                } else {
+                    // Simple scoring: yes/good = 1 point, partial = 0.5, no/unknown = 0
+                    if (checked.value === 'yes' || checked.value === 'fha' || checked.value === 'va') {
+                        score += 1;
+                    } else if (checked.value === 'partial' || checked.value === 'older') {
+                        score += 0.5;
+                    }
+                }
+            });
+
+            if (!allAnswered) {
+                alert('Please answer all questions before getting your assessment.');
+                return;
+            }
+
+            // Determine compliance status
+            let status = '';
+            let statusColor = '';
+            let recommendation = '';
+
+            if (score >= 4.5) {
+                status = 'Likely Compliant';
+                statusColor = 'var(--success)';
+                recommendation = 'Your home appears to meet FHA/VA requirements. Contact your lender to confirm final approval and start the upgrade process.';
+            } else if (score >= 3) {
+                status = 'Potentially Compliant with Documentation';
+                statusColor = '#e67e22';
+                recommendation = 'Your home may meet requirements with proper documentation and inspection. We recommend consulting with your lender about specific compliance requirements.';
+            } else {
+                status = 'Compliance Review Needed';
+                statusColor = 'var(--error)';
+                recommendation = 'Your home may need additional work to meet FHA/VA requirements. Contact your lender and a professional inspector for a detailed assessment.';
+            }
+
+            const resultsHTML = `
+                <div class="results-panel" style="border-left-color: ${statusColor}; margin-top: 24px;">
+                    <h3 style="color: ${statusColor};">${status}</h3>
+                    <p style="margin: 12px 0; font-size: 15px;">${recommendation}</p>
+                    <div class="disclaimer">
+                        <strong>Important:</strong> Final approval rests with your lender and appraiser, not with Everlock Systems. This assessment is informational only and does not guarantee FHA/VA approval. FHA and VA financing requirements may change. Please consult directly with your lender for current compliance requirements.
+                    </div>
+                    <div style="margin-top: 24px; text-align: center;">
+                        <button class="button" style="background: var(--navy);">Request Compliance Documentation</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('compliance-results').innerHTML = resultsHTML;
+        }
+    </script>
+</body>
+</html>

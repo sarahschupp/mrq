@@ -67,6 +67,6 @@ Allow: /
 
 # ================================================================
 # SkirtingDirect.com by Everlock Systems
-# Factory-direct mobile home skirting since 1980
+# Factory-direct mobile home skirting since 1981
 # 800-843-3336
 # ================================================================

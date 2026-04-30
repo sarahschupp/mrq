@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Home Skirting FAQs | SkirtingDirect.com by Everlock Systems</title>
+  <meta name="description" content="Get straight answers to the most common questions about mobile home skirting: shipping, installation, FHA/VA requirements, product selection, and more. Factory-direct from Everlock Systems since 1981.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+    button { cursor: pointer; font-family: inherit; border: none; background: none; }
+
+    /* ============================================================
+       CSS VARIABLES
+    ============================================================ */
+    :root {
+      --green: #006400;
+      --green-dark: #004d00;
+      --green-light: #1a7a1a;
+      --green-pale: #e8f4e8;
+      --navy: #003366;
+      --navy-dark: #001f3f;
+      --navy-light: #0d4f8c;
+      --earth: #f5f2ed;
+      --earth-dark: #e8dfd0;
+      --text: #1a1a1a;
+      --text-mid: #3d3d3d;
+      --text-muted: #6b6b6b;
+      --border: #d9d9d9;
+      --white: #ffffff;
+      --gold: #c8860a;
+      --gold-light: #fef7e8;
+    }
+
+    /* ============================================================
+       UTILITY CLASSES
+    ============================================================ */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 28px; border-radius: 6px; font-size: 16px; font-weight: 600;
+      transition: all 0.18s ease; line-height: 1.2; gap: 8px; white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--green); color: var(--white); border: 2px solid var(--green);
+    }
+    .btn-primary:hover { background: var(--green-dark); border-color: var(--green-dark); }
+    .btn-secondary {
+      background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.12); border-color: var(--white); }
+    .btn-navy { background: var(--navy); color: var(--white); border: 2px solid var(--navy); }
+    .btn-navy:hover { background: var(--navy-dark); }
+    .btn-sm { padding: 10px 20px; font-size: 14px; }
+    .btn-lg { padding: 18px 36px; font-size: 18px; }
+    .section-label {
+      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--green); margin-bottom: 10px;
+    }
+    h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 800; line-height: 1.1; }
+    h2 { font-size: clamp(26px, 3.5vw, 42px); font-weight: 800; line-height: 1.15; }
+    h3 { font-size: clamp(20px, 2.5vw, 28px); font-weight: 700; line-height: 1.2; }
+    h4 { font-size: 18px; font-weight: 700; line-height: 1.3; }
+
+    /* ============================================================
+       TOP UTILITY BAR
+    ============================================================ */
+    .utility-bar {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.92);
+      font-size: 13px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .utility-bar .container {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px;
+    }
+    .utility-bar a { color: rgba(255,255,255,0.9); }
+    .utility-bar a:hover { color: var(--white); }
+    .utility-links { display: flex; align-items: center; gap: 20px; }
+    .utility-phone {
+      display: flex; align-items: center; gap: 6px;
+      font-weight: 700; font-size: 14px; color: var(--white);
+    }
+    .utility-phone svg { width: 14px; height: 14px; }
+    .utility-center {
+      text-align: center;
+    }
+    .utility-center strong { color: var(--white); }
+
+    /* ============================================================
+       HEADER / NAV
+    ============================================================ */
+    .site-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .header-inner {
+      display: flex; align-items: center; gap: 24px; padding: 14px 24px;
+      max-width: 1400px; margin: 0 auto;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+    }
+    .logo-icon {
+      width: 44px; height: 44px; background: var(--green);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 26px; height: 26px; fill: var(--white); }
+    .logo-text { line-height: 1.1; }
+    .logo-name { font-size: 20px; font-weight: 800; color: var(--green); }
+    .logo-tagline { font-size: 10px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .main-nav { display: flex; align-items: center; gap: 2px; flex: 1; }
+    .nav-item { position: relative; }
+    .nav-link {
+      display: flex; align-items: center; gap: 4px; padding: 8px 12px;
+      font-size: 14px; font-weight: 500; color: var(--text-mid); border-radius: 6px;
+      transition: all 0.15s; white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--green); background: var(--green-pale); }
+    .nav-link.active { color: var(--green); }
+    .nav-link svg { width: 12px; height: 12px; opacity: 0.6; }
+    .header-cta { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .header-phone { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: var(--navy); }
+    .hamburger { display: none; padding: 8px; }
+    .hamburger svg { width: 24px; height: 24px; }
+
+    /* ============================================================
+       HERO SECTION (Navy Band for FAQ)
+    ============================================================ */
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      padding: 80px 0 72px;
+      text-align: center;
+    }
+    .hero h1 { color: var(--white); margin-bottom: 14px; }
+    .hero-sub {
+      font-size: 19px; color: rgba(255,255,255,0.85); max-width: 680px;
+      margin: 0 auto; line-height: 1.5; font-weight: 400;
+    }
+
+    /* ============================================================
+       FAQ ACCORDION
+    ============================================================ */
+    .faq-section {
+      padding: 80px 0;
+    }
+    .faq-section:nth-child(even) {
+      background: var(--earth);
+    }
+    .faq-section-title {
+      color: var(--green);
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid var(--green);
+      display: inline-block;
+    }
+    .faq-items {
+      display: flex; flex-direction: column; gap: 0;
+      margin-top: 32px;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-question {
+      padding: 20px 0;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px;
+      user-select: none;
+      transition: background 0.15s;
+    }
+    .faq-question:hover {
+      background: rgba(0,100,0,0.03);
+    }
+    .faq-question-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      flex: 1;
+      text-align: left;
+    }
+    .faq-toggle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--green-pale);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--green);
+      font-weight: 700;
+      font-size: 18px;
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-toggle {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      display: none;
+      padding: 0 0 20px 0;
+      color: #374151;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    /* ============================================================
+       CTA BAND (navy)
+    ============================================================ */
+    .faq-cta-band {
+      background: var(--navy);
+      color: var(--white);
+      padding: 64px 0;
+      text-align: center;
+    }
+    .faq-cta-inner { max-width: 680px; margin: 0 auto; }
+    .faq-cta-band h2 { color: var(--white); margin-bottom: 14px; }
+    .faq-cta-band p { font-size: 18px; color: rgba(255,255,255,0.85); margin-bottom: 28px; }
+    .faq-cta-buttons {
+      display: flex; align-items: center; justify-content: center; gap: 20px;
+      flex-wrap: wrap; margin-bottom: 20px;
+    }
+    .faq-cta-or { color: rgba(255,255,255,0.4); }
+    .faq-email-link {
+      color: rgba(255,255,255,0.75);
+      font-size: 15px;
+      margin-top: 16px;
+    }
+    .faq-email-link a {
+      color: rgba(255,255,255,1);
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+    }
+
+    /* ============================================================
+       SECTION COMMON
+    ============================================================ */
+    .section { padding: 80px 0; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .site-footer { background: #0a1005; color: rgba(255,255,255,0.7); padding: 56px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 24px; }
+    .footer-brand-name { font-size: 20px; font-weight: 800; color: var(--white); margin-bottom: 4px; }
+    .footer-brand-sub { font-size: 12px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; }
+    .footer-brand-desc { font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
+    .footer-phone-row { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .footer-hours { font-size: 13px; color: rgba(255,255,255,0.4); }
+    .footer-col-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+    .footer-links { display: flex; flex-direction: column; gap: 10px; }
+    .footer-link { font-size: 14px; color: rgba(255,255,255,0.65); transition: color 0.15s; }
+    .footer-link:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+      max-width: 1200px; margin: 0 auto; padding-left: 24px; padding-right: 24px;
+    }
+    .footer-bottom-text { font-size: 13px; color: rgba(255,255,255,0.35); }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-link { font-size: 13px; color: rgba(255,255,255,0.4); }
+    .footer-bottom-link:hover { color: rgba(255,255,255,0.7); }
+    .footer-warranty-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(0,100,0,0.3); border: 1px solid rgba(0,180,0,0.3);
+      border-radius: 8px; padding: 10px 16px; margin-top: 16px;
+    }
+    .footer-warranty-badge span { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.85); }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 900px) {
+      .main-nav { display: none; }
+      .hamburger { display: flex; }
+      .header-phone { display: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .utility-center { display: none; }
+      .faq-cta-buttons { flex-direction: column; width: 100%; }
+      .faq-cta-buttons .btn { width: 100%; }
+      .faq-cta-or { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     UTILITY BAR
+============================================================ -->
+<div class="utility-bar">
+  <div class="container">
+    <div class="utility-phone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      800-843-3336
+    </div>
+    <div class="utility-center">
+      <strong>Factory Direct Since 1981 | True Lifetime Warranty | 2 U.S. Plants</strong>
+    </div>
+    <a href="/samples" style="color:rgba(255,255,255,0.85); font-size:13px; white-space:nowrap;">Request Free Samples</a>
+  </div>
+</div>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,10 90,45 10,45" fill="white"/>
+          <rect x="30" y="45" width="40" height="30" fill="white"/>
+          <rect x="10" y="75" width="80" height="10" fill="rgba(255,255,255,0.6)"/>
+          <rect x="10" y="85" width="80" height="5" fill="rgba(255,255,255,0.4)"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <div class="logo-name">SkirtingDirect</div>
+        <div class="logo-tagline">By Everlock Systems</div>
+      </div>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <div class="nav-item">
+        <a href="/products" class="nav-link">Products</a>
+      </div>
+      <div class="nav-item">
+        <a href="/complete-kits" class="nav-link">Complete Kits</a>
+      </div>
+      <div class="nav-item">
+        <a href="/calculator" class="nav-link" style="font-weight:600; color:var(--green);">Build Your Quote</a>
+      </div>
+      <div class="nav-item">
+        <a href="/installation" class="nav-link">How It Works</a>
+      </div>
+      <div class="nav-item">
+        <a href="/real-homes" class="nav-link">Real Homes</a>
+      </div>
+      <div class="nav-item">
+        <a href="/resources" class="nav-link">Resources</a>
+      </div>
+    </nav>
+
+    <div class="header-cta">
+      <div class="header-phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        800-843-3336
+      </div>
+      <a href="/calculator" class="btn btn-primary btn-sm">Get Instant Pricing</a>
+    </div>
+
+    <button class="hamburger" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO SECTION
+============================================================ -->
+<section class="hero" aria-label="FAQ hero">
+  <div class="container">
+    <h1>Frequently Asked Questions</h1>
+    <p class="hero-sub">45 years of helping homeowners. Here are the answers we give most.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ SECTION 1: SHIPPING & DELIVERY
+============================================================ -->
+<section class="faq-section">
+  <div class="container">
+    <h2 class="faq-section-title">Shipping &amp; Delivery</h2>
+
+    <div class="faq-items">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">How are your products shipped?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Most skirting panels are too long for UPS or FedEx, so they ship via LTL (less-than-truckload) freight on a semi-truck. Vents and doors ship separately via UPS. Shipping costs depend on your location and what you order. You can estimate your cost before checkout using the calculator on our website.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">Do you ship to my address?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">We ship to residential addresses in the continental United States. The freight carrier needs to be able to access your location with a semi-truck (18-wheeler). We do not currently ship to Alaska, Hawaii, Canada, Mexico, or internationally.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">Will I need to unload the shipment myself?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Yes. To keep your shipping cost as low as possible, you are responsible for unloading. The panels can be unpackaged and carried in a few pieces at a time. If you need special delivery services (liftgate, driver unloading), you will pay those fees directly to the carrier at delivery.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">What do I do if my order arrives damaged?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Inspect everything before signing the delivery receipt. If anything is damaged or missing, note it on the receipt, get an exception number from the driver, and call us at 800-843-3336. We'll handle the freight claim and get you replacement product. Do not sign and accept without noting damage, because once you do, we cannot file a claim on your behalf.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">Can I cancel my order?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Yes, if we receive your cancellation request before the product has shipped. Once it's on the truck, we cannot cancel the order.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">How long does delivery take?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Everlock Deluxe, EverRock, Gorilla, and Thermal EverRock generally ship within 3 business days and arrive within 7-10 business days after that. Novik brick and stone products ship approximately 5 business days after your order, with an additional 5-8 days in transit. Certain Novik colors may take up to 15 business days to ship. We cannot guarantee specific arrival dates due to carrier variables.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">Can I pick up my order at the factory?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Our factories do not allow customer pickups due to daily shipping volumes. You may be able to arrange a pickup at the freight carrier's local terminal, but policies vary by carrier.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ SECTION 2: PRODUCTS & ORDERING
+============================================================ -->
+<section class="faq-section">
+  <div class="container">
+    <h2 class="faq-section-title">Products &amp; Ordering</h2>
+
+    <div class="faq-items">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">What is your most economical skirting option?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Everlock Deluxe Vinyl is our most affordable product, and still a premium skirting with .040" thickness. It's our most popular option for good reason.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">Do you sell complete skirting kits?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Yes. We sell complete kits with panels, rails, and hardware, sized for standard manufactured home dimensions. Visit our Complete Kits page to find the right kit for your home size and get instant pricing.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">How do I know how much skirting to order?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Use our online calculator. You'll need your home's length, width, and the average height off the ground. If you have an unusual setup, such as large height variations, decks, or additions, call us at 800-843-3336 and we'll calculate it for you.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">How do I match the skirting color to my home?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Order a sample. Colors look different on screens, and the only reliable way to check is to hold the actual panel against your home. Samples of all products are available on our website.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">Is there a minimum order quantity?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Thermal EverRock, Gorilla, and EverRock orders must be at least 10 panels. Everlock Deluxe minimum is 14 panels (preferably a full rail kit). We recommend ordering a few extra panels, because the cost of a second small shipment exceeds the cost of a couple extra panels up front.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">Can I reuse skirting if I move my home?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">In some cases, portions may be reusable, but generally no. Every home setup is unique in terms of exact dimensions and ground clearance. Skirting can also be damaged when a home is moved.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">Can your products be used on conventional homes?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Our products are designed for manufactured and mobile homes, but many customers have used them creatively on conventional home projects, particularly the Novik faux stone and brick panels.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">Do you offer discount coupons or financing?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">We do not currently offer discount coupons. Promotions are sent to newsletter subscribers. For financing, we accept PayPal, which offers its own financing options. You can also split payment between two credit cards by calling us at 800-843-3336.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ SECTION 3: INSTALLATION
+============================================================ -->
+<section class="faq-section">
+  <div class="container">
+    <h2 class="faq-section-title">Installation</h2>
+
+    <div class="faq-items">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">Can I install skirting myself?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Yes, if you're comfortable with basic home improvement projects and the safe operation of a skill saw. Our complete installation instructions are at skirtingdirect.com/installation. If you're not confident, we recommend finding a local installer. Search "mobile home installer" or "mobile home services" in your area.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">Do you install skirting?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">We manufacture and sell direct, so we don't install. To find an installer near you, search for mobile home services in your area.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">Do you sell framing materials?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">No. Framing materials are widely available at your local home improvement store.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">How do I access underneath my home after skirting is installed?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">We sell access doors and access door conversion kits specifically for this purpose.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">How much ventilation do I need?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">A common rule of thumb is one square foot of ventilation per 150 square feet of crawl space. But local codes vary, so check your local requirements before installing. Compliance with local codes is the homeowner's responsibility.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ SECTION 4: FHA/VA & COMPLIANCE
+============================================================ -->
+<section class="faq-section">
+  <div class="container">
+    <h2 class="faq-section-title">FHA/VA &amp; Compliance</h2>
+
+    <div class="faq-items">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">Does my skirting need to meet FHA or VA requirements?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">If you're buying or refinancing a manufactured home with an FHA or VA loan, your lender will likely require skirting that meets HUD standards. Our products are manufactured to meet general HUD guidelines for skirting. We strongly recommend confirming specific requirements with your lender or appraiser before ordering, because final approval rests with them, not us.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">What does FHA/VA-compliant skirting look like?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Generally, compliant skirting must enclose the entire perimeter of the home, be durable and weather-resistant, include proper ventilation, and include at least one access door. Our Everlock Deluxe Vinyl, EverRock, and insulated products all meet these general requirements. Our full FHA/VA resource page covers the specific checklist.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          <span class="faq-question-text">Which Everlock product is recommended for FHA/VA compliance?</span>
+          <div class="faq-toggle">+</div>
+        </div>
+        <div class="faq-answer">Everlock Deluxe Vinyl is the most commonly specified product for FHA/VA compliance. It meets HUD material and durability standards, is widely accepted by lenders, and is the most cost-effective option. Call us at 800-843-3336 if your lender has specific questions.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FINAL CTA BAND
+============================================================ -->
+<section class="faq-cta-band">
+  <div class="faq-cta-inner">
+    <h2>Still Have Questions?</h2>
+    <p>We've been helping homeowners for 45 years. We're ready to help you too.</p>
+
+    <div class="faq-cta-buttons">
+      <a href="tel:8008433336" class="btn btn-primary btn-lg">Call 800-843-3336</a>
+      <span class="faq-cta-or">or</span>
+      <a href="/calculator" class="btn btn-secondary btn-lg">Build My Quote</a>
+    </div>
+
+    <div class="faq-email-link">
+      Email us at <a href="mailto:sales@skirtingdirect.com">sales@skirtingdirect.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">SkirtingDirect.com</div>
+      <div class="footer-brand-sub">By Everlock Systems, Inc.</div>
+      <div class="footer-brand-desc">
+        Factory-direct mobile and manufactured home skirting since 1981. We manufacture vinyl, insulated, and faux stone skirting at two U.S. plants and sell directly to homeowners, no middlemen, no markups.
+      </div>
+      <div class="footer-phone-row">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        800-843-3336
+      </div>
+      
+      <div class="footer-warranty-badge">
+        <span>Shield</span>
+        <span>True Lifetime Limited Warranty - Materials &amp; Workmanship</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Products</div>
+      <div class="footer-links">
+        <a href="/products/everlock-deluxe-vinyl" class="footer-link">Everlock Deluxe Vinyl</a>
+        <a href="/products/thermal-everrock" class="footer-link">Thermal EverRock Insulated</a>
+        <a href="/products/gorilla-thermal" class="footer-link">Gorilla Insulated Skirting</a>
+        <a href="/products/novik-brick-stone" class="footer-link">Novik Brick &amp; Stone Panels</a>
+        <a href="/products/accessories" class="footer-link">Accessories &amp; Vents</a>
+        <a href="/complete-kits" class="footer-link">Complete Kits</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Help &amp; Resources</div>
+      <div class="footer-links">
+        <a href="/calculator" class="footer-link">Skirting Calculator</a>
+        <a href="/samples" class="footer-link">Order Free Samples</a>
+        <a href="/installation" class="footer-link">Installation Guide</a>
+        <a href="/resources/fha-va-requirements" class="footer-link">FHA/VA Guide</a>
+        <a href="/resources/blog" class="footer-link">Blog &amp; Buying Guides</a>
+        <a href="/resources/faq" class="footer-link">FAQ</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Company</div>
+      <div class="footer-links">
+        <a href="/about" class="footer-link">About Everlock Systems</a>
+        <a href="/why-everlock" class="footer-link">Why SkirtingDirect</a>
+        <a href="/real-homes" class="footer-link">Real Homes Gallery</a>
+        <a href="/for-pros" class="footer-link">For Pros &amp; Dealers</a>
+        <a href="/contact" class="footer-link">Contact Us</a>
+        <a href="/resources/warranty" class="footer-link">Lifetime Warranty</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid rgba(255,255,255,0.08); padding:28px 24px; max-width:1200px; margin:0 auto;">
+    <p style="font-size:12px; color:rgba(255,255,255,0.3); line-height:1.7;">
+      <strong style="color:rgba(255,255,255,0.45);">Legal &amp; Accuracy Notice:</strong>
+      All product information, specifications, pricing, and images on SkirtingDirect.com are provided for general information purposes only. Prices are subject to change without notice. Actual product colors may vary slightly from images shown. Installation results may vary based on local conditions, proper preparation, and installer expertise. FHA/VA compliance statements are based on general HUD guidelines, with final approval resting with your lender and appraiser. Everlock Systems, Inc. is not responsible for local code variations or installation outcomes.
+      <strong style="color:rgba(255,255,255,0.45);">Lifetime Warranty:</strong> Limited to original purchaser. Covers manufacturing defects in materials and workmanship under normal use. Full terms at <a href="/resources/warranty" style="color:rgba(255,255,255,0.45);">skirtingdirect.com/resources/warranty</a>.
+    </p>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-text">
+      Copyright 2026 Everlock Systems, Inc. All rights reserved. Manufactured in the USA.
+    </div>
+    <div class="footer-bottom-links">
+      <a href="/privacy-policy" class="footer-bottom-link">Privacy Policy</a>
+      <a href="/terms" class="footer-bottom-link">Terms &amp; Conditions</a>
+      <a href="/resources/warranty" class="footer-bottom-link">Warranty</a>
+      <a href="/sitemap.xml" class="footer-bottom-link">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT - FAQ ACCORDION
+============================================================ -->
+<script>
+  function toggleFAQ(element) {
+    const item = element.closest('.faq-item');
+    item.classList.toggle('open');
+  }
+</script>
+
+<!-- ============================================================
+     JSON-LD FAQPage SCHEMA
+============================================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How are your products shipped?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most skirting panels are too long for UPS or FedEx, so they ship via LTL (less-than-truckload) freight on a semi-truck. Vents and doors ship separately via UPS. Shipping costs depend on your location and what you order. You can estimate your cost before checkout using the calculator on our website."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you ship to my address?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We ship to residential addresses in the continental United States. The freight carrier needs to be able to access your location with a semi-truck (18-wheeler). We do not currently ship to Alaska, Hawaii, Canada, Mexico, or internationally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I need to unload the shipment myself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. To keep your shipping cost as low as possible, you are responsible for unloading. The panels can be unpackaged and carried in a few pieces at a time. If you need special delivery services (liftgate, driver unloading), you will pay those fees directly to the carrier at delivery."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I do if my order arrives damaged?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Inspect everything before signing the delivery receipt. If anything is damaged or missing, note it on the receipt, get an exception number from the driver, and call us at 800-843-3336. We will handle the freight claim and get you replacement product. Do not sign and accept without noting damage, because once you do, we cannot file a claim on your behalf."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I cancel my order?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if we receive your cancellation request before the product has shipped. Once it is on the truck, we cannot cancel the order."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does delivery take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Everlock Deluxe, EverRock, Gorilla, and Thermal EverRock generally ship within 3 business days and arrive within 7-10 business days after that. Novik brick and stone products ship approximately 5 business days after your order, with an additional 5-8 days in transit. Certain Novik colors may take up to 15 business days to ship. We cannot guarantee specific arrival dates due to carrier variables."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I pick up my order at the factory?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our factories do not allow customer pickups due to daily shipping volumes. You may be able to arrange a pickup at the freight carrier's local terminal, but policies vary by carrier."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is your most economical skirting option?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Everlock Deluxe Vinyl is our most affordable product, and still a premium skirting with .040 inch thickness. It is our most popular option for good reason."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you sell complete skirting kits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We sell complete kits with panels, rails, and hardware, sized for standard manufactured home dimensions. Visit our Complete Kits page to find the right kit for your home size and get instant pricing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know how much skirting to order?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use our online calculator. You will need your home's length, width, and the average height off the ground. If you have an unusual setup, such as large height variations, decks, or additions, call us at 800-843-3336 and we will calculate it for you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I match the skirting color to my home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Order a sample. Colors look different on screens, and the only reliable way to check is to hold the actual panel against your home. Samples of all products are available on our website."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a minimum order quantity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Thermal EverRock, Gorilla, and EverRock orders must be at least 10 panels. Everlock Deluxe minimum is 14 panels (preferably a full rail kit). We recommend ordering a few extra panels, because the cost of a second small shipment exceeds the cost of a couple extra panels up front."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I reuse skirting if I move my home?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In some cases, portions may be reusable, but generally no. Every home setup is unique in terms of exact dimensions and ground clearance. Skirting can also be damaged when a home is moved."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can your products be used on conventional homes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our products are designed for manufactured and mobile homes, but many customers have used them creatively on conventional home projects, particularly the Novik faux stone and brick panels."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer discount coupons or financing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We do not currently offer discount coupons. Promotions are sent to newsletter subscribers. For financing, we accept PayPal, which offers its own financing options. You can also split payment between two credit cards by calling us at 800-843-3336."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I install skirting myself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if you are comfortable with basic home improvement projects and the safe operation of a skill saw. Our complete installation instructions are at skirtingdirect.com/installation. If you are not confident, we recommend finding a local installer. Search for mobile home installer or mobile home services in your area."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you install skirting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We manufacture and sell direct, so we do not install. To find an installer near you, search for mobile home services in your area."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you sell framing materials?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Framing materials are widely available at your local home improvement store."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I access underneath my home after skirting is installed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We sell access doors and access door conversion kits specifically for this purpose."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much ventilation do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A common rule of thumb is one square foot of ventilation per 150 square feet of crawl space. But local codes vary, so check your local requirements before installing. Compliance with local codes is the homeowner's responsibility."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my skirting need to meet FHA or VA requirements?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you are buying or refinancing a manufactured home with an FHA or VA loan, your lender will likely require skirting that meets HUD standards. Our products are manufactured to meet general HUD guidelines for skirting. We strongly recommend confirming specific requirements with your lender or appraiser before ordering, because final approval rests with them, not us."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does FHA/VA-compliant skirting look like?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally, compliant skirting must enclose the entire perimeter of the home, be durable and weather-resistant, include proper ventilation, and include at least one access door. Our Everlock Deluxe Vinyl, EverRock, and insulated products all meet these general requirements. Our full FHA/VA resource page covers the specific checklist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Everlock product is recommended for FHA/VA compliance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Everlock Deluxe Vinyl is the most commonly specified product for FHA/VA compliance. It meets HUD material and durability standards, is widely accepted by lenders, and is the most cost-effective option. Call us at 800-843-3336 if your lender has specific questions."
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
