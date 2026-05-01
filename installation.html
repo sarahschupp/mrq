@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Home Skirting Installation Guide | SkirtingDirect.com</title>
+  <meta name="description" content="Step-by-step installation guide for Everlock mobile home skirting. Learn how to measure, order, and install vinyl or insulated skirting on a single-wide or double-wide manufactured home.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #1a1a1a;
+      background: #fff;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+    button { cursor: pointer; font-family: inherit; border: none; background: none; }
+
+    /* ============================================================
+       CSS VARIABLES
+    ============================================================ */
+    :root {
+      --green: #006400;
+      --green-dark: #004d00;
+      --green-light: #1a7a1a;
+      --green-pale: #e8f4e8;
+      --navy: #003366;
+      --navy-dark: #001f3f;
+      --navy-light: #0d4f8c;
+      --earth: #f5f2ed;
+      --earth-dark: #e8dfd0;
+      --text: #1a1a1a;
+      --text-mid: #3d3d3d;
+      --text-muted: #6b6b6b;
+      --border: #d9d9d9;
+      --white: #ffffff;
+      --gold: #c8860a;
+      --gold-light: #fef7e8;
+    }
+
+    /* ============================================================
+       UTILITY CLASSES
+    ============================================================ */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 28px; border-radius: 6px; font-size: 16px; font-weight: 600;
+      transition: all 0.18s ease; line-height: 1.2; gap: 8px; white-space: nowrap;
+    }
+    .btn-primary {
+      background: var(--green); color: var(--white); border: 2px solid var(--green);
+    }
+    .btn-primary:hover { background: var(--green-dark); border-color: var(--green-dark); }
+    .btn-secondary {
+      background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.75);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.12); border-color: var(--white); }
+    .btn-navy { background: var(--navy); color: var(--white); border: 2px solid var(--navy); }
+    .btn-navy:hover { background: var(--navy-dark); }
+    .btn-outline-green {
+      background: transparent; color: var(--green); border: 2px solid var(--green);
+    }
+    .btn-outline-green:hover { background: var(--green-pale); }
+    .btn-sm { padding: 10px 20px; font-size: 14px; }
+    .btn-lg { padding: 18px 36px; font-size: 18px; }
+    .section-label {
+      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--green); margin-bottom: 10px;
+    }
+    h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 800; line-height: 1.1; }
+    h2 { font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; line-height: 1.15; }
+    h3 { font-size: clamp(20px, 2.5vw, 26px); font-weight: 700; line-height: 1.2; }
+    h4 { font-size: 18px; font-weight: 700; line-height: 1.3; }
+
+    /* ============================================================
+       TOP UTILITY BAR
+    ============================================================ */
+    .utility-bar {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.92);
+      font-size: 13px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .utility-bar .container {
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px;
+    }
+    .utility-bar a { color: rgba(255,255,255,0.9); }
+    .utility-bar a:hover { color: var(--white); }
+    .utility-phone {
+      display: flex; align-items: center; gap: 6px;
+      font-weight: 700; font-size: 14px; color: var(--white);
+    }
+    .utility-phone svg { width: 14px; height: 14px; }
+    .utility-center { text-align: center; }
+    .utility-center strong { color: var(--white); }
+
+    /* ============================================================
+       HEADER / NAV
+    ============================================================ */
+    .site-header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .header-inner {
+      display: flex; align-items: center; gap: 24px; padding: 14px 24px;
+      max-width: 1400px; margin: 0 auto;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .logo-icon {
+      width: 44px; height: 44px; background: var(--green);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 26px; height: 26px; fill: var(--white); }
+    .logo-text { line-height: 1.1; }
+    .logo-name { font-size: 20px; font-weight: 800; color: var(--green); }
+    .logo-tagline { font-size: 10px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .main-nav { display: flex; align-items: center; gap: 2px; flex: 1; }
+    .nav-item { position: relative; }
+    .nav-link {
+      display: flex; align-items: center; gap: 4px; padding: 8px 12px;
+      font-size: 14px; font-weight: 500; color: var(--text-mid); border-radius: 6px;
+      transition: all 0.15s; white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--green); background: var(--green-pale); }
+    .nav-link.active { color: var(--green); }
+    .nav-link svg { width: 12px; height: 12px; opacity: 0.6; }
+    .dropdown {
+      position: absolute; top: calc(100% + 8px); left: 0;
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 10px; min-width: 200px; padding: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12); opacity: 0; visibility: hidden;
+      transform: translateY(-6px); transition: all 0.18s ease; z-index: 200;
+    }
+    .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+    .dropdown-item {
+      display: block; padding: 9px 14px; font-size: 14px; color: var(--text-mid);
+      border-radius: 6px; transition: all 0.12s;
+    }
+    .dropdown-item:hover { color: var(--green); background: var(--green-pale); }
+    .header-cta { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .header-phone { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: var(--navy); }
+    .hamburger { display: none; padding: 8px; }
+    .hamburger svg { width: 24px; height: 24px; }
+
+    /* ============================================================
+       PAGE HERO (Navy Band)
+    ============================================================ */
+    .page-hero {
+      background: var(--navy);
+      color: var(--white);
+      padding: 60px 0 52px;
+    }
+    .page-hero .section-label { color: rgba(255,255,255,0.7); }
+    .page-hero h1 { color: var(--white); margin-bottom: 16px; }
+    .page-hero p {
+      font-size: 18px; color: rgba(255,255,255,0.82); max-width: 640px; margin-bottom: 28px;
+    }
+    .hero-meta {
+      display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+      font-size: 14px; color: rgba(255,255,255,0.65);
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 6px; }
+
+    /* ============================================================
+       PROGRESS / TOC
+    ============================================================ */
+    .toc-bar {
+      background: var(--earth);
+      border-bottom: 1px solid var(--earth-dark);
+      padding: 0;
+      overflow-x: auto;
+    }
+    .toc-inner {
+      display: flex; align-items: stretch; gap: 0;
+      max-width: 1200px; margin: 0 auto; padding: 0 24px;
+    }
+    .toc-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 20px; font-size: 14px; font-weight: 500;
+      color: var(--text-muted); border-bottom: 2px solid transparent;
+      white-space: nowrap; transition: all 0.15s;
+    }
+    .toc-item:hover { color: var(--green); border-bottom-color: var(--green); }
+    .toc-item .step-num {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--border); color: var(--text-muted);
+      font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ============================================================
+       MAIN LAYOUT
+    ============================================================ */
+    .install-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 24px;
+      align-items: start;
+    }
+
+    /* ============================================================
+       STEP SECTIONS
+    ============================================================ */
+    .step-section {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .step-section:last-child { border-bottom: none; }
+    .step-header {
+      display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px;
+    }
+    .step-badge {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--green); color: var(--white);
+      font-size: 17px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 4px;
+    }
+    .step-title { font-size: clamp(20px, 2.5vw, 26px); font-weight: 700; color: var(--text); }
+    .step-subtitle { font-size: 15px; color: var(--text-muted); margin-top: 4px; }
+    .step-body { font-size: 16px; color: var(--text-mid); line-height: 1.75; }
+    .step-body p { margin-bottom: 16px; }
+    .step-body p:last-child { margin-bottom: 0; }
+
+    .step-list {
+      margin: 16px 0 16px 0;
+      padding-left: 0;
+    }
+    .step-list li {
+      display: block;
+      position: relative;
+      padding: 10px 0 10px 18px;
+      font-size: 15px; color: var(--text-mid); line-height: 1.6;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .step-list li:last-child { border-bottom: none; }
+    .step-list li::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--green);
+      position: absolute; left: 0; top: 18px;
+    }
+
+    .step-checklist {
+      background: var(--earth); border-radius: 10px; padding: 24px; margin: 20px 0;
+    }
+    .step-checklist h4 { font-size: 15px; color: var(--text); margin-bottom: 14px; }
+    .checklist-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+    }
+    .checklist-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 14px; color: var(--text-mid);
+    }
+    .checklist-item::before {
+      content: ''; width: 16px; height: 16px; border-radius: 3px;
+      border: 2px solid var(--border); flex-shrink: 0; background: var(--white);
+    }
+
+    .step-tip {
+      background: var(--gold-light); border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 20px 0;
+    }
+    .step-tip-label {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--gold); margin-bottom: 6px;
+    }
+    .step-tip p { font-size: 14px; color: var(--text-mid); margin: 0; }
+
+    .step-warning {
+      background: #fff8e1; border-left: 4px solid #f59e0b;
+      border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 20px 0;
+    }
+    .step-warning-label {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: #b45309; margin-bottom: 6px;
+    }
+    .step-warning p { font-size: 14px; color: var(--text-mid); margin: 0; }
+
+    .measure-diagram {
+      background: var(--earth); border-radius: 12px; padding: 28px;
+      margin: 24px 0; border: 1px solid var(--earth-dark);
+    }
+    .measure-diagram h4 { font-size: 15px; color: var(--navy); margin-bottom: 16px; font-weight: 700; }
+    .measure-row {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 12px 0; border-bottom: 1px solid var(--earth-dark);
+    }
+    .measure-row:last-child { border-bottom: none; }
+    .measure-label { font-weight: 600; font-size: 14px; color: var(--text); min-width: 140px; }
+    .measure-desc { font-size: 14px; color: var(--text-muted); }
+
+    .product-install-card {
+      border: 1px solid var(--border); border-radius: 10px;
+      padding: 24px; margin: 16px 0;
+      display: grid; grid-template-columns: auto 1fr; gap: 16px;
+    }
+    .product-install-icon {
+      width: 48px; height: 48px; background: var(--green-pale);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      font-size: 22px; flex-shrink: 0;
+    }
+    .product-install-name { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .product-install-note { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+
+    /* ============================================================
+       SIDEBAR
+    ============================================================ */
+    .install-sidebar { position: sticky; top: 90px; }
+
+    .sidebar-card {
+      background: var(--earth); border-radius: 12px; padding: 24px; margin-bottom: 20px;
+    }
+    .sidebar-card-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 14px; }
+    .sidebar-nav-link {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 0; font-size: 14px; color: var(--text-mid);
+      border-bottom: 1px solid var(--earth-dark); transition: color 0.15s;
+    }
+    .sidebar-nav-link:last-child { border-bottom: none; }
+    .sidebar-nav-link:hover { color: var(--green); }
+    .sidebar-nav-link .step-dot {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--border); color: var(--text-muted);
+      font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .sidebar-cta {
+      background: var(--green); color: var(--white);
+      border-radius: 12px; padding: 24px; margin-bottom: 20px;
+      text-align: center;
+    }
+    .sidebar-cta h4 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+    .sidebar-cta p { font-size: 14px; color: rgba(255,255,255,0.82); margin-bottom: 18px; }
+    .sidebar-cta-phone {
+      font-size: 20px; font-weight: 800; color: var(--white); margin-bottom: 4px;
+    }
+    .sidebar-cta-hours { font-size: 12px; color: rgba(255,255,255,0.65); margin-bottom: 16px; }
+
+    .sidebar-links { padding: 0; }
+    .sidebar-link-item {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 0; font-size: 14px; color: var(--text-mid);
+      border-bottom: 1px solid var(--border); transition: color 0.15s;
+    }
+    .sidebar-link-item:last-child { border-bottom: none; }
+    .sidebar-link-item:hover { color: var(--green); }
+    .sidebar-link-arrow { margin-left: auto; color: var(--text-muted); font-size: 12px; }
+
+    /* ============================================================
+       PRO VS DIY SECTION
+    ============================================================ */
+    .diy-pro-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0;
+    }
+    .diy-card {
+      border-radius: 12px; padding: 24px;
+    }
+    .diy-card.diy { background: var(--green-pale); border: 1px solid #b8d9b8; }
+    .diy-card.pro { background: #eef2ff; border: 1px solid #c7d2fe; }
+    .diy-card-title {
+      font-size: 16px; font-weight: 700; margin-bottom: 14px;
+    }
+    .diy-card.diy .diy-card-title { color: var(--green-dark); }
+    .diy-card.pro .diy-card-title { color: var(--navy); }
+    .diy-card ul { padding-left: 0; }
+    .diy-card ul li {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 14px; color: var(--text-mid); padding: 6px 0;
+    }
+    .diy-card ul li::before {
+      content: ''; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--green); flex-shrink: 0; margin-top: 8px;
+    }
+    .diy-card.pro ul li::before { background: var(--navy-light); }
+
+    /* ============================================================
+       BOTTOM CTA BAND
+    ============================================================ */
+    .bottom-cta {
+      background: var(--navy); color: var(--white);
+      padding: 64px 0; text-align: center;
+    }
+    .bottom-cta h2 { color: var(--white); margin-bottom: 14px; }
+    .bottom-cta p { font-size: 18px; color: rgba(255,255,255,0.8); margin-bottom: 32px; }
+    .bottom-cta-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .site-footer {
+      background: var(--navy-dark); color: rgba(255,255,255,0.75); padding: 56px 24px 0;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 40px; max-width: 1200px; margin: 0 auto; padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand-name { font-size: 20px; font-weight: 800; color: var(--white); margin-bottom: 4px; }
+    .footer-brand-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-bottom: 14px; }
+    .footer-brand-desc { font-size: 13px; line-height: 1.7; margin-bottom: 16px; }
+    .footer-phone-row {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 16px;
+    }
+    .footer-warranty-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.07); border-radius: 6px;
+      padding: 8px 14px; font-size: 12px; color: rgba(255,255,255,0.65);
+    }
+    .footer-col-title {
+      font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--white); margin-bottom: 14px;
+    }
+    .footer-links { display: flex; flex-direction: column; gap: 8px; }
+    .footer-link {
+      font-size: 14px; color: rgba(255,255,255,0.65); transition: color 0.15s;
+    }
+    .footer-link:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+      padding: 20px 0;
+    }
+    .footer-bottom-text { font-size: 12px; color: rgba(255,255,255,0.35); }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-link { font-size: 12px; color: rgba(255,255,255,0.45); }
+    .footer-bottom-link:hover { color: var(--white); }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .install-layout { grid-template-columns: 1fr; }
+      .install-sidebar { position: static; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .page-hero { padding: 40px 0 36px; }
+      .toc-inner { gap: 0; }
+      .toc-item { padding: 12px 14px; font-size: 13px; }
+      .checklist-grid { grid-template-columns: 1fr; }
+      .diy-pro-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .bottom-cta-btns { flex-direction: column; align-items: center; }
+    }
+    @media (max-width: 640px) {
+      .header-inner { padding: 12px 16px; }
+      .main-nav { display: none; }
+      .hamburger { display: flex; }
+      .utility-center { display: none; }
+      .product-install-card { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     TOP UTILITY BAR
+============================================================ -->
+<div class="utility-bar">
+  <div class="container">
+    <div class="utility-phone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      800-843-3336
+    </div>
+    <div class="utility-center">
+      <strong>Factory Direct Since 1981 | True Lifetime Warranty | 2 U.S. Plants</strong>
+    </div>
+    <a href="samples.html" style="color:rgba(255,255,255,0.85); font-size:13px; white-space:nowrap;">Order Samples</a>
+  </div>
+</div>
+
+<!-- ============================================================
+     HEADER
+============================================================ -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,10 90,45 10,45" fill="white"/>
+          <rect x="30" y="45" width="40" height="30" fill="white"/>
+          <rect x="10" y="75" width="80" height="10" fill="rgba(255,255,255,0.6)"/>
+          <rect x="10" y="85" width="80" height="5" fill="rgba(255,255,255,0.4)"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <div class="logo-name">SkirtingDirect</div>
+        <div class="logo-tagline">By Everlock Systems</div>
+      </div>
+    </a>
+
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-item">
+        <a href="products.html" class="nav-link">
+          Products
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="blog-everlock-deluxe-vinyl-skirting.html" class="dropdown-item">Everlock Deluxe Vinyl</a>
+          <a href="blog-thermal-everrock-insulated-skirting.html" class="dropdown-item">Thermal EverRock Insulated</a>
+          <a href="blog-gorilla-insulated-skirting.html" class="dropdown-item">Gorilla Insulated Skirting</a>
+          <a href="products.html#novik" class="dropdown-item">Novik Brick &amp; Stone</a>
+          <a href="products.html#accessories" class="dropdown-item">Accessories &amp; Vents</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="complete-kits.html" class="nav-link">Complete Kits</a>
+      </div>
+      <div class="nav-item">
+        <a href="calculator.html" class="nav-link" style="font-weight:600; color:var(--green);">Build Your Quote</a>
+      </div>
+      <div class="nav-item">
+        <a href="installation.html" class="nav-link active">
+          Installation
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="installation.html" class="dropdown-item">How to Install Skirting</a>
+          <a href="installation.html#videos" class="dropdown-item">Installation Videos</a>
+          <a href="installation.html" class="dropdown-item">Find a Pro Installer</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="real-homes.html" class="nav-link">Real Homes</a>
+      </div>
+      <div class="nav-item">
+        <a href="blog.html" class="nav-link">
+          Resources
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="blog.html" class="dropdown-item">Blog &amp; Buying Guides</a>
+          <a href="faq.html" class="dropdown-item">FAQ</a>
+          <a href="fha-va-requirements.html" class="dropdown-item">FHA/VA Requirements</a>
+          <a href="warranty.html" class="dropdown-item">Warranty</a>
+          <a href="why-everlock.html" class="dropdown-item">Why SkirtingDirect</a>
+          <a href="for-pros.html" class="dropdown-item">For Pros &amp; Dealers</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="header-cta">
+      <div class="header-phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        800-843-3336
+      </div>
+      <a href="calculator.html" class="btn btn-primary btn-sm">Get Instant Pricing</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============================================================
+     PAGE HERO
+============================================================ -->
+<section class="page-hero">
+  <div class="container">
+    <div class="section-label">Installation Guide</div>
+    <h1>How to Install Mobile Home Skirting</h1>
+    <p>A complete walkthrough from measuring your home to finishing the last panel. Most homeowners complete a single-wide in a weekend with basic tools.</p>
+    <div class="hero-meta">
+      <span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        1-2 days for most homes
+      </span>
+      <span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        Basic tools required
+      </span>
+      <span>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        No special skills needed
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     TABLE OF CONTENTS BAR
+============================================================ -->
+<nav class="toc-bar" aria-label="Page sections">
+  <div class="toc-inner">
+    <a href="#measure" class="toc-item">
+      <span class="step-num">1</span> Measure Your Home
+    </a>
+    <a href="#order" class="toc-item">
+      <span class="step-num">2</span> Order Materials
+    </a>
+    <a href="#tools" class="toc-item">
+      <span class="step-num">3</span> Gather Tools
+    </a>
+    <a href="#prep" class="toc-item">
+      <span class="step-num">4</span> Prepare the Site
+    </a>
+    <a href="#install" class="toc-item">
+      <span class="step-num">5</span> Install Panels
+    </a>
+    <a href="#finish" class="toc-item">
+      <span class="step-num">6</span> Finish &amp; Inspect
+    </a>
+    <a href="#pro" class="toc-item">
+      <span class="step-num">?</span> DIY vs. Pro
+    </a>
+  </div>
+</nav>
+
+<!-- ============================================================
+     MAIN CONTENT + SIDEBAR
+============================================================ -->
+<div class="install-layout">
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- STEP 1: MEASURE -->
+    <div class="step-section" id="measure">
+      <div class="step-header">
+        <div class="step-badge">1</div>
+        <div>
+          <div class="step-title">Measure Your Home</div>
+          <div class="step-subtitle">Get accurate numbers before you order anything</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Accurate measurements are the most important part of the whole project. Ordering too little means delays waiting for more material. Ordering too much wastes money. Take your time here and measure twice.</p>
+
+        <div class="measure-diagram">
+          <h4>What to Measure</h4>
+          <div class="measure-row">
+            <div class="measure-label">Home Length</div>
+            <div class="measure-desc">Measure the full length of each long side, from corner to corner at ground level. Record both sides separately, they may differ slightly.</div>
+          </div>
+          <div class="measure-row">
+            <div class="measure-label">Home Width</div>
+            <div class="measure-desc">Measure each short end of the home from corner to corner. For double-wides, note the location of any seam in the middle.</div>
+          </div>
+          <div class="measure-row">
+            <div class="measure-label">Height (Above Grade)</div>
+            <div class="measure-desc">Measure from the ground to the bottom of the home frame at each corner. Heights often vary 2-4 inches around the perimeter. Use the tallest measurement for ordering.</div>
+          </div>
+          <div class="measure-row">
+            <div class="measure-label">Doors and Openings</div>
+            <div class="measure-desc">Note the width of any existing access doors, utility openings, or crawl space vents. These reduce the total panel footage needed and factor into vent placement.</div>
+          </div>
+        </div>
+
+        <div class="step-tip">
+          <div class="step-tip-label">Pro Tip</div>
+          <p>Measure the perimeter in linear feet, then multiply height (in inches) by linear footage to get total square footage if using the calculator. Or just call us at 800-843-3336 and read your measurements to our team. We'll tell you exactly what to order.</p>
+        </div>
+
+        <p>For standard homes: a 14' x 66' single-wide typically needs around 160 linear feet of skirting panels. A 28' x 60' double-wide needs roughly 180 linear feet. Heights vary, so always measure your actual home.</p>
+      </div>
+    </div>
+
+    <!-- STEP 2: ORDER MATERIALS -->
+    <div class="step-section" id="order">
+      <div class="step-header">
+        <div class="step-badge">2</div>
+        <div>
+          <div class="step-title">Order Your Materials</div>
+          <div class="step-subtitle">Use our calculator or call for a custom parts list</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Everlock complete kits include everything you need: panels, top and bottom rails, corner pieces, hardware, and installation instructions. You do not need to source components separately.</p>
+
+        <p>Choose your product based on your climate, budget, and aesthetic. Here is a quick summary of what each product requires at installation:</p>
+
+        <div class="product-install-card">
+          <div class="product-install-icon">&#9651;</div>
+          <div>
+            <div class="product-install-name">Everlock Deluxe Vinyl and EverRock Vinyl</div>
+            <div class="product-install-note">Standard installation. Rails anchor to the ground and the home frame. Panels snap into rails with no fasteners required in the panel field. Easiest for first-time installers.</div>
+          </div>
+        </div>
+
+        <div class="product-install-card">
+          <div class="product-install-icon">&#10021;</div>
+          <div>
+            <div class="product-install-name">Thermal EverRock Insulated and Gorilla Insulated Skirting</div>
+            <div class="product-install-note">Same rail system as standard vinyl. The insulated core adds R-value and weight. Panels are slightly heavier but install the same way. Ideal for cold climates where pipe protection matters.</div>
+          </div>
+        </div>
+
+        <div class="product-install-card">
+          <div class="product-install-icon">&#9632;</div>
+          <div>
+            <div class="product-install-name">Novik Brick and Stone Panel Systems</div>
+            <div class="product-install-note">These panels require a slightly different approach. They attach to a furring strip or Z-channel system along the home frame and are interlocked horizontally. Slightly more labor-intensive but achieves a finished masonry look. Call us before ordering to confirm your installation method.</div>
+          </div>
+        </div>
+
+        <p>Our <a href="calculator.html" style="color:var(--green); font-weight:600;">online calculator</a> will generate a material estimate for your home. For a precise parts list with quantities, call 800-843-3336. Our team in Boulder will walk through your measurements and tell you exactly what you need, including vents and access doors.</p>
+      </div>
+    </div>
+
+    <!-- STEP 3: GATHER TOOLS -->
+    <div class="step-section" id="tools">
+      <div class="step-header">
+        <div class="step-badge">3</div>
+        <div>
+          <div class="step-title">Gather Your Tools</div>
+          <div class="step-subtitle">Most of this is already in a typical garage</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>You do not need specialized tools to install Everlock skirting. Everything listed below is available at any hardware store if you do not already own it.</p>
+
+        <div class="step-checklist">
+          <h4>Tools Needed</h4>
+          <div class="checklist-grid">
+            <div class="checklist-item">Tape measure (25 ft. or longer)</div>
+            <div class="checklist-item">Chalk line or string line</div>
+            <div class="checklist-item">Circular saw or tin snips (for panel cuts)</div>
+            <div class="checklist-item">Hammer or rubber mallet</div>
+            <div class="checklist-item">Drill and bits</div>
+            <div class="checklist-item">Level (4-ft. preferred)</div>
+            <div class="checklist-item">Utility knife</div>
+            <div class="checklist-item">Galvanized staples or screws (for top rail)</div>
+            <div class="checklist-item">Safety glasses</div>
+            <div class="checklist-item">Work gloves</div>
+            <div class="checklist-item">Knee pads (optional but helpful)</div>
+            <div class="checklist-item">Wheelbarrow or bucket (for leveling gravel)</div>
+          </div>
+        </div>
+
+        <div class="step-tip">
+          <div class="step-tip-label">On Cutting Vinyl Panels</div>
+          <p>A standard circular saw with a fine-tooth blade cuts vinyl cleanly. Cut on the finished face to reduce chipping. Tin snips work for small trims. A score-and-snap method also works for straight cuts on vinyl panels.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4: PREP THE SITE -->
+    <div class="step-section" id="prep">
+      <div class="step-header">
+        <div class="step-badge">4</div>
+        <div>
+          <div class="step-title">Prepare the Site</div>
+          <div class="step-subtitle">A level, clear perimeter makes everything easier</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Before any panels go up, take time to prepare the ground along the perimeter. This step is quick but it directly affects how the finished job looks.</p>
+
+        <ul class="step-list">
+          <li>Clear vegetation, rocks, and debris from the full perimeter. You need clear access along the ground line.</li>
+          <li>Grade the soil so it slopes slightly away from the home for drainage. Standing water behind skirting accelerates corrosion and pest intrusion.</li>
+          <li>If the ground is soft or uneven, add a bed of compacted gravel under the bottom rail line. This gives a stable, level base.</li>
+          <li>Mark the bottom rail line with chalk or string. Use your level to ensure it is consistent around the full perimeter before you anchor anything.</li>
+          <li>Note utility penetrations and plan vent placement. HUD guidelines require foundation vents every 150 square feet of enclosed floor area. Everlock Foundation Vents fit the same rail system as your panels.</li>
+        </ul>
+
+        <div class="step-warning">
+          <div class="step-warning-label">Before You Dig</div>
+          <p>If you plan to stake the bottom rail into the ground, call 811 (the national dig-safe number) to have underground utilities marked. This is required by law in most states and takes one business day.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5: INSTALL PANELS -->
+    <div class="step-section" id="install">
+      <div class="step-header">
+        <div class="step-badge">5</div>
+        <div>
+          <div class="step-title">Install the Panels</div>
+          <div class="step-subtitle">Start at a corner and work around the perimeter</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Your kit comes with a full installation instruction sheet. What follows is an overview of the process for standard vinyl panel systems.</p>
+
+        <ul class="step-list">
+          <li><strong>Attach the top rail</strong> to the bottom of the home frame using galvanized screws or staples. Run it level around the full perimeter. This rail holds the top of every panel.</li>
+          <li><strong>Set the bottom rail</strong> along your chalk line. Anchor it to the ground with stakes included in the kit, or attach to a concrete footer if your site has one. Keep it level and flush with the top rail.</li>
+          <li><strong>Install corner pieces first.</strong> Outside and inside corner sections lock both rails together at each corner and give you a clean starting reference for panel runs.</li>
+          <li><strong>Slide panels into the rails</strong> one at a time, starting from a corner. Panels interlock vertically with a tongue-and-groove edge. No fasteners needed in the panel field for standard vinyl.</li>
+          <li><strong>Cut the last panel in each run</strong> to fit. Measure carefully, add about 1/4-inch to the panel depth so it locks into the rail securely, and cut with a circular saw or snips.</li>
+          <li><strong>Install vents and access doors</strong> as you go. Everlock Foundation Vents replace a standard panel in the run. EZ Access Doors replace a section of panel and rail to create a hinged opening.</li>
+        </ul>
+
+        <div class="step-tip">
+          <div class="step-tip-label">Double-Wides</div>
+          <p>On a double-wide, treat each side independently and work toward the center seam. The marriage wall section between the two halves is typically handled with a continuous panel run. Call us if you have questions about your specific home configuration.</p>
+        </div>
+
+        <p>Most single-wides take 6-8 hours for the panel installation phase once the rails are set. Double-wides typically take a full day.</p>
+      </div>
+    </div>
+
+    <!-- STEP 6: FINISH AND INSPECT -->
+    <div class="step-section" id="finish">
+      <div class="step-header">
+        <div class="step-badge">6</div>
+        <div>
+          <div class="step-title">Finish and Inspect</div>
+          <div class="step-subtitle">A few final checks before you call it done</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Once all panels are in, walk the full perimeter and check each of these before wrapping up:</p>
+
+        <ul class="step-list">
+          <li>All panels are fully seated in both top and bottom rails. Press firmly at each panel to confirm there is no play.</li>
+          <li>Corner pieces are flush and locked on both sides. No gaps at corners where pests or moisture can enter.</li>
+          <li>Foundation vents are open (or operable, if using closeable vents). Blocked vents cause moisture buildup under the home.</li>
+          <li>Access doors open and close freely. The hinge and latch should operate without binding.</li>
+          <li>No panel edges are visible above the top rail line. The top rail should conceal all panel edges cleanly.</li>
+          <li>Bottom rail is in contact with the ground along the full run. Any gaps larger than 1/2 inch should be filled with gravel or soil to prevent pest entry.</li>
+        </ul>
+
+        <div class="step-tip">
+          <div class="step-tip-label">FHA and VA Loans</div>
+          <p>If your skirting installation is required for loan approval, keep a copy of your invoice and product specs. Your lender's appraiser will inspect that skirting is present, continuous, and in good condition. Everlock products meet HUD Manufactured Home Construction and Safety Standards. Final approval rests with your lender and appraiser, not with Everlock Systems. See our <a href="fha-va-requirements.html" style="color:var(--green); font-weight:600;">FHA/VA guide</a> for details.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 7: DIY VS PRO -->
+    <div class="step-section" id="pro">
+      <div class="step-header">
+        <div class="step-badge">?</div>
+        <div>
+          <div class="step-title">DIY or Hire a Pro?</div>
+          <div class="step-subtitle">Most people can do this themselves. Here is how to decide.</div>
+        </div>
+      </div>
+      <div class="step-body">
+        <p>Everlock skirting is designed to be homeowner-installed. The rail-and-panel system does not require carpentry skills or special equipment. That said, there are situations where hiring a local installer makes sense.</p>
+
+        <div class="diy-pro-grid">
+          <div class="diy-card diy">
+            <div class="diy-card-title">Install It Yourself If...</div>
+            <ul>
+              <li>You are comfortable with basic measuring and cutting</li>
+              <li>Your home has a standard rectangular footprint</li>
+              <li>The ground perimeter is relatively level</li>
+              <li>You have a free weekend and a helper</li>
+              <li>You want to save on labor costs</li>
+            </ul>
+          </div>
+          <div class="diy-card pro">
+            <div class="diy-card-title">Consider a Pro If...</div>
+            <ul>
+              <li>Your home has irregular perimeter angles or additions</li>
+              <li>Significant grading or ground prep is needed</li>
+              <li>Your lender requires a licensed contractor for loan approval</li>
+              <li>You are working with Novik stone panels (more complex)</li>
+              <li>Physical mobility makes ground-level work difficult</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>We do not install skirting ourselves. To find an installer, search for "mobile home installer" or "mobile home services" in your area. You can also call us at 800-843-3336 and we will try to help point you in the right direction, though we cannot guarantee a referral in every location.</p>
+
+        <div class="step-tip">
+          <div class="step-tip-label">Order First, Install Later</div>
+          <p>You can order your materials directly from us and hand them to your installer. There is no markup when you buy factory-direct first. Your installer only charges labor, not a materials markup.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="install-sidebar">
+
+    <div class="sidebar-cta">
+      <h4>Questions Before You Start?</h4>
+      <p>Call and talk through your home with our team. We have helped thousands of homeowners figure this out.</p>
+      <div class="sidebar-cta-phone">800-843-3336</div>
+      <div class="sidebar-cta-hours">Mon-Fri, 9am-4pm MT</div>
+      <a href="calculator.html" class="btn btn-secondary btn-sm" style="width:100%;">Build My Quote First</a>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-card-title">Steps on This Page</div>
+      <a href="#measure" class="sidebar-nav-link">
+        <span class="step-dot">1</span> Measure Your Home
+      </a>
+      <a href="#order" class="sidebar-nav-link">
+        <span class="step-dot">2</span> Order Materials
+      </a>
+      <a href="#tools" class="sidebar-nav-link">
+        <span class="step-dot">3</span> Gather Tools
+      </a>
+      <a href="#prep" class="sidebar-nav-link">
+        <span class="step-dot">4</span> Prepare the Site
+      </a>
+      <a href="#install" class="sidebar-nav-link">
+        <span class="step-dot">5</span> Install Panels
+      </a>
+      <a href="#finish" class="sidebar-nav-link">
+        <span class="step-dot">6</span> Finish &amp; Inspect
+      </a>
+      <a href="#pro" class="sidebar-nav-link">
+        <span class="step-dot">?</span> DIY vs. Pro
+      </a>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-card-title">Related Resources</div>
+      <div class="sidebar-links">
+        <a href="calculator.html" class="sidebar-link-item">
+          Skirting Cost Calculator
+          <span class="sidebar-link-arrow">&#8594;</span>
+        </a>
+        <a href="complete-kits.html" class="sidebar-link-item">
+          Shop Complete Kits
+          <span class="sidebar-link-arrow">&#8594;</span>
+        </a>
+        <a href="fha-va-requirements.html" class="sidebar-link-item">
+          FHA/VA Requirements Guide
+          <span class="sidebar-link-arrow">&#8594;</span>
+        </a>
+        <a href="faq.html" class="sidebar-link-item">
+          Frequently Asked Questions
+          <span class="sidebar-link-arrow">&#8594;</span>
+        </a>
+        <a href="products.html" class="sidebar-link-item">
+          Compare All Products
+          <span class="sidebar-link-arrow">&#8594;</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="sidebar-card" style="background:#eef2ff; border:1px solid #c7d2fe;">
+      <div class="sidebar-card-title" style="color:var(--navy);">True Lifetime Warranty</div>
+      <p style="font-size:14px; color:var(--text-muted); line-height:1.65;">
+        Every Everlock product is covered by a true lifetime limited warranty on materials and workmanship. If it cracks, fades, or fails under normal conditions, we make it right. No questions.
+      </p>
+      <a href="warranty.html" class="sidebar-nav-link" style="margin-top:12px; font-weight:600; color:var(--navy);">
+        Read the Full Warranty &#8594;
+      </a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- ============================================================
+     BOTTOM CTA BAND
+============================================================ -->
+<section class="bottom-cta">
+  <div class="container">
+    <h2>Ready to Get Started?</h2>
+    <p>Use the calculator to estimate your project cost, or call us and we will help you pick the right product and figure out exactly what to order.</p>
+    <div class="bottom-cta-btns">
+      <a href="calculator.html" class="btn btn-primary btn-lg">Build My Quote</a>
+      <a href="contact.html" class="btn btn-secondary btn-lg">Talk to Our Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">SkirtingDirect.com</div>
+      <div class="footer-brand-sub">By Everlock Systems, Inc.</div>
+      <div class="footer-brand-desc">
+        Factory-direct mobile and manufactured home skirting since 1981. We manufacture vinyl, insulated, and faux stone skirting at two U.S. plants and sell directly to homeowners, no middlemen, no markups.
+      </div>
+      <div class="footer-phone-row">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        800-843-3336
+      </div>
+      <div class="footer-warranty-badge">
+        <span>Shield</span>
+        <span>True Lifetime Limited Warranty - Materials &amp; Workmanship</span>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Products</div>
+      <div class="footer-links">
+        <a href="blog-everlock-deluxe-vinyl-skirting.html" class="footer-link">Everlock Deluxe Vinyl</a>
+        <a href="blog-thermal-everrock-insulated-skirting.html" class="footer-link">Thermal EverRock Insulated</a>
+        <a href="blog-gorilla-insulated-skirting.html" class="footer-link">Gorilla Insulated Skirting</a>
+        <a href="products.html#novik" class="footer-link">Novik Brick &amp; Stone Panels</a>
+        <a href="products.html#accessories" class="footer-link">Accessories &amp; Vents</a>
+        <a href="complete-kits.html" class="footer-link">Complete Kits</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Help &amp; Resources</div>
+      <div class="footer-links">
+        <a href="calculator.html" class="footer-link">Skirting Calculator</a>
+        <a href="samples.html" class="footer-link">Order Samples</a>
+        <a href="installation.html" class="footer-link">Installation Guide</a>
+        <a href="fha-va-requirements.html" class="footer-link">FHA/VA Guide</a>
+        <a href="blog.html" class="footer-link">Blog &amp; Buying Guides</a>
+        <a href="faq.html" class="footer-link">FAQ</a>
+      </div>
+    </div>
+
+    <div>
+      <div class="footer-col-title">Company</div>
+      <div class="footer-links">
+        <a href="about.html" class="footer-link">About Everlock Systems</a>
+        <a href="why-everlock.html" class="footer-link">Why SkirtingDirect</a>
+        <a href="real-homes.html" class="footer-link">Real Homes Gallery</a>
+        <a href="for-pros.html" class="footer-link">For Pros &amp; Dealers</a>
+        <a href="contact.html" class="footer-link">Contact Us</a>
+        <a href="warranty.html" class="footer-link">Lifetime Warranty</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid rgba(255,255,255,0.08); padding:28px 24px; max-width:1200px; margin:0 auto;">
+    <p style="font-size:12px; color:rgba(255,255,255,0.3); line-height:1.7;">
+      <strong style="color:rgba(255,255,255,0.45);">Legal &amp; Accuracy Notice:</strong>
+      All product information, specifications, pricing, and images on SkirtingDirect.com are provided for general information purposes only. Prices are subject to change without notice. Installation results may vary based on local conditions, proper preparation, and installer expertise. FHA/VA compliance statements are based on general HUD guidelines, with final approval resting with your lender and appraiser. Everlock Systems, Inc. is not responsible for local code variations or installation outcomes.
+      <strong style="color:rgba(255,255,255,0.45);">Lifetime Warranty:</strong> Limited to original purchaser. Covers manufacturing defects in materials and workmanship under normal use. Full terms at <a href="warranty.html" style="color:rgba(255,255,255,0.45);">skirtingdirect.com/resources/warranty</a>.
+    </p>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-text">
+      Copyright 2026 Everlock Systems, Inc. All rights reserved. Manufactured in the USA.
+    </div>
+    <div class="footer-bottom-links">
+      <a href="privacy-policy.html" class="footer-bottom-link">Privacy Policy</a>
+      <a href="terms.html" class="footer-bottom-link">Terms &amp; Conditions</a>
+      <a href="warranty.html" class="footer-bottom-link">Warranty</a>
+      <a href="sitemap.xml" class="footer-bottom-link">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JSON-LD SCHEMA
+============================================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Install Mobile Home Skirting",
+  "description": "Step-by-step guide to installing Everlock vinyl or insulated skirting on a manufactured or mobile home.",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "750"
+  },
+  "totalTime": "PT16H",
+  "supply": [
+    { "@type": "HowToSupply", "name": "Everlock skirting panels" },
+    { "@type": "HowToSupply", "name": "Top and bottom rails" },
+    { "@type": "HowToSupply", "name": "Corner pieces" },
+    { "@type": "HowToSupply", "name": "Foundation vents" },
+    { "@type": "HowToSupply", "name": "Galvanized screws or staples" }
+  ],
+  "tool": [
+    { "@type": "HowToTool", "name": "Tape measure" },
+    { "@type": "HowToTool", "name": "Circular saw or tin snips" },
+    { "@type": "HowToTool", "name": "Drill" },
+    { "@type": "HowToTool", "name": "Level" },
+    { "@type": "HowToTool", "name": "Chalk line" }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Measure Your Home",
+      "text": "Measure the perimeter length and height above grade at each corner of your home. Record all dimensions before ordering."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Order Your Materials",
+      "text": "Use our calculator or call 800-843-3336. Order a complete kit including panels, rails, corners, vents, and hardware."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Gather Your Tools",
+      "text": "Collect tape measure, circular saw or tin snips, drill, level, chalk line, hammer, and safety equipment."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Prepare the Site",
+      "text": "Clear vegetation, grade for drainage, mark the bottom rail line level around the full perimeter."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Install Panels",
+      "text": "Attach top rail to home frame, set bottom rail at grade, install corners, then slide panels into rails working from each corner around the perimeter."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Finish and Inspect",
+      "text": "Confirm all panels are fully seated, vents are open, access doors operate freely, and no gaps exist at ground level."
+    }
+  ]
+}
+</script>
+
+</body>
+</html>

@@ -346,6 +346,47 @@ footer a:hover {
 @media (max-width: 640px) {
   .products-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .product-content {
+    padding: 20px;
+  }
+  .product-price {
+    padding-top: 18px;
+    margin-bottom: 18px;
+  }
+  .product-price p {
+    font-size: 1.1rem;
+  }
+  .product-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .product-actions a {
+    text-align: center;
+    display: block;
+    padding: 12px 16px;
+  }
+  .product-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 14px;
+  }
+  .product-specs li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .product-image-area {
+    height: 180px;
+  }
+  .price-disclaimer {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-top: 6px;
   }
 }
 
@@ -634,6 +675,7 @@ footer a:hover {
 
             <!-- Products Grid -->
             <div class="products-grid">
+
                 <!-- Card 1: Everlock Deluxe Vinyl -->
                 <div class="product-card" data-category="vinyl">
                     <div class="product-image-area" style="background-color: #e8f5e9;">
@@ -642,19 +684,20 @@ footer a:hover {
                     </div>
                     <div class="product-content">
                         <h3>Everlock Deluxe Vinyl Skirting</h3>
-                        <p class="product-description">Our flagship product and most popular choice for over 40 years. Heavy-duty vinyl panels with a triple-lock system that holds firm in wind and weather.</p>
+                        <p class="product-description">Our flagship product. Heavy-duty triple-lock vinyl panels that hold firm in wind and weather. The most popular choice for over 40 years, and the most commonly specified product for FHA/VA loans.</p>
                         <ul class="product-specs">
                             <li>Triple-lock interlocking panel system</li>
                             <li>Available in multiple colors</li>
                             <li>.040" panel thickness, dent and kink resistant</li>
+                            <li>FHA/VA accepted</li>
                         </ul>
                         <div class="product-price">
-                            <p>Starting at $1.89/sq ft</p>
-                            <p class="price-disclaimer">Factory-direct, subject to change</p>
+                            <p>Complete projects from $750*</p>
+                            <p class="price-disclaimer">*14' x 66' at 36" above grade, materials only, freight not included. Factory-direct pricing subject to change.</p>
                         </div>
                         <div class="product-actions">
-                            <a href="/products/everlock-deluxe-vinyl" class="btn-secondary btn-small">See Details</a>
-                            <a href="/calculator" class="btn-primary btn-small">Get a Quote</a>
+                            <a href="blog-everlock-deluxe-vinyl-skirting.html" class="btn-secondary btn-small">See Details</a>
+                            <a href="calculator.html" class="btn-primary btn-small">Get a Quote</a>
                         </div>
                     </div>
                 </div>
@@ -666,19 +709,19 @@ footer a:hover {
                     </div>
                     <div class="product-content">
                         <h3>EverRock Vinyl Skirting</h3>
-                        <p class="product-description">Realistic simulated rock texture with the durability and price of vinyl. Hidden seams give it a more permanent look than standard vinyl.</p>
+                        <p class="product-description">Realistic simulated rock texture with the durability and price of vinyl. Hidden seams give it a more permanent look than standard vinyl. A strong mid-range option for curb appeal on a budget.</p>
                         <ul class="product-specs">
                             <li>Textured stone appearance, multiple color options</li>
                             <li>Heavier gauge than standard vinyl</li>
                             <li>Easy corner forming, no prefab corners needed</li>
                         </ul>
                         <div class="product-price">
-                            <p>Starting at $2.10/sq ft</p>
-                            <p class="price-disclaimer">Factory-direct, subject to change</p>
+                            <p>Complete projects from $1,624*</p>
+                            <p class="price-disclaimer">*14' x 66' at 36" above grade, materials only, freight not included. Factory-direct pricing subject to change.</p>
                         </div>
                         <div class="product-actions">
-                            <a href="/products/everrock-vinyl" class="btn-secondary btn-small">See Details</a>
-                            <a href="/calculator" class="btn-primary btn-small">Get a Quote</a>
+                            <a href="blog-everrock-vinyl-skirting.html" class="btn-secondary btn-small">See Details</a>
+                            <a href="calculator.html" class="btn-primary btn-small">Get a Quote</a>
                         </div>
                     </div>
                 </div>
@@ -690,20 +733,21 @@ footer a:hover {
                         <span class="product-badge">Best for Cold Climates</span>
                     </div>
                     <div class="product-content">
-                        <h3>Thermal EverRock Insulated</h3>
-                        <p class="product-description">Foam-insulated panels that reduce heat loss and protect pipes from freezing. The right choice for the Midwest, Mountain West, and Northern states.</p>
+                        <h3>Thermal EverRock Insulated Skirting</h3>
+                        <p class="product-description">Foam-insulated panels that reduce heat loss and protect pipes from freezing. The right choice for the Midwest, Mountain West, and Northern states. Can qualify for energy tax credits.</p>
                         <ul class="product-specs">
-                            <li>Foam-insulated core for added R-value</li>
+                            <li>Foam-insulated core panel</li>
                             <li>Reduces heating costs year-round</li>
-                            <li>Protects pipes in freezing temperatures</li>
+                            <li>Protects pipes in cold climates</li>
+                            <li>FHA/VA accepted</li>
                         </ul>
                         <div class="product-price">
-                            <p>Starting at $3.20/sq ft</p>
-                            <p class="price-disclaimer">Factory-direct, subject to change</p>
+                            <p>Complete projects from $2,974*</p>
+                            <p class="price-disclaimer">*14' x 66' at 36" above grade, materials only, freight not included. Factory-direct pricing subject to change.</p>
                         </div>
                         <div class="product-actions">
-                            <a href="/products/thermal-everrock" class="btn-secondary btn-small">See Details</a>
-                            <a href="/calculator" class="btn-primary btn-small">Get a Quote</a>
+                            <a href="blog-thermal-everrock-insulated-skirting.html" class="btn-secondary btn-small">See Details</a>
+                            <a href="calculator.html" class="btn-primary btn-small">Get a Quote</a>
                         </div>
                     </div>
                 </div>
@@ -716,100 +760,175 @@ footer a:hover {
                     </div>
                     <div class="product-content">
                         <h3>Gorilla Insulated Skirting</h3>
-                        <p class="product-description">Maximum insulation value in a skirting panel. Built for homes in the coldest climates where energy efficiency and pipe protection are the top priority.</p>
+                        <p class="product-description">Maximum insulation value in a skirting panel. Built for homes in the coldest climates where energy efficiency and pipe protection are the top priority. Commercial-grade thickness.</p>
                         <ul class="product-specs">
-                            <li>Highest R-value of any vinyl skirting panel</li>
-                            <li>Commercial-grade panel thickness</li>
+                            <li>Highest R-value of any vinyl skirting</li>
+                            <li>Commercial-grade core thickness</li>
                             <li>Ideal for extreme cold climates</li>
                         </ul>
                         <div class="product-price">
-                            <p>Starting at $3.85/sq ft</p>
-                            <p class="price-disclaimer">Factory-direct, subject to change</p>
+                            <p>Complete projects from $3,101*</p>
+                            <p class="price-disclaimer">*14' x 66' at 36" above grade, materials only, freight not included. Factory-direct pricing subject to change.</p>
                         </div>
                         <div class="product-actions">
-                            <a href="/products/gorilla-thermal" class="btn-secondary btn-small">See Details</a>
-                            <a href="/calculator" class="btn-primary btn-small">Get a Quote</a>
+                            <a href="blog-gorilla-insulated-skirting.html" class="btn-secondary btn-small">See Details</a>
+                            <a href="calculator.html" class="btn-primary btn-small">Get a Quote</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 5: Novik Faux Brick -->
+                <!-- Card 5: Novik Hand-Laid Brick -->
                 <div class="product-card" data-category="stone-brick">
-                    <div class="product-image-area" style="background-color: #d4694f;">
+                    <div class="product-image-area" style="background-color: #b85c40;">
                         <span>🧱</span>
                         <span class="product-badge">Premium Look</span>
                     </div>
                     <div class="product-content">
-                        <h3>Novik Faux Brick Panels</h3>
-                        <p class="product-description">Faux hand-laid brick panels that give your home a site-built appearance. Frequently noted positively by FHA/VA appraisers.</p>
+                        <h3>Novik Hand-Laid Brick Skirting</h3>
+                        <p class="product-description">Faux hand-laid brick panels that give your home a site-built appearance. Brick-look skirting is consistently noted positively by FHA/VA appraisers and adds significant curb appeal.</p>
                         <ul class="product-specs">
-                            <li>Available in multiple brick colors</li>
-                            <li>Excellent curb appeal, adds perceived home value</li>
-                            <li>Most permanent appearance for lenders</li>
+                            <li>Authentic hand-laid brick look</li>
+                            <li>Available in Brick, Stone, and Stacked Stone</li>
+                            <li>Adds significant curb appeal and home value</li>
+                            <li>FHA/VA accepted</li>
                         </ul>
                         <div class="product-price">
-                            <p>Starting at $4.90/sq ft</p>
-                            <p class="price-disclaimer">Factory-direct, subject to change</p>
+                            <p>Complete projects from $3,320*</p>
+                            <p class="price-disclaimer">*14' x 66' at 36" above grade, materials only, freight not included. Factory-direct pricing subject to change.</p>
                         </div>
                         <div class="product-actions">
-                            <a href="/products/novik-brick-stone" class="btn-secondary btn-small">See Details</a>
-                            <a href="/calculator" class="btn-primary btn-small">Get a Quote</a>
+                            <a href="blog-novik-hand-laid-brick-skirting.html" class="btn-secondary btn-small">See Details</a>
+                            <a href="calculator.html" class="btn-primary btn-small">Get a Quote</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Card 6: Novik Stacked Stone -->
                 <div class="product-card" data-category="stone-brick">
-                    <div class="product-image-area" style="background-color: #d4b896;">
+                    <div class="product-image-area" style="background-color: #8c9e80;">
                         <span>🏛️</span>
                     </div>
                     <div class="product-content">
-                        <h3>Novik Stacked Stone Panels</h3>
-                        <p class="product-description">Stacked stone panels that blend beautifully with natural settings and landscaped yards. A strong upgrade from vinyl when curb appeal is the priority.</p>
+                        <h3>Novik Stacked Stone Skirting</h3>
+                        <p class="product-description">Stacked stone panels that blend beautifully with natural settings and landscaped yards. A strong visual upgrade from vinyl for homes where curb appeal is the main priority.</p>
                         <ul class="product-specs">
-                            <li>Natural stone appearance, multiple color options</li>
-                            <li>Interlocking panel system</li>
-                            <li>Great for homes in wooded or landscaped settings</li>
+                            <li>Natural stacked stone appearance</li>
+                            <li>Available in multiple color options</li>
+                            <li>Great for wooded or landscaped settings</li>
                         </ul>
                         <div class="product-price">
-                            <p>Starting at $4.90/sq ft</p>
-                            <p class="price-disclaimer">Factory-direct, subject to change</p>
+                            <p>Complete projects from $3,600*</p>
+                            <p class="price-disclaimer">*14' x 66' at 36" above grade, materials only, freight not included. Factory-direct pricing subject to change.</p>
                         </div>
                         <div class="product-actions">
-                            <a href="/products/novik-stacked-stone" class="btn-secondary btn-small">See Details</a>
-                            <a href="/calculator" class="btn-primary btn-small">Get a Quote</a>
+                            <a href="blog-novik-stacked-stone-skirting.html" class="btn-secondary btn-small">See Details</a>
+                            <a href="calculator.html" class="btn-primary btn-small">Get a Quote</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 7: Accessories -->
+                <!-- Card 7: Premium Novik Hand-Cut Stone -->
+                <div class="product-card" data-category="stone-brick">
+                    <div class="product-image-area" style="background-color: #a08060;">
+                        <span>💎</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Premium Novik Hand-Cut Stone Skirting</h3>
+                        <p class="product-description">The most realistic stone appearance in the Novik line. Hand-cut stone texture creates a high-end, custom look at a fraction of the cost of real stone masonry.</p>
+                        <ul class="product-specs">
+                            <li>Premium hand-cut stone texture</li>
+                            <li>Available in multiple stone colors</li>
+                            <li>High-end curb appeal, strong appraiser perception</li>
+                        </ul>
+                        <div class="product-price">
+                            <p>Complete projects from $3,710*</p>
+                            <p class="price-disclaimer">*14' x 66' at 36" above grade, materials only, freight not included. Factory-direct pricing subject to change.</p>
+                        </div>
+                        <div class="product-actions">
+                            <a href="blog-novik-hand-cut-stone-skirting.html" class="btn-secondary btn-small">See Details</a>
+                            <a href="calculator.html" class="btn-primary btn-small">Get a Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8: Novik Field Stone -->
+                <div class="product-card" data-category="stone-brick">
+                    <div class="product-image-area" style="background-color: #7a8a70;">
+                        <span>🌿</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Novik Field Stone Skirting</h3>
+                        <p class="product-description">Irregular field stone pattern for a natural, organic look. Works especially well with homes in rural or country settings where a more informal stone appearance fits the landscape.</p>
+                        <ul class="product-specs">
+                            <li>Irregular field stone texture</li>
+                            <li>Natural, earthy color options</li>
+                            <li>Great fit for rural and country settings</li>
+                        </ul>
+                        <div class="product-price">
+                            <p>Complete projects from $4,050*</p>
+                            <p class="price-disclaimer">*14' x 66' at 36" above grade, materials only, freight not included. Factory-direct pricing subject to change.</p>
+                        </div>
+                        <div class="product-actions">
+                            <a href="blog-novik-field-stone-skirting.html" class="btn-secondary btn-small">See Details</a>
+                            <a href="calculator.html" class="btn-primary btn-small">Get a Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9: Novik Dry Stacked Stone -->
+                <div class="product-card" data-category="stone-brick">
+                    <div class="product-image-area" style="background-color: #6a7a88;">
+                        <span>🗿</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>Novik Dry Stacked Stone Skirting</h3>
+                        <p class="product-description">Clean, tight dry-stacked stone pattern with a modern, architectural look. The most upscale appearance in the Novik line. For homeowners who want a custom, built-on-site look.</p>
+                        <ul class="product-specs">
+                            <li>Tight dry-stacked stone pattern</li>
+                            <li>Modern, architectural appearance</li>
+                            <li>Available in multiple stone colors</li>
+                        </ul>
+                        <div class="product-price">
+                            <p>Complete projects from $5,490*</p>
+                            <p class="price-disclaimer">*14' x 66' at 36" above grade, materials only, freight not included. Factory-direct pricing subject to change.</p>
+                        </div>
+                        <div class="product-actions">
+                            <a href="blog-novik-dry-stacked-stone-skirting.html" class="btn-secondary btn-small">See Details</a>
+                            <a href="calculator.html" class="btn-primary btn-small">Get a Quote</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 10: Accessories -->
                 <div class="product-card" data-category="accessories">
                     <div class="product-image-area" style="background-color: #d9d9d9;">
                         <span>🔧</span>
                     </div>
                     <div class="product-content">
-                        <h3>Accessories</h3>
-                        <p class="product-description">Everything you need to complete your skirting installation: foundation vents, access doors, floor kits, and hardware.</p>
+                        <h3>Accessories &amp; Add-Ons</h3>
+                        <p class="product-description">Everything you need to finish the job right: access doors, foundation vents, floor repair kits, and EZ Storage units. Most accessories ship with your main skirting order.</p>
                         <ul class="product-specs">
-                            <li>Access doors (FHA/VA required, multiple sizes)</li>
-                            <li>Foundation vents (perforated and solid)</li>
-                            <li>Fastener packs and corner trim</li>
+                            <li>EZ Access Doors (FHA/VA required, multiple sizes)</li>
+                            <li>Foundation Vents (perforated and solid)</li>
+                            <li>Squeek No More floor repair kits</li>
+                            <li>Everlock EZ Storage under-home units</li>
                         </ul>
                         <div class="product-price">
-                            <p>Vents from $4.95 | Doors from $39.95</p>
-                            <p class="price-disclaimer">Factory-direct, subject to change</p>
+                            <p>Call for current accessory pricing</p>
+                            <p class="price-disclaimer">Prices are factory-direct and subject to change.</p>
                         </div>
                         <div class="product-actions">
-                            <a href="/products/accessories" class="btn-secondary btn-small">See Details</a>
-                            <a href="/calculator" class="btn-primary btn-small">Get a Quote</a>
+                            <a href="products.html#accessories" class="btn-secondary btn-small">Vents &amp; Doors</a>
+                            <a href="tel:8008433336" class="btn-primary btn-small">Call to Order</a>
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <!-- Image Credit Bar -->
             <div class="image-credit">
-                Product images shown are representative. <a href="/samples">Order free samples</a> to verify color match before purchasing.
+                Product images shown are representative. <a href="samples.html">Order samples</a> to verify color match before purchasing.
             </div>
         </div>
     </section>
@@ -844,8 +963,8 @@ footer a:hover {
             <h2>Want Everything in One Order?</h2>
             <p>Our Complete Kits include panels, rails, and hardware sized for your specific home. No calculating, no separate orders.</p>
             <div class="kits-buttons">
-                <a href="/complete-kits" class="btn-primary">Shop Complete Kits</a>
-                <a href="/calculator" class="btn-secondary">Build My Quote</a>
+                <a href="complete-kits.html" class="btn-primary">Shop Complete Kits</a>
+                <a href="calculator.html" class="btn-secondary">Build My Quote</a>
             </div>
         </div>
     </section>
@@ -853,7 +972,7 @@ footer a:hover {
     <!-- Pricing Disclaimer -->
     <div class="container">
         <div class="pricing-disclaimer">
-            <p>All prices shown are factory-direct starting prices and subject to change. Final pricing confirmed at checkout. Call <strong>800-843-3336</strong> for current availability and pricing.</p>
+            <p>Project pricing based on a 14' x 66' home at 36" above grade, materials only, freight not included. Prices are factory-direct and subject to change. Final pricing confirmed at checkout. Call <strong>800-843-3336</strong> for your home size and current availability.</p>
         </div>
     </div>
 
@@ -863,43 +982,47 @@ footer a:hover {
             <div class="footer-section">
                 <h4>Products</h4>
                 <ul>
-                    <li><a href="/products/everlock-deluxe-vinyl">Everlock Deluxe Vinyl</a></li>
-                    <li><a href="/products/everrock-vinyl">EverRock Vinyl</a></li>
-                    <li><a href="/products/thermal-everrock">Thermal EverRock</a></li>
-                    <li><a href="/products/gorilla-thermal">Gorilla Insulated</a></li>
-                    <li><a href="/products/novik-brick-stone">Novik Brick & Stone</a></li>
-                    <li><a href="/products/accessories">Accessories</a></li>
+                    <li><a href="blog-everlock-deluxe-vinyl-skirting.html">Everlock Deluxe Vinyl</a></li>
+                    <li><a href="blog-everrock-vinyl-skirting.html">EverRock Vinyl</a></li>
+                    <li><a href="blog-thermal-everrock-insulated-skirting.html">Thermal EverRock</a></li>
+                    <li><a href="blog-gorilla-insulated-skirting.html">Gorilla Insulated</a></li>
+                    <li><a href="blog-novik-hand-laid-brick-skirting.html">Novik Hand-Laid Brick</a></li>
+                    <li><a href="blog-novik-stacked-stone-skirting.html">Novik Stacked Stone</a></li>
+                    <li><a href="blog-novik-dry-stacked-stone-skirting.html">Novik Dry Stacked Stone</a></li>
+                    <li><a href="blog-novik-hand-cut-stone-skirting.html">Novik Premium Hand-Cut Stone</a></li>
+                    <li><a href="blog-novik-field-stone-skirting.html">Novik Field Stone</a></li>
+                    <li><a href="products.html#accessories">Accessories</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Resources</h4>
                 <ul>
-                    <li><a href="/complete-kits">Complete Kits</a></li>
-                    <li><a href="/calculator">Build a Quote</a></li>
-                    <li><a href="/samples">Order Samples</a></li>
-                    <li><a href="/installation">Installation Guide</a></li>
-                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="complete-kits.html">Complete Kits</a></li>
+                    <li><a href="calculator.html">Build a Quote</a></li>
+                    <li><a href="samples.html">Order Samples</a></li>
+                    <li><a href="installation.html">Installation Guide</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                    <li><a href="/warranty">Limited Lifetime Warranty</a></li>
-                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="warranty.html">Limited Lifetime Warranty</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Get in Touch</h4>
-                <p>Call us Monday-Friday, 8am-5pm MT</p>
+                <p>Call us Monday-Friday, 9am-4pm MT</p>
                 <p><strong>800-843-3336</strong></p>
                 <p>From real people based in Boulder, Colorado</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Everlock Systems. All rights reserved. | <a href="/sitemap.xml">Sitemap</a> | <a href="/privacy">Privacy</a> | <a href="/terms">Terms</a></p>
+            <p>&copy; 2026 Everlock Systems. All rights reserved. | <a href="sitemap.xml">Sitemap</a> | <a href="privacy-policy.html">Privacy</a> | <a href="terms.html">Terms</a></p>
         </div>
     </footer>
 

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Homes Gallery | SkirtingDirect.com by Everlock Systems</title>
+  <meta name="description" content="See Everlock skirting installed on real customer homes across the country. Vinyl, insulated, and Novik stone panels on single-wides, double-wides, and park homes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #1a1a1a; background: #fff; font-size: 16px; line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+    button { cursor: pointer; font-family: inherit; border: none; background: none; }
+
+    :root {
+      --green: #006400; --green-dark: #004d00; --green-light: #1a7a1a;
+      --green-pale: #e8f4e8; --navy: #003366; --navy-dark: #001f3f;
+      --navy-light: #0d4f8c; --earth: #f5f2ed; --earth-dark: #e8dfd0;
+      --text: #1a1a1a; --text-mid: #3d3d3d; --text-muted: #6b6b6b;
+      --border: #d9d9d9; --white: #ffffff; --gold: #c8860a; --gold-light: #fef7e8;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 28px; border-radius: 6px; font-size: 16px; font-weight: 600;
+      transition: all 0.18s ease; line-height: 1.2; gap: 8px; white-space: nowrap;
+    }
+    .btn-primary { background: var(--green); color: var(--white); border: 2px solid var(--green); }
+    .btn-primary:hover { background: var(--green-dark); border-color: var(--green-dark); }
+    .btn-secondary { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.75); }
+    .btn-secondary:hover { background: rgba(255,255,255,0.12); border-color: var(--white); }
+    .btn-navy { background: var(--navy); color: var(--white); border: 2px solid var(--navy); }
+    .btn-navy:hover { background: var(--navy-dark); }
+    .btn-outline-green { background: transparent; color: var(--green); border: 2px solid var(--green); }
+    .btn-outline-green:hover { background: var(--green-pale); }
+    .btn-sm { padding: 10px 20px; font-size: 14px; }
+    .btn-lg { padding: 18px 36px; font-size: 18px; }
+    .section-label {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--green); margin-bottom: 10px;
+    }
+    h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; line-height: 1.1; }
+    h2 { font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; line-height: 1.15; }
+    h3 { font-size: clamp(20px, 2.5vw, 26px); font-weight: 700; line-height: 1.2; }
+
+    /* UTILITY BAR */
+    .utility-bar {
+      background: var(--green-dark); color: rgba(255,255,255,0.92);
+      font-size: 13px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .utility-bar .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+    .utility-bar a { color: rgba(255,255,255,0.9); }
+    .utility-bar a:hover { color: var(--white); }
+    .utility-phone { display: flex; align-items: center; gap: 6px; font-weight: 700; font-size: 14px; color: var(--white); }
+    .utility-phone svg { width: 14px; height: 14px; }
+    .utility-center { text-align: center; }
+    .utility-center strong { color: var(--white); }
+
+    /* HEADER */
+    .site-header {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .header-inner {
+      display: flex; align-items: center; gap: 24px; padding: 14px 24px;
+      max-width: 1400px; margin: 0 auto;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .logo-icon { width: 44px; height: 44px; background: var(--green); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .logo-icon svg { width: 26px; height: 26px; fill: var(--white); }
+    .logo-text { line-height: 1.1; }
+    .logo-name { font-size: 20px; font-weight: 800; color: var(--green); }
+    .logo-tagline { font-size: 10px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .main-nav { display: flex; align-items: center; gap: 2px; flex: 1; }
+    .nav-item { position: relative; }
+    .nav-link {
+      display: flex; align-items: center; gap: 4px; padding: 8px 12px;
+      font-size: 14px; font-weight: 500; color: var(--text-mid); border-radius: 6px;
+      transition: all 0.15s; white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--green); background: var(--green-pale); }
+    .nav-link.active { color: var(--green); }
+    .nav-link svg { width: 12px; height: 12px; opacity: 0.6; }
+    .dropdown {
+      position: absolute; top: calc(100% + 8px); left: 0;
+      background: var(--white); border: 1px solid var(--border); border-radius: 10px;
+      min-width: 200px; padding: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      opacity: 0; visibility: hidden; transform: translateY(-6px);
+      transition: all 0.18s ease; z-index: 200;
+    }
+    .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+    .dropdown-item {
+      display: block; padding: 9px 14px; font-size: 14px; color: var(--text-mid);
+      border-radius: 6px; transition: all 0.12s;
+    }
+    .dropdown-item:hover { color: var(--green); background: var(--green-pale); }
+    .header-cta { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .header-phone { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: var(--navy); }
+    .hamburger { display: none; padding: 8px; }
+    .hamburger svg { width: 24px; height: 24px; }
+
+    /* PAGE HERO */
+    .page-hero { background: var(--navy); color: var(--white); padding: 60px 0 52px; }
+    .page-hero .section-label { color: rgba(255,255,255,0.7); }
+    .page-hero h1 { color: var(--white); margin-bottom: 16px; }
+    .page-hero p { font-size: 18px; color: rgba(255,255,255,0.82); max-width: 600px; margin-bottom: 28px; }
+    .hero-stats {
+      display: flex; gap: 40px; flex-wrap: wrap;
+    }
+    .hero-stat-num { font-size: 36px; font-weight: 800; color: var(--white); line-height: 1; }
+    .hero-stat-label { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+
+    /* FILTER BAR */
+    .filter-bar {
+      background: var(--earth); border-bottom: 1px solid var(--earth-dark);
+      padding: 16px 0; position: sticky; top: 73px; z-index: 50;
+    }
+    .filter-inner {
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .filter-label { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-right: 4px; }
+    .filter-btn {
+      padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: 500;
+      border: 1.5px solid var(--border); background: var(--white); color: var(--text-mid);
+      cursor: pointer; transition: all 0.15s;
+    }
+    .filter-btn:hover { border-color: var(--green); color: var(--green); }
+    .filter-btn.active { background: var(--green); color: var(--white); border-color: var(--green); }
+
+    /* GALLERY GRID */
+    .gallery-section { padding: 56px 0; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .photo-card {
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--border);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .photo-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); }
+    .photo-card.featured {
+      grid-column: span 2;
+    }
+    .photo-area {
+      background: var(--earth);
+      position: relative; overflow: hidden;
+    }
+    .photo-area img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .photo-area-placeholder {
+      width: 100%; display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, var(--earth) 0%, var(--earth-dark) 100%);
+      color: var(--text-muted); font-size: 13px; font-weight: 500;
+    }
+    .photo-card.featured .photo-area { height: 340px; }
+    .photo-card:not(.featured) .photo-area { height: 220px; }
+    .photo-badge {
+      position: absolute; top: 12px; left: 12px;
+      background: var(--green); color: var(--white);
+      font-size: 11px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; padding: 4px 10px; border-radius: 20px;
+    }
+    .photo-badge.novik { background: var(--navy); }
+    .photo-badge.insulated { background: #1e6b8a; }
+    .photo-info { padding: 18px 20px; }
+    .photo-location { font-size: 13px; color: var(--text-muted); margin-bottom: 4px; }
+    .photo-product { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+    .photo-quote {
+      font-size: 14px; color: var(--text-mid); line-height: 1.6;
+      font-style: italic; border-left: 3px solid var(--green-pale);
+      padding-left: 10px; margin-top: 8px;
+    }
+    .photo-detail {
+      display: flex; gap: 14px; margin-top: 12px;
+      font-size: 12px; color: var(--text-muted);
+    }
+    .photo-detail span { display: flex; align-items: center; gap: 4px; }
+
+    /* SUBMIT SECTION */
+    .submit-section {
+      background: var(--earth); padding: 64px 0;
+    }
+    .submit-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .submit-heading { font-size: clamp(26px, 3vw, 36px); font-weight: 800; color: var(--text); margin-bottom: 16px; }
+    .submit-body { font-size: 16px; color: var(--text-mid); line-height: 1.75; margin-bottom: 24px; }
+    .submit-perks { padding: 0; margin-bottom: 28px; }
+    .submit-perk {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 8px 0; font-size: 15px; color: var(--text-mid);
+      border-bottom: 1px solid var(--earth-dark);
+    }
+    .submit-perk:last-child { border-bottom: none; }
+    .submit-perk-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+    .submit-form-card {
+      background: var(--white); border-radius: 16px; padding: 36px;
+      border: 1px solid var(--earth-dark);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .submit-form-card h3 { font-size: 20px; margin-bottom: 20px; color: var(--navy); }
+    .form-group { margin-bottom: 16px; }
+    .form-label { display: block; font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: 10px 14px; border: 1.5px solid var(--border);
+      border-radius: 6px; font-size: 15px; font-family: inherit;
+      color: var(--text); background: var(--white); transition: border-color 0.15s;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none; border-color: var(--green);
+    }
+    .form-textarea { resize: vertical; min-height: 90px; }
+    .file-drop {
+      border: 2px dashed var(--border); border-radius: 8px; padding: 28px 20px;
+      text-align: center; color: var(--text-muted); font-size: 14px;
+      cursor: pointer; transition: border-color 0.15s;
+    }
+    .file-drop:hover { border-color: var(--green); color: var(--green); }
+    .file-drop-icon { font-size: 28px; margin-bottom: 8px; }
+    .form-note { font-size: 12px; color: var(--text-muted); margin-top: 12px; }
+
+    /* BOTTOM CTA */
+    .bottom-cta { background: var(--navy); color: var(--white); padding: 64px 0; text-align: center; }
+    .bottom-cta h2 { color: var(--white); margin-bottom: 14px; }
+    .bottom-cta p { font-size: 18px; color: rgba(255,255,255,0.8); margin-bottom: 32px; }
+    .bottom-cta-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* FOOTER */
+    .site-footer { background: var(--navy-dark); color: rgba(255,255,255,0.75); padding: 56px 24px 0; }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 40px; max-width: 1200px; margin: 0 auto; padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand-name { font-size: 20px; font-weight: 800; color: var(--white); margin-bottom: 4px; }
+    .footer-brand-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-bottom: 14px; }
+    .footer-brand-desc { font-size: 13px; line-height: 1.7; margin-bottom: 16px; }
+    .footer-phone-row { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 16px; }
+    .footer-warranty-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.07); border-radius: 6px;
+      padding: 8px 14px; font-size: 12px; color: rgba(255,255,255,0.65);
+    }
+    .footer-col-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--white); margin-bottom: 14px; }
+    .footer-links { display: flex; flex-direction: column; gap: 8px; }
+    .footer-link { font-size: 14px; color: rgba(255,255,255,0.65); transition: color 0.15s; }
+    .footer-link:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+      padding: 20px 0;
+    }
+    .footer-bottom-text { font-size: 12px; color: rgba(255,255,255,0.35); }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-link { font-size: 12px; color: rgba(255,255,255,0.45); }
+    .footer-bottom-link:hover { color: var(--white); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .photo-card.featured { grid-column: span 2; }
+      .submit-inner { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .photo-card.featured { grid-column: span 1; }
+      .photo-card.featured .photo-area { height: 240px; }
+      .hero-stats { gap: 24px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .bottom-cta-btns { flex-direction: column; align-items: center; }
+    }
+    @media (max-width: 640px) {
+      .header-inner { padding: 12px 16px; }
+      .main-nav { display: none; }
+      .hamburger { display: flex; }
+      .utility-center { display: none; }
+      .submit-form-card { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="container">
+    <div class="utility-phone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      800-843-3336
+    </div>
+    <div class="utility-center">
+      <strong>Factory Direct Since 1981 | True Lifetime Warranty | 2 U.S. Plants</strong>
+    </div>
+    <a href="samples.html" style="color:rgba(255,255,255,0.85); font-size:13px; white-space:nowrap;">Order Samples</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,10 90,45 10,45" fill="white"/>
+          <rect x="30" y="45" width="40" height="30" fill="white"/>
+          <rect x="10" y="75" width="80" height="10" fill="rgba(255,255,255,0.6)"/>
+          <rect x="10" y="85" width="80" height="5" fill="rgba(255,255,255,0.4)"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <div class="logo-name">SkirtingDirect</div>
+        <div class="logo-tagline">By Everlock Systems</div>
+      </div>
+    </a>
+
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-item">
+        <a href="products.html" class="nav-link">
+          Products
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="blog-everlock-deluxe-vinyl-skirting.html" class="dropdown-item">Everlock Deluxe Vinyl</a>
+          <a href="blog-thermal-everrock-insulated-skirting.html" class="dropdown-item">Thermal EverRock Insulated</a>
+          <a href="blog-gorilla-insulated-skirting.html" class="dropdown-item">Gorilla Insulated Skirting</a>
+          <a href="products.html#novik" class="dropdown-item">Novik Brick &amp; Stone</a>
+          <a href="products.html#accessories" class="dropdown-item">Accessories &amp; Vents</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="complete-kits.html" class="nav-link">Complete Kits</a>
+      </div>
+      <div class="nav-item">
+        <a href="calculator.html" class="nav-link" style="font-weight:600; color:var(--green);">Build Your Quote</a>
+      </div>
+      <div class="nav-item">
+        <a href="installation.html" class="nav-link">
+          Installation
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="installation.html" class="dropdown-item">How to Install Skirting</a>
+          <a href="installation.html#videos" class="dropdown-item">Installation Videos</a>
+          <a href="installation.html" class="dropdown-item">Find a Pro Installer</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="real-homes.html" class="nav-link active">Real Homes</a>
+      </div>
+      <div class="nav-item">
+        <a href="blog.html" class="nav-link">
+          Resources
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="blog.html" class="dropdown-item">Blog &amp; Buying Guides</a>
+          <a href="faq.html" class="dropdown-item">FAQ</a>
+          <a href="fha-va-requirements.html" class="dropdown-item">FHA/VA Requirements</a>
+          <a href="warranty.html" class="dropdown-item">Warranty</a>
+          <a href="why-everlock.html" class="dropdown-item">Why SkirtingDirect</a>
+          <a href="for-pros.html" class="dropdown-item">For Pros &amp; Dealers</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="header-cta">
+      <div class="header-phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        800-843-3336
+      </div>
+      <a href="calculator.html" class="btn btn-primary btn-sm">Get Instant Pricing</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="section-label">Real Homes Gallery</div>
+    <h1>See It Installed on Real Homes</h1>
+    <p>Every photo below was sent in by a real customer. These are not staged photos. This is what Everlock looks like after installation on actual manufactured homes across the country.</p>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">45+</div>
+        <div class="hero-stat-label">Years of Installs</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">1000s</div>
+        <div class="hero-stat-label">Homes Skirted</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">Lower 48</div>
+        <div class="hero-stat-label">States Served</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-inner">
+      <span class="filter-label">Filter by:</span>
+      <button class="filter-btn active" onclick="filterGallery('all', this)">All Products</button>
+      <button class="filter-btn" onclick="filterGallery('vinyl', this)">Vinyl</button>
+      <button class="filter-btn" onclick="filterGallery('insulated', this)">Insulated</button>
+      <button class="filter-btn" onclick="filterGallery('novik', this)">Novik Stone</button>
+      <button class="filter-btn" onclick="filterGallery('single', this)">Single-Wide</button>
+      <button class="filter-btn" onclick="filterGallery('double', this)">Double-Wide</button>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="container">
+
+    <div class="gallery-grid" id="galleryGrid">
+
+      <!-- FEATURED: Card 1 -->
+      <div class="photo-card featured" data-tags="insulated single">
+        <div class="photo-area">
+          <img src="images/hero-sandstone-thermal-home.jpg" alt="Thermal EverRock skirting on a single-wide in sandstone color, Texas" loading="lazy">
+          <div class="photo-badge insulated">Thermal EverRock</div>
+        </div>
+        <div class="photo-info">
+          <div class="photo-location">Conroe, TX</div>
+          <div class="photo-product">Thermal EverRock Insulated, Sandstone</div>
+          <div class="photo-quote">"Our pipes used to freeze every winter. Not anymore. We also noticed a drop in our heating bill the first month after install."</div>
+          <div class="photo-detail">
+            <span>Single-wide</span>
+            <span>DIY install, 1 weekend</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="photo-card" data-tags="vinyl single">
+        <div class="photo-area">
+          <img src="images/white-everrock-home.jpg" alt="EverRock Vinyl skirting in Granite Grey on a manufactured home" loading="lazy">
+          <div class="photo-badge">EverRock Vinyl</div>
+        </div>
+        <div class="photo-info">
+          <div class="photo-location">Raleigh, NC</div>
+          <div class="photo-product">EverRock Vinyl, Granite Grey</div>
+          <div class="photo-quote">"Took us a Saturday. My husband had never done anything like this before."</div>
+          <div class="photo-detail">
+            <span>Single-wide</span>
+            <span>DIY install</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="photo-card" data-tags="novik double">
+        <div class="photo-area">
+          <img src="images/novik-brick-product.jpg" alt="Novik Hand-Laid Brick skirting on a double-wide manufactured home" loading="lazy">
+          <div class="photo-badge novik">Novik Brick</div>
+        </div>
+        <div class="photo-info">
+          <div class="photo-location">Tulsa, OK</div>
+          <div class="photo-product">Novik Hand-Laid Brick</div>
+          <div class="photo-quote">"Everyone thinks it's real brick. The neighbors kept asking who did the masonry."</div>
+          <div class="photo-detail">
+            <span>Double-wide</span>
+            <span>Pro installed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="photo-card" data-tags="vinyl double">
+        <div class="photo-area">
+          <img src="images/thermal-everrock-product-detail.jpg" alt="EverRock Vinyl skirting in Sandstone on a double-wide manufactured home" loading="lazy">
+          <div class="photo-badge">EverRock Vinyl</div>
+        </div>
+        <div class="photo-info">
+          <div class="photo-location">Billings, MT</div>
+          <div class="photo-product">EverRock Vinyl, Sandstone</div>
+          <div class="photo-quote">"We replaced 20-year-old fiber cement. Night and day difference."</div>
+          <div class="photo-detail">
+            <span>Double-wide</span>
+            <span>DIY install</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="photo-card" data-tags="vinyl double">
+        <div class="photo-area">
+          <img src="images/sandstone-everrock-home.jpg" alt="EverRock Vinyl skirting in sandstone on a double-wide manufactured home" loading="lazy">
+          <div class="photo-badge">EverRock Vinyl</div>
+        </div>
+        <div class="photo-info">
+          <div class="photo-location">Phoenix, AZ</div>
+          <div class="photo-product">EverRock Vinyl, Sandstone</div>
+          <div class="photo-quote">"Perfect for our desert climate. Holds up to the heat with no warping or cracking."</div>
+          <div class="photo-detail">
+            <span>Double-wide</span>
+            <span>DIY install</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="photo-card" data-tags="novik single">
+        <div class="photo-area">
+          <img src="images/novik-brick-home-2.jpg" alt="Novik Hand-Laid Brick skirting on a manufactured home, autumn" loading="lazy">
+          <div class="photo-badge novik">Novik Brick</div>
+        </div>
+        <div class="photo-info">
+          <div class="photo-location">Asheville, NC</div>
+          <div class="photo-product">Novik Hand-Laid Brick</div>
+          <div class="photo-quote">"We live in the mountains and wanted something that matched the surroundings. This was exactly it."</div>
+          <div class="photo-detail">
+            <span>Single-wide</span>
+            <span>Pro installed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="photo-card" data-tags="insulated single">
+        <div class="photo-area">
+          <img src="images/thermal-everrock-vent-detail.jpg" alt="Thermal EverRock insulated skirting in granite grey with foundation vent" loading="lazy">
+          <div class="photo-badge insulated">Thermal EverRock</div>
+        </div>
+        <div class="photo-info">
+          <div class="photo-location">Fargo, ND</div>
+          <div class="photo-product">Thermal EverRock Insulated, Grey</div>
+          <div class="photo-quote">"Highest R-value available. We have harsh winters and wanted the most protection possible."</div>
+          <div class="photo-detail">
+            <span>Single-wide</span>
+            <span>DIY install</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="photo-card" data-tags="vinyl single">
+        <div class="photo-area">
+          <img src="images/granite-grey-everrock-home.jpg" alt="EverRock Vinyl skirting in granite grey on a manufactured home" loading="lazy">
+          <div class="photo-badge">EverRock Vinyl</div>
+        </div>
+        <div class="photo-info">
+          <div class="photo-location">Orlando, FL</div>
+          <div class="photo-product">EverRock Vinyl, Granite Grey</div>
+          <div class="photo-quote">"Our lender required skirting for FHA approval. Ordered Monday, installed by Friday, closed the following week."</div>
+          <div class="photo-detail">
+            <span>Single-wide</span>
+            <span>DIY install</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="noResults" style="display:none; text-align:center; padding:40px 0; color:var(--text-muted);">
+      No photos for that filter yet. <a href="#submit" style="color:var(--green); font-weight:600;">Submit yours and be the first.</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SUBMIT SECTION -->
+<section class="submit-section" id="submit">
+  <div class="container">
+    <div class="submit-inner">
+      <div>
+        <div class="section-label">Share Your Home</div>
+        <div class="submit-heading">We May Feature Your Home Here</div>
+        <div class="submit-body">
+          If you installed Everlock skirting and are happy with how it came out, send us a photo. We post real customer photos with a caption and your first name and state only. No personal information beyond that.
+        </div>
+        <ul class="submit-perks">
+          <li class="submit-perk">
+            <span class="submit-perk-icon">&#128247;</span>
+            <div>Any photo quality works. Smartphone photos are fine. Clear, well-lit shots of the finished install are ideal.</div>
+          </li>
+          <li class="submit-perk">
+            <span class="submit-perk-icon">&#127968;</span>
+            <div>Tell us your home size, the product you used, and whether you installed it yourself or hired someone.</div>
+          </li>
+          <li class="submit-perk">
+            <span class="submit-perk-icon">&#128172;</span>
+            <div>A short quote about your experience helps other homeowners know what to expect from the process.</div>
+          </li>
+        </ul>
+        <p style="font-size:14px; color:var(--text-muted);">You can also email photos directly to <a href="mailto:info@skirtingdirect.com" style="color:var(--green); font-weight:600;">info@skirtingdirect.com</a> with "Customer Photo" in the subject line.</p>
+      </div>
+
+      <div class="submit-form-card">
+        <h3>Submit Your Install Photo</h3>
+        <form id="photoForm" onsubmit="handlePhotoSubmit(event)">
+          <div class="form-group">
+            <label class="form-label">Your First Name and State</label>
+            <input type="text" class="form-input" id="photoName" placeholder="e.g. Linda, Texas" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Product You Used</label>
+            <select class="form-select" id="photoProduct" required>
+              <option value="">Select a product...</option>
+              <option>Everlock Deluxe Vinyl</option>
+              <option>EverRock Vinyl</option>
+              <option>Thermal EverRock Insulated</option>
+              <option>Gorilla Insulated Skirting</option>
+              <option>Novik Hand-Laid Brick</option>
+              <option>Novik Stacked Stone</option>
+              <option>Novik Premium Hand-Cut Stone</option>
+              <option>Novik Field Stone</option>
+              <option>Novik Dry Stacked Stone</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Home Type</label>
+            <select class="form-select" id="photoHomeType">
+              <option value="">Select...</option>
+              <option>Single-wide</option>
+              <option>Double-wide</option>
+              <option>Triple-wide / other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Quote (Optional)</label>
+            <textarea class="form-textarea" id="photoQuote" placeholder="A sentence or two about your experience..." style="min-height:72px;"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Attach Photo(s)</label>
+            <div class="file-drop" onclick="document.getElementById('photoFile').click()">
+              <div class="file-drop-icon">&#128247;</div>
+              <div>Click to select photos</div>
+              <div style="font-size:12px; margin-top:4px;">JPG, PNG, up to 10MB each</div>
+            </div>
+            <input type="file" id="photoFile" accept="image/*" multiple style="display:none;" onchange="handleFileSelect(this)">
+            <div id="fileNames" style="font-size:13px; color:var(--green); margin-top:8px;"></div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Send My Photo</button>
+          <p class="form-note">By submitting, you give Everlock Systems permission to use your photo and quote on this page and in marketing materials.</p>
+        </form>
+        <div id="photoSuccess" style="display:none; text-align:center; padding:24px 0;">
+          <div style="width:48px; height:48px; background:var(--green); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; color:#fff; font-size:22px; font-weight:700;">&#10003;</div>
+          <h4 style="color:var(--navy); margin-bottom:8px;">Photo submitted.</h4>
+          <p style="font-size:14px; color:var(--text-muted);">Thanks for sharing. We will review it and may add it to the gallery. We will reach out if we have questions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <div class="container">
+    <h2>Like What You See?</h2>
+    <p>Use the calculator to get an instant project estimate, or call and we will help you pick the right product for your home and climate.</p>
+    <div class="bottom-cta-btns">
+      <a href="calculator.html" class="btn btn-primary btn-lg">Build My Quote</a>
+      <a href="products.html" class="btn btn-secondary btn-lg">Compare All Products</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">SkirtingDirect.com</div>
+      <div class="footer-brand-sub">By Everlock Systems, Inc.</div>
+      <div class="footer-brand-desc">Factory-direct mobile and manufactured home skirting since 1981. We manufacture vinyl, insulated, and faux stone skirting at two U.S. plants and sell directly to homeowners, no middlemen, no markups.</div>
+      <div class="footer-phone-row">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        800-843-3336
+      </div>
+      <div class="footer-warranty-badge">
+        <span>Shield</span>
+        <span>True Lifetime Limited Warranty - Materials &amp; Workmanship</span>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Products</div>
+      <div class="footer-links">
+        <a href="blog-everlock-deluxe-vinyl-skirting.html" class="footer-link">Everlock Deluxe Vinyl</a>
+        <a href="blog-thermal-everrock-insulated-skirting.html" class="footer-link">Thermal EverRock Insulated</a>
+        <a href="blog-gorilla-insulated-skirting.html" class="footer-link">Gorilla Insulated Skirting</a>
+        <a href="products.html#novik" class="footer-link">Novik Brick &amp; Stone Panels</a>
+        <a href="products.html#accessories" class="footer-link">Accessories &amp; Vents</a>
+        <a href="complete-kits.html" class="footer-link">Complete Kits</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Help &amp; Resources</div>
+      <div class="footer-links">
+        <a href="calculator.html" class="footer-link">Skirting Calculator</a>
+        <a href="samples.html" class="footer-link">Order Samples</a>
+        <a href="installation.html" class="footer-link">Installation Guide</a>
+        <a href="fha-va-requirements.html" class="footer-link">FHA/VA Guide</a>
+        <a href="blog.html" class="footer-link">Blog &amp; Buying Guides</a>
+        <a href="faq.html" class="footer-link">FAQ</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <div class="footer-links">
+        <a href="about.html" class="footer-link">About Everlock Systems</a>
+        <a href="why-everlock.html" class="footer-link">Why SkirtingDirect</a>
+        <a href="real-homes.html" class="footer-link">Real Homes Gallery</a>
+        <a href="for-pros.html" class="footer-link">For Pros &amp; Dealers</a>
+        <a href="contact.html" class="footer-link">Contact Us</a>
+        <a href="warranty.html" class="footer-link">Lifetime Warranty</a>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.08); padding:28px 24px; max-width:1200px; margin:0 auto;">
+    <p style="font-size:12px; color:rgba(255,255,255,0.3); line-height:1.7;">
+      <strong style="color:rgba(255,255,255,0.45);">Legal &amp; Accuracy Notice:</strong> Customer photos are shared with permission. Results may vary. All product information and pricing subject to change. FHA/VA compliance: final approval rests with your lender and appraiser, not with Everlock Systems. <strong style="color:rgba(255,255,255,0.45);">Lifetime Warranty:</strong> Limited to original purchaser. Full terms at <a href="warranty.html" style="color:rgba(255,255,255,0.45);">skirtingdirect.com/resources/warranty</a>.
+    </p>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-text">Copyright 2026 Everlock Systems, Inc. All rights reserved. Manufactured in the USA.</div>
+    <div class="footer-bottom-links">
+      <a href="privacy-policy.html" class="footer-bottom-link">Privacy Policy</a>
+      <a href="terms.html" class="footer-bottom-link">Terms &amp; Conditions</a>
+      <a href="warranty.html" class="footer-bottom-link">Warranty</a>
+      <a href="sitemap.xml" class="footer-bottom-link">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function filterGallery(tag, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cards = document.querySelectorAll('.photo-card');
+    let visible = 0;
+    cards.forEach(card => {
+      const tags = card.dataset.tags || '';
+      if (tag === 'all' || tags.includes(tag)) {
+        card.style.display = '';
+        visible++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+  }
+
+  function handleFileSelect(input) {
+    const names = Array.from(input.files).map(f => f.name).join(', ');
+    document.getElementById('fileNames').textContent = names ? 'Selected: ' + names : '';
+  }
+
+  function handlePhotoSubmit(event) {
+    event.preventDefault();
+    const name = document.getElementById('photoName').value.trim();
+    const product = document.getElementById('photoProduct').value;
+    if (!name || !product) return;
+    const quote = document.getElementById('photoQuote').value.trim();
+    const subject = encodeURIComponent('Customer Install Photo Submission');
+    const body = encodeURIComponent(
+      'Name/State: ' + name + '\n' +
+      'Product: ' + product + '\n' +
+      'Home Type: ' + (document.getElementById('photoHomeType').value || 'Not specified') + '\n\n' +
+      'Quote: ' + (quote || 'None provided') + '\n\n' +
+      '(Please attach your photo files to this email before sending.)'
+    );
+    window.location.href = 'mailto:info@skirtingdirect.com?subject=' + subject + '&body=' + body;
+    document.getElementById('photoForm').style.display = 'none';
+    document.getElementById('photoSuccess').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>

@@ -192,6 +192,122 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://www.skirtingdirect.com/resources/blog/mobile-home-skirting-cost-guide-2026</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://www.skirtingdirect.com/resources/blog/how-to-install-mobile-home-skirting-diy-guide-2026</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://www.skirtingdirect.com/resources/blog/best-mobile-home-skirting-california-2026</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://www.skirtingdirect.com/resources/blog/vinyl-vs-novik-stone-skirting-2026</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://www.skirtingdirect.com/resources/blog/novik-hand-laid-brick-skirting</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.skirtingdirect.com/resources/blog/novik-stacked-stone-skirting</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.skirtingdirect.com/resources/blog/novik-hand-cut-stone-skirting</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.skirtingdirect.com/resources/blog/novik-field-stone-skirting</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.skirtingdirect.com/resources/blog/novik-dry-stacked-stone-skirting</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.skirtingdirect.com/resources/blog/everlock-deluxe-vinyl-skirting</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.skirtingdirect.com/resources/blog/everrock-vinyl-skirting</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.skirtingdirect.com/resources/blog/thermal-everrock-insulated-skirting</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.skirtingdirect.com/resources/blog/gorilla-insulated-skirting</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.skirtingdirect.com/resources/blog/best-mobile-home-skirting-minnesota-2026</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://www.skirtingdirect.com/resources/blog/best-mobile-home-skirting-montana-2026</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://www.skirtingdirect.com/resources/blog/best-mobile-home-skirting-wyoming-2026</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://www.skirtingdirect.com/resources/blog/best-mobile-home-skirting-michigan-2026</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <!-- ==================== LEGAL PAGES ==================== -->
+  <url>
+    <loc>https://www.skirtingdirect.com/privacy-policy</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.skirtingdirect.com/terms</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 
   <!-- ==================== COMPANY PAGES ==================== -->
   <url>
@@ -208,9 +324,9 @@
   </url>
   <url>
     <loc>https://www.skirtingdirect.com/for-pros</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
+    <priority>0.65</priority>
   </url>
 
 </urlset>

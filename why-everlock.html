@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why SkirtingDirect? Factory Direct vs. Big-Box vs. Dealers | Everlock Systems</title>
+  <meta name="description" content="See how buying factory-direct from Everlock Systems compares to big-box stores, local dealers, and other online retailers. Same product, lower price, better warranty.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #1a1a1a; background: #fff; font-size: 16px; line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+    button { cursor: pointer; font-family: inherit; border: none; background: none; }
+
+    :root {
+      --green: #006400; --green-dark: #004d00; --green-light: #1a7a1a;
+      --green-pale: #e8f4e8; --navy: #003366; --navy-dark: #001f3f;
+      --navy-light: #0d4f8c; --earth: #f5f2ed; --earth-dark: #e8dfd0;
+      --text: #1a1a1a; --text-mid: #3d3d3d; --text-muted: #6b6b6b;
+      --border: #d9d9d9; --white: #ffffff; --gold: #c8860a; --gold-light: #fef7e8;
+      --red-pale: #fef2f2; --red: #dc2626;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 28px; border-radius: 6px; font-size: 16px; font-weight: 600;
+      transition: all 0.18s ease; line-height: 1.2; gap: 8px; white-space: nowrap;
+    }
+    .btn-primary { background: var(--green); color: var(--white); border: 2px solid var(--green); }
+    .btn-primary:hover { background: var(--green-dark); border-color: var(--green-dark); }
+    .btn-secondary { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.75); }
+    .btn-secondary:hover { background: rgba(255,255,255,0.12); border-color: var(--white); }
+    .btn-navy { background: var(--navy); color: var(--white); border: 2px solid var(--navy); }
+    .btn-navy:hover { background: var(--navy-dark); }
+    .btn-sm { padding: 10px 20px; font-size: 14px; }
+    .btn-lg { padding: 18px 36px; font-size: 18px; }
+    .section-label {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--green); margin-bottom: 10px;
+    }
+    h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; line-height: 1.1; }
+    h2 { font-size: clamp(26px, 3.5vw, 38px); font-weight: 800; line-height: 1.15; }
+    h3 { font-size: clamp(20px, 2.5vw, 26px); font-weight: 700; line-height: 1.2; }
+    h4 { font-size: 18px; font-weight: 700; }
+
+    /* UTILITY BAR */
+    .utility-bar {
+      background: var(--green-dark); color: rgba(255,255,255,0.92);
+      font-size: 13px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .utility-bar .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+    .utility-bar a { color: rgba(255,255,255,0.9); }
+    .utility-bar a:hover { color: var(--white); }
+    .utility-phone { display: flex; align-items: center; gap: 6px; font-weight: 700; font-size: 14px; color: var(--white); white-space: nowrap; }
+    .utility-phone svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .utility-center { text-align: center; }
+    .utility-center strong { color: var(--white); }
+
+    /* HEADER */
+    .site-header {
+      background: var(--white); border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .header-inner { display: flex; align-items: center; gap: 24px; padding: 14px 24px; max-width: 1400px; margin: 0 auto; }
+    .logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .logo-icon { width: 44px; height: 44px; background: var(--green); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .logo-icon svg { width: 26px; height: 26px; fill: var(--white); }
+    .logo-text { line-height: 1.1; }
+    .logo-name { font-size: 20px; font-weight: 800; color: var(--green); }
+    .logo-tagline { font-size: 10px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .main-nav { display: flex; align-items: center; gap: 2px; flex: 1; }
+    .nav-item { position: relative; }
+    .nav-link {
+      display: flex; align-items: center; gap: 4px; padding: 8px 12px;
+      font-size: 14px; font-weight: 500; color: var(--text-mid); border-radius: 6px; transition: all 0.15s; white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--green); background: var(--green-pale); }
+    .nav-link.active { color: var(--green); }
+    .nav-link svg { width: 12px; height: 12px; opacity: 0.6; }
+    .dropdown {
+      position: absolute; top: calc(100% + 8px); left: 0;
+      background: var(--white); border: 1px solid var(--border); border-radius: 10px;
+      min-width: 200px; padding: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      opacity: 0; visibility: hidden; transform: translateY(-6px); transition: all 0.18s ease; z-index: 200;
+    }
+    .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+    .dropdown-item { display: block; padding: 9px 14px; font-size: 14px; color: var(--text-mid); border-radius: 6px; transition: all 0.12s; }
+    .dropdown-item:hover { color: var(--green); background: var(--green-pale); }
+    .header-cta { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .header-phone { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--navy); }
+    .hamburger { display: none; padding: 8px; }
+    .hamburger svg { width: 24px; height: 24px; }
+
+    /* PAGE HERO */
+    .page-hero { background: var(--navy); color: var(--white); padding: 64px 0 56px; }
+    .page-hero .section-label { color: rgba(255,255,255,0.7); }
+    .page-hero h1 { color: var(--white); margin-bottom: 16px; max-width: 720px; }
+    .page-hero p { font-size: 19px; color: rgba(255,255,255,0.82); max-width: 640px; line-height: 1.65; }
+
+    /* INTRO SECTION */
+    .intro-section { padding: 64px 0 48px; }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .intro-body { font-size: 17px; color: var(--text-mid); line-height: 1.8; }
+    .intro-body p { margin-bottom: 20px; }
+    .intro-body p:last-child { margin-bottom: 0; }
+    .intro-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .intro-stat {
+      background: var(--earth); border-radius: 12px; padding: 24px;
+      text-align: center; border: 1px solid var(--earth-dark);
+    }
+    .intro-stat-num { font-size: 42px; font-weight: 800; color: var(--green); line-height: 1; margin-bottom: 6px; }
+    .intro-stat-label { font-size: 14px; color: var(--text-muted); line-height: 1.4; }
+
+    /* COMPARISON TABLE */
+    .comparison-section { background: var(--earth); padding: 72px 0; }
+    .comparison-section h2 { text-align: center; margin-bottom: 12px; }
+    .comparison-section .section-intro {
+      text-align: center; font-size: 17px; color: var(--text-muted); max-width: 560px; margin: 0 auto 48px;
+    }
+    .comparison-table-wrap { overflow-x: auto; }
+    .comparison-table {
+      width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08); font-size: 15px;
+    }
+    .comparison-table thead tr { background: var(--navy); color: var(--white); }
+    .comparison-table th {
+      padding: 18px 20px; text-align: center; font-size: 14px; font-weight: 700;
+    }
+    .comparison-table th:first-child { text-align: left; }
+    .comparison-table th.highlight { background: var(--green); }
+    .comparison-table tbody tr { background: var(--white); border-bottom: 1px solid var(--border); }
+    .comparison-table tbody tr:last-child { border-bottom: none; }
+    .comparison-table tbody tr:hover { background: #fafafa; }
+    .comparison-table td { padding: 16px 20px; text-align: center; }
+    .comparison-table td:first-child { text-align: left; font-weight: 600; color: var(--text); }
+    .comparison-table td.highlight { background: var(--green-pale); }
+    .check { color: var(--green); font-size: 18px; font-weight: 700; }
+    .cross { color: var(--red); font-size: 18px; }
+    .maybe { color: var(--gold); font-size: 14px; font-weight: 600; }
+    .col-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.75; }
+
+    /* REASONS SECTION */
+    .reasons-section { padding: 72px 0; }
+    .reasons-section h2 { text-align: center; margin-bottom: 48px; }
+    .reasons-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .reason-card {
+      border: 1px solid var(--border); border-radius: 14px; padding: 32px 28px;
+      transition: box-shadow 0.2s ease;
+    }
+    .reason-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .reason-icon {
+      width: 52px; height: 52px; background: var(--green-pale);
+      border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin-bottom: 18px;
+    }
+    .reason-title { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .reason-body { font-size: 15px; color: var(--text-mid); line-height: 1.7; }
+
+    /* OBJECTIONS SECTION */
+    .objections-section { background: var(--earth); padding: 72px 0; }
+    .objections-section h2 { text-align: center; margin-bottom: 48px; }
+    .objections-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .objection-card {
+      background: var(--white); border-radius: 12px; padding: 28px;
+      border: 1px solid var(--earth-dark);
+    }
+    .objection-q {
+      font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 12px;
+      padding-bottom: 12px; border-bottom: 1px solid var(--earth-dark);
+    }
+    .objection-q::before { content: '"'; opacity: 0.4; }
+    .objection-q::after { content: '"'; opacity: 0.4; }
+    .objection-a { font-size: 15px; color: var(--text-mid); line-height: 1.7; }
+
+    /* TRUST BAND */
+    .trust-band { background: var(--green); color: var(--white); padding: 48px 0; }
+    .trust-band-inner {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
+      max-width: 1000px; margin: 0 auto; text-align: center;
+    }
+    .trust-item-num { font-size: 40px; font-weight: 800; line-height: 1; margin-bottom: 6px; }
+    .trust-item-label { font-size: 14px; color: rgba(255,255,255,0.8); }
+
+    /* BOTTOM CTA */
+    .bottom-cta { background: var(--navy); color: var(--white); padding: 72px 0; text-align: center; }
+    .bottom-cta h2 { color: var(--white); margin-bottom: 14px; }
+    .bottom-cta p { font-size: 18px; color: rgba(255,255,255,0.8); margin-bottom: 32px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .bottom-cta-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+    /* FOOTER */
+    .site-footer { background: var(--navy-dark); color: rgba(255,255,255,0.75); padding: 56px 24px 0; }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: 40px; max-width: 1200px; margin: 0 auto; padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand-name { font-size: 20px; font-weight: 800; color: var(--white); margin-bottom: 4px; }
+    .footer-brand-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-bottom: 14px; }
+    .footer-brand-desc { font-size: 13px; line-height: 1.7; margin-bottom: 16px; }
+    .footer-phone-row { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 16px; }
+    .footer-warranty-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.07); border-radius: 6px; padding: 8px 14px; font-size: 12px; color: rgba(255,255,255,0.65); }
+    .footer-col-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--white); margin-bottom: 14px; }
+    .footer-links { display: flex; flex-direction: column; gap: 8px; }
+    .footer-link { font-size: 14px; color: rgba(255,255,255,0.65); transition: color 0.15s; }
+    .footer-link:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 20px 0;
+    }
+    .footer-bottom-text { font-size: 12px; color: rgba(255,255,255,0.35); }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-link { font-size: 12px; color: rgba(255,255,255,0.45); }
+    .footer-bottom-link:hover { color: var(--white); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .reasons-grid { grid-template-columns: 1fr 1fr; }
+      .trust-band-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .intro-grid { grid-template-columns: 1fr; }
+      .reasons-grid { grid-template-columns: 1fr; }
+      .objections-grid { grid-template-columns: 1fr; }
+      .trust-band-inner { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .bottom-cta-btns { flex-direction: column; align-items: center; }
+    }
+    @media (max-width: 640px) {
+      .header-inner { padding: 12px 16px; }
+      .main-nav { display: none; }
+      .hamburger { display: flex; }
+      .utility-center { display: none; }
+      .intro-stat-grid { grid-template-columns: 1fr 1fr; }
+      .trust-band-inner { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="utility-bar">
+  <div class="container">
+    <div class="utility-phone">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      800-843-3336
+    </div>
+    <div class="utility-center">
+      <strong>Factory Direct Since 1981 | True Lifetime Warranty | 2 U.S. Plants</strong>
+    </div>
+    <a href="samples.html" style="color:rgba(255,255,255,0.85); font-size:13px; white-space:nowrap;">Order Samples</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,10 90,45 10,45" fill="white"/>
+          <rect x="30" y="45" width="40" height="30" fill="white"/>
+          <rect x="10" y="75" width="80" height="10" fill="rgba(255,255,255,0.6)"/>
+          <rect x="10" y="85" width="80" height="5" fill="rgba(255,255,255,0.4)"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <div class="logo-name">SkirtingDirect</div>
+        <div class="logo-tagline">By Everlock Systems</div>
+      </div>
+    </a>
+
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-item">
+        <a href="products.html" class="nav-link">
+          Products
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="blog-everlock-deluxe-vinyl-skirting.html" class="dropdown-item">Everlock Deluxe Vinyl</a>
+          <a href="blog-thermal-everrock-insulated-skirting.html" class="dropdown-item">Thermal EverRock Insulated</a>
+          <a href="blog-gorilla-insulated-skirting.html" class="dropdown-item">Gorilla Insulated Skirting</a>
+          <a href="products.html#novik" class="dropdown-item">Novik Brick &amp; Stone</a>
+          <a href="products.html#accessories" class="dropdown-item">Accessories &amp; Vents</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="complete-kits.html" class="nav-link">Complete Kits</a></div>
+      <div class="nav-item"><a href="calculator.html" class="nav-link" style="font-weight:600; color:var(--green);">Build Your Quote</a></div>
+      <div class="nav-item">
+        <a href="installation.html" class="nav-link">
+          Installation
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="installation.html" class="dropdown-item">How to Install Skirting</a>
+          <a href="installation.html#videos" class="dropdown-item">Installation Videos</a>
+          <a href="installation.html" class="dropdown-item">Find a Pro Installer</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="real-homes.html" class="nav-link">Real Homes</a></div>
+      <div class="nav-item">
+        <a href="blog.html" class="nav-link active">
+          Resources
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="dropdown">
+          <a href="blog.html" class="dropdown-item">Blog &amp; Buying Guides</a>
+          <a href="faq.html" class="dropdown-item">FAQ</a>
+          <a href="fha-va-requirements.html" class="dropdown-item">FHA/VA Requirements</a>
+          <a href="warranty.html" class="dropdown-item">Warranty</a>
+          <a href="why-everlock.html" class="dropdown-item" style="color:var(--green); font-weight:600;">Why SkirtingDirect</a>
+          <a href="for-pros.html" class="dropdown-item">For Pros &amp; Dealers</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="header-cta">
+      <a href="calculator.html" class="btn btn-primary btn-sm">Get Instant Pricing</a>
+    </div>
+    <button class="hamburger" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="section-label">Why SkirtingDirect</div>
+    <h1>You Are Buying from the Manufacturer. That Changes Everything.</h1>
+    <p>When you order from SkirtingDirect.com, there is no distributor, no dealer, and no retailer in between. Everlock Systems makes the product and ships it directly to your door at the factory price.</p>
+  </div>
+</section>
+
+<!-- INTRO SECTION -->
+<section class="intro-section">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-body">
+        <p>Most people who shop for mobile home skirting end up with one of three options: a big-box store that carries a limited product in one color, a local dealer who marks up whatever they can get from a distributor, or a faceless online seller who buys in bulk and knows nothing about the product.</p>
+        <p>SkirtingDirect.com is different. Everlock Systems has manufactured skirting in the United States since 1981. We have two plants, one in Alabama and one in Mississippi. When you buy here, you are buying directly from the source, at the price we actually sell for, with a warranty backed by the company that made the product.</p>
+        <p>That means lower prices, better product knowledge, and a warranty that actually means something because we are still going to be here when you need it.</p>
+      </div>
+      <div class="intro-stat-grid">
+        <div class="intro-stat">
+          <div class="intro-stat-num">45+</div>
+          <div class="intro-stat-label">Years in business, same family ownership</div>
+        </div>
+        <div class="intro-stat">
+          <div class="intro-stat-num">2</div>
+          <div class="intro-stat-label">U.S. manufacturing plants, Alabama and Mississippi</div>
+        </div>
+        <div class="intro-stat">
+          <div class="intro-stat-num">&#8734;</div>
+          <div class="intro-stat-label">Lifetime Warranty, not a limited-year guarantee</div>
+        </div>
+        <div class="intro-stat">
+          <div class="intro-stat-num">0</div>
+          <div class="intro-stat-label">Middlemen between factory and your door</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="comparison-section">
+  <div class="container">
+    <div class="section-label" style="text-align:center;">Side-by-Side Comparison</div>
+    <h2>How We Stack Up</h2>
+    <p class="section-intro">Buying factory-direct is not just a lower price. It is a different experience from start to finish.</p>
+
+    <div class="comparison-table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th style="width:30%;">What You Get</th>
+            <th class="highlight">
+              <div>SkirtingDirect.com</div>
+              <div class="col-label">Factory Direct</div>
+            </th>
+            <th>
+              <div>Big-Box Stores</div>
+              <div class="col-label">Home Depot / Lowes</div>
+            </th>
+            <th>
+              <div>Local Dealers</div>
+              <div class="col-label">Park Suppliers</div>
+            </th>
+            <th>
+              <div>Other Online</div>
+              <div class="col-label">Amazon / Resellers</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Factory-direct pricing</td>
+            <td class="highlight"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+          </tr>
+          <tr>
+            <td>Full product line available</td>
+            <td class="highlight"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10007;</span> Limited</td>
+            <td><span class="maybe">Varies</span></td>
+            <td><span class="maybe">Varies</span></td>
+          </tr>
+          <tr>
+            <td>True Lifetime Warranty</td>
+            <td class="highlight"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+          </tr>
+          <tr>
+            <td>Ships direct from manufacturer</td>
+            <td class="highlight"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+          </tr>
+          <tr>
+            <td>Custom sizing available</td>
+            <td class="highlight"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+            <td><span class="maybe">Sometimes</span></td>
+            <td><span class="cross">&#10007;</span></td>
+          </tr>
+          <tr>
+            <td>Complete kits by home size</td>
+            <td class="highlight"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+            <td><span class="maybe">Sometimes</span></td>
+            <td><span class="cross">&#10007;</span></td>
+          </tr>
+          <tr>
+            <td>Phone support from product experts</td>
+            <td class="highlight"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+            <td><span class="maybe">Varies</span></td>
+            <td><span class="cross">&#10007;</span></td>
+          </tr>
+          <tr>
+            <td>FHA/VA compliance documentation</td>
+            <td class="highlight"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+            <td><span class="maybe">Rarely</span></td>
+            <td><span class="cross">&#10007;</span></td>
+          </tr>
+          <tr>
+            <td>Made in the USA</td>
+            <td class="highlight"><span class="check">&#10003;</span></td>
+            <td><span class="maybe">Some products</span></td>
+            <td><span class="maybe">Varies</span></td>
+            <td><span class="maybe">Often not</span></td>
+          </tr>
+          <tr>
+            <td>Samples available before you order</td>
+            <td class="highlight"><span class="check">&#10003;</span></td>
+            <td><span class="cross">&#10007;</span></td>
+            <td><span class="maybe">Sometimes</span></td>
+            <td><span class="cross">&#10007;</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT COMPARISON: EVERLOCK vs BIG-BOX VINYL -->
+<section class="reasons-section" style="padding-top: 0;">
+  <div class="container">
+    <div class="section-label" style="text-align:center;">Product Comparison</div>
+    <h2 style="text-align:center;">Everlock Deluxe Vinyl vs. Typical Big-Box Store Vinyl Skirting</h2>
+    <p style="text-align:center; font-size:17px; color:var(--text-muted); max-width:680px; margin:12px auto 40px;">Many homeowners look at big-box retailers first. Here is how our factory-direct Everlock Deluxe compares on the things that actually matter.</p>
+
+    <div class="comparison-table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th style="width:30%;">Feature</th>
+            <th class="highlight">
+              <div>Everlock Deluxe</div>
+              <div class="col-label">Factory Direct</div>
+            </th>
+            <th>
+              <div>Typical Big-Box Vinyl</div>
+              <div class="col-label">National Retailers</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Warranty</td>
+            <td class="highlight" style="color:var(--green); font-weight:700;">True Lifetime Limited Warranty</td>
+            <td>1 to 5 years, typical</td>
+          </tr>
+          <tr>
+            <td>Complete Kit Available</td>
+            <td class="highlight"><span class="check">&#10003;</span> Panels, rails, hardware in one shipment</td>
+            <td>Panels only in most cases</td>
+          </tr>
+          <tr>
+            <td>U.S. Manufacturing</td>
+            <td class="highlight"><span class="check">&#10003;</span> Two U.S. plants</td>
+            <td>Manufacturing varies by brand</td>
+          </tr>
+          <tr>
+            <td>Customer Support</td>
+            <td class="highlight"><span class="check">&#10003;</span> Real people, M-F 9am to 4pm MT, Boulder, CO</td>
+            <td>General store staff, limited product knowledge</td>
+          </tr>
+          <tr>
+            <td>FHA/VA Assistance</td>
+            <td class="highlight"><span class="check">&#10003;</span> Can help you confirm requirements</td>
+            <td><span class="cross">&#10007;</span> Not available</td>
+          </tr>
+          <tr>
+            <td>Color Samples Available</td>
+            <td class="highlight"><span class="check">&#10003;</span> Before you commit</td>
+            <td><span class="cross">&#10007;</span> Not available</td>
+          </tr>
+          <tr>
+            <td>Factory-Direct Price</td>
+            <td class="highlight"><span class="check">&#10003;</span> No distributor or retailer markup</td>
+            <td>Retail markup applied</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="background:var(--green-pale); border-left:4px solid var(--green); padding:24px 28px; border-radius:0 10px 10px 0; margin-top:32px;">
+      <strong style="color:var(--green); display:block; margin-bottom:8px; font-size:17px;">Bottom line</strong>
+      <p style="color:var(--text-mid); margin:0; font-size:16px;">You can often find lower-priced vinyl at big-box stores for basic installations. But you get better panel quality, a true Lifetime Warranty, and full factory support when you buy direct from Everlock. Many customers tell us they looked at big-box options first and came back to us once they compared the warranty and the total kit cost.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REASONS SECTION -->
+<section class="reasons-section">
+  <div class="container">
+    <div class="section-label" style="text-align:center;">The Details</div>
+    <h2 style="text-align:center;">Six Reasons Homeowners Choose Us</h2>
+    <div class="reasons-grid">
+
+      <div class="reason-card">
+        <div class="reason-icon">&#127981;</div>
+        <div class="reason-title">We Make It Ourselves</div>
+        <div class="reason-body">Everlock Systems is the manufacturer, not a reseller. Our skirting is made at two plants in Alabama and Mississippi. When you call with a product question, you are talking to people who work with the product every day, not a customer service rep reading from a script.</div>
+      </div>
+
+      <div class="reason-card">
+        <div class="reason-icon">&#128176;</div>
+        <div class="reason-title">No Markup in the Middle</div>
+        <div class="reason-body">Every time a product passes through a distributor or dealer, the price goes up. When you order from SkirtingDirect.com, that chain does not exist. You pay what a dealer would pay, which is substantially less than what a dealer charges you.</div>
+      </div>
+
+      <div class="reason-card">
+        <div class="reason-icon">&#9855;</div>
+        <div class="reason-title">A Warranty That Means Something</div>
+        <div class="reason-body">Most skirting warranties are limited to 5 or 10 years, or are voided by normal weathering. Ours is a true lifetime limited warranty on materials and workmanship. And since we are the manufacturer, we can actually back it up. We have been in business since 1981 and we plan to stay.</div>
+      </div>
+
+      <div class="reason-card">
+        <div class="reason-icon">&#128222;</div>
+        <div class="reason-title">Real Support from Real People</div>
+        <div class="reason-body">You can call 800-843-3336 Monday through Friday and talk to someone who knows the products, knows what questions lenders ask, and can help you figure out exactly what to order based on your home dimensions. We are based in Boulder, Colorado.</div>
+      </div>
+
+      <div class="reason-card">
+        <div class="reason-icon">&#128296;</div>
+        <div class="reason-title">Everything in One Order</div>
+        <div class="reason-body">Complete kits include panels, rails, corner pieces, vents, and hardware sized for your home. You do not need to figure out what components to order and hope they are compatible. Call us with your measurements and we will build a complete parts list for you.</div>
+      </div>
+
+      <div class="reason-card">
+        <div class="reason-icon">&#127968;</div>
+        <div class="reason-title">Built for Manufactured Homes</div>
+        <div class="reason-body">We make skirting. That is all we do. Our products are designed specifically for mobile and manufactured homes, sized for the height clearances these homes require, and tested against the weather conditions these homes face across the country.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OBJECTIONS -->
+<section class="objections-section">
+  <div class="container">
+    <div class="section-label" style="text-align:center;">Common Questions</div>
+    <h2 style="text-align:center;">Things We Hear Before People Order</h2>
+    <div class="objections-grid">
+
+      <div class="objection-card">
+        <div class="objection-q">I found cheaper skirting on Amazon. Why should I pay more here?</div>
+        <div class="objection-a">Look at what you are actually buying. Most skirting sold through resellers is imported with no real warranty and no US support if something goes wrong. Our pricing is factory-direct, which is often lower than what you find on Amazon once you account for the full kit. Call us and we will give you a real comparison.</div>
+      </div>
+
+      <div class="objection-card">
+        <div class="objection-q">My local park dealer offered to install skirting for me. Should I just go with them?</div>
+        <div class="objection-a">A local installer can still use Everlock materials. You can order factory-direct from us and hand the product to whoever is doing the install. The installer only charges you for labor, not a materials markup on top of their markup. Ask your installer how much they are charging for materials, then compare to our prices.</div>
+      </div>
+
+      <div class="objection-card">
+        <div class="objection-q">Home Depot carries skirting. What is the difference?</div>
+        <div class="objection-a">Big-box stores typically carry one or two standard vinyl skirting options in white. They do not carry insulated products, stone panel systems, or complete kits. Their staff cannot advise you on FHA/VA requirements or help you figure out what your specific home needs. And the pricing includes a retail markup.</div>
+      </div>
+
+      <div class="objection-card">
+        <div class="objection-q">I am worried about ordering something I have never seen in person.</div>
+        <div class="objection-a">Samples are available for purchase. Call 800-843-3336 or fill out the samples request form and we will send you physical color samples before you commit to an order. You can see the material, feel the thickness, and confirm the color matches your home before anything ships.</div>
+      </div>
+
+      <div class="objection-card">
+        <div class="objection-q">What if I order the wrong amount?</div>
+        <div class="objection-a">Call us before you order. We help customers figure out quantities every day. Give us your home length, width, and height above grade and we will tell you exactly what you need, including how many vents, corners, and access doors to include. Getting the right amount the first time is part of what we do.</div>
+      </div>
+
+      <div class="objection-card">
+        <div class="objection-q">Is the lifetime warranty really unlimited?</div>
+        <div class="objection-a">It is a true lifetime limited warranty on materials and workmanship under normal use and conditions. It is limited to the original purchaser. It covers defects in how the product was made, not damage from improper installation or unusual conditions. Full terms are on our <a href="warranty.html" style="color:var(--green); font-weight:600;">warranty page</a>.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAND -->
+<section class="trust-band">
+  <div class="container">
+    <div class="trust-band-inner">
+      <div>
+        <div class="trust-item-num">1981</div>
+        <div class="trust-item-label">Founded in Colorado</div>
+      </div>
+      <div>
+        <div class="trust-item-num">2</div>
+        <div class="trust-item-label">U.S. Manufacturing Plants</div>
+      </div>
+      <div>
+        <div class="trust-item-num">&#8734;</div>
+        <div class="trust-item-label">Lifetime Warranty on All Products</div>
+      </div>
+      <div>
+        <div class="trust-item-num">$0</div>
+        <div class="trust-item-label">Middleman Markup</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <div class="container">
+    <h2>See the Price Difference for Yourself</h2>
+    <p>Use the calculator to get an instant factory-direct estimate for your home. No email required, no commitment.</p>
+    <div class="bottom-cta-btns">
+      <a href="calculator.html" class="btn btn-primary btn-lg">Build My Quote</a>
+      <a href="contact.html" class="btn btn-secondary btn-lg">Talk to Our Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">SkirtingDirect.com</div>
+      <div class="footer-brand-sub">By Everlock Systems, Inc.</div>
+      <div class="footer-brand-desc">Factory-direct mobile and manufactured home skirting since 1981. We manufacture vinyl, insulated, and faux stone skirting at two U.S. plants and sell directly to homeowners, no middlemen, no markups.</div>
+      <div class="footer-phone-row">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        800-843-3336
+      </div>
+      <div class="footer-warranty-badge">
+        <span>Shield</span>
+        <span>True Lifetime Limited Warranty - Materials &amp; Workmanship</span>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Products</div>
+      <div class="footer-links">
+        <a href="blog-everlock-deluxe-vinyl-skirting.html" class="footer-link">Everlock Deluxe Vinyl</a>
+        <a href="blog-thermal-everrock-insulated-skirting.html" class="footer-link">Thermal EverRock Insulated</a>
+        <a href="blog-gorilla-insulated-skirting.html" class="footer-link">Gorilla Insulated Skirting</a>
+        <a href="products.html#novik" class="footer-link">Novik Brick &amp; Stone Panels</a>
+        <a href="products.html#accessories" class="footer-link">Accessories &amp; Vents</a>
+        <a href="complete-kits.html" class="footer-link">Complete Kits</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Help &amp; Resources</div>
+      <div class="footer-links">
+        <a href="calculator.html" class="footer-link">Skirting Calculator</a>
+        <a href="samples.html" class="footer-link">Order Samples</a>
+        <a href="installation.html" class="footer-link">Installation Guide</a>
+        <a href="fha-va-requirements.html" class="footer-link">FHA/VA Guide</a>
+        <a href="blog.html" class="footer-link">Blog &amp; Buying Guides</a>
+        <a href="faq.html" class="footer-link">FAQ</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <div class="footer-links">
+        <a href="about.html" class="footer-link">About Everlock Systems</a>
+        <a href="why-everlock.html" class="footer-link">Why SkirtingDirect</a>
+        <a href="real-homes.html" class="footer-link">Real Homes Gallery</a>
+        <a href="for-pros.html" class="footer-link">For Pros &amp; Dealers</a>
+        <a href="contact.html" class="footer-link">Contact Us</a>
+        <a href="warranty.html" class="footer-link">Lifetime Warranty</a>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.08); padding:28px 24px; max-width:1200px; margin:0 auto;">
+    <p style="font-size:12px; color:rgba(255,255,255,0.3); line-height:1.7;">
+      <strong style="color:rgba(255,255,255,0.45);">Legal &amp; Accuracy Notice:</strong> Competitor comparisons reflect general market conditions as of 2026. Individual retailer and dealer pricing, product availability, and warranty terms vary. Contact those retailers directly for current information. <strong style="color:rgba(255,255,255,0.45);">Lifetime Warranty:</strong> Limited to original purchaser. Covers manufacturing defects under normal use. Full terms at <a href="warranty.html" style="color:rgba(255,255,255,0.45);">skirtingdirect.com/resources/warranty</a>.
+    </p>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-text">Copyright 2026 Everlock Systems, Inc. All rights reserved. Manufactured in the USA.</div>
+    <div class="footer-bottom-links">
+      <a href="privacy-policy.html" class="footer-bottom-link">Privacy Policy</a>
+      <a href="terms.html" class="footer-bottom-link">Terms &amp; Conditions</a>
+      <a href="warranty.html" class="footer-bottom-link">Warranty</a>
+      <a href="sitemap.xml" class="footer-bottom-link">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

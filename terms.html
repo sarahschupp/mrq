@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms & Conditions | SkirtingDirect.com by Everlock Systems</title>
+  <meta name="description" content="Terms and Conditions for SkirtingDirect.com. Read before placing an order or using our website.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a1a; background: #fff; font-size: 16px; line-height: 1.6; }
+    a { color: #006400; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+    button { cursor: pointer; font-family: inherit; border: none; background: none; }
+
+    :root {
+      --green: #006400; --green-dark: #004d00; --green-pale: #e8f4e8;
+      --navy: #003366; --navy-dark: #001f3f; --earth: #f5f2ed; --earth-dark: #e8dfd0;
+      --text: #1a1a1a; --text-mid: #3d3d3d; --text-muted: #6b6b6b;
+      --border: #d9d9d9; --white: #ffffff;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; border-radius: 6px; font-size: 16px; font-weight: 600; transition: all 0.18s ease; line-height: 1.2; gap: 8px; white-space: nowrap; }
+    .btn-primary { background: var(--green); color: var(--white); border: 2px solid var(--green); }
+    .btn-primary:hover { background: var(--green-dark); border-color: var(--green-dark); }
+    .btn-sm { padding: 10px 20px; font-size: 14px; }
+
+    .utility-bar { background: var(--green-dark); color: rgba(255,255,255,0.92); font-size: 13px; padding: 8px 0; }
+    .utility-bar .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+    .utility-bar a { color: rgba(255,255,255,0.9); }
+    .utility-bar a:hover { color: var(--white); }
+    .utility-phone { display: flex; align-items: center; gap: 6px; font-weight: 700; font-size: 14px; color: var(--white); }
+    .utility-center { text-align: center; }
+    .utility-center strong { color: var(--white); }
+
+    .site-header { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+    .header-inner { display: flex; align-items: center; gap: 24px; padding: 14px 24px; max-width: 1400px; margin: 0 auto; }
+    .logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .logo-icon { width: 44px; height: 44px; background: var(--green); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .logo-icon svg { width: 26px; height: 26px; fill: var(--white); }
+    .logo-text { line-height: 1.1; }
+    .logo-name { font-size: 20px; font-weight: 800; color: var(--green); }
+    .logo-tagline { font-size: 10px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .main-nav { display: flex; align-items: center; gap: 2px; flex: 1; }
+    .nav-link { display: flex; align-items: center; gap: 4px; padding: 8px 12px; font-size: 14px; font-weight: 500; color: var(--text-mid); border-radius: 6px; transition: all 0.15s; white-space: nowrap; }
+    .nav-link:hover { color: var(--green); background: var(--green-pale); }
+    .header-cta { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .header-phone { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: var(--navy); }
+
+    /* PAGE HERO */
+    .page-hero { background: var(--navy); color: var(--white); padding: 48px 0 40px; }
+    .page-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; color: var(--white); margin-bottom: 8px; }
+    .page-hero p { font-size: 15px; color: rgba(255,255,255,0.65); }
+
+    /* LEGAL CONTENT */
+    .legal-layout {
+      display: grid; grid-template-columns: 220px 1fr;
+      gap: 48px; max-width: 1200px; margin: 0 auto; padding: 56px 24px;
+      align-items: start;
+    }
+    .legal-toc { position: sticky; top: 90px; }
+    .legal-toc-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 12px; }
+    .legal-toc a { display: block; padding: 7px 0; font-size: 14px; color: var(--text-mid); border-bottom: 1px solid var(--border); transition: color 0.15s; text-decoration: none; }
+    .legal-toc a:hover { color: var(--green); }
+    .legal-toc a:last-child { border-bottom: none; }
+
+    .legal-content h2 { font-size: 22px; font-weight: 700; color: var(--navy); margin: 40px 0 12px; padding-top: 8px; border-top: 1px solid var(--border); }
+    .legal-content h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+    .legal-content p { font-size: 15px; color: var(--text-mid); line-height: 1.8; margin-bottom: 14px; }
+    .legal-content ul { padding-left: 0; margin-bottom: 14px; }
+    .legal-content ul li { display: flex; align-items: flex-start; gap: 8px; font-size: 15px; color: var(--text-mid); padding: 5px 0; line-height: 1.7; }
+    .legal-content ul li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 9px; }
+    .legal-content .last-updated { font-size: 13px; color: var(--text-muted); margin-bottom: 32px; padding: 12px 16px; background: var(--earth); border-radius: 6px; }
+    .legal-content a { color: var(--green); }
+    .legal-content a:hover { text-decoration: underline; }
+    .legal-contact-box { background: var(--earth); border-radius: 10px; padding: 24px; margin-top: 32px; }
+    .legal-contact-box h3 { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .legal-contact-box p { font-size: 14px; color: var(--text-mid); margin-bottom: 6px; }
+
+    /* FOOTER */
+    .site-footer { background: var(--navy-dark); color: rgba(255,255,255,0.75); padding: 56px 24px 0; }
+    .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .footer-brand-name { font-size: 20px; font-weight: 800; color: var(--white); margin-bottom: 4px; }
+    .footer-brand-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-bottom: 14px; }
+    .footer-brand-desc { font-size: 13px; line-height: 1.7; margin-bottom: 16px; }
+    .footer-phone-row { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 16px; }
+    .footer-col-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--white); margin-bottom: 14px; }
+    .footer-links { display: flex; flex-direction: column; gap: 8px; }
+    .footer-link { font-size: 14px; color: rgba(255,255,255,0.65); transition: color 0.15s; text-decoration: none; }
+    .footer-link:hover { color: var(--white); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 20px 0; }
+    .footer-bottom-text { font-size: 12px; color: rgba(255,255,255,0.35); }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-link { font-size: 12px; color: rgba(255,255,255,0.45); text-decoration: none; }
+    .footer-bottom-link:hover { color: var(--white); }
+
+    @media (max-width: 768px) {
+      .legal-layout { grid-template-columns: 1fr; }
+      .legal-toc { position: static; background: var(--earth); border-radius: 10px; padding: 16px 20px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    }
+    @media (max-width: 640px) {
+      .header-inner { padding: 12px 16px; }
+      .main-nav { display: none; }
+      .utility-center { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="utility-bar">
+  <div class="container">
+    <div class="utility-phone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      800-843-3336
+    </div>
+    <div class="utility-center"><strong>Factory Direct Since 1981 | True Lifetime Warranty | 2 U.S. Plants</strong></div>
+    <a href="samples.html" style="color:rgba(255,255,255,0.85); font-size:13px;">Order Samples</a>
+  </div>
+</div>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,10 90,45 10,45" fill="white"/>
+          <rect x="30" y="45" width="40" height="30" fill="white"/>
+          <rect x="10" y="75" width="80" height="10" fill="rgba(255,255,255,0.6)"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <div class="logo-name">SkirtingDirect</div>
+        <div class="logo-tagline">By Everlock Systems</div>
+      </div>
+    </a>
+    <nav class="main-nav" role="navigation">
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="complete-kits.html" class="nav-link">Complete Kits</a>
+      <a href="calculator.html" class="nav-link" style="font-weight:600; color:var(--green);">Build Your Quote</a>
+      <a href="installation.html" class="nav-link">Installation</a>
+      <a href="real-homes.html" class="nav-link">Real Homes</a>
+      <a href="blog.html" class="nav-link">Resources</a>
+    </nav>
+    <div class="header-cta">
+      <div class="header-phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        800-843-3336
+      </div>
+      <a href="calculator.html" class="btn btn-primary btn-sm">Get Instant Pricing</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Terms &amp; Conditions</h1>
+    <p>Everlock Systems, Inc. / SkirtingDirect.com &nbsp;|&nbsp; Effective Date: January 1, 2026</p>
+  </div>
+</section>
+
+<div class="legal-layout">
+  <nav class="legal-toc">
+    <div class="legal-toc-title">On This Page</div>
+    <a href="#acceptance">Acceptance of Terms</a>
+    <a href="#products-orders">Products &amp; Orders</a>
+    <a href="#pricing-payment">Pricing &amp; Payment</a>
+    <a href="#shipping-delivery">Shipping &amp; Delivery</a>
+    <a href="#returns-cancellations">Returns &amp; Cancellations</a>
+    <a href="#warranty">Warranty</a>
+    <a href="#installation">Installation</a>
+    <a href="#user-content">User Content</a>
+    <a href="#intellectual-property">Intellectual Property</a>
+    <a href="#disclaimers">Disclaimers</a>
+    <a href="#limitation-liability">Limitation of Liability</a>
+    <a href="#governing-law">Governing Law</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+
+  <div class="legal-content">
+    <p class="last-updated">Last updated: January 1, 2026. These Terms apply to SkirtingDirect.com, operated by Everlock Systems, Inc., 6676 Gunpark Dr., Boulder, CO 80301.</p>
+
+    <p>Please read these Terms and Conditions carefully before placing an order or using this website. By accessing SkirtingDirect.com or purchasing any product, you agree to be bound by these Terms. If you do not agree, please do not use this website.</p>
+
+    <h2 id="acceptance">Acceptance of Terms</h2>
+    <p>These Terms constitute a legally binding agreement between you and Everlock Systems, Inc. ("Everlock," "we," "us," or "our"), the manufacturer and operator of SkirtingDirect.com. Use of this website constitutes your acceptance of these Terms, our <a href="privacy-policy.html">Privacy Policy</a>, and any other policies posted on the site.</p>
+    <p>We reserve the right to update these Terms at any time. Changes take effect upon posting. Continued use of the site after any update constitutes acceptance of the revised Terms.</p>
+
+    <h2 id="products-orders">Products &amp; Orders</h2>
+    <p>All products sold on SkirtingDirect.com are manufactured by Everlock Systems, Inc. and sold factory-direct. Product descriptions, specifications, and images are provided in good faith and are subject to change without notice.</p>
+    <p>By placing an order, you confirm that:</p>
+    <ul>
+      <li>You are at least 18 years of age</li>
+      <li>You have provided accurate information about your home dimensions and site conditions</li>
+      <li>You understand that skirting must be installed per HUD Manufactured Home Construction and Safety Standards and any applicable local codes</li>
+      <li>You accept responsibility for verifying that the products ordered are appropriate for your home and installation site</li>
+    </ul>
+    <p>We reserve the right to refuse or cancel any order at our discretion, including orders that appear to contain errors in pricing or product selection. If we cancel your order, we will issue a full refund of any payment collected.</p>
+    <p><strong>Color and appearance:</strong> Colors displayed on screen may vary from actual product due to monitor calibration and photography conditions. We strongly recommend ordering a sample before placing a full order. See <a href="samples.html">Order Samples</a>.</p>
+
+    <h2 id="pricing-payment">Pricing &amp; Payment</h2>
+    <p>All prices shown on SkirtingDirect.com are in U.S. dollars and are factory-direct prices. No middleman markups. Prices are subject to change without notice. The price in effect at the time your order is confirmed is the price you will be charged.</p>
+    <p>Project-based pricing shown on the site is based on a reference home size of 14' x 66' at 36" above grade, materials only, freight not included. Final pricing for your specific home is confirmed at checkout after you enter your dimensions and delivery zip code.</p>
+    <p>We accept major credit cards and other payment methods as displayed at checkout. Payment is processed securely. We do not store full credit card numbers on our servers.</p>
+    <p>Sales tax is applied where required by law based on the delivery address.</p>
+
+    <h2 id="shipping-delivery">Shipping &amp; Delivery</h2>
+    <p>Products are shipped from our manufacturing facilities in the United States. Shipping costs are calculated at checkout based on order size, weight, and delivery location.</p>
+    <ul>
+      <li>Freight shipments (full skirting kits) are delivered via LTL carrier to a curbside or accessible delivery point. Inside delivery is not included unless arranged separately.</li>
+      <li>Estimated transit times are provided at checkout and are not guaranteed. Actual delivery times may vary based on carrier schedules, weather, and other factors outside our control.</li>
+      <li>You are responsible for inspecting shipments upon delivery and noting any visible damage on the carrier's delivery receipt. Claims for shipping damage must be filed within 5 business days of delivery.</li>
+      <li>Delivery to remote areas or locations without accessible road access may require special arrangements. Contact us before ordering if you have concerns about delivery accessibility.</li>
+    </ul>
+    <p>If you have questions about shipping to your location, call us at <a href="tel:8008433336">800-843-3336</a>, Monday through Friday, 9am to 4pm Mountain Time.</p>
+
+    <h2 id="returns-cancellations">Returns &amp; Cancellations</h2>
+    <p><strong>Order cancellations:</strong> Orders may be cancelled without penalty within 24 hours of placement, provided manufacturing or shipment has not yet begun. Contact us immediately at <a href="tel:8008433336">800-843-3336</a> or <a href="mailto:info@skirtingdirect.com">info@skirtingdirect.com</a> if you need to cancel.</p>
+    <p><strong>Returns:</strong> Because skirting products are manufactured to order and cut to specific dimensions, we are unable to accept returns on cut or custom-configured materials. Standard (non-custom) stock items may be returned within 30 days of delivery in original, unopened condition. Return shipping costs are the customer's responsibility unless the return is due to our error or a product defect.</p>
+    <p>Products that have been installed, cut, or otherwise modified cannot be returned.</p>
+    <p>To initiate a return or report a defective product, contact us at <a href="mailto:info@skirtingdirect.com">info@skirtingdirect.com</a> or call 800-843-3336. Do not ship items back without first receiving a return authorization from us.</p>
+
+    <h2 id="warranty">Warranty</h2>
+    <p>Everlock Systems products are backed by our true Lifetime Warranty against defects in materials and workmanship under normal use and proper installation. The warranty is non-transferable and applies to the original purchaser only.</p>
+    <p>The Lifetime Warranty does not cover:</p>
+    <ul>
+      <li>Damage caused by improper installation or failure to follow installation instructions</li>
+      <li>Damage from acts of nature, including but not limited to floods, fires, hail, severe wind, or animal damage</li>
+      <li>Normal weathering, surface oxidation, or color change over time on non-Everlock-branded panels</li>
+      <li>Products that have been modified, cut, or used outside their intended application</li>
+      <li>Labor costs associated with removal, replacement, or reinstallation</li>
+    </ul>
+    <p>To make a warranty claim, contact us with your original order number, a description of the issue, and photographs of the defect. We will review your claim and respond within 5 business days.</p>
+    <p>Full warranty terms are available at <a href="warranty.html">skirtingdirect.com/warranty</a>.</p>
+
+    <h2 id="installation">Installation</h2>
+    <p>Skirting must be installed in accordance with the instructions provided with your order, applicable HUD Manufactured Home Construction and Safety Standards, and any local building codes or permit requirements.</p>
+    <p>You are responsible for verifying local permit requirements before installation. We do not guarantee that our products meet every local code or regulation in every jurisdiction. For guidance, consult your local building authority.</p>
+    <p>If you are purchasing skirting to satisfy requirements for an FHA or VA loan, you are responsible for confirming compliance with your lender and appraiser. Final approval rests with your lender and appraiser, not with Everlock Systems.</p>
+    <p>While we are happy to answer installation questions, we are a manufacturer, not a licensed contractor. Information provided by our staff is general guidance only and does not constitute professional installation advice.</p>
+
+    <h2 id="user-content">User Content</h2>
+    <p>If you submit photos, reviews, testimonials, or other content to SkirtingDirect.com (including via the contact form, email, or any gallery submission form), you grant Everlock Systems a non-exclusive, royalty-free, perpetual license to use, display, reproduce, and distribute that content for marketing and promotional purposes, including on our website and social media channels.</p>
+    <p>By submitting content, you confirm that:</p>
+    <ul>
+      <li>You own or have the right to share the content</li>
+      <li>The content does not violate any third party's rights</li>
+      <li>You consent to our use of the content as described above</li>
+    </ul>
+    <p>We reserve the right to edit, remove, or decline to publish any submitted content for any reason.</p>
+
+    <h2 id="intellectual-property">Intellectual Property</h2>
+    <p>All content on SkirtingDirect.com, including text, images, graphics, logos, product names, and design elements, is the property of Everlock Systems, Inc. or its content suppliers and is protected by U.S. copyright, trademark, and other intellectual property laws.</p>
+    <p>You may not copy, reproduce, distribute, modify, or create derivative works from any content on this site without our prior written consent. Limited personal, non-commercial use is permitted for informational purposes.</p>
+    <p>"Everlock," "SkirtingDirect," "EverRock," "Thermal EverRock," and related product names are trademarks of Everlock Systems, Inc.</p>
+
+    <h2 id="disclaimers">Disclaimers</h2>
+    <p>This website and its content are provided "as is" without warranty of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+    <p>We make reasonable efforts to ensure that product information, pricing, and specifications on this site are accurate and up to date. However, we do not warrant that the website will be error-free, uninterrupted, or free of viruses or other harmful components.</p>
+    <p>Any reliance you place on information from this site is at your own risk. Always verify specifications and requirements with your local building authority and, where applicable, your lender or appraiser.</p>
+
+    <h2 id="limitation-liability">Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, Everlock Systems, Inc. shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of this website or any products purchased from SkirtingDirect.com, even if we have been advised of the possibility of such damages.</p>
+    <p>Our total liability for any claim arising out of or related to your use of this website or purchase of our products shall not exceed the amount you paid for the specific product giving rise to the claim.</p>
+    <p>Some states do not allow exclusion or limitation of incidental or consequential damages, so the above limitation may not apply to you.</p>
+
+    <h2 id="governing-law">Governing Law &amp; Disputes</h2>
+    <p>These Terms are governed by the laws of the State of Colorado, without regard to conflict of law principles. Any disputes arising out of or related to these Terms or your use of this website shall be resolved in the state or federal courts located in Boulder County, Colorado, and you consent to personal jurisdiction in those courts.</p>
+    <p>Before initiating any legal action, you agree to contact us in good faith to attempt to resolve the dispute informally. Most issues can be resolved quickly by calling us at 800-843-3336 or emailing <a href="mailto:info@skirtingdirect.com">info@skirtingdirect.com</a>.</p>
+    <p>These Terms represent the entire agreement between you and Everlock Systems with respect to this website and supersede any prior agreements. If any provision is found unenforceable, the remaining provisions will continue in full force.</p>
+
+    <h2 id="contact">Contact Us</h2>
+    <p>Questions about these Terms? We're a real company with real people who pick up the phone.</p>
+
+    <div class="legal-contact-box">
+      <h3>Everlock Systems, Inc.</h3>
+      <p>6676 Gunpark Dr., Boulder, CO 80301</p>
+      <p>Phone: <a href="tel:8008433336">800-843-3336</a> &nbsp;|&nbsp; Mon-Fri, 9am-4pm Mountain Time</p>
+      <p>Email: <a href="mailto:info@skirtingdirect.com">info@skirtingdirect.com</a></p>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">SkirtingDirect.com</div>
+      <div class="footer-brand-sub">By Everlock Systems, Inc.</div>
+      <p class="footer-brand-desc">Factory-direct mobile home skirting since 1981. Two U.S. manufacturing plants. True Lifetime Warranty on every product.</p>
+      <div class="footer-phone-row">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <a href="tel:8008433336" style="color:white; text-decoration:none;">800-843-3336</a>
+      </div>
+      <p style="font-size:12px; color:rgba(255,255,255,0.4);">Mon-Fri 9am-4pm Mountain Time</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Products</div>
+      <div class="footer-links">
+        <a href="products.html" class="footer-link">All Skirting</a>
+        <a href="complete-kits.html" class="footer-link">Complete Kits</a>
+        <a href="samples.html" class="footer-link">Samples</a>
+        <a href="calculator.html" class="footer-link">Get a Quote</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Resources</div>
+      <div class="footer-links">
+        <a href="installation.html" class="footer-link">Installation Guide</a>
+        <a href="faq.html" class="footer-link">FAQ</a>
+        <a href="real-homes.html" class="footer-link">Real Homes Gallery</a>
+        <a href="why-everlock.html" class="footer-link">Why Everlock?</a>
+        <a href="blog.html" class="footer-link">Blog</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <div class="footer-links">
+        <a href="why-everlock.html" class="footer-link">About Us</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+        <a href="warranty.html" class="footer-link">Lifetime Warranty</a>
+        <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+        <a href="terms.html" class="footer-link">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-text">&copy; 2026 Everlock Systems, Inc. All rights reserved. Founded in Colorado in 1981.</div>
+    <div class="footer-bottom-links">
+      <a href="privacy-policy.html" class="footer-bottom-link">Privacy</a>
+      <a href="terms.html" class="footer-bottom-link">Terms</a>
+      <a href="sitemap.xml" class="footer-bottom-link">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

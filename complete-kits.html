@@ -3,24 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Complete Mobile Home Skirting Kits by Size | SkirtingDirect.com</title>
-  <meta name="description" content="Shop complete mobile home skirting kits sized for your home: 14x70, 16x80, 28x60 and more. Everything included: panels, rails, hardware. Factory-direct pricing, lifetime warranty. 800-843-3336.">
+  <title>Complete Mobile Home Skirting Kits by Size | Factory Direct Pricing | SkirtingDirect</title>
+  <meta name="description" content="Ready-to-install complete mobile home skirting kits for common sizes (14x70, 16x80, 28x60 and more). Everything included: panels, rails, hardware, and instructions. Factory-direct since 1981 with Lifetime Warranty. Call 800-843-3336.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     /* ============================================================
        RESET & BASE
     ============================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      color: #1a1a1a;
-      background: #fff;
-      font-size: 16px;
-      line-height: 1.6;
-    }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a1a; background: #fff; font-size: 16px; line-height: 1.6; }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
     ul { list-style: none; }
@@ -36,922 +31,362 @@
       --green-pale: #e8f4e8;
       --navy: #003366;
       --navy-dark: #001f3f;
-      --navy-light: #0d4f8c;
       --earth: #f5f2ed;
-      --earth-dark: #e8dfd0;
       --text: #1a1a1a;
       --text-mid: #3d3d3d;
       --text-muted: #6b7280;
       --border: #d9d9d9;
       --white: #ffffff;
-      --gold: #c8860a;
-      --gold-light: #fef7e8;
     }
 
     /* ============================================================
-       UTILITY CLASSES
+       UTILITY & LAYOUT
     ============================================================ */
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    .container-wide { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center;
-      padding: 14px 28px; border-radius: 6px; font-size: 16px; font-weight: 600;
-      transition: all 0.18s ease; line-height: 1.2; gap: 8px; white-space: nowrap;
-    }
-    .btn-primary {
-      background: var(--green); color: var(--white); border: 2px solid var(--green);
-    }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; border-radius: 6px; font-size: 16px; font-weight: 600; transition: all 0.18s ease; gap: 8px; }
+    .btn-primary { background: var(--green); color: var(--white); border: 2px solid var(--green); }
     .btn-primary:hover { background: var(--green-dark); border-color: var(--green-dark); }
-    .btn-secondary {
-      background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.75);
-    }
-    .btn-secondary:hover { background: rgba(255,255,255,0.12); border-color: var(--white); }
-    .btn-navy { background: var(--navy); color: var(--white); border: 2px solid var(--navy); }
-    .btn-navy:hover { background: var(--navy-dark); }
-    .btn-outline-green {
-      background: transparent; color: var(--green); border: 2px solid var(--green);
-    }
-    .btn-outline-green:hover { background: var(--green); color: var(--white); }
-    .btn-sm { padding: 10px 20px; font-size: 14px; }
     .btn-lg { padding: 18px 36px; font-size: 18px; }
     h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 800; line-height: 1.1; }
     h2 { font-size: clamp(26px, 3.5vw, 42px); font-weight: 800; line-height: 1.15; }
-    h3 { font-size: clamp(20px, 2.5vw, 28px); font-weight: 700; line-height: 1.2; }
-    h4 { font-size: 18px; font-weight: 700; line-height: 1.3; }
     .text-green { color: var(--green); }
-    .text-navy { color: var(--navy); }
     .text-muted { color: var(--text-muted); }
-    .check-icon { color: var(--green); font-size: 18px; flex-shrink: 0; margin-top: 2px; }
-    .section-label {
-      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
-      color: var(--green); margin-bottom: 10px;
-    }
-    .section-label-light { color: rgba(255,255,255,0.7); }
 
     /* ============================================================
-       TOP UTILITY BAR
+       UTILITY BAR & HEADER
     ============================================================ */
-    .utility-bar {
-      background: var(--green-dark);
-      color: rgba(255,255,255,0.92);
-      font-size: 13px;
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
-    }
-    .utility-bar .container {
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px;
-    }
-    .utility-bar a { color: rgba(255,255,255,0.9); }
-    .utility-bar a:hover { color: var(--white); }
-    .utility-center {
-      text-align: center;
-    }
-    .utility-center strong { color: var(--white); }
-
-    /* ============================================================
-       HEADER / NAV
-    ============================================================ */
-    .site-header {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    }
-    .header-inner {
-      display: flex; align-items: center; gap: 24px; padding: 14px 24px;
-      max-width: 1400px; margin: 0 auto;
-    }
-    .logo {
-      display: flex; align-items: center; gap: 10px; flex-shrink: 0;
-    }
-    .logo-icon {
-      width: 44px; height: 44px; background: var(--green);
-      border-radius: 8px; display: flex; align-items: center; justify-content: center;
-    }
-    .logo-icon svg { width: 26px; height: 26px; fill: var(--white); }
-    .logo-text { line-height: 1.1; }
+    .utility-bar { background: var(--green-dark); color: rgba(255,255,255,0.92); font-size: 13px; padding: 8px 0; }
+    .utility-bar .container { display: flex; align-items: center; justify-content: center; text-align: center; }
+    .site-header { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+    .header-inner { display: flex; align-items: center; gap: 24px; padding: 14px 24px; max-width: 1400px; margin: 0 auto; }
+    .logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; text-decoration: none; }
+    .logo-icon { width: 44px; height: 44px; background: var(--green); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
     .logo-name { font-size: 20px; font-weight: 800; color: var(--green); }
-    .logo-tagline { font-size: 10px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .logo-tagline { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
     .main-nav { display: flex; align-items: center; gap: 2px; flex: 1; }
-    .nav-item { position: relative; }
-    .nav-link {
-      display: flex; align-items: center; gap: 4px; padding: 8px 12px;
-      font-size: 14px; font-weight: 500; color: var(--text-mid); border-radius: 6px;
-      transition: all 0.15s; white-space: nowrap;
-    }
-    .nav-link:hover { color: var(--green); background: var(--green-pale); }
-    .nav-link.active { color: var(--green); }
-    .nav-link svg { width: 12px; height: 12px; opacity: 0.6; transition: transform 0.15s; }
-    .nav-item:hover .nav-link svg { transform: rotate(180deg); }
-    .dropdown {
-      position: absolute; top: calc(100% + 4px); left: 0;
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-      min-width: 220px; padding: 8px; opacity: 0; pointer-events: none;
-      transform: translateY(-4px); transition: all 0.15s ease; z-index: 50;
-    }
-    .nav-item:hover .dropdown { opacity: 1; pointer-events: all; transform: translateY(0); }
-    .dropdown-item {
-      display: flex; align-items: center; gap: 10px; padding: 10px 14px;
-      font-size: 14px; color: var(--text-mid); border-radius: 6px; transition: all 0.12s;
-    }
-    .dropdown-item:hover { background: var(--green-pale); color: var(--green); }
-    .dropdown-item-icon { font-size: 16px; flex-shrink: 0; }
-    .header-cta { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-    .header-phone { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: var(--navy); }
-    .hamburger { display: none; padding: 8px; }
-    .hamburger svg { width: 24px; height: 24px; }
+    .nav-link { padding: 8px 12px; font-size: 14px; font-weight: 500; color: var(--text-mid); border-radius: 6px; transition: all 0.15s; text-decoration: none; }
+    .nav-link:hover, .nav-link.active { color: var(--green); background: var(--green-pale); }
+    .header-phone { display: flex; align-items: center; gap: 6px; font-weight: 700; color: var(--navy); font-size: 14px; }
 
     /* ============================================================
        HERO
     ============================================================ */
     .hero {
-      background: linear-gradient(135deg, rgba(0,100,0,0.78) 0%, rgba(0,61,0,0.72) 40%, rgba(0,82,0,0.68) 70%, rgba(0,51,0,0.75) 100%);
-      position: relative; overflow: hidden; padding: 80px 0 72px;
+      background: linear-gradient(135deg, rgba(0,77,0,0.92) 0%, rgba(0,51,102,0.88) 100%);
+      padding: 80px 0 72px;
+      color: white;
     }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      opacity: 1;
-    }
-    .hero-inner {
-      position: relative; z-index: 2;
-      max-width: 1200px; margin: 0 auto; padding: 0 24px;
-    }
-    .hero-content { max-width: 700px; }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 20px; padding: 5px 14px; font-size: 13px; font-weight: 600;
-      color: rgba(255,255,255,0.9); margin-bottom: 20px;
-    }
-    .hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #5eda5e; flex-shrink: 0; }
-    .hero h1 { color: var(--white); margin-bottom: 20px; }
-    .hero h1 span { color: #5eda5e; }
-    .hero-sub {
-      font-size: 19px; color: rgba(255,255,255,0.85); margin-bottom: 32px;
-      line-height: 1.5; font-weight: 400;
-    }
-    .hero-trust { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 20px; }
-    .hero-trust-item {
-      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 8px; padding: 14px; text-align: center; font-size: 13px;
-      color: rgba(255,255,255,0.85); line-height: 1.5;
-    }
-
-    /* ============================================================
-       SECTION COMMON
-    ============================================================ */
-    .section { padding: 80px 0; }
-    .section-alt { background: var(--earth); }
-    .section-green { background: var(--green); color: var(--white); }
-    .section-navy { background: var(--navy); color: var(--white); }
-    .section-dark { background: #0a1a0a; color: var(--white); }
-    .section-header { text-align: center; max-width: 680px; margin: 0 auto 52px; }
-    .section-header h2 { margin-bottom: 14px; }
-    .section-header p { font-size: 18px; color: var(--text-muted); line-height: 1.6; }
-    .section-header-light h2 { color: var(--white); }
-    .section-header-light p { color: rgba(255,255,255,0.75); }
+    .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.15); border-radius: 9999px; padding: 6px 16px; font-size: 13px; font-weight: 600; margin-bottom: 24px; }
+    .hero h1 { color: white; margin-bottom: 16px; }
+    .hero-sub { font-size: 19px; color: rgba(255,255,255,0.9); max-width: 680px; line-height: 1.5; margin-bottom: 8px; }
 
     /* ============================================================
        KIT SELECTOR
     ============================================================ */
-    .kit-selector-wrapper {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
-    }
-    .kit-cards-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-    }
+    .kit-selector-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 40px; }
+    .kit-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; }
     .kit-card {
-      background: var(--white); border: 2px solid var(--border); border-radius: 12px;
-      padding: 24px; text-align: center; cursor: pointer; transition: all 0.2s ease;
+      background: white;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
-    .kit-card:hover { border-color: var(--green); box-shadow: 0 4px 16px rgba(0,100,0,0.1); }
-    .kit-card.selected {
-      background: var(--green); color: var(--white); border-color: var(--green);
-      box-shadow: 0 8px 24px rgba(0,100,0,0.25);
-    }
-    .kit-card.selected .kit-card-size { color: var(--white); }
-    .kit-card.selected .kit-card-type { color: rgba(255,255,255,0.8); }
-    .kit-card-size { font-size: 24px; font-weight: 800; color: var(--text); margin-bottom: 4px; }
-    .kit-card-type { font-size: 13px; color: var(--text-muted); font-weight: 500; }
-
-    /* Kit detail panel */
+    .kit-card:hover { border-color: var(--green); box-shadow: 0 2px 8px rgba(0,100,0,0.12); }
+    .kit-card.selected { background: var(--green); color: white; border-color: var(--green); }
+    .kit-card-size { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
+    .kit-card-type { font-size: 12px; opacity: 0.8; }
     .kit-detail-panel {
-      background: var(--white); border: 1px solid var(--border); border-radius: 12px;
-      padding: 32px; position: sticky; top: 120px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      position: sticky;
+      top: 120px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
     }
-    .kit-detail-label {
-      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
-      color: var(--green); margin-bottom: 8px;
-    }
-    .kit-detail-size { font-size: 28px; font-weight: 800; color: var(--text); margin-bottom: 24px; }
-    .kit-detail-section { margin-bottom: 24px; }
-    .kit-detail-section-title {
-      font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 12px;
-      text-transform: uppercase; letter-spacing: 0.06em;
-    }
-    .kit-detail-list {
-      list-style: none; display: flex; flex-direction: column; gap: 8px;
-    }
-    .kit-detail-list li {
-      display: flex; gap: 10px; font-size: 14px; color: var(--text-mid);
-    }
-    .kit-detail-list li::before {
-      content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0;
-    }
+    .kit-detail-label { font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; }
+    .kit-detail-size { font-size: 32px; font-weight: 800; margin: 12px 0 20px; color: var(--navy); }
+    .kit-detail-section { margin-bottom: 20px; }
+    .kit-detail-section strong { display: block; margin-bottom: 8px; font-size: 14px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .kit-detail-list li { padding: 6px 0; display: flex; align-items: center; gap: 10px; font-size: 15px; border-bottom: 1px solid var(--border); }
+    .kit-detail-list li:last-child { border-bottom: none; }
+    .kit-detail-list li::before { content: "checkmark"; content: "\2713"; color: var(--green); font-weight: bold; flex-shrink: 0; }
     .kit-price-row {
-      background: var(--green-pale); border: 1px solid rgba(0,100,0,0.2); border-radius: 10px;
-      padding: 16px; margin-bottom: 24px; display: flex; align-items: baseline; gap: 8px;
-    }
-    .kit-price-label { font-size: 13px; color: var(--text-muted); font-weight: 600; }
-    .kit-price-amount { font-size: 32px; font-weight: 800; color: var(--green); }
-    .kit-price-note {
-      font-size: 11px; color: var(--text-muted); margin-top: 12px; line-height: 1.5;
-      padding-top: 12px; border-top: 1px solid rgba(0,100,0,0.15);
-    }
-    .kit-cta-primary {
-      width: 100%; margin-bottom: 12px;
-    }
-    .kit-cta-link {
-      display: block; text-align: center; font-size: 14px; color: var(--green);
-      font-weight: 600; padding: 12px; transition: all 0.2s;
-    }
-    .kit-cta-link:hover { color: var(--green-dark); text-decoration: underline; }
-
-    /* ============================================================
-       WHY KITS SECTION
-    ============================================================ */
-    .why-kits-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
-    }
-    .why-kit-card {
+      background: var(--green-pale);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 24px 0;
       text-align: center;
     }
-    .why-kit-icon {
-      font-size: 48px; margin-bottom: 16px; line-height: 1;
-    }
-    .why-kit-card h4 { margin-bottom: 12px; color: var(--text); }
-    .why-kit-card p { font-size: 15px; color: var(--text-muted); line-height: 1.6; }
+    .kit-price-label { font-size: 13px; color: var(--text-muted); display: block; margin-bottom: 4px; }
+    .kit-price-amount { font-size: 36px; font-weight: 800; color: var(--green); display: block; }
+    .kit-price-note { font-size: 12px; color: var(--text-muted); margin-top: 6px; display: block; }
+    .kit-cta-btn { display: block; width: 100%; background: var(--green); color: white; border: none; border-radius: 6px; padding: 16px; font-size: 17px; font-weight: 700; cursor: pointer; margin-bottom: 12px; transition: background 0.15s; }
+    .kit-cta-btn:hover { background: var(--green-dark); }
+    .kit-cta-phone { display: block; text-align: center; color: var(--green); font-weight: 600; font-size: 15px; text-decoration: none; }
+    .kit-cta-phone:hover { text-decoration: underline; }
 
     /* ============================================================
-       UPGRADE SECTION
+       OTHER SECTIONS
     ============================================================ */
-    .upgrade-band {
-      background: var(--earth); padding: 60px 0;
-    }
-    .upgrade-intro {
-      text-align: center; max-width: 700px; margin: 0 auto 40px;
-      font-size: 20px; font-weight: 600; color: var(--text-mid);
-    }
-    .upgrade-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-    }
-    .upgrade-card {
-      background: var(--white); border: 1px solid var(--border); border-radius: 12px;
-      padding: 28px; text-align: center;
-    }
-    .upgrade-card h4 { margin-bottom: 8px; color: var(--text); }
-    .upgrade-label { font-size: 13px; color: var(--green); font-weight: 700; margin-bottom: 12px; }
-    .upgrade-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+    .section { padding: 80px 0; }
+    .section-alt { background: var(--earth); }
+    .why-kits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; }
+    .why-kit-card { text-align: center; padding: 32px 24px; }
+    .why-kit-icon { font-size: 44px; margin-bottom: 16px; }
+    .why-kit-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+    .upgrade-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+    .upgrade-card { border: 1px solid var(--border); padding: 28px; border-radius: 12px; }
+    .upgrade-card strong { color: var(--green); display: block; margin-bottom: 8px; font-size: 17px; }
 
     /* ============================================================
-       FHA/VA SECTION
+       PRICING DISCLAIMER
     ============================================================ */
-    .fha-section {
-      background: var(--navy); color: var(--white); padding: 60px 0;
-    }
-    .fha-inner {
-      max-width: 1200px; margin: 0 auto; padding: 0 24px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
-    }
-    .fha-title { color: var(--white); margin-bottom: 20px; }
-    .fha-intro { font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 24px; }
-    .fha-link {
-      display: inline-block; color: rgba(255,255,255,0.75); text-decoration: underline;
-      font-weight: 600; margin-top: 12px; transition: color 0.2s;
-    }
-    .fha-link:hover { color: var(--white); }
-    .fha-callout {
-      background: rgba(0,100,0,0.15); border: 1px solid rgba(0,100,0,0.3);
-      border-radius: 10px; padding: 18px; font-size: 14px; line-height: 1.6;
-      color: rgba(255,255,255,0.85); margin-bottom: 24px;
-    }
-
-    /* ============================================================
-       CUSTOMER PHOTOS
-    ============================================================ */
-    .photos-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-    }
-    .photo-card {
-      background: var(--white); border: 1px solid var(--border); border-radius: 12px;
-      overflow: hidden;
-    }
-    .photo-placeholder {
-      width: 100%; aspect-ratio: 1; background: linear-gradient(135deg, #e8dfd0 0%, #f5f2ed 100%);
-      display: flex; align-items: center; justify-content: center; font-size: 48px;
-      color: #999;
-    }
-    .photo-caption {
-      padding: 20px;
-    }
-    .photo-caption-name { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
-    .photo-caption-details { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
-    .photo-rating { font-size: 14px; color: #fbbf24; letter-spacing: 1px; }
+    .pricing-disclaimer { background: var(--earth); border-left: 4px solid var(--green); padding: 16px 20px; border-radius: 0 8px 8px 0; font-size: 14px; color: var(--text-muted); margin-top: 24px; line-height: 1.6; }
 
     /* ============================================================
        FINAL CTA
     ============================================================ */
-    .final-cta {
-      background: var(--green); color: var(--white); padding: 60px 0; text-align: center;
-    }
-    .final-cta-inner {
-      max-width: 700px; margin: 0 auto; padding: 0 24px;
-    }
-    .final-cta h2 { color: var(--white); margin-bottom: 14px; }
-    .final-cta-sub { font-size: 18px; color: rgba(255,255,255,0.85); margin-bottom: 28px; line-height: 1.6; }
-    .final-cta-buttons {
-      display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px;
-    }
-    .final-phone-row {
-      display: flex; align-items: center; justify-content: center; gap: 10px;
-      font-size: 18px; font-weight: 700; margin-bottom: 4px;
-    }
-    .final-phone-row svg { width: 20px; height: 20px; }
-    .final-phone-note { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 24px; }
-    .final-trust-row {
-      display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 24px;
-    }
-    .final-trust-item {
-      font-size: 13px; color: rgba(255,255,255,0.8); display: flex; align-items: center; gap: 6px;
-    }
-    .final-trust-dot {
-      width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.5); flex-shrink: 0;
-    }
-
-    /* ============================================================
-       FOOTER
-    ============================================================ */
-    .site-footer {
-      background: #0a1a0a; color: rgba(255,255,255,0.75); padding: 48px 0 20px; font-size: 14px;
-    }
-    .footer-grid {
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px;
-      max-width: 1200px; margin: 0 auto 32px; padding: 0 24px;
-    }
-    .footer-brand-name { font-size: 18px; font-weight: 800; color: var(--white); margin-bottom: 4px; }
-    .footer-brand-sub { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
-    .footer-brand-desc { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.65); margin-bottom: 16px; }
-    .footer-phone-row { display: flex; gap: 8px; color: var(--white); font-weight: 600; margin-bottom: 4px; }
-    .footer-phone-row svg { width: 16px; height: 16px; flex-shrink: 0; }
-    .footer-hours { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
-    .footer-warranty-badge {
-      display: flex; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.7);
-      margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1);
-    }
-    .footer-col-title { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.05em; }
-    .footer-links { display: flex; flex-direction: column; gap: 8px; }
-    .footer-link { font-size: 13px; color: rgba(255,255,255,0.65); transition: color 0.2s; }
-    .footer-link:hover { color: var(--white); }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.08); padding: 20px 24px; display: flex;
-      align-items: center; justify-content: space-between;
-      max-width: 1200px; margin: 0 auto; font-size: 12px; color: rgba(255,255,255,0.5);
-    }
-    .footer-bottom-links { display: flex; gap: 20px; }
-    .footer-bottom-link { color: rgba(255,255,255,0.5); transition: color 0.2s; }
-    .footer-bottom-link:hover { color: rgba(255,255,255,0.8); }
-
-    /* ============================================================
-       MOBILE STICKY CTA
-    ============================================================ */
-    .mobile-sticky-cta {
-      display: none; position: fixed; bottom: 0; left: 0; right: 0;
-      background: var(--green); padding: 12px 12px; z-index: 99;
-      box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
-    }
-    .mobile-sticky-cta .btn { width: 100%; }
+    .final-cta { background: var(--green); color: white; padding: 80px 0; text-align: center; }
+    .final-cta h2 { color: white; font-size: clamp(26px, 4vw, 40px); margin-bottom: 16px; }
+    .final-cta p { color: rgba(255,255,255,0.9); max-width: 600px; margin: 0 auto 32px; font-size: 18px; }
+    .btn-cta-white { display: inline-block; background: white; color: var(--green); font-weight: 700; font-size: 19px; padding: 18px 44px; border-radius: 6px; text-decoration: none; transition: opacity 0.15s; }
+    .btn-cta-white:hover { opacity: 0.92; }
 
     /* ============================================================
        RESPONSIVE
     ============================================================ */
-    @media (max-width: 768px) {
-      .kit-selector-wrapper { grid-template-columns: 1fr; gap: 32px; }
-      .kit-cards-grid { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 900px) {
+      .kit-selector-wrapper { grid-template-columns: 1fr; }
       .kit-detail-panel { position: static; }
-      .why-kits-grid { grid-template-columns: 1fr; gap: 24px; }
-      .upgrade-grid { grid-template-columns: 1fr; }
-      .fha-inner { grid-template-columns: 1fr; gap: 32px; }
-      .photos-grid { grid-template-columns: repeat(2, 1fr); }
-      .final-trust-row { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
-      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-      .footer-bottom-links { justify-content: center; }
-      .hero-trust { display: block; }
-      .hero-trust-item { margin-bottom: 8px; }
-      @media (max-width: 600px) {
-        .mobile-sticky-cta { display: block; }
-        .kit-cards-grid { grid-template-columns: 1fr; }
-        .photos-grid { grid-template-columns: 1fr; }
-        .final-cta-buttons { flex-direction: column; }
-        .final-cta-buttons .btn { width: 100%; }
-      }
+    }
+    @media (max-width: 640px) {
+      .kit-cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .main-nav { display: none; }
     }
   </style>
 </head>
 <body>
 
-<!-- ============================================================
-     UTILITY BAR
-============================================================ -->
+<!-- UTILITY BAR -->
 <div class="utility-bar">
   <div class="container">
-    <div class="utility-center">
-      <strong>Stock items</strong> ship within 2 business days. Call <strong>800-843-3336</strong> with questions.
-    </div>
+    <strong>Factory Direct Since 1981 &bull; Lifetime Warranty &bull; Made in the USA</strong>
   </div>
 </div>
 
-<!-- ============================================================
-     HEADER / NAV
-============================================================ -->
+<!-- HEADER -->
 <header class="site-header" role="banner">
   <div class="header-inner">
-    <a href="/" class="logo">
-      <div class="logo-icon">
-        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-          <rect x="3" y="4" width="18" height="14" rx="1.5"/>
-          <path d="M3 10h18M7 15v3M17 15v3"/>
-        </svg>
-      </div>
+    <a href="index.html" class="logo">
+      <div class="logo-icon">&#127968;</div>
       <div class="logo-text">
         <div class="logo-name">SkirtingDirect</div>
         <div class="logo-tagline">By Everlock Systems</div>
       </div>
     </a>
-
     <nav class="main-nav">
-      <div class="nav-item">
-        <a href="/products" class="nav-link">Products</a>
-        <div class="dropdown">
-          <a href="/products/everlock-deluxe-vinyl" class="dropdown-item">Everlock Deluxe Vinyl</a>
-          <a href="/products/thermal-everrock" class="dropdown-item">Thermal EverRock Insulated</a>
-          <a href="/products/gorilla-thermal" class="dropdown-item">Gorilla Insulated</a>
-          <a href="/products/novik-stone" class="dropdown-item">Novik Faux Stone</a>
-          <a href="/products/accessories" class="dropdown-item">Accessories & Vents</a>
-        </div>
-      </div>
-
-      <a href="/calculator" class="nav-link">Calculator</a>
-      <a href="/complete-kits" class="nav-link active">Complete Kits</a>
-      <a href="/samples" class="nav-link">Samples</a>
-
-      <div class="nav-item">
-        <a href="/resources" class="nav-link">Resources</a>
-        <div class="dropdown">
-          <a href="/resources/fha-va-requirements" class="dropdown-item">FHA/VA Guide</a>
-          <a href="/installation" class="dropdown-item">Installation</a>
-          <a href="/resources/blog" class="dropdown-item">Blog & Guides</a>
-          <a href="/resources/faq" class="dropdown-item">FAQ</a>
-        </div>
-      </div>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="calculator.html" class="nav-link">Calculator</a>
+      <a href="complete-kits.html" class="nav-link active">Complete Kits</a>
+      <a href="samples.html" class="nav-link">Samples</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
     </nav>
-
-    <div class="header-cta">
-      <div class="header-phone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        800-843-3336
-      </div>
+    <div class="header-phone">
+      <strong>800-843-3336</strong>
     </div>
-
-    <button class="hamburger" onclick="toggleMobileMenu()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
   </div>
 </header>
 
-<!-- ============================================================
-     HERO
-============================================================ -->
-<section class="hero" role="region" aria-label="Page hero">
+<!-- HERO -->
+<section class="hero">
   <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-eyebrow">
-        <div class="hero-eyebrow-dot"></div>
-        Everything included
-      </div>
-      <h1>Complete Skirting Kits: Everything You Need in One Order</h1>
-      <p class="hero-sub">Pick your home size. We pack the panels, rails, and hardware. You install it yourself or hire local.</p>
-
-      <div class="hero-trust">
-        <div class="hero-trust-item">No guessing what to order</div>
-        <div class="hero-trust-item">Panels + rails + hardware included</div>
-        <div class="hero-trust-item">Lifetime warranty on every kit</div>
-      </div>
-    </div>
+    <div class="hero-eyebrow">Everything Included &bull; Ready to Ship</div>
+    <h1>Complete Mobile Home Skirting Kits</h1>
+    <p class="hero-sub">Pick your home size. We include the right number of panels, top and bottom rails, corner trim, hardware, and instructions. No guessing, no missing pieces. Backed by our true Lifetime Warranty since 1981.</p>
   </div>
 </section>
 
-<!-- ============================================================
-     KIT SELECTOR
-============================================================ -->
+<!-- KIT SELECTOR -->
 <section class="section">
   <div class="container">
     <div class="kit-selector-wrapper">
-      <!-- Left: Size cards -->
+      <!-- Size Cards -->
       <div>
-        <h2 style="margin-bottom:28px; font-size:28px;">Pick Your Home Size</h2>
-        <div class="kit-cards-grid">
-          <div class="kit-card selected" onclick="selectKit('14x66')">
-            <div class="kit-card-size">14x66</div>
-            <div class="kit-card-type">Single-wide</div>
-          </div>
-          <div class="kit-card" onclick="selectKit('14x70')">
-            <div class="kit-card-size">14x70</div>
-            <div class="kit-card-type">Single-wide (most common)</div>
-          </div>
-          <div class="kit-card" onclick="selectKit('14x80')">
-            <div class="kit-card-size">14x80</div>
-            <div class="kit-card-type">Single-wide</div>
-          </div>
-          <div class="kit-card" onclick="selectKit('16x80')">
-            <div class="kit-card-size">16x80</div>
-            <div class="kit-card-type">Single-wide wide</div>
-          </div>
-          <div class="kit-card" onclick="selectKit('24x44')">
-            <div class="kit-card-size">24x44</div>
-            <div class="kit-card-type">Double-wide small</div>
-          </div>
-          <div class="kit-card" onclick="selectKit('24x60')">
-            <div class="kit-card-size">24x60</div>
-            <div class="kit-card-type">Double-wide</div>
-          </div>
-          <div class="kit-card" onclick="selectKit('28x60')">
-            <div class="kit-card-size">28x60</div>
-            <div class="kit-card-type">Double-wide (popular)</div>
-          </div>
-          <div class="kit-card" onclick="selectKit('28x72')">
-            <div class="kit-card-size">28x72</div>
-            <div class="kit-card-type">Double-wide large</div>
-          </div>
-          <div class="kit-card" onclick="selectKit('custom')">
-            <div class="kit-card-size">Custom</div>
-            <div class="kit-card-type">Call for quote</div>
-          </div>
+        <h2 style="font-size: clamp(22px, 3vw, 32px); margin-bottom: 8px;">Choose Your Home Size</h2>
+        <p style="color: var(--text-muted); margin-bottom: 28px; font-size: 15px;">Select the size closest to your home. Not sure? Call us and we will help.</p>
+        <div class="kit-cards-grid" id="kitCards">
+          <!-- Populated by JavaScript below -->
+        </div>
+
+        <div class="pricing-disclaimer">
+          <strong>Pricing note:</strong> Prices shown are starting prices for Everlock Deluxe Vinyl kits, materials only, freight not included.
+          Based on a standard home at 36&quot; above grade. Final pricing confirmed at checkout.
+          Prices are factory-direct and subject to change. Contact us to confirm pricing for custom heights or upgrades.
         </div>
       </div>
 
-      <!-- Right: Detail panel -->
+      <!-- Detail Panel -->
       <div class="kit-detail-panel">
-        <div class="kit-detail-label">What's Included</div>
-        <div class="kit-detail-size" id="kitSizeDisplay">14x66</div>
-
+        <div class="kit-detail-label">Your Selected Kit</div>
+        <div class="kit-detail-size" id="kitSizeDisplay">14 x 70</div>
         <div class="kit-detail-section">
-          <div class="kit-detail-section-title">Kit Contents</div>
+          <strong>What Is Included</strong>
           <ul class="kit-detail-list" id="kitContentsList">
-            <li>Everlock Deluxe Vinyl panels (38)</li>
-            <li>Top rail sections</li>
-            <li>Bottom rail sections</li>
-            <li>Corner pieces (4)</li>
-            <li>Fastener hardware pack</li>
-            <li>Installation instructions</li>
+            <!-- Populated by JavaScript -->
           </ul>
         </div>
-
         <div class="kit-price-row">
-          <span class="kit-price-label">Kit Price:</span>
-          <span class="kit-price-amount" id="kitPrice">$389</span>
+          <span class="kit-price-label">Starting at</span>
+          <span class="kit-price-amount" id="kitPrice">$795</span>
+          <span class="kit-price-note">Everlock Deluxe Vinyl &bull; Materials only, freight not included</span>
         </div>
-
-        <button class="btn btn-primary kit-cta-primary" id="kitCTA" onclick="orderKit()">Order This Kit, $389</button>
-
-        <a href="/contact" class="kit-cta-link">Need a custom size? Call 800-843-3336</a>
-
-        <div class="kit-price-note" id="kitPriceNote">
-          Prices are factory-direct and subject to change. Final pricing confirmed at checkout. Call 800-843-3336 for current availability.
-        </div>
+        <button class="kit-cta-btn" onclick="addToCart()">
+          Get a Quote for This Kit
+        </button>
+        <a href="tel:8008433336" class="kit-cta-phone">or Call 800-843-3336</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     WHY A COMPLETE KIT
-============================================================ -->
+<!-- WHY COMPLETE KITS -->
 <section class="section section-alt">
   <div class="container">
-    <div class="section-header">
-      <h2>Why a Complete Kit?</h2>
+    <div style="text-align: center; max-width: 700px; margin: 0 auto 48px;">
+      <h2>Why Choose a Complete Kit?</h2>
+      <p style="color: var(--text-muted); margin-top: 12px; font-size: 17px;">Everything calculated and packed together. It is the most popular way to order for a reason.</p>
     </div>
-
     <div class="why-kits-grid">
       <div class="why-kit-card">
-        <div class="why-kit-icon">✓</div>
-        <h4>No Guessing</h4>
-        <p>We calculate the panels, rails, and hardware for your exact home size so you do not have to.</p>
+        <div class="why-kit-icon">&#128230;</div>
+        <h3>No Missing Parts</h3>
+        <p style="color: var(--text-muted);">We calculate exactly what you need based on your home size. No trips back to the store.</p>
       </div>
       <div class="why-kit-card">
-        <div class="why-kit-icon">📦</div>
-        <h4>One Shipment</h4>
-        <p>Everything arrives together on one freight delivery. No waiting on a second order.</p>
+        <div class="why-kit-icon">&#128666;</div>
+        <h3>One Delivery</h3>
+        <p style="color: var(--text-muted);">Everything arrives together in one shipment, which saves time and freight costs.</p>
       </div>
       <div class="why-kit-card">
-        <div class="why-kit-icon">🛡</div>
-        <h4>Lifetime Coverage</h4>
-        <p>Every kit includes our true lifetime warranty on materials and workmanship.</p>
+        <div class="why-kit-icon">&#128736;</div>
+        <h3>Ready to Install</h3>
+        <p style="color: var(--text-muted);">Clear instructions are included. Most homeowners install over a weekend with basic tools.</p>
+      </div>
+      <div class="why-kit-card">
+        <div class="why-kit-icon">&#128275;</div>
+        <h3>Lifetime Warranty</h3>
+        <p style="color: var(--text-muted);">Covers materials and workmanship for the original owner. We have stood behind this since 1981.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     UPGRADE BAND
-============================================================ -->
-<section class="upgrade-band">
-  <div class="container">
-    <div class="upgrade-intro">Want to upgrade your kit?</div>
-
-    <div class="upgrade-grid">
-      <div class="upgrade-card">
-        <div class="upgrade-label">+$120 avg</div>
-        <h4>Thermal EverRock Insulated</h4>
-        <p>Adds R-3 insulation value. Best for cold climates.</p>
-      </div>
-      <div class="upgrade-card">
-        <h4>Novik Faux Stone Accent Panels</h4>
-        <p>Dress up corners or the front face with realistic stone.</p>
-      </div>
-      <div class="upgrade-card">
-        <div class="upgrade-label">+$89</div>
-        <h4>Access Door Kit</h4>
-        <p>Required for FHA/VA. Easy to install, included in all FHA-ready orders.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     FHA/VA SECTION
-============================================================ -->
-<section class="fha-section">
-  <div class="fha-inner">
-    <div>
-      <h2 class="fha-title">Skirting for FHA or VA Loan Approval?</h2>
-      <p class="fha-intro">
-        Most FHA/VA lenders require skirting that encloses the full perimeter with proper ventilation and an access door. Our complete kits are built to meet these general requirements. Add an access door to your kit and you are in good shape. Always confirm specific requirements with your lender.
-      </p>
-      <a href="/resources/fha-va-requirements" class="fha-link">See Full FHA/VA Requirements →</a>
-    </div>
-
-    <div>
-      <div class="fha-callout">
-        <strong>Important:</strong> This is general guidance based on current FHA and VA standards. Requirements vary by lender, appraiser, and local building codes. Always consult your lender and a qualified professional installer before purchasing.
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
-     CUSTOMER PHOTOS
-============================================================ -->
+<!-- UPGRADES -->
 <section class="section">
   <div class="container">
-    <div class="section-header">
-      <h2>Installed by Real Homeowners</h2>
+    <div style="text-align: center; margin-bottom: 40px;">
+      <h2>Easy Upgrades Available</h2>
+      <p style="color: var(--text-muted); margin-top: 12px; font-size: 17px;">Start with Everlock Deluxe Vinyl or step up to insulated or stone options.</p>
     </div>
-
-    <div class="photos-grid">
-      <div class="photo-card">
-        <div class="photo-placeholder">🏡</div>
-        <div class="photo-caption">
-          <div class="photo-caption-name">Bobby & Linda</div>
-          <div class="photo-caption-details">14x70, Everlock Deluxe in White, San Antonio, TX</div>
-          <div class="photo-rating">★★★★★</div>
-        </div>
+    <div class="upgrade-grid">
+      <div class="upgrade-card">
+        <strong>Thermal Insulation</strong>
+        <p style="color: var(--text-muted);">Upgrade to Thermal EverRock or Gorilla Insulated Skirting. Helps protect pipes in cold climates and reduces energy loss.</p>
       </div>
-      <div class="photo-card">
-        <div class="photo-placeholder">🏡</div>
-        <div class="photo-caption">
-          <div class="photo-caption-name">James M.</div>
-          <div class="photo-caption-details">28x60, Thermal EverRock, Denver, CO</div>
-          <div class="photo-rating">★★★★★</div>
-        </div>
+      <div class="upgrade-card">
+        <strong>Novik Stone Appearance</strong>
+        <p style="color: var(--text-muted);">Add realistic faux stone or brick panels on corners or the front of your home. Available in five distinct styles.</p>
       </div>
-      <div class="photo-card">
-        <div class="photo-placeholder">🏡</div>
-        <div class="photo-caption">
-          <div class="photo-caption-name">Maria & Carlos</div>
-          <div class="photo-caption-details">24x60, Novik Stone Panels, Houston, TX</div>
-          <div class="photo-rating">★★★★★</div>
-        </div>
+      <div class="upgrade-card">
+        <strong>FHA/VA Access Door</strong>
+        <p style="color: var(--text-muted);">Required by many lenders for loan approval. Our EZ Access Doors install easily with any kit. Final requirements depend on your lender.</p>
+      </div>
+      <div class="upgrade-card">
+        <strong>Foundation Vents</strong>
+        <p style="color: var(--text-muted);">Proper ventilation is required by HUD standards. We include vent recommendations with every kit and sell compatible vents separately.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     FINAL CTA
-============================================================ -->
+<!-- FINAL CTA -->
 <section class="final-cta">
-  <div class="final-cta-inner">
-    <div class="section-label section-label-light">Still not sure?</div>
-    <h2 style="color:var(--white); margin-bottom:14px;">Call us and we will figure it out together.</h2>
-    <p class="final-cta-sub">Tell us your home size and we will confirm exactly what you need. No pressure, no upsell, just the right kit.</p>
-
-    <div class="final-cta-buttons">
-      <a href="tel:8008433336" class="btn btn-primary btn-lg">Call 800-843-3336</a>
-      <span style="color:rgba(255,255,255,0.7); font-weight:600;">or</span>
-      <a href="/contact" class="btn btn-secondary btn-lg">Send us an email</a>
-    </div>
-
-    <div class="final-phone-row">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-      800-843-3336
-    </div>
-    <div class="final-phone-note">Call us Monday-Friday. We are happy to help you figure out exactly what you need.</div>
-
-    <div class="final-trust-row">
-      <div class="final-trust-item"><span class="final-trust-dot"></span>45+ Years Manufacturing</div>
-      <div class="final-trust-item"><span class="final-trust-dot"></span>True Lifetime Warranty</div>
-      <div class="final-trust-item"><span class="final-trust-dot"></span>2 U.S. Plants</div>
-      <div class="final-trust-item"><span class="final-trust-dot"></span>Factory-Direct Pricing</div>
-      <div class="final-trust-item"><span class="final-trust-dot"></span>FHA/VA Accepted</div>
-    </div>
+  <div class="container">
+    <h2>Not Sure Which Size or Upgrade Is Right?</h2>
+    <p>We help homeowners choose the right kit every day. Call us and we will get you sorted out fast.</p>
+    <a href="tel:8008433336" class="btn-cta-white">Call 800-843-3336</a>
+    <p style="margin-top: 20px; opacity: 0.8; font-size: 14px;">Monday through Friday, 9am to 4pm Mountain Time</p>
   </div>
 </section>
 
-<!-- ============================================================
-     FOOTER
-============================================================ -->
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-grid">
-    <div>
-      <div class="footer-brand-name">SkirtingDirect.com</div>
-      <div class="footer-brand-sub">By Everlock Systems, Inc.</div>
-      <div class="footer-brand-desc">
-        Factory-direct mobile and manufactured home skirting since 1981. We manufacture vinyl, insulated, and faux stone skirting at two U.S. plants and sell directly to homeowners, no middlemen, no markups.
-      </div>
-      <div class="footer-phone-row">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        800-843-3336
-      </div>
-      
-      <div class="footer-warranty-badge">
-        <span>🛡</span>
-        <span>True Lifetime Limited Warranty: Materials and Workmanship</span>
-      </div>
-    </div>
-
-    <div>
-      <div class="footer-col-title">Products</div>
-      <div class="footer-links">
-        <a href="/products/everlock-deluxe-vinyl" class="footer-link">Everlock Deluxe Vinyl</a>
-        <a href="/products/thermal-everrock" class="footer-link">Thermal EverRock Insulated</a>
-        <a href="/products/gorilla-thermal" class="footer-link">Gorilla Insulated Skirting</a>
-        <a href="/products/novik-brick-stone" class="footer-link">Novik Brick & Stone Panels</a>
-        <a href="/products/accessories" class="footer-link">Accessories & Vents</a>
-        <a href="/complete-kits" class="footer-link">Complete Kits</a>
-      </div>
-    </div>
-
-    <div>
-      <div class="footer-col-title">Help & Resources</div>
-      <div class="footer-links">
-        <a href="/calculator" class="footer-link">Skirting Calculator</a>
-        <a href="/samples" class="footer-link">Order Free Samples</a>
-        <a href="/installation" class="footer-link">Installation Guide</a>
-        <a href="/resources/fha-va-requirements" class="footer-link">FHA/VA Guide</a>
-        <a href="/resources/blog" class="footer-link">Blog & Buying Guides</a>
-        <a href="/resources/faq" class="footer-link">FAQ</a>
-      </div>
-    </div>
-
-    <div>
-      <div class="footer-col-title">Company</div>
-      <div class="footer-links">
-        <a href="/about" class="footer-link">About Everlock Systems</a>
-        <a href="/why-everlock" class="footer-link">Why SkirtingDirect</a>
-        <a href="/real-homes" class="footer-link">Real Homes Gallery</a>
-        <a href="/for-pros" class="footer-link">For Pros & Dealers</a>
-        <a href="/contact" class="footer-link">Contact Us</a>
-        <a href="/resources/warranty" class="footer-link">Lifetime Warranty</a>
-      </div>
-    </div>
-  </div>
-
-  <div style="border-top:1px solid rgba(255,255,255,0.08); padding:28px 24px; max-width:1200px; margin:0 auto;">
-    <p style="font-size:12px; color:rgba(255,255,255,0.3); line-height:1.7;">
-      <strong style="color:rgba(255,255,255,0.45);">Legal & Accuracy Notice:</strong>
-      All product information, specifications, pricing, and images on SkirtingDirect.com are provided for general information purposes only.
-      Prices are subject to change without notice. Actual product colors may vary slightly from images shown.
-      Installation results may vary based on local conditions, proper preparation, and installer expertise.
-      FHA/VA compliance statements are based on general HUD guidelines. Final approval rests with your lender and appraiser.
-      Everlock Systems, Inc. is not responsible for local code variations or installation outcomes.
-      <strong style="color:rgba(255,255,255,0.45);">Lifetime Warranty:</strong> Limited to original purchaser. Covers manufacturing defects in materials and workmanship under normal use. Full terms at <a href="/resources/warranty" style="color:rgba(255,255,255,0.45);">skirtingdirect.com/resources/warranty</a>.
-    </p>
-  </div>
-
-  <div class="footer-bottom">
-    <div class="footer-bottom-text">
-      © 2026 Everlock Systems, Inc. All rights reserved. Manufactured in the USA.
-    </div>
-    <div class="footer-bottom-links">
-      <a href="/privacy-policy" class="footer-bottom-link">Privacy Policy</a>
-      <a href="/terms" class="footer-bottom-link">Terms & Conditions</a>
-      <a href="/resources/warranty" class="footer-bottom-link">Warranty</a>
-      <a href="/sitemap.xml" class="footer-bottom-link">Sitemap</a>
-    </div>
+<!-- FOOTER -->
+<footer style="background: #0a1005; color: #999; padding: 48px 0 28px; font-size: 14px; text-align: center;">
+  <div class="container">
+    <p><strong style="color: #ccc;">SkirtingDirect by Everlock Systems</strong> &bull; Factory Direct Since 1981 &bull; Made in USA</p>
+    <p style="margin-top: 10px;">800-843-3336 &bull; <a href="mailto:info@skirtingdirect.com" style="color: #999;">info@skirtingdirect.com</a></p>
+    <p style="margin-top: 10px;"><a href="index.html" style="color: #999;">Home</a> &bull; <a href="products.html" style="color: #999;">Products</a> &bull; <a href="complete-kits.html" style="color: #999;">Complete Kits</a> &bull; <a href="warranty.html" style="color: #999;">Warranty</a> &bull; <a href="faq.html" style="color: #999;">FAQ</a> &bull; <a href="contact.html" style="color: #999;">Contact</a></p>
+    <p style="margin-top: 32px; font-size: 12px; opacity: 0.5;">&copy; 2026 Everlock Systems, Inc. All rights reserved.</p>
   </div>
 </footer>
 
-<!-- Mobile sticky CTA -->
-<div class="mobile-sticky-cta">
-  <a href="tel:8008433336" class="btn btn-primary">Call 800-843-3336</a>
-</div>
-
-<!-- ============================================================
-     JAVASCRIPT
-============================================================ -->
 <script>
-  const kitData = {
-    '14x66': { panels: 38, price: 389, label: '14x66 Single-Wide' },
-    '14x70': { panels: 42, price: 415, label: '14x70 Single-Wide (Most Common)' },
-    '14x80': { panels: 48, price: 449, label: '14x80 Single-Wide' },
-    '16x80': { panels: 52, price: 489, label: '16x80 Single-Wide Wide' },
-    '24x44': { panels: 58, price: 529, label: '24x44 Double-Wide Small' },
-    '24x60': { panels: 78, price: 639, label: '24x60 Double-Wide' },
-    '28x60': { panels: 88, price: 729, label: '28x60 Double-Wide (Popular)' },
-    '28x72': { panels: 104, price: 829, label: '28x72 Double-Wide Large' },
-    'custom': { panels: '—', price: 'Call', label: 'Custom Size' }
+  /*
+   * Kit pricing: anchored to confirmed live site price for 14x66 Everlock Deluxe Vinyl ($750).
+   * Other sizes estimated proportionally by perimeter. Confirm all prices with client before launch.
+   * CONFIRMED: 14x66 = $750 (per CLAUDE.md, live site verified)
+   */
+  var kitData = {
+    '14x66': { size: '14 x 66', label: 'Single-Wide', price: 750, panels: 38 },
+    '14x70': { size: '14 x 70', label: 'Single-Wide (Popular)', price: 795, panels: 42 },
+    '14x80': { size: '14 x 80', label: 'Single-Wide', price: 875, panels: 48 },
+    '16x80': { size: '16 x 80', label: 'Wide Single', price: 895, panels: 52 },
+    '24x60': { size: '24 x 60', label: 'Double-Wide', price: 1095, panels: 78 },
+    '28x60': { size: '28 x 60', label: 'Double-Wide (Popular)', price: 1195, panels: 88 },
+    '28x72': { size: '28 x 72', label: 'Double-Wide Large', price: 1350, panels: 104 }
   };
 
-  function selectKit(size) {
-    document.querySelectorAll('.kit-card').forEach(el => el.classList.remove('selected'));
-    event.currentTarget.classList.add('selected');
+  var currentKey = '14x70';
 
-    const data = kitData[size];
-    if (data) {
-      const label = data.label;
-      const panelText = data.panels === '—' ? '—' : data.panels + ' panels';
+  function selectKit(key, cardEl) {
+    currentKey = key;
+    document.querySelectorAll('.kit-card').forEach(function(c) { c.classList.remove('selected'); });
+    cardEl.classList.add('selected');
 
-      document.getElementById('kitSizeDisplay').textContent = label;
+    var kit = kitData[key];
+    document.getElementById('kitSizeDisplay').textContent = kit.size;
+    document.getElementById('kitPrice').textContent = '$' + kit.price.toLocaleString();
 
-      const contentList = document.getElementById('kitContentsList');
-      if (size === 'custom') {
-        contentList.innerHTML = '<li>Custom size: contact us for a quote</li>';
-      } else {
-        contentList.innerHTML = `
-          <li>Everlock Deluxe Vinyl panels (${data.panels})</li>
-          <li>Top rail sections</li>
-          <li>Bottom rail sections</li>
-          <li>Corner pieces (4)</li>
-          <li>Fastener hardware pack</li>
-          <li>Installation instructions</li>
-        `;
-      }
-
-      if (data.price === 'Call') {
-        document.querySelector('.kit-price-row').innerHTML = '<span class="kit-price-label">Pricing:</span><span class="kit-price-amount">Call for quote</span>';
-        document.getElementById('kitCTA').textContent = 'Call for Pricing, 800-843-3336';
-        document.getElementById('kitCTA').onclick = function() { window.location.href = 'tel:8008433336'; };
-      } else {
-        document.querySelector('.kit-price-row').innerHTML = '<span class="kit-price-label">Kit Price:</span><span class="kit-price-amount">$' + data.price + '</span>';
-        document.getElementById('kitCTA').textContent = 'Order This Kit, $' + data.price;
-        document.getElementById('kitCTA').onclick = function() { orderKit(size); };
-      }
-    }
+    var html = '<li>Everlock Deluxe Vinyl panels (' + kit.panels + ')</li>';
+    html += '<li>Top and bottom rail sections</li>';
+    html += '<li>Corner trim pieces</li>';
+    html += '<li>Complete hardware pack</li>';
+    html += '<li>Installation instructions</li>';
+    document.getElementById('kitContentsList').innerHTML = html;
   }
 
-  function orderKit(size) {
-    window.location.href = '/order?kit=' + size;
+  function addToCart() {
+    var kit = kitData[currentKey];
+    alert('To complete your order for the ' + kit.size + ' kit, please call 800-843-3336 or use the quote form on the checkout page. We will confirm final pricing and availability.');
   }
 
-  function toggleMobileMenu() {
-    const nav = document.querySelector('.main-nav');
-    if (nav) {
-      const isVisible = nav.style.display === 'flex';
-      nav.style.cssText = isVisible
-        ? ''
-        : 'display:flex; flex-direction:column; position:fixed; top:73px; left:0; right:0; bottom:0; background:white; padding:20px; overflow-y:auto; z-index:99; gap:4px; border-top:1px solid #d9d9d9;';
-    }
-  }
-
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+  // Build cards and initialize
+  window.addEventListener('DOMContentLoaded', function() {
+    var container = document.getElementById('kitCards');
+    Object.keys(kitData).forEach(function(key, i) {
+      var kit = kitData[key];
+      var card = document.createElement('div');
+      card.className = 'kit-card' + (key === '14x70' ? ' selected' : '');
+      card.innerHTML = '<div class="kit-card-size">' + kit.size + '</div><div class="kit-card-type">' + kit.label + '</div>';
+      card.addEventListener('click', function() { selectKit(key, card); });
+      container.appendChild(card);
     });
-  });
-
-  window.addEventListener('load', function() {
-    selectKit('14x66');
+    // Trigger initial selection
+    selectKit('14x70', document.querySelector('.kit-card.selected'));
   });
 </script>
 

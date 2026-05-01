@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | SkirtingDirect.com by Everlock Systems</title>
+  <meta name="description" content="Privacy Policy for SkirtingDirect.com. How Everlock Systems collects, uses, and protects your personal information.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #1a1a1a; background: #fff; font-size: 16px; line-height: 1.6; }
+    a { color: #006400; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+    button { cursor: pointer; font-family: inherit; border: none; background: none; }
+
+    :root {
+      --green: #006400; --green-dark: #004d00; --green-pale: #e8f4e8;
+      --navy: #003366; --navy-dark: #001f3f; --earth: #f5f2ed; --earth-dark: #e8dfd0;
+      --text: #1a1a1a; --text-mid: #3d3d3d; --text-muted: #6b6b6b;
+      --border: #d9d9d9; --white: #ffffff;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 28px; border-radius: 6px; font-size: 16px; font-weight: 600; transition: all 0.18s ease; line-height: 1.2; gap: 8px; white-space: nowrap; }
+    .btn-primary { background: var(--green); color: var(--white); border: 2px solid var(--green); }
+    .btn-primary:hover { background: var(--green-dark); border-color: var(--green-dark); }
+    .btn-sm { padding: 10px 20px; font-size: 14px; }
+
+    .utility-bar { background: var(--green-dark); color: rgba(255,255,255,0.92); font-size: 13px; padding: 8px 0; }
+    .utility-bar .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+    .utility-bar a { color: rgba(255,255,255,0.9); }
+    .utility-bar a:hover { color: var(--white); }
+    .utility-phone { display: flex; align-items: center; gap: 6px; font-weight: 700; font-size: 14px; color: var(--white); }
+    .utility-center { text-align: center; }
+    .utility-center strong { color: var(--white); }
+
+    .site-header { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+    .header-inner { display: flex; align-items: center; gap: 24px; padding: 14px 24px; max-width: 1400px; margin: 0 auto; }
+    .logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .logo-icon { width: 44px; height: 44px; background: var(--green); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .logo-icon svg { width: 26px; height: 26px; fill: var(--white); }
+    .logo-text { line-height: 1.1; }
+    .logo-name { font-size: 20px; font-weight: 800; color: var(--green); }
+    .logo-tagline { font-size: 10px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .main-nav { display: flex; align-items: center; gap: 2px; flex: 1; }
+    .nav-link { display: flex; align-items: center; gap: 4px; padding: 8px 12px; font-size: 14px; font-weight: 500; color: var(--text-mid); border-radius: 6px; transition: all 0.15s; white-space: nowrap; }
+    .nav-link:hover { color: var(--green); background: var(--green-pale); }
+    .header-cta { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .header-phone { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: var(--navy); }
+
+    /* PAGE HERO */
+    .page-hero { background: var(--navy); color: var(--white); padding: 48px 0 40px; }
+    .page-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; color: var(--white); margin-bottom: 8px; }
+    .page-hero p { font-size: 15px; color: rgba(255,255,255,0.65); }
+
+    /* LEGAL CONTENT */
+    .legal-layout {
+      display: grid; grid-template-columns: 220px 1fr;
+      gap: 48px; max-width: 1200px; margin: 0 auto; padding: 56px 24px;
+      align-items: start;
+    }
+    .legal-toc { position: sticky; top: 90px; }
+    .legal-toc-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 12px; }
+    .legal-toc a { display: block; padding: 7px 0; font-size: 14px; color: var(--text-mid); border-bottom: 1px solid var(--border); transition: color 0.15s; text-decoration: none; }
+    .legal-toc a:hover { color: var(--green); }
+    .legal-toc a:last-child { border-bottom: none; }
+
+    .legal-content h2 { font-size: 22px; font-weight: 700; color: var(--navy); margin: 40px 0 12px; padding-top: 8px; border-top: 1px solid var(--border); }
+    .legal-content h2:first-child { margin-top: 0; border-top: none; padding-top: 0; }
+    .legal-content p { font-size: 15px; color: var(--text-mid); line-height: 1.8; margin-bottom: 14px; }
+    .legal-content ul { padding-left: 0; margin-bottom: 14px; }
+    .legal-content ul li { display: flex; align-items: flex-start; gap: 8px; font-size: 15px; color: var(--text-mid); padding: 5px 0; line-height: 1.7; }
+    .legal-content ul li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--green); flex-shrink: 0; margin-top: 9px; }
+    .legal-content .last-updated { font-size: 13px; color: var(--text-muted); margin-bottom: 32px; padding: 12px 16px; background: var(--earth); border-radius: 6px; }
+    .legal-content a { color: var(--green); }
+    .legal-content a:hover { text-decoration: underline; }
+    .legal-contact-box { background: var(--earth); border-radius: 10px; padding: 24px; margin-top: 32px; }
+    .legal-contact-box h3 { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+    .legal-contact-box p { font-size: 14px; color: var(--text-mid); margin-bottom: 6px; }
+
+    /* FOOTER */
+    .site-footer { background: var(--navy-dark); color: rgba(255,255,255,0.75); padding: 56px 24px 0; }
+    .footer-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .footer-brand-name { font-size: 20px; font-weight: 800; color: var(--white); margin-bottom: 4px; }
+    .footer-brand-sub { font-size: 12px; color: rgba(255,255,255,0.45); margin-bottom: 14px; }
+    .footer-brand-desc { font-size: 13px; line-height: 1.7; margin-bottom: 16px; }
+    .footer-phone-row { display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 16px; }
+    .footer-col-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--white); margin-bottom: 14px; }
+    .footer-links { display: flex; flex-direction: column; gap: 8px; }
+    .footer-link { font-size: 14px; color: rgba(255,255,255,0.65); transition: color 0.15s; text-decoration: none; }
+    .footer-link:hover { color: var(--white); }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding: 20px 0; }
+    .footer-bottom-text { font-size: 12px; color: rgba(255,255,255,0.35); }
+    .footer-bottom-links { display: flex; gap: 20px; }
+    .footer-bottom-link { font-size: 12px; color: rgba(255,255,255,0.45); text-decoration: none; }
+    .footer-bottom-link:hover { color: var(--white); }
+
+    @media (max-width: 768px) {
+      .legal-layout { grid-template-columns: 1fr; }
+      .legal-toc { position: static; background: var(--earth); border-radius: 10px; padding: 16px 20px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    }
+    @media (max-width: 640px) {
+      .header-inner { padding: 12px 16px; }
+      .main-nav { display: none; }
+      .utility-center { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="utility-bar">
+  <div class="container">
+    <div class="utility-phone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      800-843-3336
+    </div>
+    <div class="utility-center"><strong>Factory Direct Since 1981 | True Lifetime Warranty | 2 U.S. Plants</strong></div>
+    <a href="samples.html" style="color:rgba(255,255,255,0.85); font-size:13px;">Order Samples</a>
+  </div>
+</div>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,10 90,45 10,45" fill="white"/>
+          <rect x="30" y="45" width="40" height="30" fill="white"/>
+          <rect x="10" y="75" width="80" height="10" fill="rgba(255,255,255,0.6)"/>
+        </svg>
+      </div>
+      <div class="logo-text">
+        <div class="logo-name">SkirtingDirect</div>
+        <div class="logo-tagline">By Everlock Systems</div>
+      </div>
+    </a>
+    <nav class="main-nav" role="navigation">
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="complete-kits.html" class="nav-link">Complete Kits</a>
+      <a href="calculator.html" class="nav-link" style="font-weight:600; color:var(--green);">Build Your Quote</a>
+      <a href="installation.html" class="nav-link">Installation</a>
+      <a href="real-homes.html" class="nav-link">Real Homes</a>
+      <a href="blog.html" class="nav-link">Resources</a>
+    </nav>
+    <div class="header-cta">
+      <div class="header-phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        800-843-3336
+      </div>
+      <a href="calculator.html" class="btn btn-primary btn-sm">Get Instant Pricing</a>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p>Everlock Systems, Inc. / SkirtingDirect.com &nbsp;|&nbsp; Effective Date: January 1, 2026</p>
+  </div>
+</section>
+
+<div class="legal-layout">
+  <nav class="legal-toc">
+    <div class="legal-toc-title">On This Page</div>
+    <a href="#information-we-collect">Information We Collect</a>
+    <a href="#how-we-use">How We Use It</a>
+    <a href="#sharing">Sharing Your Information</a>
+    <a href="#cookies">Cookies</a>
+    <a href="#data-security">Data Security</a>
+    <a href="#your-rights">Your Rights</a>
+    <a href="#children">Children's Privacy</a>
+    <a href="#changes">Changes to This Policy</a>
+    <a href="#contact">Contact Us</a>
+  </nav>
+
+  <div class="legal-content">
+    <p class="last-updated">Last updated: January 1, 2026. This policy applies to SkirtingDirect.com, operated by Everlock Systems, Inc., 6676 Gunpark Dr., Boulder, CO 80301.</p>
+
+    <p>We take your privacy seriously. This policy explains what personal information we collect, how we use it, and your choices. We do not sell your personal information to third parties.</p>
+
+    <h2 id="information-we-collect">Information We Collect</h2>
+    <p>We collect information you provide directly to us and limited information gathered automatically when you use our website.</p>
+    <p><strong>Information you provide:</strong></p>
+    <ul>
+      <li>Name, email address, phone number, and mailing address when you place an order, request samples, or contact us</li>
+      <li>Payment information processed through our payment processor (we do not store full credit card numbers)</li>
+      <li>Home dimensions and product preferences when you use the calculator or request a quote</li>
+      <li>Messages and attachments you send through the contact form or by email</li>
+      <li>Photos you submit to the customer photo gallery</li>
+    </ul>
+    <p><strong>Information collected automatically:</strong></p>
+    <ul>
+      <li>Browser type and version, operating system, and general geographic location (state or region level)</li>
+      <li>Pages visited, time on site, and referring URL, collected through standard web analytics</li>
+      <li>Cookies and similar technologies as described below</li>
+    </ul>
+
+    <h2 id="how-we-use">How We Use Your Information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+      <li>Process and fulfill your orders and sample requests</li>
+      <li>Respond to your questions and provide customer service</li>
+      <li>Send order confirmations, shipping notifications, and warranty information</li>
+      <li>Improve the website and understand how visitors use it</li>
+      <li>Send you information about products or promotions you have opted into (you can unsubscribe at any time)</li>
+      <li>Comply with legal obligations</li>
+    </ul>
+    <p>We do not use your information for automated decision-making that produces legal or similarly significant effects.</p>
+
+    <h2 id="sharing">Sharing Your Information</h2>
+    <p>We do not sell, rent, or trade your personal information. We share it only in limited circumstances:</p>
+    <ul>
+      <li><strong>Shipping carriers</strong> receive your name and delivery address to fulfill your order.</li>
+      <li><strong>Payment processors</strong> handle payment transactions on our behalf under their own security and privacy standards.</li>
+      <li><strong>Analytics providers</strong> (such as Google Analytics) receive anonymized usage data to help us understand site traffic.</li>
+      <li><strong>Legal compliance</strong>: we may disclose information if required by law, court order, or to protect the rights and safety of our customers or the public.</li>
+    </ul>
+    <p>Any third parties we work with are bound by confidentiality obligations and may not use your information for their own marketing purposes.</p>
+
+    <h2 id="cookies">Cookies and Tracking</h2>
+    <p>Our website uses cookies, which are small text files stored in your browser. We use them to:</p>
+    <ul>
+      <li>Remember your calculator inputs during a session</li>
+      <li>Understand how visitors navigate the site (analytics)</li>
+      <li>Deliver relevant ads if you have opted into advertising features</li>
+    </ul>
+    <p>You can disable cookies in your browser settings. Some site features, such as the calculator, may not function correctly if cookies are disabled. We do not use cookies to track you across third-party websites for advertising without your consent.</p>
+
+    <h2 id="data-security">Data Security</h2>
+    <p>We use industry-standard security measures to protect your information, including HTTPS encryption on all pages. Payment information is handled by our payment processor and is not stored on our servers in unencrypted form.</p>
+    <p>No method of transmission over the internet is completely secure. While we take reasonable steps to protect your data, we cannot guarantee absolute security.</p>
+
+    <h2 id="your-rights">Your Rights and Choices</h2>
+    <p>Depending on your state of residence, you may have the right to:</p>
+    <ul>
+      <li>Access the personal information we hold about you</li>
+      <li>Request correction of inaccurate information</li>
+      <li>Request deletion of your information, subject to legal retention requirements</li>
+      <li>Opt out of marketing communications at any time by following the unsubscribe link in any email or contacting us directly</li>
+    </ul>
+    <p>California residents have additional rights under the California Consumer Privacy Act (CCPA). We do not sell personal information as defined by the CCPA. To exercise any of your rights, contact us at the address below.</p>
+
+    <h2 id="children">Children's Privacy</h2>
+    <p>SkirtingDirect.com is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, contact us and we will delete it promptly.</p>
+
+    <h2 id="changes">Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top of this page. We encourage you to review this policy periodically. Continued use of our website after a change constitutes acceptance of the updated policy.</p>
+
+    <h2 id="contact">Contact Us</h2>
+    <div class="legal-contact-box">
+      <h3>Questions About This Policy?</h3>
+      <p>Everlock Systems, Inc.<br>6676 Gunpark Dr., Boulder, CO 80301</p>
+      <p>Phone: <a href="tel:8008433336">800-843-3336</a> (Mon-Fri, 9am-4pm Mountain Time)</p>
+      <p>Email: <a href="mailto:info@skirtingdirect.com">info@skirtingdirect.com</a></p>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">SkirtingDirect.com</div>
+      <div class="footer-brand-sub">By Everlock Systems, Inc.</div>
+      <div class="footer-brand-desc">Factory-direct mobile and manufactured home skirting since 1981. Two U.S. plants, no middlemen, no markups.</div>
+      <div class="footer-phone-row">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.45a16 16 0 006.55 6.55l1.51-1.51a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        800-843-3336
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Products</div>
+      <div class="footer-links">
+        <a href="products.html" class="footer-link">All Products</a>
+        <a href="complete-kits.html" class="footer-link">Complete Kits</a>
+        <a href="samples.html" class="footer-link">Samples</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Help</div>
+      <div class="footer-links">
+        <a href="calculator.html" class="footer-link">Skirting Calculator</a>
+        <a href="installation.html" class="footer-link">Installation Guide</a>
+        <a href="faq.html" class="footer-link">FAQ</a>
+        <a href="contact.html" class="footer-link">Contact Us</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <div class="footer-links">
+        <a href="about.html" class="footer-link">About Everlock</a>
+        <a href="warranty.html" class="footer-link">Lifetime Warranty</a>
+        <a href="privacy-policy.html" class="footer-link">Privacy Policy</a>
+        <a href="terms.html" class="footer-link">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-text">Copyright 2026 Everlock Systems, Inc. All rights reserved. Manufactured in the USA.</div>
+    <div class="footer-bottom-links">
+      <a href="privacy-policy.html" class="footer-bottom-link">Privacy Policy</a>
+      <a href="terms.html" class="footer-bottom-link">Terms &amp; Conditions</a>
+      <a href="warranty.html" class="footer-bottom-link">Warranty</a>
+      <a href="sitemap.xml" class="footer-bottom-link">Sitemap</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
