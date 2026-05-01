@@ -50,6 +50,39 @@
 - **No $50 store credit** — unconfirmed; use "We may feature your home here" instead.
 - **Color counts:** Do not use specific numbers. Use "available in multiple colors" until client confirms exact counts per product.
 
+## Policies (must match original site exactly)
+
+- **Returns: No returns accepted.** The original site policy is a blanket no-returns. Do not invent a 30-day return window or any partial return policy. The correct language: "We do not accept returns. Please take extra care when ordering to ensure correct quantities and colors."
+- **Cancellation: Before shipment, not a time window.** The correct policy is: "You may cancel your order if we receive a cancellation request before the product has shipped." Do not write "within 24 hours" — that is more restrictive than actual policy and creates customer service liability.
+- **Shipping damage: 3 calendar days, not 5 business days.** Customer must note damage on delivery receipt, obtain exception number from driver, and call 800-843-3336 within 3 days of delivery.
+- **Minimum order quantities:** EverRock, Gorilla Insulated, Thermal EverRock = 10 panels minimum. Everlock Deluxe = 14 panels (full rail kit preferred).
+- **Payment options:** Major credit cards, PayPal financing. Split payment between two cards must be done by phone. No discount coupons.
+- **Skirting reuse:** Generally not reusable when a home is moved. Do not imply otherwise.
+
+## Warranty Rules
+
+- **Warranty name is "Limited Lifetime Warranty" everywhere.** Never write "True Lifetime Warranty" — this overpromises relative to what the warranty actually covers and is legally distinct from "limited." Standardize to "Limited Lifetime Warranty" on all pages, utility bars, footer badges, and copy.
+- **Products confirmed under warranty:** Everlock Deluxe Vinyl, EverRock Vinyl, EverBrick/EverStone (Novik panels). Coverage for Thermal EverRock and Gorilla Insulated is **not confirmed from original warranty text** — do not include them in the warranty products list without client confirmation.
+- **Warranty exclusions that must be included:** frost heave, settlement of the home, improper installation, string trimmer damage, impact damage, fire, flood, hail, lightning, windstorm, earthquake.
+
+## FHA/VA Rules
+
+- **Never write "FHA/VA accepted" as an absolute claim on product cards.** Use: "May satisfy FHA/VA lender requirements — confirm with your lender." The only product with confirmed FHA/VA acceptance language on the original site is Everlock Deluxe Vinyl. For Thermal EverRock, Gorilla, and Novik products, use the softened language and the advisory disclaimer.
+
+## About Page / Family Biography Rules
+
+- **Pete Quatrochi passed away in December 2024.** Do not write biographical content about Pete without explicit family direction. Do not refer to his military history, specific role, or personal story on the website.
+- **Do not name Phil or Nick Quatrochi with specific titles** (Vice President, owner, etc.) without written confirmation from the family of the exact language they approve.
+- **Do not state "1986" as the year Everlock Systems, Inc. was formally incorporated** — unverified.
+- **Do not state "2011" as the year SkirtingDirect.com launched** — unverified.
+- **Safe about-page language:** Use company-level narrative only — family-owned since 1981, Colorado-based, two U.S. plants, factory-direct, Limited Lifetime Warranty. Do not name individuals with titles until client confirms.
+- **All Quatrochi family references in footers, badges, and body copy should use generic language** ("family-owned manufacturer," "this family business") rather than naming individuals.
+
+## Novik Product Card Rules
+
+- **Novik Hand-Laid Brick spec line:** Do not write "Available in Brick, Stone, and Stacked Stone" — that describes the entire Novik product line, not variants of Hand-Laid Brick specifically. Use "Available in multiple colors" until client confirms color options per product.
+- **Each Novik product must have its own card.** Never collapse the 6 Novik products into one card or one generic description.
+
 ## File Structure
 
 ```
