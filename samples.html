@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Order Skirting Samples | SkirtingDirect.com by Everlock Systems</title>
-  <meta name="description" content="Order color samples of Everlock vinyl, EverRock, and Gorilla Insulated skirting before you buy. See the material, feel the thickness, confirm the color match for your home.">
+  <title>Order Skirting Samples | $20 Per Sample | SkirtingDirect.com</title>
+  <meta name="description" content="Order physical color samples of Everlock vinyl, EverRock, and Novik brick and stone skirting for $20 each. See the material before you buy. Factory-direct from Everlock Systems.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -40,6 +40,8 @@
     .btn-secondary:hover { background: rgba(255,255,255,0.12); border-color: var(--white); }
     .btn-sm { padding: 10px 20px; font-size: 14px; }
     .btn-lg { padding: 18px 36px; font-size: 18px; }
+    .btn-outline-green { background: transparent; color: var(--green); border: 2px solid var(--green); }
+    .btn-outline-green:hover { background: var(--green-pale); }
     .section-label {
       font-size: 12px; font-weight: 700; text-transform: uppercase;
       letter-spacing: 0.1em; color: var(--green); margin-bottom: 10px;
@@ -101,132 +103,90 @@
     .page-hero { background: var(--navy); color: var(--white); padding: 60px 0 52px; }
     .page-hero .section-label { color: rgba(255,255,255,0.7); }
     .page-hero h1 { color: var(--white); margin-bottom: 16px; }
-    .page-hero p { font-size: 18px; color: rgba(255,255,255,0.82); max-width: 580px; }
+    .page-hero p { font-size: 18px; color: rgba(255,255,255,0.82); max-width: 600px; }
 
-    /* MAIN LAYOUT */
-    .page-body {
-      display: grid; grid-template-columns: 1fr 420px;
-      gap: 64px; max-width: 1200px; margin: 0 auto; padding: 64px 24px;
-      align-items: start;
+    /* PRICING NOTICE */
+    .pricing-notice {
+      background: var(--gold-light); border: 1.5px solid #e8b84b;
+      border-radius: 10px; padding: 18px 22px; margin: 40px 0 8px;
+      display: flex; align-items: flex-start; gap: 14px; font-size: 15px; color: var(--text-mid);
     }
+    .pricing-notice-icon { font-size: 22px; flex-shrink: 0; line-height: 1; }
+    .pricing-notice strong { color: var(--text); }
 
-    /* PRODUCT SAMPLE GRID */
-    .sample-intro { font-size: 17px; color: var(--text-mid); line-height: 1.75; margin-bottom: 40px; }
-    .sample-intro p { margin-bottom: 16px; }
+    /* MAIN CONTENT */
+    .samples-main { max-width: 1200px; margin: 0 auto; padding: 56px 24px 72px; }
 
-    .product-samples { margin-bottom: 48px; }
-    .product-samples h3 { font-size: 18px; margin-bottom: 20px; color: var(--text); }
+    .product-group { margin-bottom: 64px; }
+    .product-group-header { margin-bottom: 28px; padding-bottom: 16px; border-bottom: 2px solid var(--earth-dark); }
+    .product-group-header h2 { font-size: 26px; margin-bottom: 6px; }
+    .product-group-header p { font-size: 15px; color: var(--text-muted); }
 
-    .sample-product {
-      border: 1.5px solid var(--border); border-radius: 12px; padding: 20px 22px;
-      margin-bottom: 12px; cursor: pointer; transition: all 0.15s;
-      display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 16px;
+    /* SAMPLE CARDS */
+    .sample-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
     }
-    .sample-product:hover { border-color: var(--green); background: var(--green-pale); }
-    .sample-product.selected {
-      border-color: var(--green); background: var(--green-pale);
-      box-shadow: 0 0 0 3px rgba(0,100,0,0.12);
+    .sample-card {
+      border: 1.5px solid var(--border); border-radius: 14px; padding: 24px 26px;
+      display: flex; flex-direction: column; gap: 0;
+      transition: border-color 0.15s, box-shadow 0.15s;
     }
-    .sample-checkbox {
-      width: 22px; height: 22px; border-radius: 50%;
-      border: 2px solid var(--border); flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      transition: all 0.15s;
-    }
-    .sample-product.selected .sample-checkbox {
-      background: var(--green); border-color: var(--green); color: var(--white);
-      font-size: 12px; font-weight: 700;
-    }
-    .sample-name { font-size: 15px; font-weight: 600; color: var(--text); }
-    .sample-desc { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
-    .sample-colors {
-      display: flex; gap: 5px; flex-shrink: 0;
-    }
-    .color-dot {
-      width: 16px; height: 16px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.12);
-    }
+    .sample-card:hover { border-color: var(--green); box-shadow: 0 4px 20px rgba(0,100,0,0.08); }
 
-    .how-it-works { margin-bottom: 48px; }
-    .how-it-works h3 { font-size: 18px; margin-bottom: 20px; }
-    .steps-list { padding: 0; }
-    .step-item {
-      display: flex; align-items: flex-start; gap: 16px; padding: 14px 0;
-      border-bottom: 1px solid var(--earth-dark);
+    .sample-card-name { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .sample-card-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px; }
+
+    .sample-card-details {
+      display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px;
+      padding: 14px 16px; background: var(--earth); border-radius: 8px; font-size: 13px;
     }
-    .step-item:last-child { border-bottom: none; }
-    .step-num {
-      width: 30px; height: 30px; border-radius: 50%;
+    .sample-detail { display: flex; gap: 8px; align-items: baseline; }
+    .sample-detail-label { font-weight: 600; color: var(--text); min-width: 60px; flex-shrink: 0; }
+    .sample-detail-val { color: var(--text-mid); }
+
+    .sample-card-price {
+      font-size: 22px; font-weight: 800; color: var(--green); margin-bottom: 14px;
+    }
+    .sample-card-price span { font-size: 14px; font-weight: 500; color: var(--text-muted); }
+
+    .sample-card-footer { margin-top: auto; }
+    .sample-card-note { font-size: 12px; color: var(--text-muted); margin-top: 10px; line-height: 1.5; }
+
+    .btn-order {
+      display: inline-flex; align-items: center; gap: 8px;
       background: var(--green); color: var(--white);
-      font-size: 13px; font-weight: 700; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center; margin-top: 2px;
+      padding: 12px 22px; border-radius: 7px; font-size: 15px; font-weight: 600;
+      border: none; cursor: pointer; transition: background 0.15s; width: 100%;
+      justify-content: center;
     }
-    .step-text { font-size: 15px; color: var(--text-mid); line-height: 1.6; }
-    .step-text strong { color: var(--text); }
+    .btn-order:hover { background: var(--green-dark); }
+    .btn-order svg { width: 14px; height: 14px; }
 
-    /* FORM CARD */
-    .form-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 16px; padding: 36px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-      position: sticky; top: 90px;
+    .code-chip {
+      display: inline-block; background: var(--earth); border: 1px solid var(--border);
+      border-radius: 4px; padding: 2px 8px; font-size: 11px; font-family: monospace;
+      color: var(--text-muted); margin-top: 8px;
     }
-    .form-card h3 { font-size: 20px; color: var(--navy); margin-bottom: 6px; }
-    .form-card .form-subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
-    .form-group { margin-bottom: 16px; }
-    .form-label { display: block; font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
-    .required { color: #dc2626; }
-    .form-input, .form-select, .form-textarea {
-      width: 100%; padding: 10px 14px; border: 1.5px solid var(--border);
-      border-radius: 6px; font-size: 15px; font-family: inherit; color: var(--text);
-      background: var(--white); transition: border-color 0.15s;
-    }
-    .form-input:focus, .form-select:focus { outline: none; border-color: var(--green); }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .form-note { font-size: 12px; color: var(--text-muted); margin-top: 10px; line-height: 1.5; }
 
-    .selected-samples-display {
-      background: var(--earth); border-radius: 8px; padding: 14px 16px;
-      margin-bottom: 16px; font-size: 14px; color: var(--text-muted);
-    }
-    .selected-samples-display strong { color: var(--text); display: block; margin-bottom: 4px; font-size: 13px; }
+    /* HOW IT WORKS */
+    .how-section { background: var(--earth); padding: 56px 0; }
+    .how-section .container { max-width: 1000px; }
+    .how-section h2 { text-align: center; margin-bottom: 8px; }
+    .how-section .how-intro { text-align: center; color: var(--text-muted); font-size: 16px; margin-bottom: 44px; }
 
-    .form-submit {
-      width: 100%; padding: 16px; background: var(--green); color: var(--white);
-      border: none; border-radius: 8px; font-size: 16px; font-weight: 700;
-      cursor: pointer; transition: background 0.15s; margin-top: 4px;
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .step {
+      text-align: center; padding: 24px 16px; background: var(--white);
+      border-radius: 12px; border: 1px solid var(--earth-dark);
     }
-    .form-submit:hover { background: var(--green-dark); }
-
-    .form-success {
-      text-align: center; padding: 32px 16px; display: none;
+    .step-num {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--green); color: var(--white);
+      font-size: 16px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 14px;
     }
-    .form-success-icon {
-      width: 52px; height: 52px; border-radius: 50%; background: var(--green);
-      color: var(--white); font-size: 24px; font-weight: 700;
-      display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;
-    }
-    .form-success h4 { font-size: 18px; color: var(--navy); margin-bottom: 8px; }
-    .form-success p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
-
-    /* SWATCH SECTION */
-    .swatch-section { background: var(--earth); padding: 64px 0; }
-    .swatch-section h2 { text-align: center; margin-bottom: 12px; }
-    .swatch-section .section-intro { text-align: center; font-size: 16px; color: var(--text-muted); max-width: 520px; margin: 0 auto 40px; }
-    .swatch-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-    .swatch-card {
-      background: var(--white); border-radius: 12px; overflow: hidden;
-      border: 1px solid var(--earth-dark); transition: box-shadow 0.2s;
-    }
-    .swatch-card:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
-    .swatch-image { height: 160px; background: var(--earth-dark); overflow: hidden; }
-    .swatch-image img { width: 100%; height: 100%; object-fit: cover; }
-    .swatch-image-placeholder {
-      width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
-    }
-    .swatch-info { padding: 16px; }
-    .swatch-product { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--green); margin-bottom: 4px; }
-    .swatch-color { font-size: 15px; font-weight: 600; color: var(--text); }
-    .swatch-note { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+    .step-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .step-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 
     /* BOTTOM CTA */
     .bottom-cta { background: var(--navy); color: var(--white); padding: 64px 0; text-align: center; }
@@ -260,15 +220,12 @@
     .footer-bottom-link:hover { color: var(--white); }
 
     /* RESPONSIVE */
-    @media (max-width: 1024px) {
-      .page-body { grid-template-columns: 1fr; gap: 48px; }
-      .form-card { position: static; }
-      .swatch-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 900px) {
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 768px) {
-      .swatch-grid { grid-template-columns: 1fr 1fr; }
-      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .sample-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
       .bottom-cta-btns { flex-direction: column; align-items: center; }
     }
     @media (max-width: 640px) {
@@ -276,10 +233,10 @@
       .main-nav { display: none; }
       .hamburger { display: flex; }
       .utility-center { display: none; }
-      .form-row { grid-template-columns: 1fr; }
-      .swatch-grid { grid-template-columns: 1fr 1fr; }
-      .sample-product { grid-template-columns: auto 1fr; }
-      .sample-colors { display: none; }
+      .steps-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
     }
   </style>
 </head>
@@ -325,6 +282,7 @@
         </a>
         <div class="dropdown">
           <a href="blog-everlock-deluxe-vinyl-skirting.html" class="dropdown-item">Everlock Deluxe Vinyl</a>
+          <a href="blog-everrock-vinyl-skirting.html" class="dropdown-item">EverRock Vinyl</a>
           <a href="blog-thermal-everrock-insulated-skirting.html" class="dropdown-item">Thermal EverRock Insulated</a>
           <a href="blog-gorilla-insulated-skirting.html" class="dropdown-item">Gorilla Insulated Skirting</a>
           <a href="products.html#novik" class="dropdown-item">Novik Brick &amp; Stone</a>
@@ -379,215 +337,280 @@
   <div class="container">
     <div class="section-label">Color Samples</div>
     <h1>See It Before You Buy It</h1>
-    <p>Order physical color samples before you commit to a full order. Feel the material, confirm the color matches your home, and order with confidence.</p>
+    <p>Order physical material samples before you commit to a full order. Hold the actual panel, compare it to your home in natural light, and order with confidence. All samples are $20 each, shipped by mail.</p>
   </div>
 </section>
 
-<!-- MAIN BODY -->
-<div class="page-body">
+<!-- MAIN CONTENT -->
+<div class="samples-main">
 
-  <!-- LEFT: CONTENT -->
-  <main>
-    <div class="sample-intro">
-      <p>Colors look different on a screen than they do in person. Before you order hundreds of dollars of skirting, it makes sense to hold the actual material in your hand and compare it to your home's exterior.</p>
-      <p>Samples of our most popular vinyl and insulated products are available for purchase. Select the products you want to see, fill out the form, and we will contact you to arrange your sample order.</p>
+  <div class="pricing-notice">
+    <div class="pricing-notice-icon">&#9432;</div>
+    <div>
+      <strong>Pricing:</strong> All samples are $20 per product. For Novik stone and brick styles, each color is a separate $20 sample (one 8" x 18" panel piece). Everlock Deluxe and EverRock sample packs include all available colors in one shipment for $20. Orders are placed directly on SkirtingDirect.com. Samples can take up to two weeks to deliver for Novik products; vinyl samples ship via US Mail.
+    </div>
+  </div>
+
+  <!-- VINYL SAMPLES -->
+  <div class="product-group" style="margin-top: 48px;">
+    <div class="product-group-header">
+      <div class="section-label">Vinyl Skirting</div>
+      <h2>Vinyl Samples</h2>
+      <p>Each vinyl sample pack includes all available colors in a single shipment for $20. Sent via US Mail.</p>
     </div>
 
-    <div class="product-samples">
-      <h3>Select Products to Sample</h3>
-      <div id="productList">
+    <div class="sample-grid">
 
-        <div class="sample-product" data-product="Everlock Deluxe Vinyl" onclick="toggleProduct(this)">
-          <div class="sample-checkbox"></div>
-          <div>
-            <div class="sample-name">Everlock Deluxe Vinyl</div>
-            <div class="sample-desc">Standard vinyl panel system. Lightweight, easy DIY install, multiple colors.</div>
+      <!-- Everlock Deluxe -->
+      <div class="sample-card">
+        <div class="sample-card-name">Everlock Deluxe Vinyl</div>
+        <div class="sample-card-desc">Our most popular vinyl panel system. Lightweight, DIY-friendly, and available in multiple colors. If you are deciding between colors, this sample pack lets you compare all six side by side.</div>
+        <div class="sample-card-details">
+          <div class="sample-detail">
+            <span class="sample-detail-label">Includes</span>
+            <span class="sample-detail-val">One 8" x 8" panel sample in all six Everlock Deluxe colors</span>
           </div>
-          <div class="sample-colors">
-            <div class="color-dot" style="background:#fff; border:1px solid #ccc;" title="White"></div>
-            <div class="color-dot" style="background:#e8c99a;" title="Sandstone"></div>
-            <div class="color-dot" style="background:#b0aaaa;" title="Grey"></div>
+          <div class="sample-detail">
+            <span class="sample-detail-label">Ships</span>
+            <span class="sample-detail-val">Via US Mail</span>
           </div>
-        </div>
-
-        <div class="sample-product" data-product="EverRock Vinyl" onclick="toggleProduct(this)">
-          <div class="sample-checkbox"></div>
-          <div>
-            <div class="sample-name">EverRock Vinyl</div>
-            <div class="sample-desc">Textured stone-look surface. Same easy install as Deluxe Vinyl, more visual depth.</div>
-          </div>
-          <div class="sample-colors">
-            <div class="color-dot" style="background:#d4c9b8;" title="Sandstone"></div>
-            <div class="color-dot" style="background:#8a8080;" title="Granite Grey"></div>
-            <div class="color-dot" style="background:#fff; border:1px solid #ccc;" title="White"></div>
+          <div class="sample-detail">
+            <span class="sample-detail-label">Code</span>
+            <span class="sample-detail-val"><span class="code-chip">ELSAMP</span></span>
           </div>
         </div>
-
-        <div class="sample-product" data-product="Thermal EverRock Insulated" onclick="toggleProduct(this)">
-          <div class="sample-checkbox"></div>
-          <div>
-            <div class="sample-name">Thermal EverRock Insulated</div>
-            <div class="sample-desc">EverRock look with insulated foam core. Best for cold climates and pipe protection.</div>
-          </div>
-          <div class="sample-colors">
-            <div class="color-dot" style="background:#d4c9b8;" title="Sandstone"></div>
-            <div class="color-dot" style="background:#8a8080;" title="Granite Grey"></div>
-            <div class="color-dot" style="background:#fff; border:1px solid #ccc;" title="White"></div>
-          </div>
-        </div>
-
-        <div class="sample-product" data-product="Gorilla Insulated Skirting" onclick="toggleProduct(this)">
-          <div class="sample-checkbox"></div>
-          <div>
-            <div class="sample-name">Gorilla Insulated Skirting</div>
-            <div class="sample-desc">Highest R-value option. Thick insulated core for maximum thermal protection.</div>
-          </div>
-          <div class="sample-colors">
-            <div class="color-dot" style="background:#fff; border:1px solid #ccc;" title="White"></div>
-            <div class="color-dot" style="background:#e8c99a;" title="Sandstone"></div>
-          </div>
-        </div>
-
-      </div>
-      <p style="font-size:13px; color:var(--text-muted); margin-top:12px;">Novik brick and stone panel samples are available by calling 800-843-3336 directly.</p>
-    </div>
-
-    <div class="how-it-works">
-      <h3>How It Works</h3>
-      <div class="steps-list">
-        <div class="step-item">
-          <div class="step-num">1</div>
-          <div class="step-text"><strong>Select your products and fill out the form.</strong> Tell us which products you want to see and where to send them. We will follow up to confirm your order and arrange payment.</div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">2</div>
-          <div class="step-text"><strong>We mail your samples within 2 business days of your order.</strong> Samples arrive by USPS. Typical delivery is 3-5 business days depending on your location.</div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">3</div>
-          <div class="step-text"><strong>Hold them up to your home.</strong> Compare in natural light. Check the color against your siding, trim, or foundation. See how the texture reads at a distance.</div>
-        </div>
-        <div class="step-item">
-          <div class="step-num">4</div>
-          <div class="step-text"><strong>Order when you are ready.</strong> Call 800-843-3336 or use the calculator to build your quote. There is no pressure and no expiration date on sample requests.</div>
+        <div class="sample-card-price">$20.00 <span>all colors included</span></div>
+        <div class="sample-card-footer">
+          <a href="https://www.skirtingdirect.com/Merchant5/merchant.mvc?Screen=PROD&Product_Code=ELSAMP" target="_blank" rel="noopener" class="btn-order">
+            Order on SkirtingDirect.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <div class="sample-card-note">Opens in SkirtingDirect.com to complete your order.</div>
         </div>
       </div>
-    </div>
-  </main>
 
-  <!-- RIGHT: FORM CARD -->
-  <aside>
-    <div class="form-card">
-      <h3>Order Samples</h3>
-      <p class="form-subtitle">Fill out the form and we will contact you to confirm your order and arrange payment. Delivered by mail in 3-5 business days.</p>
-
-      <form id="sampleForm" onsubmit="handleSampleSubmit(event)">
-        <div class="selected-samples-display" id="selectedDisplay">
-          <strong>Selected products:</strong>
-          <span id="selectedList">None selected yet. Choose from the list.</span>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label">First Name <span class="required">*</span></label>
-            <input type="text" class="form-input" id="sampleFirst" required>
+      <!-- EverRock -->
+      <div class="sample-card">
+        <div class="sample-card-name">EverRock Vinyl</div>
+        <div class="sample-card-desc">Textured stone-look surface on a standard vinyl panel. More visual depth than the Deluxe, same straightforward install. The sample pack includes all five EverRock colors, including White.</div>
+        <div class="sample-card-details">
+          <div class="sample-detail">
+            <span class="sample-detail-label">Includes</span>
+            <span class="sample-detail-val">One 10" x 10" panel sample in all five EverRock colors, including White</span>
           </div>
-          <div class="form-group">
-            <label class="form-label">Last Name <span class="required">*</span></label>
-            <input type="text" class="form-input" id="sampleLast" required>
+          <div class="sample-detail">
+            <span class="sample-detail-label">Ships</span>
+            <span class="sample-detail-val">Via US Mail</span>
+          </div>
+          <div class="sample-detail">
+            <span class="sample-detail-label">Code</span>
+            <span class="sample-detail-val"><span class="code-chip">ERSAMP</span></span>
           </div>
         </div>
-
-        <div class="form-group">
-          <label class="form-label">Shipping Address <span class="required">*</span></label>
-          <input type="text" class="form-input" id="sampleAddress" placeholder="Street address" required style="margin-bottom:8px;">
-          <div class="form-row">
-            <input type="text" class="form-input" id="sampleCity" placeholder="City" required>
-            <input type="text" class="form-input" id="sampleState" placeholder="State" required maxlength="2" style="text-transform:uppercase;">
-          </div>
-          <input type="text" class="form-input" id="sampleZip" placeholder="ZIP code" required style="margin-top:8px;" maxlength="10">
+        <div class="sample-card-price">$20.00 <span>all colors included</span></div>
+        <div class="sample-card-footer">
+          <a href="https://www.skirtingdirect.com/Merchant5/merchant.mvc?Screen=PROD&Product_Code=ERSAMP" target="_blank" rel="noopener" class="btn-order">
+            Order on SkirtingDirect.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <div class="sample-card-note">Opens in SkirtingDirect.com to complete your order.</div>
         </div>
-
-        <div class="form-group">
-          <label class="form-label">Email Address</label>
-          <input type="email" class="form-input" id="sampleEmail" placeholder="Optional, for order confirmation">
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Phone Number</label>
-          <input type="tel" class="form-input" id="samplePhone" placeholder="Optional">
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Home Size (Optional)</label>
-          <select class="form-select" id="sampleHomeSize">
-            <option value="">Select if known...</option>
-            <option>Single-wide (under 18 ft wide)</option>
-            <option>Double-wide (18-28 ft wide)</option>
-            <option>Triple-wide / larger</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-
-        <button type="submit" class="form-submit" id="submitBtn">Request My Samples</button>
-        <p class="form-note">By submitting this form you agree to receive a one-time shipping confirmation. We do not sell your information or add you to marketing lists without your consent.</p>
-      </form>
-
-      <div class="form-success" id="formSuccess">
-        <div class="form-success-icon">&#10003;</div>
-        <h4>Request received.</h4>
-        <p>Thanks, <strong id="successName"></strong>. We will get your samples in the mail within 2 business days. Questions in the meantime? Call us at 800-843-3336, Mon-Fri, 9am-4pm MT.</p>
       </div>
+
     </div>
-  </aside>
+
+    <p style="font-size: 13px; color: var(--text-muted); margin-top: 16px;">Samples for Thermal EverRock Insulated and Gorilla Insulated Skirting are not available by mail. Call 800-843-3336 to request information on those products.</p>
+  </div>
+
+  <!-- NOVIK SAMPLES -->
+  <div class="product-group">
+    <div class="product-group-header">
+      <div class="section-label">Novik Brick &amp; Stone</div>
+      <h2>Novik Samples</h2>
+      <p>Each Novik sample is $20 per color. You receive one 8" wide x 18" tall panel piece in your color of choice. If you want multiple colors, each additional color is $20. Allow up to two weeks for delivery. We strongly recommend ordering a sample before purchasing Novik panels.</p>
+    </div>
+
+    <div class="sample-grid">
+
+      <!-- Novik Hand-Laid Brick -->
+      <div class="sample-card">
+        <div class="sample-card-name">Novik Hand-Laid Brick</div>
+        <div class="sample-card-desc">Realistic hand-laid brick appearance. Multiple color options. A sample is especially useful for matching your home's existing brick or trim color before you order a full job.</div>
+        <div class="sample-card-details">
+          <div class="sample-detail">
+            <span class="sample-detail-label">Includes</span>
+            <span class="sample-detail-val">One 8" x 18" panel piece in your color of choice</span>
+          </div>
+          <div class="sample-detail">
+            <span class="sample-detail-label">Delivery</span>
+            <span class="sample-detail-val">Up to two weeks</span>
+          </div>
+          <div class="sample-detail">
+            <span class="sample-detail-label">Code</span>
+            <span class="sample-detail-val"><span class="code-chip">EBSAMP</span></span>
+          </div>
+        </div>
+        <div class="sample-card-price">$20.00 <span>per color</span></div>
+        <div class="sample-card-footer">
+          <a href="https://www.skirtingdirect.com/Merchant5/merchant.mvc?Screen=PROD&Product_Code=EBSAMP" target="_blank" rel="noopener" class="btn-order">
+            Order on SkirtingDirect.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <div class="sample-card-note">Select your color at checkout. Each additional color is $20.</div>
+        </div>
+      </div>
+
+      <!-- Novik Stacked Stone -->
+      <div class="sample-card">
+        <div class="sample-card-name">Novik Stacked Stone</div>
+        <div class="sample-card-desc">Clean horizontal stacked stone profile. A versatile look that works well with a wide range of home styles and exterior colors. Order a sample to verify color in your specific light conditions.</div>
+        <div class="sample-card-details">
+          <div class="sample-detail">
+            <span class="sample-detail-label">Includes</span>
+            <span class="sample-detail-val">One 8" x 18" panel piece in your color of choice</span>
+          </div>
+          <div class="sample-detail">
+            <span class="sample-detail-label">Delivery</span>
+            <span class="sample-detail-val">Up to two weeks</span>
+          </div>
+          <div class="sample-detail">
+            <span class="sample-detail-label">Code</span>
+            <span class="sample-detail-val"><span class="code-chip">ESTSAMP</span></span>
+          </div>
+        </div>
+        <div class="sample-card-price">$20.00 <span>per color</span></div>
+        <div class="sample-card-footer">
+          <a href="https://www.skirtingdirect.com/Merchant5/merchant.mvc?Screen=PROD&Product_Code=ESTSAMP" target="_blank" rel="noopener" class="btn-order">
+            Order on SkirtingDirect.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <div class="sample-card-note">Select your color at checkout. Each additional color is $20.</div>
+        </div>
+      </div>
+
+      <!-- Novik Field Stone -->
+      <div class="sample-card">
+        <div class="sample-card-name">Novik Field Stone</div>
+        <div class="sample-card-desc">Natural-looking irregular fieldstone pattern. Rich texture and color variation give it a highly realistic appearance. Order a sample to see how it reads against your home's foundation line.</div>
+        <div class="sample-card-details">
+          <div class="sample-detail">
+            <span class="sample-detail-label">Includes</span>
+            <span class="sample-detail-val">One 8" x 18" panel piece in your color of choice</span>
+          </div>
+          <div class="sample-detail">
+            <span class="sample-detail-label">Delivery</span>
+            <span class="sample-detail-val">Up to two weeks</span>
+          </div>
+          <div class="sample-detail">
+            <span class="sample-detail-label">Code</span>
+            <span class="sample-detail-val"><span class="code-chip">Fieldstone-Sample</span></span>
+          </div>
+        </div>
+        <div class="sample-card-price">$20.00 <span>per color</span></div>
+        <div class="sample-card-footer">
+          <a href="https://www.skirtingdirect.com/Merchant5/merchant.mvc?Screen=PROD&Product_Code=Fieldstone-Sample" target="_blank" rel="noopener" class="btn-order">
+            Order on SkirtingDirect.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <div class="sample-card-note">Select your color at checkout. Each additional color is $20.</div>
+        </div>
+      </div>
+
+      <!-- Novik Premium Hand-Cut Stone -->
+      <div class="sample-card">
+        <div class="sample-card-name">Novik Premium Hand-Cut Stone</div>
+        <div class="sample-card-desc">The most detailed stone profile in the Novik line. Intricate cut-stone texture with high visual impact. At this price point, ordering a sample before you commit is especially worthwhile.</div>
+        <div class="sample-card-details">
+          <div class="sample-detail">
+            <span class="sample-detail-label">Includes</span>
+            <span class="sample-detail-val">One 8" x 18" panel piece in your color of choice</span>
+          </div>
+          <div class="sample-detail">
+            <span class="sample-detail-label">Delivery</span>
+            <span class="sample-detail-val">Up to two weeks</span>
+          </div>
+          <div class="sample-detail">
+            <span class="sample-detail-label">Code</span>
+            <span class="sample-detail-val"><span class="code-chip">Premium-EverStone-II-Sample</span></span>
+          </div>
+        </div>
+        <div class="sample-card-price">$20.00 <span>per color</span></div>
+        <div class="sample-card-footer">
+          <a href="https://www.skirtingdirect.com/Merchant5/merchant.mvc?Screen=PROD&Product_Code=Premium-EverStone-II-Sample" target="_blank" rel="noopener" class="btn-order">
+            Order on SkirtingDirect.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <div class="sample-card-note">Select your color at checkout. Each additional color is $20.</div>
+        </div>
+      </div>
+
+      <!-- Novik Dry-Stacked Stone -->
+      <div class="sample-card">
+        <div class="sample-card-name">Novik Dry-Stacked Stone</div>
+        <div class="sample-card-desc">Clean, modern dry-stack profile without mortar lines. One of the more contemporary-looking Novik styles. Order a sample to confirm color accuracy before purchasing panels.</div>
+        <div class="sample-card-details">
+          <div class="sample-detail">
+            <span class="sample-detail-label">Includes</span>
+            <span class="sample-detail-val">One 8" x 18" panel piece in your color of choice</span>
+          </div>
+          <div class="sample-detail">
+            <span class="sample-detail-label">Delivery</span>
+            <span class="sample-detail-val">Up to two weeks</span>
+          </div>
+          <div class="sample-detail">
+            <span class="sample-detail-label">Code</span>
+            <span class="sample-detail-val"><span class="code-chip">DRYSAMP</span></span>
+          </div>
+        </div>
+        <div class="sample-card-price">$20.00 <span>per color</span></div>
+        <div class="sample-card-footer">
+          <a href="https://www.skirtingdirect.com/Merchant5/merchant.mvc?Screen=PROD&Product_Code=DRYSAMP" target="_blank" rel="noopener" class="btn-order">
+            Order on SkirtingDirect.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+          <div class="sample-card-note">Select your color at checkout. Each additional color is $20.</div>
+        </div>
+      </div>
+
+      <!-- Call to Order -->
+      <div class="sample-card" style="background: var(--earth); border-color: var(--earth-dark); justify-content: center; align-items: center; text-align: center; padding: 36px 26px; gap: 12px;">
+        <div style="font-size: 32px; margin-bottom: 4px;">&#128222;</div>
+        <div class="sample-card-name" style="font-size: 16px;">Questions About Novik Colors?</div>
+        <div class="sample-card-desc" style="margin-bottom: 0;">Our team in Boulder, Colorado can walk you through the Novik color options and help you decide which style fits your home. Call Mon-Fri, 9am-4pm MT.</div>
+        <a href="tel:8008433336" class="btn btn-outline-green btn-sm" style="margin-top: 8px;">Call 800-843-3336</a>
+      </div>
+
+    </div>
+  </div>
+
 </div>
 
-<!-- SWATCH GALLERY -->
-<section class="swatch-section">
+<!-- HOW IT WORKS -->
+<section class="how-section">
   <div class="container">
-    <div class="section-label" style="text-align:center;">Available Colors</div>
-    <h2>What the Colors Look Like</h2>
-    <p class="section-intro">These are enhanced product photos. Request physical samples for accurate color matching before you order.</p>
-    <div class="swatch-grid">
-      <div class="swatch-card">
-        <div class="swatch-image">
-          <img src="images/swatch-sandstone-everrock.jpg" alt="Sandstone EverRock skirting color swatch" loading="lazy">
-        </div>
-        <div class="swatch-info">
-          <div class="swatch-product">EverRock Vinyl / Thermal EverRock</div>
-          <div class="swatch-color">Sandstone</div>
-          <div class="swatch-note">Warm tan with subtle stone texture</div>
-        </div>
+    <div class="section-label" style="text-align:center;">The Process</div>
+    <h2>How Sample Orders Work</h2>
+    <p class="how-intro">Straightforward from start to finish. Here is what to expect.</p>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">Pick Your Products</div>
+        <div class="step-desc">Choose the products above you want to see. Click the "Order on SkirtingDirect.com" button for each one.</div>
       </div>
-      <div class="swatch-card">
-        <div class="swatch-image">
-          <img src="images/swatch-granite-grey-everrock.jpg" alt="Granite Grey EverRock skirting color swatch" loading="lazy">
-        </div>
-        <div class="swatch-info">
-          <div class="swatch-product">EverRock Vinyl / Thermal EverRock</div>
-          <div class="swatch-color">Granite Grey</div>
-          <div class="swatch-note">Cool medium grey with natural variation</div>
-        </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">Select Color and Pay</div>
+        <div class="step-desc">For Novik samples, select your color at checkout. Vinyl sample packs include all colors automatically. Payment is $20 per sample.</div>
       </div>
-      <div class="swatch-card">
-        <div class="swatch-image">
-          <img src="images/swatch-white-everrock.jpg" alt="White EverRock skirting color swatch" loading="lazy">
-        </div>
-        <div class="swatch-info">
-          <div class="swatch-product">EverRock Vinyl / Everlock Deluxe</div>
-          <div class="swatch-color">White</div>
-          <div class="swatch-note">Clean bright white, works with most home colors</div>
-        </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">Receive Your Samples</div>
+        <div class="step-desc">Vinyl samples ship via US Mail. Novik samples can take up to two weeks. We will confirm your order by email.</div>
       </div>
-      <div class="swatch-card">
-        <div class="swatch-image">
-          <img src="images/novik-brick-product.jpg" alt="Novik Hand-Laid Brick skirting panel" loading="lazy">
-        </div>
-        <div class="swatch-info">
-          <div class="swatch-product">Novik Panel Systems</div>
-          <div class="swatch-color">Hand-Laid Brick and Stone</div>
-          <div class="swatch-note">Multiple stone styles available. Call for Novik samples.</div>
-        </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-title">Compare and Order</div>
+        <div class="step-desc">Hold the sample against your home in natural light. When you are ready, call 800-843-3336 or use the calculator to build your full quote.</div>
       </div>
     </div>
   </div>
@@ -596,8 +619,8 @@
 <!-- BOTTOM CTA -->
 <section class="bottom-cta">
   <div class="container">
-    <h2>Ready to Order Once You Have Seen the Samples?</h2>
-    <p>Our calculator gives you an instant factory-direct project estimate. Or call and we will help you figure out exactly what to order.</p>
+    <h2>Ready to Build Your Quote?</h2>
+    <p>Our calculator gives you an instant factory-direct project price. Or call us and we will help you figure out exactly what to order.</p>
     <div class="bottom-cta-btns">
       <a href="calculator.html" class="btn btn-primary btn-lg">Build My Quote</a>
       <a href="contact.html" class="btn btn-secondary btn-lg">Talk to Our Team</a>
@@ -617,7 +640,7 @@
         800-843-3336
       </div>
       <div class="footer-warranty-badge">
-        <span>Shield</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         <span>True Lifetime Limited Warranty - Materials &amp; Workmanship</span>
       </div>
     </div>
@@ -625,6 +648,7 @@
       <div class="footer-col-title">Products</div>
       <div class="footer-links">
         <a href="blog-everlock-deluxe-vinyl-skirting.html" class="footer-link">Everlock Deluxe Vinyl</a>
+        <a href="blog-everrock-vinyl-skirting.html" class="footer-link">EverRock Vinyl</a>
         <a href="blog-thermal-everrock-insulated-skirting.html" class="footer-link">Thermal EverRock Insulated</a>
         <a href="blog-gorilla-insulated-skirting.html" class="footer-link">Gorilla Insulated Skirting</a>
         <a href="products.html#novik" class="footer-link">Novik Brick &amp; Stone Panels</a>
@@ -655,13 +679,8 @@
       </div>
     </div>
   </div>
-  <div style="border-top:1px solid rgba(255,255,255,0.08); padding:28px 24px; max-width:1200px; margin:0 auto;">
-    <p style="font-size:12px; color:rgba(255,255,255,0.3); line-height:1.7;">
-      <strong style="color:rgba(255,255,255,0.45);">Legal &amp; Accuracy Notice:</strong> Sample colors displayed on screen may differ from physical samples due to monitor calibration. Physical samples are provided for color matching purposes. <strong style="color:rgba(255,255,255,0.45);">Lifetime Warranty:</strong> Limited to original purchaser. Full terms at <a href="warranty.html" style="color:rgba(255,255,255,0.45);">skirtingdirect.com/resources/warranty</a>.
-    </p>
-  </div>
   <div class="footer-bottom">
-    <div class="footer-bottom-text">Copyright 2026 Everlock Systems, Inc. All rights reserved. Manufactured in the USA.</div>
+    <div class="footer-bottom-text">Copyright 2026 Everlock Systems, Inc. All rights reserved. Manufactured in the USA. Founded in Colorado in 1981.</div>
     <div class="footer-bottom-links">
       <a href="privacy-policy.html" class="footer-bottom-link">Privacy Policy</a>
       <a href="terms.html" class="footer-bottom-link">Terms &amp; Conditions</a>
@@ -670,67 +689,6 @@
     </div>
   </div>
 </footer>
-
-<script>
-  const selected = new Set();
-
-  function toggleProduct(el) {
-    const product = el.dataset.product;
-    if (selected.has(product)) {
-      selected.delete(product);
-      el.classList.remove('selected');
-      el.querySelector('.sample-checkbox').textContent = '';
-    } else {
-      selected.add(product);
-      el.classList.add('selected');
-      el.querySelector('.sample-checkbox').textContent = '&#10003;';
-      el.querySelector('.sample-checkbox').innerHTML = '&#10003;';
-    }
-    updateSelectedDisplay();
-  }
-
-  function updateSelectedDisplay() {
-    const list = document.getElementById('selectedList');
-    if (selected.size === 0) {
-      list.textContent = 'None selected yet. Choose from the list.';
-    } else {
-      list.textContent = Array.from(selected).join(', ');
-    }
-  }
-
-  function handleSampleSubmit(event) {
-    event.preventDefault();
-    const first = document.getElementById('sampleFirst').value.trim();
-    const last = document.getElementById('sampleLast').value.trim();
-    const address = document.getElementById('sampleAddress').value.trim();
-    const city = document.getElementById('sampleCity').value.trim();
-    const state = document.getElementById('sampleState').value.trim();
-    const zip = document.getElementById('sampleZip').value.trim();
-
-    if (!first || !last || !address || !city || !state || !zip) return;
-    if (selected.size === 0) {
-      alert('Please select at least one product to sample.');
-      return;
-    }
-
-    const products = Array.from(selected).join(', ');
-    const subject = encodeURIComponent('Sample Request');
-    const body = encodeURIComponent(
-      'Name: ' + first + ' ' + last + '\n' +
-      'Address: ' + address + '\n' +
-      'City: ' + city + ', ' + state + ' ' + zip + '\n' +
-      'Email: ' + (document.getElementById('sampleEmail').value || 'Not provided') + '\n' +
-      'Phone: ' + (document.getElementById('samplePhone').value || 'Not provided') + '\n' +
-      'Home Size: ' + (document.getElementById('sampleHomeSize').value || 'Not specified') + '\n\n' +
-      'Products Requested:\n' + products
-    );
-    window.location.href = 'mailto:info@skirtingdirect.com?subject=' + subject + '&body=' + body;
-
-    document.getElementById('sampleForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-    document.getElementById('successName').textContent = first;
-  }
-</script>
 
 </body>
 </html>

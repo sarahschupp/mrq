@@ -44,7 +44,7 @@
 - **Business hours: Monday-Friday, 9am-4pm Mountain Time.** Phone: 800-843-3336.
 - **Email: info@skirtingdirect.com** (confirmed — used throughout the redesign).
 - **Product name: "Gorilla Insulated Skirting"** (NOT "Gorilla Thermal Insulated" — "Thermal" is not in the product name).
-- **Novik line has 5 distinct products:** Hand-Laid Brick, Stacked Stone, Premium Hand-Cut Stone, Field Stone, Dry Stacked Stone. Never collapse to one card.
+- **Novik line has 6 distinct products:** Hand-Laid Brick, Stacked Stone, Premium Hand-Cut Stone, Field Stone, Dry Stacked Stone, Artisan-Cut Stacked Stone. Never collapse to one card. Artisan-Cut Stacked Stone (product code AC101, $375 per panel on live site) does not have a mail sample available.
 - **Accessories (confirmed product names):** Squeek No More, Everlock EZ Storage, Foundation Vents, EZ Access Doors.
 - **No HUD CFR citation** (24 CFR §3285.504) — use "HUD Manufactured Home Construction and Safety Standards" generically.
 - **No $50 store credit** — unconfirmed; use "We may feature your home here" instead.
